@@ -149,5 +149,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
+  whelm:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: f58a2fd79b3cb9ede63740d282624b7f83f35af5
+      url: "https://github.com/fekz115/whelm.git"
+    source: git
+    version: "0.0.1"
 sdks:
   dart: ">=2.13.0 <3.0.0"
+  flutter: ">=2.2.0"
