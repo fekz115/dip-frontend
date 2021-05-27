@@ -13,6 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
   freezed_annotation: ^0.14.2
+  objectdb: ^1.2.1
   whelm:
     git: https://github.com/fekz115/whelm.git
 
