@@ -490,7 +490,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: f58a2fd79b3cb9ede63740d282624b7f83f35af5
+      resolved-ref: "8b80fba653b117ba3b16e75bbc87f37ad7ef656e"
       url: "https://github.com/fekz115/whelm.git"
     source: git
     version: "0.0.1"

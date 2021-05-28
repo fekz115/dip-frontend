@@ -6,5 +6,6 @@ part 'app_action.freezed.dart';
 class AppAction with _$AppAction {
 
   const factory AppAction.initAction() = InitAction;
+  const factory AppAction.appLoaded() = AppLoaded;
 
 }

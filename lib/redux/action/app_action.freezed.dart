@@ -19,6 +19,10 @@ class _$AppActionTearOff {
   InitAction initAction() {
     return const InitAction();
   }
+
+  AppLoaded appLoaded() {
+    return const AppLoaded();
+  }
 }
 
 /// @nodoc
@@ -29,22 +33,26 @@ mixin _$AppAction {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initAction,
+    required TResult Function() appLoaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initAction,
+    TResult Function()? appLoaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(InitAction value) initAction,
+    required TResult Function(AppLoaded value) appLoaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitAction value)? initAction,
+    TResult Function(AppLoaded value)? appLoaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -104,6 +112,7 @@ class _$InitAction implements InitAction {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initAction,
+    required TResult Function() appLoaded,
   }) {
     return initAction();
   }
@@ -112,6 +121,7 @@ class _$InitAction implements InitAction {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initAction,
+    TResult Function()? appLoaded,
     required TResult orElse(),
   }) {
     if (initAction != null) {
@@ -124,6 +134,7 @@ class _$InitAction implements InitAction {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(InitAction value) initAction,
+    required TResult Function(AppLoaded value) appLoaded,
   }) {
     return initAction(this);
   }
@@ -132,6 +143,7 @@ class _$InitAction implements InitAction {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitAction value)? initAction,
+    TResult Function(AppLoaded value)? appLoaded,
     required TResult orElse(),
   }) {
     if (initAction != null) {
@@ -143,4 +155,87 @@ class _$InitAction implements InitAction {
 
 abstract class InitAction implements AppAction {
   const factory InitAction() = _$InitAction;
+}
+
+/// @nodoc
+abstract class $AppLoadedCopyWith<$Res> {
+  factory $AppLoadedCopyWith(AppLoaded value, $Res Function(AppLoaded) then) =
+      _$AppLoadedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$AppLoadedCopyWithImpl<$Res> extends _$AppActionCopyWithImpl<$Res>
+    implements $AppLoadedCopyWith<$Res> {
+  _$AppLoadedCopyWithImpl(AppLoaded _value, $Res Function(AppLoaded) _then)
+      : super(_value, (v) => _then(v as AppLoaded));
+
+  @override
+  AppLoaded get _value => super._value as AppLoaded;
+}
+
+/// @nodoc
+
+class _$AppLoaded implements AppLoaded {
+  const _$AppLoaded();
+
+  @override
+  String toString() {
+    return 'AppAction.appLoaded()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is AppLoaded);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initAction,
+    required TResult Function() appLoaded,
+  }) {
+    return appLoaded();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initAction,
+    TResult Function()? appLoaded,
+    required TResult orElse(),
+  }) {
+    if (appLoaded != null) {
+      return appLoaded();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitAction value) initAction,
+    required TResult Function(AppLoaded value) appLoaded,
+  }) {
+    return appLoaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitAction value)? initAction,
+    TResult Function(AppLoaded value)? appLoaded,
+    required TResult orElse(),
+  }) {
+    if (appLoaded != null) {
+      return appLoaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AppLoaded implements AppAction {
+  const factory AppLoaded() = _$AppLoaded;
 }
