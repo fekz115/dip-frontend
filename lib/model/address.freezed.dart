@@ -12,6 +12,10 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+Address _$AddressFromJson(Map<String, dynamic> json) {
+  return _Address.fromJson(json);
+}
+
 /// @nodoc
 class _$AddressTearOff {
   const _$AddressTearOff();
@@ -28,6 +32,10 @@ class _$AddressTearOff {
       locaion: locaion,
     );
   }
+
+  Address fromJson(Map<String, Object> json) {
+    return Address.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -40,6 +48,7 @@ mixin _$Address {
   Street get street => throw _privateConstructorUsedError;
   Location get locaion => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $AddressCopyWith<Address> get copyWith => throw _privateConstructorUsedError;
 }
@@ -155,13 +164,16 @@ class __$AddressCopyWithImpl<$Res> extends _$AddressCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_Address implements _Address {
   const _$_Address(
       {required this.id,
       required this.building,
       required this.street,
       required this.locaion});
+
+  factory _$_Address.fromJson(Map<String, dynamic> json) =>
+      _$_$_AddressFromJson(json);
 
   @override
   final int id;
@@ -204,6 +216,11 @@ class _$_Address implements _Address {
   @override
   _$AddressCopyWith<_Address> get copyWith =>
       __$AddressCopyWithImpl<_Address>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_AddressToJson(this);
+  }
 }
 
 abstract class _Address implements Address {
@@ -212,6 +229,8 @@ abstract class _Address implements Address {
       required String building,
       required Street street,
       required Location locaion}) = _$_Address;
+
+  factory _Address.fromJson(Map<String, dynamic> json) = _$_Address.fromJson;
 
   @override
   int get id => throw _privateConstructorUsedError;

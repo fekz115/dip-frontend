@@ -3,6 +3,7 @@ import 'package:dip_frontend/model/street.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'address.freezed.dart';
+part 'address.g.dart';
 
 @freezed
 class Address with _$Address {
@@ -12,4 +13,6 @@ class Address with _$Address {
     required Street street,
     required Location locaion,
   }) = _Address;
+
+  factory Address.fromJson(Map<String, dynamic> json) => _$AddressFromJson(json);
 }

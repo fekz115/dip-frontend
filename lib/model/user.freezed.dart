@@ -12,6 +12,10 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+User _$UserFromJson(Map<String, dynamic> json) {
+  return _User.fromJson(json);
+}
+
 /// @nodoc
 class _$UserTearOff {
   const _$UserTearOff();
@@ -34,6 +38,10 @@ class _$UserTearOff {
       banned: banned,
     );
   }
+
+  User fromJson(Map<String, Object> json) {
+    return User.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -49,6 +57,7 @@ mixin _$User {
   bool get active => throw _privateConstructorUsedError;
   bool get banned => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
 }
@@ -198,7 +207,7 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_User implements _User {
   const _$_User(
       {required this.id,
@@ -208,6 +217,9 @@ class _$_User implements _User {
       required this.userInfo,
       required this.active,
       required this.banned});
+
+  factory _$_User.fromJson(Map<String, dynamic> json) =>
+      _$_$_UserFromJson(json);
 
   @override
   final int id;
@@ -265,6 +277,11 @@ class _$_User implements _User {
   @override
   _$UserCopyWith<_User> get copyWith =>
       __$UserCopyWithImpl<_User>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_UserToJson(this);
+  }
 }
 
 abstract class _User implements User {
@@ -276,6 +293,8 @@ abstract class _User implements User {
       required UserInfo userInfo,
       required bool active,
       required bool banned}) = _$_User;
+
+  factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
   @override
   int get id => throw _privateConstructorUsedError;

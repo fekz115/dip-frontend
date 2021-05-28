@@ -12,6 +12,10 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+Location _$LocationFromJson(Map<String, dynamic> json) {
+  return _Location.fromJson(json);
+}
+
 /// @nodoc
 class _$LocationTearOff {
   const _$LocationTearOff();
@@ -24,6 +28,10 @@ class _$LocationTearOff {
       latitude: latitude,
     );
   }
+
+  Location fromJson(Map<String, Object> json) {
+    return Location.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -35,6 +43,7 @@ mixin _$Location {
   double get longitude => throw _privateConstructorUsedError;
   double get latitude => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $LocationCopyWith<Location> get copyWith =>
       throw _privateConstructorUsedError;
@@ -119,10 +128,13 @@ class __$LocationCopyWithImpl<$Res> extends _$LocationCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_Location implements _Location {
   const _$_Location(
       {required this.id, required this.longitude, required this.latitude});
+
+  factory _$_Location.fromJson(Map<String, dynamic> json) =>
+      _$_$_LocationFromJson(json);
 
   @override
   final int id;
@@ -161,6 +173,11 @@ class _$_Location implements _Location {
   @override
   _$LocationCopyWith<_Location> get copyWith =>
       __$LocationCopyWithImpl<_Location>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_LocationToJson(this);
+  }
 }
 
 abstract class _Location implements Location {
@@ -168,6 +185,8 @@ abstract class _Location implements Location {
       {required int id,
       required double longitude,
       required double latitude}) = _$_Location;
+
+  factory _Location.fromJson(Map<String, dynamic> json) = _$_Location.fromJson;
 
   @override
   int get id => throw _privateConstructorUsedError;

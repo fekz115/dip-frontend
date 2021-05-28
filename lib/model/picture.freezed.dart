@@ -12,6 +12,10 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+Picture _$PictureFromJson(Map<String, dynamic> json) {
+  return _Picture.fromJson(json);
+}
+
 /// @nodoc
 class _$PictureTearOff {
   const _$PictureTearOff();
@@ -21,6 +25,10 @@ class _$PictureTearOff {
       id: id,
       name: name,
     );
+  }
+
+  Picture fromJson(Map<String, Object> json) {
+    return Picture.fromJson(json);
   }
 }
 
@@ -32,6 +40,7 @@ mixin _$Picture {
   int get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $PictureCopyWith<Picture> get copyWith => throw _privateConstructorUsedError;
 }
@@ -105,9 +114,12 @@ class __$PictureCopyWithImpl<$Res> extends _$PictureCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_Picture implements _Picture {
   const _$_Picture({required this.id, this.name});
+
+  factory _$_Picture.fromJson(Map<String, dynamic> json) =>
+      _$_$_PictureFromJson(json);
 
   @override
   final int id;
@@ -139,10 +151,17 @@ class _$_Picture implements _Picture {
   @override
   _$PictureCopyWith<_Picture> get copyWith =>
       __$PictureCopyWithImpl<_Picture>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_PictureToJson(this);
+  }
 }
 
 abstract class _Picture implements Picture {
   const factory _Picture({required int id, String? name}) = _$_Picture;
+
+  factory _Picture.fromJson(Map<String, dynamic> json) = _$_Picture.fromJson;
 
   @override
   int get id => throw _privateConstructorUsedError;

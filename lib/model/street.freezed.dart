@@ -12,6 +12,10 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+Street _$StreetFromJson(Map<String, dynamic> json) {
+  return _Street.fromJson(json);
+}
+
 /// @nodoc
 class _$StreetTearOff {
   const _$StreetTearOff();
@@ -22,6 +26,10 @@ class _$StreetTearOff {
       name: name,
       city: city,
     );
+  }
+
+  Street fromJson(Map<String, Object> json) {
+    return Street.fromJson(json);
   }
 }
 
@@ -34,6 +42,7 @@ mixin _$Street {
   String get name => throw _privateConstructorUsedError;
   City get city => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $StreetCopyWith<Street> get copyWith => throw _privateConstructorUsedError;
 }
@@ -129,9 +138,12 @@ class __$StreetCopyWithImpl<$Res> extends _$StreetCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_Street implements _Street {
   const _$_Street({required this.id, required this.name, required this.city});
+
+  factory _$_Street.fromJson(Map<String, dynamic> json) =>
+      _$_$_StreetFromJson(json);
 
   @override
   final int id;
@@ -168,11 +180,18 @@ class _$_Street implements _Street {
   @override
   _$StreetCopyWith<_Street> get copyWith =>
       __$StreetCopyWithImpl<_Street>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_StreetToJson(this);
+  }
 }
 
 abstract class _Street implements Street {
   const factory _Street(
       {required int id, required String name, required City city}) = _$_Street;
+
+  factory _Street.fromJson(Map<String, dynamic> json) = _$_Street.fromJson;
 
   @override
   int get id => throw _privateConstructorUsedError;

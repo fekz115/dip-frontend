@@ -3,6 +3,7 @@ import 'package:dip_frontend/model/user_info.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'user.freezed.dart';
+part 'user.g.dart';
 
 @freezed
 class User with _$User {
@@ -15,4 +16,6 @@ class User with _$User {
     required bool active,
     required bool banned,
   }) = _User;
+
+  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 }

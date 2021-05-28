@@ -12,6 +12,10 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+UserInfo _$UserInfoFromJson(Map<String, dynamic> json) {
+  return _UserInfo.fromJson(json);
+}
+
 /// @nodoc
 class _$UserInfoTearOff {
   const _$UserInfoTearOff();
@@ -30,6 +34,10 @@ class _$UserInfoTearOff {
       address: address,
     );
   }
+
+  UserInfo fromJson(Map<String, Object> json) {
+    return UserInfo.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -43,6 +51,7 @@ mixin _$UserInfo {
   Picture? get picture => throw _privateConstructorUsedError;
   Address? get address => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $UserInfoCopyWith<UserInfo> get copyWith =>
       throw _privateConstructorUsedError;
@@ -187,7 +196,7 @@ class __$UserInfoCopyWithImpl<$Res> extends _$UserInfoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_UserInfo implements _UserInfo {
   const _$_UserInfo(
       {required this.id,
@@ -195,6 +204,9 @@ class _$_UserInfo implements _UserInfo {
       this.lastName,
       this.picture,
       this.address});
+
+  factory _$_UserInfo.fromJson(Map<String, dynamic> json) =>
+      _$_$_UserInfoFromJson(json);
 
   @override
   final int id;
@@ -244,6 +256,11 @@ class _$_UserInfo implements _UserInfo {
   @override
   _$UserInfoCopyWith<_UserInfo> get copyWith =>
       __$UserInfoCopyWithImpl<_UserInfo>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_UserInfoToJson(this);
+  }
 }
 
 abstract class _UserInfo implements UserInfo {
@@ -253,6 +270,8 @@ abstract class _UserInfo implements UserInfo {
       String? lastName,
       Picture? picture,
       Address? address}) = _$_UserInfo;
+
+  factory _UserInfo.fromJson(Map<String, dynamic> json) = _$_UserInfo.fromJson;
 
   @override
   int get id => throw _privateConstructorUsedError;

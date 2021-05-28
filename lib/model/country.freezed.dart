@@ -12,6 +12,10 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+Country _$CountryFromJson(Map<String, dynamic> json) {
+  return _Country.fromJson(json);
+}
+
 /// @nodoc
 class _$CountryTearOff {
   const _$CountryTearOff();
@@ -21,6 +25,10 @@ class _$CountryTearOff {
       id: id,
       name: name,
     );
+  }
+
+  Country fromJson(Map<String, Object> json) {
+    return Country.fromJson(json);
   }
 }
 
@@ -32,6 +40,7 @@ mixin _$Country {
   int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $CountryCopyWith<Country> get copyWith => throw _privateConstructorUsedError;
 }
@@ -105,9 +114,12 @@ class __$CountryCopyWithImpl<$Res> extends _$CountryCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_Country implements _Country {
   const _$_Country({required this.id, required this.name});
+
+  factory _$_Country.fromJson(Map<String, dynamic> json) =>
+      _$_$_CountryFromJson(json);
 
   @override
   final int id;
@@ -139,10 +151,17 @@ class _$_Country implements _Country {
   @override
   _$CountryCopyWith<_Country> get copyWith =>
       __$CountryCopyWithImpl<_Country>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_CountryToJson(this);
+  }
 }
 
 abstract class _Country implements Country {
   const factory _Country({required int id, required String name}) = _$_Country;
+
+  factory _Country.fromJson(Map<String, dynamic> json) = _$_Country.fromJson;
 
   @override
   int get id => throw _privateConstructorUsedError;
