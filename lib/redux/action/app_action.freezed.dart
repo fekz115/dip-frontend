@@ -23,6 +23,14 @@ class _$AppActionTearOff {
   AppLoaded appLoaded() {
     return const AppLoaded();
   }
+
+  ShowSignIn showSignIn() {
+    return const ShowSignIn();
+  }
+
+  ShowSignUp showSignUp() {
+    return const ShowSignUp();
+  }
 }
 
 /// @nodoc
@@ -34,12 +42,16 @@ mixin _$AppAction {
   TResult when<TResult extends Object?>({
     required TResult Function() initAction,
     required TResult Function() appLoaded,
+    required TResult Function() showSignIn,
+    required TResult Function() showSignUp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initAction,
     TResult Function()? appLoaded,
+    TResult Function()? showSignIn,
+    TResult Function()? showSignUp,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,12 +59,16 @@ mixin _$AppAction {
   TResult map<TResult extends Object?>({
     required TResult Function(InitAction value) initAction,
     required TResult Function(AppLoaded value) appLoaded,
+    required TResult Function(ShowSignIn value) showSignIn,
+    required TResult Function(ShowSignUp value) showSignUp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitAction value)? initAction,
     TResult Function(AppLoaded value)? appLoaded,
+    TResult Function(ShowSignIn value)? showSignIn,
+    TResult Function(ShowSignUp value)? showSignUp,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,6 +129,8 @@ class _$InitAction implements InitAction {
   TResult when<TResult extends Object?>({
     required TResult Function() initAction,
     required TResult Function() appLoaded,
+    required TResult Function() showSignIn,
+    required TResult Function() showSignUp,
   }) {
     return initAction();
   }
@@ -122,6 +140,8 @@ class _$InitAction implements InitAction {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initAction,
     TResult Function()? appLoaded,
+    TResult Function()? showSignIn,
+    TResult Function()? showSignUp,
     required TResult orElse(),
   }) {
     if (initAction != null) {
@@ -135,6 +155,8 @@ class _$InitAction implements InitAction {
   TResult map<TResult extends Object?>({
     required TResult Function(InitAction value) initAction,
     required TResult Function(AppLoaded value) appLoaded,
+    required TResult Function(ShowSignIn value) showSignIn,
+    required TResult Function(ShowSignUp value) showSignUp,
   }) {
     return initAction(this);
   }
@@ -144,6 +166,8 @@ class _$InitAction implements InitAction {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitAction value)? initAction,
     TResult Function(AppLoaded value)? appLoaded,
+    TResult Function(ShowSignIn value)? showSignIn,
+    TResult Function(ShowSignUp value)? showSignUp,
     required TResult orElse(),
   }) {
     if (initAction != null) {
@@ -196,6 +220,8 @@ class _$AppLoaded implements AppLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initAction,
     required TResult Function() appLoaded,
+    required TResult Function() showSignIn,
+    required TResult Function() showSignUp,
   }) {
     return appLoaded();
   }
@@ -205,6 +231,8 @@ class _$AppLoaded implements AppLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initAction,
     TResult Function()? appLoaded,
+    TResult Function()? showSignIn,
+    TResult Function()? showSignUp,
     required TResult orElse(),
   }) {
     if (appLoaded != null) {
@@ -218,6 +246,8 @@ class _$AppLoaded implements AppLoaded {
   TResult map<TResult extends Object?>({
     required TResult Function(InitAction value) initAction,
     required TResult Function(AppLoaded value) appLoaded,
+    required TResult Function(ShowSignIn value) showSignIn,
+    required TResult Function(ShowSignUp value) showSignUp,
   }) {
     return appLoaded(this);
   }
@@ -227,6 +257,8 @@ class _$AppLoaded implements AppLoaded {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitAction value)? initAction,
     TResult Function(AppLoaded value)? appLoaded,
+    TResult Function(ShowSignIn value)? showSignIn,
+    TResult Function(ShowSignUp value)? showSignUp,
     required TResult orElse(),
   }) {
     if (appLoaded != null) {
@@ -238,4 +270,188 @@ class _$AppLoaded implements AppLoaded {
 
 abstract class AppLoaded implements AppAction {
   const factory AppLoaded() = _$AppLoaded;
+}
+
+/// @nodoc
+abstract class $ShowSignInCopyWith<$Res> {
+  factory $ShowSignInCopyWith(
+          ShowSignIn value, $Res Function(ShowSignIn) then) =
+      _$ShowSignInCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$ShowSignInCopyWithImpl<$Res> extends _$AppActionCopyWithImpl<$Res>
+    implements $ShowSignInCopyWith<$Res> {
+  _$ShowSignInCopyWithImpl(ShowSignIn _value, $Res Function(ShowSignIn) _then)
+      : super(_value, (v) => _then(v as ShowSignIn));
+
+  @override
+  ShowSignIn get _value => super._value as ShowSignIn;
+}
+
+/// @nodoc
+
+class _$ShowSignIn implements ShowSignIn {
+  const _$ShowSignIn();
+
+  @override
+  String toString() {
+    return 'AppAction.showSignIn()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is ShowSignIn);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initAction,
+    required TResult Function() appLoaded,
+    required TResult Function() showSignIn,
+    required TResult Function() showSignUp,
+  }) {
+    return showSignIn();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initAction,
+    TResult Function()? appLoaded,
+    TResult Function()? showSignIn,
+    TResult Function()? showSignUp,
+    required TResult orElse(),
+  }) {
+    if (showSignIn != null) {
+      return showSignIn();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitAction value) initAction,
+    required TResult Function(AppLoaded value) appLoaded,
+    required TResult Function(ShowSignIn value) showSignIn,
+    required TResult Function(ShowSignUp value) showSignUp,
+  }) {
+    return showSignIn(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitAction value)? initAction,
+    TResult Function(AppLoaded value)? appLoaded,
+    TResult Function(ShowSignIn value)? showSignIn,
+    TResult Function(ShowSignUp value)? showSignUp,
+    required TResult orElse(),
+  }) {
+    if (showSignIn != null) {
+      return showSignIn(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ShowSignIn implements AppAction {
+  const factory ShowSignIn() = _$ShowSignIn;
+}
+
+/// @nodoc
+abstract class $ShowSignUpCopyWith<$Res> {
+  factory $ShowSignUpCopyWith(
+          ShowSignUp value, $Res Function(ShowSignUp) then) =
+      _$ShowSignUpCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$ShowSignUpCopyWithImpl<$Res> extends _$AppActionCopyWithImpl<$Res>
+    implements $ShowSignUpCopyWith<$Res> {
+  _$ShowSignUpCopyWithImpl(ShowSignUp _value, $Res Function(ShowSignUp) _then)
+      : super(_value, (v) => _then(v as ShowSignUp));
+
+  @override
+  ShowSignUp get _value => super._value as ShowSignUp;
+}
+
+/// @nodoc
+
+class _$ShowSignUp implements ShowSignUp {
+  const _$ShowSignUp();
+
+  @override
+  String toString() {
+    return 'AppAction.showSignUp()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is ShowSignUp);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initAction,
+    required TResult Function() appLoaded,
+    required TResult Function() showSignIn,
+    required TResult Function() showSignUp,
+  }) {
+    return showSignUp();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initAction,
+    TResult Function()? appLoaded,
+    TResult Function()? showSignIn,
+    TResult Function()? showSignUp,
+    required TResult orElse(),
+  }) {
+    if (showSignUp != null) {
+      return showSignUp();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitAction value) initAction,
+    required TResult Function(AppLoaded value) appLoaded,
+    required TResult Function(ShowSignIn value) showSignIn,
+    required TResult Function(ShowSignUp value) showSignUp,
+  }) {
+    return showSignUp(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitAction value)? initAction,
+    TResult Function(AppLoaded value)? appLoaded,
+    TResult Function(ShowSignIn value)? showSignIn,
+    TResult Function(ShowSignUp value)? showSignUp,
+    required TResult orElse(),
+  }) {
+    if (showSignUp != null) {
+      return showSignUp(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ShowSignUp implements AppAction {
+  const factory ShowSignUp() = _$ShowSignUp;
 }

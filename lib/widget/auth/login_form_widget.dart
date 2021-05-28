@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 
 class LoginFormWidget extends StatelessWidget {
   const LoginFormWidget({
+    required this.onSignUpButton,
     Key? key,
   }) : super(key: key);
+
+  final void Function() onSignUpButton;
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +60,7 @@ class LoginFormWidget extends StatelessWidget {
                     width: 10,
                   ),
                   OutlinedButton(
-                    onPressed: () {},
+                    onPressed: onSignUpButton,
                     child: const Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Text('Sign up'),

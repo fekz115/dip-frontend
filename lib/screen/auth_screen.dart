@@ -33,12 +33,20 @@ class AuthScreen extends StatelessWidget {
     LoginFormState state,
     void Function(AppAction) dispatcher,
   ) =>
-      const LoginFormWidget();
+      LoginFormWidget(
+        onSignUpButton: () {
+          dispatcher(const AppAction.showSignUp());
+        },
+      );
 
   Widget _buildRegistrationState(
     BuildContext context,
     RegistrationFormState state,
     void Function(AppAction) dispatcher,
   ) =>
-      const RegistrationFormWidget();
+      RegistrationFormWidget(
+        onSignInButton: () {
+          dispatcher(const AppAction.showSignIn());
+        },
+      );
 }

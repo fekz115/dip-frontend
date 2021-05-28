@@ -27,13 +27,25 @@ class MyApp extends StatelessWidget {
         ),
         reducers: [
           (state, action) => action.maybeMap(
-                appLoaded: (action) {
-                  return state.copyWith(
-                    navigationState: [
-                      const Screen.authScreen(),
-                    ],
-                  );
-                },
+                appLoaded: (action) => state.copyWith(
+                  navigationState: [
+                    const Screen.authScreen(),
+                  ],
+                ),
+                showSignIn: (action) => state.copyWith(
+                  authState: const AuthState.loginFormState(
+                    login: '',
+                    password: '',
+                  ),
+                ),
+                showSignUp: (action) => state.copyWith(
+                  authState: const AuthState.registrationFormState(
+                    login: '',
+                    email: '',
+                    password: '',
+                    repeatedPassword: '',
+                  ),
+                ),
                 orElse: () => state,
               ),
         ],
@@ -41,7 +53,6 @@ class MyApp extends StatelessWidget {
           (state, action, actionDispatcher, eventDispatcher) => action.maybeMap(
               orElse: () {},
               initAction: (action) async {
-                await Future.delayed(const Duration(seconds: 5));
                 actionDispatcher(const AppAction.appLoaded());
               }),
         ],
