@@ -8,6 +8,7 @@ class AuthState with _$AuthState {
     required String login,
     required String password,
     String? errorText,
+    required bool loading,
   }) = LoginFormState;
 
   const factory AuthState.registrationFormState({
@@ -16,5 +17,6 @@ class AuthState with _$AuthState {
     required String password,
     required String repeatedPassword,
     String? errorText,
+    required bool loading,
   }) = RegistrationFormState;
 }

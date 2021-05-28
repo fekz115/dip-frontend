@@ -15,11 +15,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData.from(colorScheme: const ColorScheme.light()),
       home: ProjectStoreWidget(
         initaialState: const AppState(
           authState: AuthState.loginFormState(
             login: '',
             password: '',
+            loading: false,
           ),
           navigationState: [
             Screen.splashScreen(),
@@ -37,6 +39,7 @@ class MyApp extends StatelessWidget {
                   authState: const AuthState.loginFormState(
                     login: '',
                     password: '',
+                    loading: false,
                   ),
                 ),
                 showSignUp: (action) => state.copyWith(
@@ -45,6 +48,7 @@ class MyApp extends StatelessWidget {
                     email: '',
                     password: '',
                     repeatedPassword: '',
+                    loading: false,
                   ),
                 ),
                 notNow: (action) => state.copyWith(
@@ -52,15 +56,54 @@ class MyApp extends StatelessWidget {
                     const Screen.mainScreen(),
                   ],
                 ),
+                loginSubmit: (action) => state.copyWith(
+                  authState: AuthState.loginFormState(
+                    login: action.login,
+                    password: action.password,
+                    loading: state.authState.loading,
+                    errorText: state.authState.errorText,
+                  ),
+                ),
+                registrationSubmit: (action) => state.copyWith(
+                  authState: AuthState.registrationFormState(
+                    login: action.login,
+                    password: action.password,
+                    email: action.email,
+                    repeatedPassword: action.repeatedPassword,
+                    loading: state.authState.loading,
+                    errorText: state.authState.errorText,
+                  ),
+                ),
+                setLoadingOnAuthScreen: (action) =>
+                    state.copyWith.authState(loading: action.loading),
                 orElse: () => state,
               ),
         ],
         middlewares: [
           (state, action, actionDispatcher, eventDispatcher) => action.maybeMap(
-              orElse: () {},
-              initAction: (action) async {
-                actionDispatcher(const AppAction.appLoaded());
-              }),
+                orElse: () {},
+                initAction: (action) async {
+                  actionDispatcher(const AppAction.appLoaded());
+                },
+                loginSubmit: (action) async {
+                  actionDispatcher(
+                    const AppAction.setLoadingOnAuthScreen(loading: true),
+                  );
+                  await Future.delayed(const Duration(seconds: 10));
+                  actionDispatcher(
+                    const AppAction.setLoadingOnAuthScreen(loading: false),
+                  );
+                },
+                registrationSubmit: (action) async {
+                  actionDispatcher(
+                    const AppAction.setLoadingOnAuthScreen(loading: true),
+                  );
+                  await Future.delayed(const Duration(seconds: 10));
+                  actionDispatcher(
+                    const AppAction.setLoadingOnAuthScreen(loading: false),
+                  );
+                },
+              ),
         ],
         initFunction: (state, actionDispatcher, eventDispatcher) =>
             actionDispatcher(const AppAction.initAction()),

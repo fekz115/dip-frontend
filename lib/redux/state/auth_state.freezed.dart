@@ -17,11 +17,15 @@ class _$AuthStateTearOff {
   const _$AuthStateTearOff();
 
   LoginFormState loginFormState(
-      {required String login, required String password, String? errorText}) {
+      {required String login,
+      required String password,
+      String? errorText,
+      required bool loading}) {
     return LoginFormState(
       login: login,
       password: password,
       errorText: errorText,
+      loading: loading,
     );
   }
 
@@ -30,13 +34,15 @@ class _$AuthStateTearOff {
       required String email,
       required String password,
       required String repeatedPassword,
-      String? errorText}) {
+      String? errorText,
+      required bool loading}) {
     return RegistrationFormState(
       login: login,
       email: email,
       password: password,
       repeatedPassword: repeatedPassword,
       errorText: errorText,
+      loading: loading,
     );
   }
 }
@@ -49,22 +55,25 @@ mixin _$AuthState {
   String get login => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
   String? get errorText => throw _privateConstructorUsedError;
+  bool get loading => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String login, String password, String? errorText)
+    required TResult Function(
+            String login, String password, String? errorText, bool loading)
         loginFormState,
     required TResult Function(String login, String email, String password,
-            String repeatedPassword, String? errorText)
+            String repeatedPassword, String? errorText, bool loading)
         registrationFormState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String login, String password, String? errorText)?
+    TResult Function(
+            String login, String password, String? errorText, bool loading)?
         loginFormState,
     TResult Function(String login, String email, String password,
-            String repeatedPassword, String? errorText)?
+            String repeatedPassword, String? errorText, bool loading)?
         registrationFormState,
     required TResult orElse(),
   }) =>
@@ -93,7 +102,7 @@ mixin _$AuthState {
 abstract class $AuthStateCopyWith<$Res> {
   factory $AuthStateCopyWith(AuthState value, $Res Function(AuthState) then) =
       _$AuthStateCopyWithImpl<$Res>;
-  $Res call({String login, String password, String? errorText});
+  $Res call({String login, String password, String? errorText, bool loading});
 }
 
 /// @nodoc
@@ -109,6 +118,7 @@ class _$AuthStateCopyWithImpl<$Res> implements $AuthStateCopyWith<$Res> {
     Object? login = freezed,
     Object? password = freezed,
     Object? errorText = freezed,
+    Object? loading = freezed,
   }) {
     return _then(_value.copyWith(
       login: login == freezed
@@ -123,6 +133,10 @@ class _$AuthStateCopyWithImpl<$Res> implements $AuthStateCopyWith<$Res> {
           ? _value.errorText
           : errorText // ignore: cast_nullable_to_non_nullable
               as String?,
+      loading: loading == freezed
+          ? _value.loading
+          : loading // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -134,7 +148,7 @@ abstract class $LoginFormStateCopyWith<$Res>
           LoginFormState value, $Res Function(LoginFormState) then) =
       _$LoginFormStateCopyWithImpl<$Res>;
   @override
-  $Res call({String login, String password, String? errorText});
+  $Res call({String login, String password, String? errorText, bool loading});
 }
 
 /// @nodoc
@@ -152,6 +166,7 @@ class _$LoginFormStateCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
     Object? login = freezed,
     Object? password = freezed,
     Object? errorText = freezed,
+    Object? loading = freezed,
   }) {
     return _then(LoginFormState(
       login: login == freezed
@@ -166,6 +181,10 @@ class _$LoginFormStateCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
           ? _value.errorText
           : errorText // ignore: cast_nullable_to_non_nullable
               as String?,
+      loading: loading == freezed
+          ? _value.loading
+          : loading // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -174,7 +193,10 @@ class _$LoginFormStateCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
 
 class _$LoginFormState implements LoginFormState {
   const _$LoginFormState(
-      {required this.login, required this.password, this.errorText});
+      {required this.login,
+      required this.password,
+      this.errorText,
+      required this.loading});
 
   @override
   final String login;
@@ -182,10 +204,12 @@ class _$LoginFormState implements LoginFormState {
   final String password;
   @override
   final String? errorText;
+  @override
+  final bool loading;
 
   @override
   String toString() {
-    return 'AuthState.loginFormState(login: $login, password: $password, errorText: $errorText)';
+    return 'AuthState.loginFormState(login: $login, password: $password, errorText: $errorText, loading: $loading)';
   }
 
   @override
@@ -199,7 +223,9 @@ class _$LoginFormState implements LoginFormState {
                     .equals(other.password, password)) &&
             (identical(other.errorText, errorText) ||
                 const DeepCollectionEquality()
-                    .equals(other.errorText, errorText)));
+                    .equals(other.errorText, errorText)) &&
+            (identical(other.loading, loading) ||
+                const DeepCollectionEquality().equals(other.loading, loading)));
   }
 
   @override
@@ -207,7 +233,8 @@ class _$LoginFormState implements LoginFormState {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(login) ^
       const DeepCollectionEquality().hash(password) ^
-      const DeepCollectionEquality().hash(errorText);
+      const DeepCollectionEquality().hash(errorText) ^
+      const DeepCollectionEquality().hash(loading);
 
   @JsonKey(ignore: true)
   @override
@@ -217,27 +244,29 @@ class _$LoginFormState implements LoginFormState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String login, String password, String? errorText)
+    required TResult Function(
+            String login, String password, String? errorText, bool loading)
         loginFormState,
     required TResult Function(String login, String email, String password,
-            String repeatedPassword, String? errorText)
+            String repeatedPassword, String? errorText, bool loading)
         registrationFormState,
   }) {
-    return loginFormState(login, password, errorText);
+    return loginFormState(login, password, errorText, loading);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String login, String password, String? errorText)?
+    TResult Function(
+            String login, String password, String? errorText, bool loading)?
         loginFormState,
     TResult Function(String login, String email, String password,
-            String repeatedPassword, String? errorText)?
+            String repeatedPassword, String? errorText, bool loading)?
         registrationFormState,
     required TResult orElse(),
   }) {
     if (loginFormState != null) {
-      return loginFormState(login, password, errorText);
+      return loginFormState(login, password, errorText, loading);
     }
     return orElse();
   }
@@ -270,7 +299,8 @@ abstract class LoginFormState implements AuthState {
   const factory LoginFormState(
       {required String login,
       required String password,
-      String? errorText}) = _$LoginFormState;
+      String? errorText,
+      required bool loading}) = _$LoginFormState;
 
   @override
   String get login => throw _privateConstructorUsedError;
@@ -278,6 +308,8 @@ abstract class LoginFormState implements AuthState {
   String get password => throw _privateConstructorUsedError;
   @override
   String? get errorText => throw _privateConstructorUsedError;
+  @override
+  bool get loading => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   $LoginFormStateCopyWith<LoginFormState> get copyWith =>
@@ -296,7 +328,8 @@ abstract class $RegistrationFormStateCopyWith<$Res>
       String email,
       String password,
       String repeatedPassword,
-      String? errorText});
+      String? errorText,
+      bool loading});
 }
 
 /// @nodoc
@@ -317,6 +350,7 @@ class _$RegistrationFormStateCopyWithImpl<$Res>
     Object? password = freezed,
     Object? repeatedPassword = freezed,
     Object? errorText = freezed,
+    Object? loading = freezed,
   }) {
     return _then(RegistrationFormState(
       login: login == freezed
@@ -339,6 +373,10 @@ class _$RegistrationFormStateCopyWithImpl<$Res>
           ? _value.errorText
           : errorText // ignore: cast_nullable_to_non_nullable
               as String?,
+      loading: loading == freezed
+          ? _value.loading
+          : loading // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -351,7 +389,8 @@ class _$RegistrationFormState implements RegistrationFormState {
       required this.email,
       required this.password,
       required this.repeatedPassword,
-      this.errorText});
+      this.errorText,
+      required this.loading});
 
   @override
   final String login;
@@ -363,10 +402,12 @@ class _$RegistrationFormState implements RegistrationFormState {
   final String repeatedPassword;
   @override
   final String? errorText;
+  @override
+  final bool loading;
 
   @override
   String toString() {
-    return 'AuthState.registrationFormState(login: $login, email: $email, password: $password, repeatedPassword: $repeatedPassword, errorText: $errorText)';
+    return 'AuthState.registrationFormState(login: $login, email: $email, password: $password, repeatedPassword: $repeatedPassword, errorText: $errorText, loading: $loading)';
   }
 
   @override
@@ -385,7 +426,9 @@ class _$RegistrationFormState implements RegistrationFormState {
                     .equals(other.repeatedPassword, repeatedPassword)) &&
             (identical(other.errorText, errorText) ||
                 const DeepCollectionEquality()
-                    .equals(other.errorText, errorText)));
+                    .equals(other.errorText, errorText)) &&
+            (identical(other.loading, loading) ||
+                const DeepCollectionEquality().equals(other.loading, loading)));
   }
 
   @override
@@ -395,7 +438,8 @@ class _$RegistrationFormState implements RegistrationFormState {
       const DeepCollectionEquality().hash(email) ^
       const DeepCollectionEquality().hash(password) ^
       const DeepCollectionEquality().hash(repeatedPassword) ^
-      const DeepCollectionEquality().hash(errorText);
+      const DeepCollectionEquality().hash(errorText) ^
+      const DeepCollectionEquality().hash(loading);
 
   @JsonKey(ignore: true)
   @override
@@ -406,29 +450,31 @@ class _$RegistrationFormState implements RegistrationFormState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String login, String password, String? errorText)
+    required TResult Function(
+            String login, String password, String? errorText, bool loading)
         loginFormState,
     required TResult Function(String login, String email, String password,
-            String repeatedPassword, String? errorText)
+            String repeatedPassword, String? errorText, bool loading)
         registrationFormState,
   }) {
     return registrationFormState(
-        login, email, password, repeatedPassword, errorText);
+        login, email, password, repeatedPassword, errorText, loading);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String login, String password, String? errorText)?
+    TResult Function(
+            String login, String password, String? errorText, bool loading)?
         loginFormState,
     TResult Function(String login, String email, String password,
-            String repeatedPassword, String? errorText)?
+            String repeatedPassword, String? errorText, bool loading)?
         registrationFormState,
     required TResult orElse(),
   }) {
     if (registrationFormState != null) {
       return registrationFormState(
-          login, email, password, repeatedPassword, errorText);
+          login, email, password, repeatedPassword, errorText, loading);
     }
     return orElse();
   }
@@ -463,7 +509,8 @@ abstract class RegistrationFormState implements AuthState {
       required String email,
       required String password,
       required String repeatedPassword,
-      String? errorText}) = _$RegistrationFormState;
+      String? errorText,
+      required bool loading}) = _$RegistrationFormState;
 
   @override
   String get login => throw _privateConstructorUsedError;
@@ -473,6 +520,8 @@ abstract class RegistrationFormState implements AuthState {
   String get repeatedPassword => throw _privateConstructorUsedError;
   @override
   String? get errorText => throw _privateConstructorUsedError;
+  @override
+  bool get loading => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   $RegistrationFormStateCopyWith<RegistrationFormState> get copyWith =>
