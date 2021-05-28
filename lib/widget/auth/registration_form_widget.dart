@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class RegistrationFormWidget extends StatelessWidget {
   const RegistrationFormWidget({
     required this.onSignInButton,
+    required this.onNotNowButton,
     Key? key, 
   }) : super(key: key);
 
   final void Function() onSignInButton;
+  final void Function() onNotNowButton;
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +65,7 @@ class RegistrationFormWidget extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 TextButton(
-                  onPressed: () {},
+                  onPressed: onNotNowButton,
                   child: const Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Text('Not now'),

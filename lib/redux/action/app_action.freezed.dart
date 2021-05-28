@@ -31,6 +31,10 @@ class _$AppActionTearOff {
   ShowSignUp showSignUp() {
     return const ShowSignUp();
   }
+
+  NotNow notNow() {
+    return const NotNow();
+  }
 }
 
 /// @nodoc
@@ -44,6 +48,7 @@ mixin _$AppAction {
     required TResult Function() appLoaded,
     required TResult Function() showSignIn,
     required TResult Function() showSignUp,
+    required TResult Function() notNow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -52,6 +57,7 @@ mixin _$AppAction {
     TResult Function()? appLoaded,
     TResult Function()? showSignIn,
     TResult Function()? showSignUp,
+    TResult Function()? notNow,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -61,6 +67,7 @@ mixin _$AppAction {
     required TResult Function(AppLoaded value) appLoaded,
     required TResult Function(ShowSignIn value) showSignIn,
     required TResult Function(ShowSignUp value) showSignUp,
+    required TResult Function(NotNow value) notNow,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +76,7 @@ mixin _$AppAction {
     TResult Function(AppLoaded value)? appLoaded,
     TResult Function(ShowSignIn value)? showSignIn,
     TResult Function(ShowSignUp value)? showSignUp,
+    TResult Function(NotNow value)? notNow,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -131,6 +139,7 @@ class _$InitAction implements InitAction {
     required TResult Function() appLoaded,
     required TResult Function() showSignIn,
     required TResult Function() showSignUp,
+    required TResult Function() notNow,
   }) {
     return initAction();
   }
@@ -142,6 +151,7 @@ class _$InitAction implements InitAction {
     TResult Function()? appLoaded,
     TResult Function()? showSignIn,
     TResult Function()? showSignUp,
+    TResult Function()? notNow,
     required TResult orElse(),
   }) {
     if (initAction != null) {
@@ -157,6 +167,7 @@ class _$InitAction implements InitAction {
     required TResult Function(AppLoaded value) appLoaded,
     required TResult Function(ShowSignIn value) showSignIn,
     required TResult Function(ShowSignUp value) showSignUp,
+    required TResult Function(NotNow value) notNow,
   }) {
     return initAction(this);
   }
@@ -168,6 +179,7 @@ class _$InitAction implements InitAction {
     TResult Function(AppLoaded value)? appLoaded,
     TResult Function(ShowSignIn value)? showSignIn,
     TResult Function(ShowSignUp value)? showSignUp,
+    TResult Function(NotNow value)? notNow,
     required TResult orElse(),
   }) {
     if (initAction != null) {
@@ -222,6 +234,7 @@ class _$AppLoaded implements AppLoaded {
     required TResult Function() appLoaded,
     required TResult Function() showSignIn,
     required TResult Function() showSignUp,
+    required TResult Function() notNow,
   }) {
     return appLoaded();
   }
@@ -233,6 +246,7 @@ class _$AppLoaded implements AppLoaded {
     TResult Function()? appLoaded,
     TResult Function()? showSignIn,
     TResult Function()? showSignUp,
+    TResult Function()? notNow,
     required TResult orElse(),
   }) {
     if (appLoaded != null) {
@@ -248,6 +262,7 @@ class _$AppLoaded implements AppLoaded {
     required TResult Function(AppLoaded value) appLoaded,
     required TResult Function(ShowSignIn value) showSignIn,
     required TResult Function(ShowSignUp value) showSignUp,
+    required TResult Function(NotNow value) notNow,
   }) {
     return appLoaded(this);
   }
@@ -259,6 +274,7 @@ class _$AppLoaded implements AppLoaded {
     TResult Function(AppLoaded value)? appLoaded,
     TResult Function(ShowSignIn value)? showSignIn,
     TResult Function(ShowSignUp value)? showSignUp,
+    TResult Function(NotNow value)? notNow,
     required TResult orElse(),
   }) {
     if (appLoaded != null) {
@@ -314,6 +330,7 @@ class _$ShowSignIn implements ShowSignIn {
     required TResult Function() appLoaded,
     required TResult Function() showSignIn,
     required TResult Function() showSignUp,
+    required TResult Function() notNow,
   }) {
     return showSignIn();
   }
@@ -325,6 +342,7 @@ class _$ShowSignIn implements ShowSignIn {
     TResult Function()? appLoaded,
     TResult Function()? showSignIn,
     TResult Function()? showSignUp,
+    TResult Function()? notNow,
     required TResult orElse(),
   }) {
     if (showSignIn != null) {
@@ -340,6 +358,7 @@ class _$ShowSignIn implements ShowSignIn {
     required TResult Function(AppLoaded value) appLoaded,
     required TResult Function(ShowSignIn value) showSignIn,
     required TResult Function(ShowSignUp value) showSignUp,
+    required TResult Function(NotNow value) notNow,
   }) {
     return showSignIn(this);
   }
@@ -351,6 +370,7 @@ class _$ShowSignIn implements ShowSignIn {
     TResult Function(AppLoaded value)? appLoaded,
     TResult Function(ShowSignIn value)? showSignIn,
     TResult Function(ShowSignUp value)? showSignUp,
+    TResult Function(NotNow value)? notNow,
     required TResult orElse(),
   }) {
     if (showSignIn != null) {
@@ -406,6 +426,7 @@ class _$ShowSignUp implements ShowSignUp {
     required TResult Function() appLoaded,
     required TResult Function() showSignIn,
     required TResult Function() showSignUp,
+    required TResult Function() notNow,
   }) {
     return showSignUp();
   }
@@ -417,6 +438,7 @@ class _$ShowSignUp implements ShowSignUp {
     TResult Function()? appLoaded,
     TResult Function()? showSignIn,
     TResult Function()? showSignUp,
+    TResult Function()? notNow,
     required TResult orElse(),
   }) {
     if (showSignUp != null) {
@@ -432,6 +454,7 @@ class _$ShowSignUp implements ShowSignUp {
     required TResult Function(AppLoaded value) appLoaded,
     required TResult Function(ShowSignIn value) showSignIn,
     required TResult Function(ShowSignUp value) showSignUp,
+    required TResult Function(NotNow value) notNow,
   }) {
     return showSignUp(this);
   }
@@ -443,6 +466,7 @@ class _$ShowSignUp implements ShowSignUp {
     TResult Function(AppLoaded value)? appLoaded,
     TResult Function(ShowSignIn value)? showSignIn,
     TResult Function(ShowSignUp value)? showSignUp,
+    TResult Function(NotNow value)? notNow,
     required TResult orElse(),
   }) {
     if (showSignUp != null) {
@@ -454,4 +478,99 @@ class _$ShowSignUp implements ShowSignUp {
 
 abstract class ShowSignUp implements AppAction {
   const factory ShowSignUp() = _$ShowSignUp;
+}
+
+/// @nodoc
+abstract class $NotNowCopyWith<$Res> {
+  factory $NotNowCopyWith(NotNow value, $Res Function(NotNow) then) =
+      _$NotNowCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$NotNowCopyWithImpl<$Res> extends _$AppActionCopyWithImpl<$Res>
+    implements $NotNowCopyWith<$Res> {
+  _$NotNowCopyWithImpl(NotNow _value, $Res Function(NotNow) _then)
+      : super(_value, (v) => _then(v as NotNow));
+
+  @override
+  NotNow get _value => super._value as NotNow;
+}
+
+/// @nodoc
+
+class _$NotNow implements NotNow {
+  const _$NotNow();
+
+  @override
+  String toString() {
+    return 'AppAction.notNow()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is NotNow);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initAction,
+    required TResult Function() appLoaded,
+    required TResult Function() showSignIn,
+    required TResult Function() showSignUp,
+    required TResult Function() notNow,
+  }) {
+    return notNow();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initAction,
+    TResult Function()? appLoaded,
+    TResult Function()? showSignIn,
+    TResult Function()? showSignUp,
+    TResult Function()? notNow,
+    required TResult orElse(),
+  }) {
+    if (notNow != null) {
+      return notNow();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitAction value) initAction,
+    required TResult Function(AppLoaded value) appLoaded,
+    required TResult Function(ShowSignIn value) showSignIn,
+    required TResult Function(ShowSignUp value) showSignUp,
+    required TResult Function(NotNow value) notNow,
+  }) {
+    return notNow(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitAction value)? initAction,
+    TResult Function(AppLoaded value)? appLoaded,
+    TResult Function(ShowSignIn value)? showSignIn,
+    TResult Function(ShowSignUp value)? showSignUp,
+    TResult Function(NotNow value)? notNow,
+    required TResult orElse(),
+  }) {
+    if (notNow != null) {
+      return notNow(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NotNow implements AppAction {
+  const factory NotNow() = _$NotNow;
 }

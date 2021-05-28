@@ -17,10 +17,15 @@ class _$AppStateTearOff {
   const _$AppStateTearOff();
 
   _AppState call(
-      {required List<Screen> navigationState, required AuthState authState}) {
+      {required List<Screen> navigationState,
+      required AuthState authState,
+      required List<Role> roles,
+      User? user}) {
     return _AppState(
       navigationState: navigationState,
       authState: authState,
+      roles: roles,
+      user: user,
     );
   }
 }
@@ -32,6 +37,8 @@ const $AppState = _$AppStateTearOff();
 mixin _$AppState {
   List<Screen> get navigationState => throw _privateConstructorUsedError;
   AuthState get authState => throw _privateConstructorUsedError;
+  List<Role> get roles => throw _privateConstructorUsedError;
+  User? get user => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AppStateCopyWith<AppState> get copyWith =>
@@ -42,9 +49,14 @@ mixin _$AppState {
 abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) =
       _$AppStateCopyWithImpl<$Res>;
-  $Res call({List<Screen> navigationState, AuthState authState});
+  $Res call(
+      {List<Screen> navigationState,
+      AuthState authState,
+      List<Role> roles,
+      User? user});
 
   $AuthStateCopyWith<$Res> get authState;
+  $UserCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -59,6 +71,8 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
   $Res call({
     Object? navigationState = freezed,
     Object? authState = freezed,
+    Object? roles = freezed,
+    Object? user = freezed,
   }) {
     return _then(_value.copyWith(
       navigationState: navigationState == freezed
@@ -69,6 +83,14 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
           ? _value.authState
           : authState // ignore: cast_nullable_to_non_nullable
               as AuthState,
+      roles: roles == freezed
+          ? _value.roles
+          : roles // ignore: cast_nullable_to_non_nullable
+              as List<Role>,
+      user: user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User?,
     ));
   }
 
@@ -78,6 +100,17 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
       return _then(_value.copyWith(authState: value));
     });
   }
+
+  @override
+  $UserCopyWith<$Res>? get user {
+    if (_value.user == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_value.user!, (value) {
+      return _then(_value.copyWith(user: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -85,10 +118,16 @@ abstract class _$AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
   factory _$AppStateCopyWith(_AppState value, $Res Function(_AppState) then) =
       __$AppStateCopyWithImpl<$Res>;
   @override
-  $Res call({List<Screen> navigationState, AuthState authState});
+  $Res call(
+      {List<Screen> navigationState,
+      AuthState authState,
+      List<Role> roles,
+      User? user});
 
   @override
   $AuthStateCopyWith<$Res> get authState;
+  @override
+  $UserCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -104,6 +143,8 @@ class __$AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
   $Res call({
     Object? navigationState = freezed,
     Object? authState = freezed,
+    Object? roles = freezed,
+    Object? user = freezed,
   }) {
     return _then(_AppState(
       navigationState: navigationState == freezed
@@ -114,6 +155,14 @@ class __$AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
           ? _value.authState
           : authState // ignore: cast_nullable_to_non_nullable
               as AuthState,
+      roles: roles == freezed
+          ? _value.roles
+          : roles // ignore: cast_nullable_to_non_nullable
+              as List<Role>,
+      user: user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User?,
     ));
   }
 }
@@ -121,16 +170,24 @@ class __$AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_AppState implements _AppState {
-  const _$_AppState({required this.navigationState, required this.authState});
+  const _$_AppState(
+      {required this.navigationState,
+      required this.authState,
+      required this.roles,
+      this.user});
 
   @override
   final List<Screen> navigationState;
   @override
   final AuthState authState;
+  @override
+  final List<Role> roles;
+  @override
+  final User? user;
 
   @override
   String toString() {
-    return 'AppState(navigationState: $navigationState, authState: $authState)';
+    return 'AppState(navigationState: $navigationState, authState: $authState, roles: $roles, user: $user)';
   }
 
   @override
@@ -142,14 +199,20 @@ class _$_AppState implements _AppState {
                     .equals(other.navigationState, navigationState)) &&
             (identical(other.authState, authState) ||
                 const DeepCollectionEquality()
-                    .equals(other.authState, authState)));
+                    .equals(other.authState, authState)) &&
+            (identical(other.roles, roles) ||
+                const DeepCollectionEquality().equals(other.roles, roles)) &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(navigationState) ^
-      const DeepCollectionEquality().hash(authState);
+      const DeepCollectionEquality().hash(authState) ^
+      const DeepCollectionEquality().hash(roles) ^
+      const DeepCollectionEquality().hash(user);
 
   @JsonKey(ignore: true)
   @override
@@ -160,12 +223,18 @@ class _$_AppState implements _AppState {
 abstract class _AppState implements AppState {
   const factory _AppState(
       {required List<Screen> navigationState,
-      required AuthState authState}) = _$_AppState;
+      required AuthState authState,
+      required List<Role> roles,
+      User? user}) = _$_AppState;
 
   @override
   List<Screen> get navigationState => throw _privateConstructorUsedError;
   @override
   AuthState get authState => throw _privateConstructorUsedError;
+  @override
+  List<Role> get roles => throw _privateConstructorUsedError;
+  @override
+  User? get user => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$AppStateCopyWith<_AppState> get copyWith =>

@@ -10,5 +10,6 @@ class AppAction with _$AppAction {
 
   const factory AppAction.showSignIn() = ShowSignIn;
   const factory AppAction.showSignUp() = ShowSignUp;
+  const factory AppAction.notNow() = NotNow;
 
 }

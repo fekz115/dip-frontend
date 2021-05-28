@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
           navigationState: [
             Screen.splashScreen(),
           ],
+          roles: [],
         ),
         reducers: [
           (state, action) => action.maybeMap(
@@ -46,6 +47,11 @@ class MyApp extends StatelessWidget {
                     repeatedPassword: '',
                   ),
                 ),
+                notNow: (action) => state.copyWith(
+                  navigationState: [
+                    const Screen.mainScreen(),
+                  ],
+                ),
                 orElse: () => state,
               ),
         ],
@@ -56,9 +62,8 @@ class MyApp extends StatelessWidget {
                 actionDispatcher(const AppAction.appLoaded());
               }),
         ],
-        initFunction: (state, actionDispatcher, eventDispatcher) {
-          actionDispatcher(const AppAction.initAction());
-        },
+        initFunction: (state, actionDispatcher, eventDispatcher) =>
+            actionDispatcher(const AppAction.initAction()),
         child: const NavigatorWidget(),
       ),
     );
