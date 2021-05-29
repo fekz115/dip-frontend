@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 import 'package:dip_frontend/api/api_exception.dart';
 import 'package:dip_frontend/api/auth_interceptor.dart';
@@ -7,6 +9,7 @@ import 'package:dip_frontend/api/role_interceptor.dart';
 import 'package:dip_frontend/model/page.dart';
 import 'package:dip_frontend/model/user.dart';
 import 'package:dip_frontend/repository/repository.dart';
+import 'package:path_provider/path_provider.dart';
 
 class ApiClient {
   ApiClient(String baseUrl, this.repository) {
@@ -97,6 +100,24 @@ class ApiClient {
           'pageSize': pageSize,
         },
       ),
-    ).then((value) => value.data!).then((value) => Page.fromJson(value['page'] as Map<String, dynamic>));
+    )
+        .then((value) => value.data!)
+        .then((value) => Page.fromJson(value['page'] as Map<String, dynamic>));
+  }
+
+  Future<File> getPdf(int articleId, [void Function(int, int)? notifier]) async {
+    final response = await dio.get(
+      '/api/qr/article/$articleId',
+      onReceiveProgress: notifier,
+      options: Options(
+        responseType: ResponseType.bytes,
+      ),
+    );
+    final t = response.headers["content-disposition"]![0];
+    final file = File('${(await getDownloadsDirectory())!.path}/${t.substring(t.indexOf('"') + 1, t.lastIndexOf('"'))}');
+    final raf = file.openSync(mode: FileMode.write);
+    raf.writeFromSync(response.data as List<int>);
+    await raf.close();
+    return file;
   }
 }

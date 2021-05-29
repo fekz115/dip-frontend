@@ -244,5 +244,11 @@ List<Middleware<AppState, AppAction, AppEvent>> createMiddleware(
                 }
               },
             );
+          },
+          downloadPdf: (action) async {
+            final file = await apiClient.getPdf(action.article.id);
+            eventDispatcher(
+              AppEvent.snackbarNotificationEvent(message: 'File downloaded: ${file.path}'),
+            );
           }),
     ];

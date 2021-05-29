@@ -129,6 +129,12 @@ class _$AppActionTearOff {
   RefreshArticles refreshArticles() {
     return const RefreshArticles();
   }
+
+  DownloadPdf downloadPdf({required Article article}) {
+    return DownloadPdf(
+      article: article,
+    );
+  }
 }
 
 /// @nodoc
@@ -161,6 +167,7 @@ mixin _$AppAction {
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
     required TResult Function() refreshArticles,
+    required TResult Function(Article article) downloadPdf,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -187,6 +194,7 @@ mixin _$AppAction {
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     TResult Function()? refreshArticles,
+    TResult Function(Article article)? downloadPdf,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -215,6 +223,7 @@ mixin _$AppAction {
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
     required TResult Function(RefreshArticles value) refreshArticles,
+    required TResult Function(DownloadPdf value) downloadPdf,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -240,6 +249,7 @@ mixin _$AppAction {
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     TResult Function(RefreshArticles value)? refreshArticles,
+    TResult Function(DownloadPdf value)? downloadPdf,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -321,6 +331,7 @@ class _$InitAction implements InitAction {
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
     required TResult Function() refreshArticles,
+    required TResult Function(Article article) downloadPdf,
   }) {
     return initAction();
   }
@@ -350,6 +361,7 @@ class _$InitAction implements InitAction {
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     TResult Function()? refreshArticles,
+    TResult Function(Article article)? downloadPdf,
     required TResult orElse(),
   }) {
     if (initAction != null) {
@@ -384,6 +396,7 @@ class _$InitAction implements InitAction {
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
     required TResult Function(RefreshArticles value) refreshArticles,
+    required TResult Function(DownloadPdf value) downloadPdf,
   }) {
     return initAction(this);
   }
@@ -412,6 +425,7 @@ class _$InitAction implements InitAction {
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     TResult Function(RefreshArticles value)? refreshArticles,
+    TResult Function(DownloadPdf value)? downloadPdf,
     required TResult orElse(),
   }) {
     if (initAction != null) {
@@ -485,6 +499,7 @@ class _$AppLoaded implements AppLoaded {
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
     required TResult Function() refreshArticles,
+    required TResult Function(Article article) downloadPdf,
   }) {
     return appLoaded();
   }
@@ -514,6 +529,7 @@ class _$AppLoaded implements AppLoaded {
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     TResult Function()? refreshArticles,
+    TResult Function(Article article)? downloadPdf,
     required TResult orElse(),
   }) {
     if (appLoaded != null) {
@@ -548,6 +564,7 @@ class _$AppLoaded implements AppLoaded {
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
     required TResult Function(RefreshArticles value) refreshArticles,
+    required TResult Function(DownloadPdf value) downloadPdf,
   }) {
     return appLoaded(this);
   }
@@ -576,6 +593,7 @@ class _$AppLoaded implements AppLoaded {
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     TResult Function(RefreshArticles value)? refreshArticles,
+    TResult Function(DownloadPdf value)? downloadPdf,
     required TResult orElse(),
   }) {
     if (appLoaded != null) {
@@ -652,6 +670,7 @@ class _$RemovePreviousPages implements RemovePreviousPages {
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
     required TResult Function() refreshArticles,
+    required TResult Function(Article article) downloadPdf,
   }) {
     return removePreviousPages();
   }
@@ -681,6 +700,7 @@ class _$RemovePreviousPages implements RemovePreviousPages {
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     TResult Function()? refreshArticles,
+    TResult Function(Article article)? downloadPdf,
     required TResult orElse(),
   }) {
     if (removePreviousPages != null) {
@@ -715,6 +735,7 @@ class _$RemovePreviousPages implements RemovePreviousPages {
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
     required TResult Function(RefreshArticles value) refreshArticles,
+    required TResult Function(DownloadPdf value) downloadPdf,
   }) {
     return removePreviousPages(this);
   }
@@ -743,6 +764,7 @@ class _$RemovePreviousPages implements RemovePreviousPages {
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     TResult Function(RefreshArticles value)? refreshArticles,
+    TResult Function(DownloadPdf value)? downloadPdf,
     required TResult orElse(),
   }) {
     if (removePreviousPages != null) {
@@ -847,6 +869,7 @@ class _$ChangeBottomNavigationState implements ChangeBottomNavigationState {
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
     required TResult Function() refreshArticles,
+    required TResult Function(Article article) downloadPdf,
   }) {
     return changeBottomNavigationState(state);
   }
@@ -876,6 +899,7 @@ class _$ChangeBottomNavigationState implements ChangeBottomNavigationState {
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     TResult Function()? refreshArticles,
+    TResult Function(Article article)? downloadPdf,
     required TResult orElse(),
   }) {
     if (changeBottomNavigationState != null) {
@@ -910,6 +934,7 @@ class _$ChangeBottomNavigationState implements ChangeBottomNavigationState {
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
     required TResult Function(RefreshArticles value) refreshArticles,
+    required TResult Function(DownloadPdf value) downloadPdf,
   }) {
     return changeBottomNavigationState(this);
   }
@@ -938,6 +963,7 @@ class _$ChangeBottomNavigationState implements ChangeBottomNavigationState {
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     TResult Function(RefreshArticles value)? refreshArticles,
+    TResult Function(DownloadPdf value)? downloadPdf,
     required TResult orElse(),
   }) {
     if (changeBottomNavigationState != null) {
@@ -1018,6 +1044,7 @@ class _$ShowSignIn implements ShowSignIn {
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
     required TResult Function() refreshArticles,
+    required TResult Function(Article article) downloadPdf,
   }) {
     return showSignIn();
   }
@@ -1047,6 +1074,7 @@ class _$ShowSignIn implements ShowSignIn {
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     TResult Function()? refreshArticles,
+    TResult Function(Article article)? downloadPdf,
     required TResult orElse(),
   }) {
     if (showSignIn != null) {
@@ -1081,6 +1109,7 @@ class _$ShowSignIn implements ShowSignIn {
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
     required TResult Function(RefreshArticles value) refreshArticles,
+    required TResult Function(DownloadPdf value) downloadPdf,
   }) {
     return showSignIn(this);
   }
@@ -1109,6 +1138,7 @@ class _$ShowSignIn implements ShowSignIn {
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     TResult Function(RefreshArticles value)? refreshArticles,
+    TResult Function(DownloadPdf value)? downloadPdf,
     required TResult orElse(),
   }) {
     if (showSignIn != null) {
@@ -1183,6 +1213,7 @@ class _$ShowSignUp implements ShowSignUp {
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
     required TResult Function() refreshArticles,
+    required TResult Function(Article article) downloadPdf,
   }) {
     return showSignUp();
   }
@@ -1212,6 +1243,7 @@ class _$ShowSignUp implements ShowSignUp {
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     TResult Function()? refreshArticles,
+    TResult Function(Article article)? downloadPdf,
     required TResult orElse(),
   }) {
     if (showSignUp != null) {
@@ -1246,6 +1278,7 @@ class _$ShowSignUp implements ShowSignUp {
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
     required TResult Function(RefreshArticles value) refreshArticles,
+    required TResult Function(DownloadPdf value) downloadPdf,
   }) {
     return showSignUp(this);
   }
@@ -1274,6 +1307,7 @@ class _$ShowSignUp implements ShowSignUp {
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     TResult Function(RefreshArticles value)? refreshArticles,
+    TResult Function(DownloadPdf value)? downloadPdf,
     required TResult orElse(),
   }) {
     if (showSignUp != null) {
@@ -1347,6 +1381,7 @@ class _$NotNow implements NotNow {
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
     required TResult Function() refreshArticles,
+    required TResult Function(Article article) downloadPdf,
   }) {
     return notNow();
   }
@@ -1376,6 +1411,7 @@ class _$NotNow implements NotNow {
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     TResult Function()? refreshArticles,
+    TResult Function(Article article)? downloadPdf,
     required TResult orElse(),
   }) {
     if (notNow != null) {
@@ -1410,6 +1446,7 @@ class _$NotNow implements NotNow {
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
     required TResult Function(RefreshArticles value) refreshArticles,
+    required TResult Function(DownloadPdf value) downloadPdf,
   }) {
     return notNow(this);
   }
@@ -1438,6 +1475,7 @@ class _$NotNow implements NotNow {
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     TResult Function(RefreshArticles value)? refreshArticles,
+    TResult Function(DownloadPdf value)? downloadPdf,
     required TResult orElse(),
   }) {
     if (notNow != null) {
@@ -1547,6 +1585,7 @@ class _$Authenticate implements Authenticate {
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
     required TResult Function() refreshArticles,
+    required TResult Function(Article article) downloadPdf,
   }) {
     return authenticate(user);
   }
@@ -1576,6 +1615,7 @@ class _$Authenticate implements Authenticate {
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     TResult Function()? refreshArticles,
+    TResult Function(Article article)? downloadPdf,
     required TResult orElse(),
   }) {
     if (authenticate != null) {
@@ -1610,6 +1650,7 @@ class _$Authenticate implements Authenticate {
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
     required TResult Function(RefreshArticles value) refreshArticles,
+    required TResult Function(DownloadPdf value) downloadPdf,
   }) {
     return authenticate(this);
   }
@@ -1638,6 +1679,7 @@ class _$Authenticate implements Authenticate {
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     TResult Function(RefreshArticles value)? refreshArticles,
+    TResult Function(DownloadPdf value)? downloadPdf,
     required TResult orElse(),
   }) {
     if (authenticate != null) {
@@ -1755,6 +1797,7 @@ class _$SubmitLogin implements SubmitLogin {
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
     required TResult Function() refreshArticles,
+    required TResult Function(Article article) downloadPdf,
   }) {
     return loginSubmit(login, password);
   }
@@ -1784,6 +1827,7 @@ class _$SubmitLogin implements SubmitLogin {
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     TResult Function()? refreshArticles,
+    TResult Function(Article article)? downloadPdf,
     required TResult orElse(),
   }) {
     if (loginSubmit != null) {
@@ -1818,6 +1862,7 @@ class _$SubmitLogin implements SubmitLogin {
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
     required TResult Function(RefreshArticles value) refreshArticles,
+    required TResult Function(DownloadPdf value) downloadPdf,
   }) {
     return loginSubmit(this);
   }
@@ -1846,6 +1891,7 @@ class _$SubmitLogin implements SubmitLogin {
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     TResult Function(RefreshArticles value)? refreshArticles,
+    TResult Function(DownloadPdf value)? downloadPdf,
     required TResult orElse(),
   }) {
     if (loginSubmit != null) {
@@ -1992,6 +2038,7 @@ class _$RegistrationLogin implements RegistrationLogin {
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
     required TResult Function() refreshArticles,
+    required TResult Function(Article article) downloadPdf,
   }) {
     return registrationSubmit(login, email, password, repeatedPassword);
   }
@@ -2021,6 +2068,7 @@ class _$RegistrationLogin implements RegistrationLogin {
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     TResult Function()? refreshArticles,
+    TResult Function(Article article)? downloadPdf,
     required TResult orElse(),
   }) {
     if (registrationSubmit != null) {
@@ -2055,6 +2103,7 @@ class _$RegistrationLogin implements RegistrationLogin {
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
     required TResult Function(RefreshArticles value) refreshArticles,
+    required TResult Function(DownloadPdf value) downloadPdf,
   }) {
     return registrationSubmit(this);
   }
@@ -2083,6 +2132,7 @@ class _$RegistrationLogin implements RegistrationLogin {
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     TResult Function(RefreshArticles value)? refreshArticles,
+    TResult Function(DownloadPdf value)? downloadPdf,
     required TResult orElse(),
   }) {
     if (registrationSubmit != null) {
@@ -2197,6 +2247,7 @@ class _$SetLoadingOnAuthScreen implements SetLoadingOnAuthScreen {
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
     required TResult Function() refreshArticles,
+    required TResult Function(Article article) downloadPdf,
   }) {
     return setLoadingOnAuthScreen(loading);
   }
@@ -2226,6 +2277,7 @@ class _$SetLoadingOnAuthScreen implements SetLoadingOnAuthScreen {
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     TResult Function()? refreshArticles,
+    TResult Function(Article article)? downloadPdf,
     required TResult orElse(),
   }) {
     if (setLoadingOnAuthScreen != null) {
@@ -2260,6 +2312,7 @@ class _$SetLoadingOnAuthScreen implements SetLoadingOnAuthScreen {
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
     required TResult Function(RefreshArticles value) refreshArticles,
+    required TResult Function(DownloadPdf value) downloadPdf,
   }) {
     return setLoadingOnAuthScreen(this);
   }
@@ -2288,6 +2341,7 @@ class _$SetLoadingOnAuthScreen implements SetLoadingOnAuthScreen {
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     TResult Function(RefreshArticles value)? refreshArticles,
+    TResult Function(DownloadPdf value)? downloadPdf,
     required TResult orElse(),
   }) {
     if (setLoadingOnAuthScreen != null) {
@@ -2396,6 +2450,7 @@ class _$SetErrorOnAuthScreen implements SetErrorOnAuthScreen {
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
     required TResult Function() refreshArticles,
+    required TResult Function(Article article) downloadPdf,
   }) {
     return setErrorOnAuthScreen(error);
   }
@@ -2425,6 +2480,7 @@ class _$SetErrorOnAuthScreen implements SetErrorOnAuthScreen {
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     TResult Function()? refreshArticles,
+    TResult Function(Article article)? downloadPdf,
     required TResult orElse(),
   }) {
     if (setErrorOnAuthScreen != null) {
@@ -2459,6 +2515,7 @@ class _$SetErrorOnAuthScreen implements SetErrorOnAuthScreen {
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
     required TResult Function(RefreshArticles value) refreshArticles,
+    required TResult Function(DownloadPdf value) downloadPdf,
   }) {
     return setErrorOnAuthScreen(this);
   }
@@ -2487,6 +2544,7 @@ class _$SetErrorOnAuthScreen implements SetErrorOnAuthScreen {
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     TResult Function(RefreshArticles value)? refreshArticles,
+    TResult Function(DownloadPdf value)? downloadPdf,
     required TResult orElse(),
   }) {
     if (setErrorOnAuthScreen != null) {
@@ -2568,6 +2626,7 @@ class _$InitLoadingArticles implements InitLoadingArticles {
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
     required TResult Function() refreshArticles,
+    required TResult Function(Article article) downloadPdf,
   }) {
     return initLoadingArticles();
   }
@@ -2597,6 +2656,7 @@ class _$InitLoadingArticles implements InitLoadingArticles {
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     TResult Function()? refreshArticles,
+    TResult Function(Article article)? downloadPdf,
     required TResult orElse(),
   }) {
     if (initLoadingArticles != null) {
@@ -2631,6 +2691,7 @@ class _$InitLoadingArticles implements InitLoadingArticles {
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
     required TResult Function(RefreshArticles value) refreshArticles,
+    required TResult Function(DownloadPdf value) downloadPdf,
   }) {
     return initLoadingArticles(this);
   }
@@ -2659,6 +2720,7 @@ class _$InitLoadingArticles implements InitLoadingArticles {
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     TResult Function(RefreshArticles value)? refreshArticles,
+    TResult Function(DownloadPdf value)? downloadPdf,
     required TResult orElse(),
   }) {
     if (initLoadingArticles != null) {
@@ -2735,6 +2797,7 @@ class _$ShowArticlesLoading implements ShowArticlesLoading {
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
     required TResult Function() refreshArticles,
+    required TResult Function(Article article) downloadPdf,
   }) {
     return showArticlesLoading();
   }
@@ -2764,6 +2827,7 @@ class _$ShowArticlesLoading implements ShowArticlesLoading {
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     TResult Function()? refreshArticles,
+    TResult Function(Article article)? downloadPdf,
     required TResult orElse(),
   }) {
     if (showArticlesLoading != null) {
@@ -2798,6 +2862,7 @@ class _$ShowArticlesLoading implements ShowArticlesLoading {
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
     required TResult Function(RefreshArticles value) refreshArticles,
+    required TResult Function(DownloadPdf value) downloadPdf,
   }) {
     return showArticlesLoading(this);
   }
@@ -2826,6 +2891,7 @@ class _$ShowArticlesLoading implements ShowArticlesLoading {
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     TResult Function(RefreshArticles value)? refreshArticles,
+    TResult Function(DownloadPdf value)? downloadPdf,
     required TResult orElse(),
   }) {
     if (showArticlesLoading != null) {
@@ -2951,6 +3017,7 @@ class _$ShowArticlesLoaded implements ShowArticlesLoaded {
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
     required TResult Function() refreshArticles,
+    required TResult Function(Article article) downloadPdf,
   }) {
     return showArticlesLoaded(articles, page, pageSize);
   }
@@ -2980,6 +3047,7 @@ class _$ShowArticlesLoaded implements ShowArticlesLoaded {
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     TResult Function()? refreshArticles,
+    TResult Function(Article article)? downloadPdf,
     required TResult orElse(),
   }) {
     if (showArticlesLoaded != null) {
@@ -3014,6 +3082,7 @@ class _$ShowArticlesLoaded implements ShowArticlesLoaded {
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
     required TResult Function(RefreshArticles value) refreshArticles,
+    required TResult Function(DownloadPdf value) downloadPdf,
   }) {
     return showArticlesLoaded(this);
   }
@@ -3042,6 +3111,7 @@ class _$ShowArticlesLoaded implements ShowArticlesLoaded {
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     TResult Function(RefreshArticles value)? refreshArticles,
+    TResult Function(DownloadPdf value)? downloadPdf,
     required TResult orElse(),
   }) {
     if (showArticlesLoaded != null) {
@@ -3155,6 +3225,7 @@ class _$ShowAllArticlesLoaded implements ShowAllArticlesLoaded {
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
     required TResult Function() refreshArticles,
+    required TResult Function(Article article) downloadPdf,
   }) {
     return showAllArticlesLoaded(articles);
   }
@@ -3184,6 +3255,7 @@ class _$ShowAllArticlesLoaded implements ShowAllArticlesLoaded {
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     TResult Function()? refreshArticles,
+    TResult Function(Article article)? downloadPdf,
     required TResult orElse(),
   }) {
     if (showAllArticlesLoaded != null) {
@@ -3218,6 +3290,7 @@ class _$ShowAllArticlesLoaded implements ShowAllArticlesLoaded {
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
     required TResult Function(RefreshArticles value) refreshArticles,
+    required TResult Function(DownloadPdf value) downloadPdf,
   }) {
     return showAllArticlesLoaded(this);
   }
@@ -3246,6 +3319,7 @@ class _$ShowAllArticlesLoaded implements ShowAllArticlesLoaded {
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     TResult Function(RefreshArticles value)? refreshArticles,
+    TResult Function(DownloadPdf value)? downloadPdf,
     required TResult orElse(),
   }) {
     if (showAllArticlesLoaded != null) {
@@ -3355,6 +3429,7 @@ class _$ShowErrorOnArticleLoading implements ShowErrorOnArticleLoading {
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
     required TResult Function() refreshArticles,
+    required TResult Function(Article article) downloadPdf,
   }) {
     return showErrorOnArticleLoading(message);
   }
@@ -3384,6 +3459,7 @@ class _$ShowErrorOnArticleLoading implements ShowErrorOnArticleLoading {
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     TResult Function()? refreshArticles,
+    TResult Function(Article article)? downloadPdf,
     required TResult orElse(),
   }) {
     if (showErrorOnArticleLoading != null) {
@@ -3418,6 +3494,7 @@ class _$ShowErrorOnArticleLoading implements ShowErrorOnArticleLoading {
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
     required TResult Function(RefreshArticles value) refreshArticles,
+    required TResult Function(DownloadPdf value) downloadPdf,
   }) {
     return showErrorOnArticleLoading(this);
   }
@@ -3446,6 +3523,7 @@ class _$ShowErrorOnArticleLoading implements ShowErrorOnArticleLoading {
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     TResult Function(RefreshArticles value)? refreshArticles,
+    TResult Function(DownloadPdf value)? downloadPdf,
     required TResult orElse(),
   }) {
     if (showErrorOnArticleLoading != null) {
@@ -3566,6 +3644,7 @@ class _$LoadNextArticlePage implements LoadNextArticlePage {
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
     required TResult Function() refreshArticles,
+    required TResult Function(Article article) downloadPdf,
   }) {
     return loadNextArticlePage(prevPage, pageSize);
   }
@@ -3595,6 +3674,7 @@ class _$LoadNextArticlePage implements LoadNextArticlePage {
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     TResult Function()? refreshArticles,
+    TResult Function(Article article)? downloadPdf,
     required TResult orElse(),
   }) {
     if (loadNextArticlePage != null) {
@@ -3629,6 +3709,7 @@ class _$LoadNextArticlePage implements LoadNextArticlePage {
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
     required TResult Function(RefreshArticles value) refreshArticles,
+    required TResult Function(DownloadPdf value) downloadPdf,
   }) {
     return loadNextArticlePage(this);
   }
@@ -3657,6 +3738,7 @@ class _$LoadNextArticlePage implements LoadNextArticlePage {
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     TResult Function(RefreshArticles value)? refreshArticles,
+    TResult Function(DownloadPdf value)? downloadPdf,
     required TResult orElse(),
   }) {
     if (loadNextArticlePage != null) {
@@ -3739,6 +3821,7 @@ class _$RefreshArticles implements RefreshArticles {
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
     required TResult Function() refreshArticles,
+    required TResult Function(Article article) downloadPdf,
   }) {
     return refreshArticles();
   }
@@ -3768,6 +3851,7 @@ class _$RefreshArticles implements RefreshArticles {
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     TResult Function()? refreshArticles,
+    TResult Function(Article article)? downloadPdf,
     required TResult orElse(),
   }) {
     if (refreshArticles != null) {
@@ -3802,6 +3886,7 @@ class _$RefreshArticles implements RefreshArticles {
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
     required TResult Function(RefreshArticles value) refreshArticles,
+    required TResult Function(DownloadPdf value) downloadPdf,
   }) {
     return refreshArticles(this);
   }
@@ -3830,6 +3915,7 @@ class _$RefreshArticles implements RefreshArticles {
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     TResult Function(RefreshArticles value)? refreshArticles,
+    TResult Function(DownloadPdf value)? downloadPdf,
     required TResult orElse(),
   }) {
     if (refreshArticles != null) {
@@ -3841,4 +3927,213 @@ class _$RefreshArticles implements RefreshArticles {
 
 abstract class RefreshArticles implements AppAction {
   const factory RefreshArticles() = _$RefreshArticles;
+}
+
+/// @nodoc
+abstract class $DownloadPdfCopyWith<$Res> {
+  factory $DownloadPdfCopyWith(
+          DownloadPdf value, $Res Function(DownloadPdf) then) =
+      _$DownloadPdfCopyWithImpl<$Res>;
+  $Res call({Article article});
+
+  $ArticleCopyWith<$Res> get article;
+}
+
+/// @nodoc
+class _$DownloadPdfCopyWithImpl<$Res> extends _$AppActionCopyWithImpl<$Res>
+    implements $DownloadPdfCopyWith<$Res> {
+  _$DownloadPdfCopyWithImpl(
+      DownloadPdf _value, $Res Function(DownloadPdf) _then)
+      : super(_value, (v) => _then(v as DownloadPdf));
+
+  @override
+  DownloadPdf get _value => super._value as DownloadPdf;
+
+  @override
+  $Res call({
+    Object? article = freezed,
+  }) {
+    return _then(DownloadPdf(
+      article: article == freezed
+          ? _value.article
+          : article // ignore: cast_nullable_to_non_nullable
+              as Article,
+    ));
+  }
+
+  @override
+  $ArticleCopyWith<$Res> get article {
+    return $ArticleCopyWith<$Res>(_value.article, (value) {
+      return _then(_value.copyWith(article: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$DownloadPdf implements DownloadPdf {
+  const _$DownloadPdf({required this.article});
+
+  @override
+  final Article article;
+
+  @override
+  String toString() {
+    return 'AppAction.downloadPdf(article: $article)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is DownloadPdf &&
+            (identical(other.article, article) ||
+                const DeepCollectionEquality().equals(other.article, article)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(article);
+
+  @JsonKey(ignore: true)
+  @override
+  $DownloadPdfCopyWith<DownloadPdf> get copyWith =>
+      _$DownloadPdfCopyWithImpl<DownloadPdf>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initAction,
+    required TResult Function() appLoaded,
+    required TResult Function() removePreviousPages,
+    required TResult Function(BottomNavigationState state)
+        changeBottomNavigationState,
+    required TResult Function() showSignIn,
+    required TResult Function() showSignUp,
+    required TResult Function() notNow,
+    required TResult Function(User user) authenticate,
+    required TResult Function(String login, String password) loginSubmit,
+    required TResult Function(String login, String email, String password,
+            String repeatedPassword)
+        registrationSubmit,
+    required TResult Function(bool loading) setLoadingOnAuthScreen,
+    required TResult Function(String? error) setErrorOnAuthScreen,
+    required TResult Function() initLoadingArticles,
+    required TResult Function() showArticlesLoading,
+    required TResult Function(List<Article> articles, int page, int pageSize)
+        showArticlesLoaded,
+    required TResult Function(List<Article> articles) showAllArticlesLoaded,
+    required TResult Function(String message) showErrorOnArticleLoading,
+    required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
+    required TResult Function() refreshArticles,
+    required TResult Function(Article article) downloadPdf,
+  }) {
+    return downloadPdf(article);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initAction,
+    TResult Function()? appLoaded,
+    TResult Function()? removePreviousPages,
+    TResult Function(BottomNavigationState state)? changeBottomNavigationState,
+    TResult Function()? showSignIn,
+    TResult Function()? showSignUp,
+    TResult Function()? notNow,
+    TResult Function(User user)? authenticate,
+    TResult Function(String login, String password)? loginSubmit,
+    TResult Function(String login, String email, String password,
+            String repeatedPassword)?
+        registrationSubmit,
+    TResult Function(bool loading)? setLoadingOnAuthScreen,
+    TResult Function(String? error)? setErrorOnAuthScreen,
+    TResult Function()? initLoadingArticles,
+    TResult Function()? showArticlesLoading,
+    TResult Function(List<Article> articles, int page, int pageSize)?
+        showArticlesLoaded,
+    TResult Function(List<Article> articles)? showAllArticlesLoaded,
+    TResult Function(String message)? showErrorOnArticleLoading,
+    TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
+    TResult Function()? refreshArticles,
+    TResult Function(Article article)? downloadPdf,
+    required TResult orElse(),
+  }) {
+    if (downloadPdf != null) {
+      return downloadPdf(article);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitAction value) initAction,
+    required TResult Function(AppLoaded value) appLoaded,
+    required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ChangeBottomNavigationState value)
+        changeBottomNavigationState,
+    required TResult Function(ShowSignIn value) showSignIn,
+    required TResult Function(ShowSignUp value) showSignUp,
+    required TResult Function(NotNow value) notNow,
+    required TResult Function(Authenticate value) authenticate,
+    required TResult Function(SubmitLogin value) loginSubmit,
+    required TResult Function(RegistrationLogin value) registrationSubmit,
+    required TResult Function(SetLoadingOnAuthScreen value)
+        setLoadingOnAuthScreen,
+    required TResult Function(SetErrorOnAuthScreen value) setErrorOnAuthScreen,
+    required TResult Function(InitLoadingArticles value) initLoadingArticles,
+    required TResult Function(ShowArticlesLoading value) showArticlesLoading,
+    required TResult Function(ShowArticlesLoaded value) showArticlesLoaded,
+    required TResult Function(ShowAllArticlesLoaded value)
+        showAllArticlesLoaded,
+    required TResult Function(ShowErrorOnArticleLoading value)
+        showErrorOnArticleLoading,
+    required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
+    required TResult Function(RefreshArticles value) refreshArticles,
+    required TResult Function(DownloadPdf value) downloadPdf,
+  }) {
+    return downloadPdf(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitAction value)? initAction,
+    TResult Function(AppLoaded value)? appLoaded,
+    TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ChangeBottomNavigationState value)?
+        changeBottomNavigationState,
+    TResult Function(ShowSignIn value)? showSignIn,
+    TResult Function(ShowSignUp value)? showSignUp,
+    TResult Function(NotNow value)? notNow,
+    TResult Function(Authenticate value)? authenticate,
+    TResult Function(SubmitLogin value)? loginSubmit,
+    TResult Function(RegistrationLogin value)? registrationSubmit,
+    TResult Function(SetLoadingOnAuthScreen value)? setLoadingOnAuthScreen,
+    TResult Function(SetErrorOnAuthScreen value)? setErrorOnAuthScreen,
+    TResult Function(InitLoadingArticles value)? initLoadingArticles,
+    TResult Function(ShowArticlesLoading value)? showArticlesLoading,
+    TResult Function(ShowArticlesLoaded value)? showArticlesLoaded,
+    TResult Function(ShowAllArticlesLoaded value)? showAllArticlesLoaded,
+    TResult Function(ShowErrorOnArticleLoading value)?
+        showErrorOnArticleLoading,
+    TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
+    TResult Function(RefreshArticles value)? refreshArticles,
+    TResult Function(DownloadPdf value)? downloadPdf,
+    required TResult orElse(),
+  }) {
+    if (downloadPdf != null) {
+      return downloadPdf(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DownloadPdf implements AppAction {
+  const factory DownloadPdf({required Article article}) = _$DownloadPdf;
+
+  Article get article => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $DownloadPdfCopyWith<DownloadPdf> get copyWith =>
+      throw _privateConstructorUsedError;
 }

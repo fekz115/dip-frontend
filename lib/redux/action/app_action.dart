@@ -55,4 +55,8 @@ class AppAction with _$AppAction {
     required int pageSize,
   }) = LoadNextArticlePage;
   const factory AppAction.refreshArticles() = RefreshArticles;
+
+  const factory AppAction.downloadPdf({
+    required Article article,
+  }) = DownloadPdf;
 }
