@@ -579,9 +579,11 @@ packages:
   whelm:
     dependency: "direct main"
     description:
-      path: "../whelm"
-      relative: true
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: "8b80fba653b117ba3b16e75bbc87f37ad7ef656e"
+      url: "https://github.com/fekz115/whelm.git"
+    source: git
     version: "0.0.1"
   win32:
     dependency: transitive

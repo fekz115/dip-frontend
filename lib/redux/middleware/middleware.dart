@@ -7,7 +7,7 @@ import 'package:dip_frontend/redux/event/app_event.dart';
 import 'package:dip_frontend/repository/repository.dart';
 import 'package:whelm/whelm.dart';
 
-List<Middleware<AppState, AppAction, AppEvent, AppAction>> createMiddleware(
+List<Middleware<AppState, AppAction, AppEvent>> createMiddleware(
   Repository repository,
   ApiClient apiClient,
 ) =>

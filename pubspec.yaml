@@ -19,8 +19,7 @@ dependencies:
   path_provider: ^2.0.2
   provider: ^5.0.0
   whelm:
-    #git: https://github.com/fekz115/whelm.git
-    path: ../whelm
+    git: https://github.com/fekz115/whelm.git
 
 dev_dependencies:
   build_runner:
