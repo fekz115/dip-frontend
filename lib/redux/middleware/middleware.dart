@@ -208,13 +208,19 @@ List<Middleware<AppState, AppAction, AppEvent>> createMiddleware(
                 );
                 final articles =
                     page.getContent((json) => Article.fromJson(json));
-                actionDispatcher(
-                  AppAction.showArticlesLoaded(
-                    articles: articles,
-                    page: state.page,
-                    pageSize: state.pageSize,
-                  ),
-                );
+                if (!page.last) {
+                  actionDispatcher(
+                    AppAction.showArticlesLoaded(
+                      articles: articles,
+                      page: state.page,
+                      pageSize: state.pageSize,
+                    ),
+                  );
+                } else {
+                  actionDispatcher(
+                    AppAction.showAllArticlesLoaded(articles: articles),
+                  );
+                }
               },
               loadedAllState: (state) async {
                 final page = await apiClient.getArticles(
@@ -223,13 +229,19 @@ List<Middleware<AppState, AppAction, AppEvent>> createMiddleware(
                 );
                 final articles =
                     page.getContent((json) => Article.fromJson(json));
-                actionDispatcher(
-                  AppAction.showArticlesLoaded(
-                    articles: articles,
-                    page: state.articles.length,
-                    pageSize: 10,
-                  ),
-                );
+                if (!page.last) {
+                  actionDispatcher(
+                    AppAction.showArticlesLoaded(
+                      articles: articles,
+                      page: page.number,
+                      pageSize: 10,
+                    ),
+                  );
+                } else {
+                  actionDispatcher(
+                    AppAction.showAllArticlesLoaded(articles: articles),
+                  );
+                }
               },
             );
           }),
