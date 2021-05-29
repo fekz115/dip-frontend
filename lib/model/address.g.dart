@@ -19,6 +19,6 @@ Map<String, dynamic> _$_$_AddressToJson(_$_Address instance) =>
     <String, dynamic>{
       'id': instance.id,
       'building': instance.building,
-      'street': instance.street,
-      'locaion': instance.locaion,
+      'street': instance.street.toJson(),
+      'locaion': instance.locaion.toJson(),
     };

@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 
-abstract class RecursiveRequestUpdateInterceptor extends Interceptor {
+abstract class RecursiveResponseUpdateInterceptor extends Interceptor {
   void update(Map<String, dynamic> data);
   
   @override

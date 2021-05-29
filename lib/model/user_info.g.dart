@@ -25,6 +25,6 @@ Map<String, dynamic> _$_$_UserInfoToJson(_$_UserInfo instance) =>
       'id': instance.id,
       'firstName': instance.firstName,
       'lastName': instance.lastName,
-      'picture': instance.picture,
-      'address': instance.address,
+      'picture': instance.picture?.toJson(),
+      'address': instance.address?.toJson(),
     };

@@ -17,5 +17,5 @@ _$_Street _$_$_StreetFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$_$_StreetToJson(_$_Street instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'city': instance.city,
+      'city': instance.city.toJson(),
     };

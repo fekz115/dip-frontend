@@ -25,7 +25,7 @@ Map<String, dynamic> _$_$_UserToJson(_$_User instance) => <String, dynamic>{
       'login': instance.login,
       'email': instance.email,
       'roles': instance.roles.map((e) => _$RoleEnumMap[e]).toList(),
-      'userInfo': instance.userInfo,
+      'userInfo': instance.userInfo.toJson(),
       'active': instance.active,
       'banned': instance.banned,
     };

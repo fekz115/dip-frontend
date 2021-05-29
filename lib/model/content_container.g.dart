@@ -30,8 +30,8 @@ Map<String, dynamic> _$_$_ContentContainerToJson(
     <String, dynamic>{
       'id': instance.id,
       'index': instance.index,
-      'text': instance.text,
-      'music': instance.music,
-      'video': instance.video,
-      'picture': instance.picture,
+      'text': instance.text?.toJson(),
+      'music': instance.music?.toJson(),
+      'video': instance.video?.toJson(),
+      'picture': instance.picture?.toJson(),
     };

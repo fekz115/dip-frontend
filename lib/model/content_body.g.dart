@@ -18,5 +18,5 @@ _$_ContentBody _$_$_ContentBodyFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$_$_ContentBodyToJson(_$_ContentBody instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'content': instance.content,
+      'content': instance.content.map((e) => e.toJson()).toList(),
     };

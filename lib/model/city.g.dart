@@ -17,5 +17,5 @@ _$_City _$_$_CityFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$_$_CityToJson(_$_City instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'country': instance.country,
+      'country': instance.country.toJson(),
     };

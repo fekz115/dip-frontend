@@ -24,5 +24,5 @@ Map<String, dynamic> _$_$_UserMinimalToJson(_$_UserMinimal instance) =>
       'login': instance.login,
       'firstName': instance.firstName,
       'lastName': instance.lastName,
-      'picture': instance.picture,
+      'picture': instance.picture?.toJson(),
     };
