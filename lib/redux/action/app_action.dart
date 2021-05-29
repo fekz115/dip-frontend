@@ -1,5 +1,6 @@
 import 'package:dip_frontend/model/article.dart';
 import 'package:dip_frontend/model/user.dart';
+import 'package:dip_frontend/redux/state/navigation/bottom_navigation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'app_action.freezed.dart';
@@ -9,6 +10,9 @@ class AppAction with _$AppAction {
   const factory AppAction.initAction() = InitAction;
   const factory AppAction.appLoaded() = AppLoaded;
   const factory AppAction.removePreviousPages() = RemovePreviousPages;
+  const factory AppAction.changeBottomNavigationState({
+    required BottomNavigationState state,
+  }) = ChangeBottomNavigationState;
 
   const factory AppAction.showSignIn() = ShowSignIn;
   const factory AppAction.showSignUp() = ShowSignUp;

@@ -90,6 +90,7 @@ List<Reducer<AppState, AppAction>> createReducers() => [
               ),
             ),
             refreshArticles: (action) => state.copyWith.articlesState(loading: true),
+            changeBottomNavigationState: (action) => state.copyWith(bottomNavigationState: action.state),
             orElse: () => state,
           ),
     ];

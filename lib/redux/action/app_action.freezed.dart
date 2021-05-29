@@ -28,6 +28,13 @@ class _$AppActionTearOff {
     return const RemovePreviousPages();
   }
 
+  ChangeBottomNavigationState changeBottomNavigationState(
+      {required BottomNavigationState state}) {
+    return ChangeBottomNavigationState(
+      state: state,
+    );
+  }
+
   ShowSignIn showSignIn() {
     return const ShowSignIn();
   }
@@ -134,6 +141,8 @@ mixin _$AppAction {
     required TResult Function() initAction,
     required TResult Function() appLoaded,
     required TResult Function() removePreviousPages,
+    required TResult Function(BottomNavigationState state)
+        changeBottomNavigationState,
     required TResult Function() showSignIn,
     required TResult Function() showSignUp,
     required TResult Function() notNow,
@@ -159,6 +168,7 @@ mixin _$AppAction {
     TResult Function()? initAction,
     TResult Function()? appLoaded,
     TResult Function()? removePreviousPages,
+    TResult Function(BottomNavigationState state)? changeBottomNavigationState,
     TResult Function()? showSignIn,
     TResult Function()? showSignUp,
     TResult Function()? notNow,
@@ -185,6 +195,8 @@ mixin _$AppAction {
     required TResult Function(InitAction value) initAction,
     required TResult Function(AppLoaded value) appLoaded,
     required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ChangeBottomNavigationState value)
+        changeBottomNavigationState,
     required TResult Function(ShowSignIn value) showSignIn,
     required TResult Function(ShowSignUp value) showSignUp,
     required TResult Function(NotNow value) notNow,
@@ -210,6 +222,8 @@ mixin _$AppAction {
     TResult Function(InitAction value)? initAction,
     TResult Function(AppLoaded value)? appLoaded,
     TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ChangeBottomNavigationState value)?
+        changeBottomNavigationState,
     TResult Function(ShowSignIn value)? showSignIn,
     TResult Function(ShowSignUp value)? showSignUp,
     TResult Function(NotNow value)? notNow,
@@ -287,6 +301,8 @@ class _$InitAction implements InitAction {
     required TResult Function() initAction,
     required TResult Function() appLoaded,
     required TResult Function() removePreviousPages,
+    required TResult Function(BottomNavigationState state)
+        changeBottomNavigationState,
     required TResult Function() showSignIn,
     required TResult Function() showSignUp,
     required TResult Function() notNow,
@@ -315,6 +331,7 @@ class _$InitAction implements InitAction {
     TResult Function()? initAction,
     TResult Function()? appLoaded,
     TResult Function()? removePreviousPages,
+    TResult Function(BottomNavigationState state)? changeBottomNavigationState,
     TResult Function()? showSignIn,
     TResult Function()? showSignUp,
     TResult Function()? notNow,
@@ -347,6 +364,8 @@ class _$InitAction implements InitAction {
     required TResult Function(InitAction value) initAction,
     required TResult Function(AppLoaded value) appLoaded,
     required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ChangeBottomNavigationState value)
+        changeBottomNavigationState,
     required TResult Function(ShowSignIn value) showSignIn,
     required TResult Function(ShowSignUp value) showSignUp,
     required TResult Function(NotNow value) notNow,
@@ -375,6 +394,8 @@ class _$InitAction implements InitAction {
     TResult Function(InitAction value)? initAction,
     TResult Function(AppLoaded value)? appLoaded,
     TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ChangeBottomNavigationState value)?
+        changeBottomNavigationState,
     TResult Function(ShowSignIn value)? showSignIn,
     TResult Function(ShowSignUp value)? showSignUp,
     TResult Function(NotNow value)? notNow,
@@ -444,6 +465,8 @@ class _$AppLoaded implements AppLoaded {
     required TResult Function() initAction,
     required TResult Function() appLoaded,
     required TResult Function() removePreviousPages,
+    required TResult Function(BottomNavigationState state)
+        changeBottomNavigationState,
     required TResult Function() showSignIn,
     required TResult Function() showSignUp,
     required TResult Function() notNow,
@@ -472,6 +495,7 @@ class _$AppLoaded implements AppLoaded {
     TResult Function()? initAction,
     TResult Function()? appLoaded,
     TResult Function()? removePreviousPages,
+    TResult Function(BottomNavigationState state)? changeBottomNavigationState,
     TResult Function()? showSignIn,
     TResult Function()? showSignUp,
     TResult Function()? notNow,
@@ -504,6 +528,8 @@ class _$AppLoaded implements AppLoaded {
     required TResult Function(InitAction value) initAction,
     required TResult Function(AppLoaded value) appLoaded,
     required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ChangeBottomNavigationState value)
+        changeBottomNavigationState,
     required TResult Function(ShowSignIn value) showSignIn,
     required TResult Function(ShowSignUp value) showSignUp,
     required TResult Function(NotNow value) notNow,
@@ -532,6 +558,8 @@ class _$AppLoaded implements AppLoaded {
     TResult Function(InitAction value)? initAction,
     TResult Function(AppLoaded value)? appLoaded,
     TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ChangeBottomNavigationState value)?
+        changeBottomNavigationState,
     TResult Function(ShowSignIn value)? showSignIn,
     TResult Function(ShowSignUp value)? showSignUp,
     TResult Function(NotNow value)? notNow,
@@ -604,6 +632,8 @@ class _$RemovePreviousPages implements RemovePreviousPages {
     required TResult Function() initAction,
     required TResult Function() appLoaded,
     required TResult Function() removePreviousPages,
+    required TResult Function(BottomNavigationState state)
+        changeBottomNavigationState,
     required TResult Function() showSignIn,
     required TResult Function() showSignUp,
     required TResult Function() notNow,
@@ -632,6 +662,7 @@ class _$RemovePreviousPages implements RemovePreviousPages {
     TResult Function()? initAction,
     TResult Function()? appLoaded,
     TResult Function()? removePreviousPages,
+    TResult Function(BottomNavigationState state)? changeBottomNavigationState,
     TResult Function()? showSignIn,
     TResult Function()? showSignUp,
     TResult Function()? notNow,
@@ -664,6 +695,8 @@ class _$RemovePreviousPages implements RemovePreviousPages {
     required TResult Function(InitAction value) initAction,
     required TResult Function(AppLoaded value) appLoaded,
     required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ChangeBottomNavigationState value)
+        changeBottomNavigationState,
     required TResult Function(ShowSignIn value) showSignIn,
     required TResult Function(ShowSignUp value) showSignUp,
     required TResult Function(NotNow value) notNow,
@@ -692,6 +725,8 @@ class _$RemovePreviousPages implements RemovePreviousPages {
     TResult Function(InitAction value)? initAction,
     TResult Function(AppLoaded value)? appLoaded,
     TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ChangeBottomNavigationState value)?
+        changeBottomNavigationState,
     TResult Function(ShowSignIn value)? showSignIn,
     TResult Function(ShowSignUp value)? showSignUp,
     TResult Function(NotNow value)? notNow,
@@ -719,6 +754,207 @@ class _$RemovePreviousPages implements RemovePreviousPages {
 
 abstract class RemovePreviousPages implements AppAction {
   const factory RemovePreviousPages() = _$RemovePreviousPages;
+}
+
+/// @nodoc
+abstract class $ChangeBottomNavigationStateCopyWith<$Res> {
+  factory $ChangeBottomNavigationStateCopyWith(
+          ChangeBottomNavigationState value,
+          $Res Function(ChangeBottomNavigationState) then) =
+      _$ChangeBottomNavigationStateCopyWithImpl<$Res>;
+  $Res call({BottomNavigationState state});
+}
+
+/// @nodoc
+class _$ChangeBottomNavigationStateCopyWithImpl<$Res>
+    extends _$AppActionCopyWithImpl<$Res>
+    implements $ChangeBottomNavigationStateCopyWith<$Res> {
+  _$ChangeBottomNavigationStateCopyWithImpl(ChangeBottomNavigationState _value,
+      $Res Function(ChangeBottomNavigationState) _then)
+      : super(_value, (v) => _then(v as ChangeBottomNavigationState));
+
+  @override
+  ChangeBottomNavigationState get _value =>
+      super._value as ChangeBottomNavigationState;
+
+  @override
+  $Res call({
+    Object? state = freezed,
+  }) {
+    return _then(ChangeBottomNavigationState(
+      state: state == freezed
+          ? _value.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as BottomNavigationState,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChangeBottomNavigationState implements ChangeBottomNavigationState {
+  const _$ChangeBottomNavigationState({required this.state});
+
+  @override
+  final BottomNavigationState state;
+
+  @override
+  String toString() {
+    return 'AppAction.changeBottomNavigationState(state: $state)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is ChangeBottomNavigationState &&
+            (identical(other.state, state) ||
+                const DeepCollectionEquality().equals(other.state, state)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(state);
+
+  @JsonKey(ignore: true)
+  @override
+  $ChangeBottomNavigationStateCopyWith<ChangeBottomNavigationState>
+      get copyWith => _$ChangeBottomNavigationStateCopyWithImpl<
+          ChangeBottomNavigationState>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initAction,
+    required TResult Function() appLoaded,
+    required TResult Function() removePreviousPages,
+    required TResult Function(BottomNavigationState state)
+        changeBottomNavigationState,
+    required TResult Function() showSignIn,
+    required TResult Function() showSignUp,
+    required TResult Function() notNow,
+    required TResult Function(User user) authenticate,
+    required TResult Function(String login, String password) loginSubmit,
+    required TResult Function(String login, String email, String password,
+            String repeatedPassword)
+        registrationSubmit,
+    required TResult Function(bool loading) setLoadingOnAuthScreen,
+    required TResult Function(String? error) setErrorOnAuthScreen,
+    required TResult Function() initLoadingArticles,
+    required TResult Function() showArticlesLoading,
+    required TResult Function(List<Article> articles, int page, int pageSize)
+        showArticlesLoaded,
+    required TResult Function(List<Article> articles) showAllArticlesLoaded,
+    required TResult Function(String message) showErrorOnArticleLoading,
+    required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
+    required TResult Function() refreshArticles,
+  }) {
+    return changeBottomNavigationState(state);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initAction,
+    TResult Function()? appLoaded,
+    TResult Function()? removePreviousPages,
+    TResult Function(BottomNavigationState state)? changeBottomNavigationState,
+    TResult Function()? showSignIn,
+    TResult Function()? showSignUp,
+    TResult Function()? notNow,
+    TResult Function(User user)? authenticate,
+    TResult Function(String login, String password)? loginSubmit,
+    TResult Function(String login, String email, String password,
+            String repeatedPassword)?
+        registrationSubmit,
+    TResult Function(bool loading)? setLoadingOnAuthScreen,
+    TResult Function(String? error)? setErrorOnAuthScreen,
+    TResult Function()? initLoadingArticles,
+    TResult Function()? showArticlesLoading,
+    TResult Function(List<Article> articles, int page, int pageSize)?
+        showArticlesLoaded,
+    TResult Function(List<Article> articles)? showAllArticlesLoaded,
+    TResult Function(String message)? showErrorOnArticleLoading,
+    TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
+    TResult Function()? refreshArticles,
+    required TResult orElse(),
+  }) {
+    if (changeBottomNavigationState != null) {
+      return changeBottomNavigationState(state);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitAction value) initAction,
+    required TResult Function(AppLoaded value) appLoaded,
+    required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ChangeBottomNavigationState value)
+        changeBottomNavigationState,
+    required TResult Function(ShowSignIn value) showSignIn,
+    required TResult Function(ShowSignUp value) showSignUp,
+    required TResult Function(NotNow value) notNow,
+    required TResult Function(Authenticate value) authenticate,
+    required TResult Function(SubmitLogin value) loginSubmit,
+    required TResult Function(RegistrationLogin value) registrationSubmit,
+    required TResult Function(SetLoadingOnAuthScreen value)
+        setLoadingOnAuthScreen,
+    required TResult Function(SetErrorOnAuthScreen value) setErrorOnAuthScreen,
+    required TResult Function(InitLoadingArticles value) initLoadingArticles,
+    required TResult Function(ShowArticlesLoading value) showArticlesLoading,
+    required TResult Function(ShowArticlesLoaded value) showArticlesLoaded,
+    required TResult Function(ShowAllArticlesLoaded value)
+        showAllArticlesLoaded,
+    required TResult Function(ShowErrorOnArticleLoading value)
+        showErrorOnArticleLoading,
+    required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
+    required TResult Function(RefreshArticles value) refreshArticles,
+  }) {
+    return changeBottomNavigationState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitAction value)? initAction,
+    TResult Function(AppLoaded value)? appLoaded,
+    TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ChangeBottomNavigationState value)?
+        changeBottomNavigationState,
+    TResult Function(ShowSignIn value)? showSignIn,
+    TResult Function(ShowSignUp value)? showSignUp,
+    TResult Function(NotNow value)? notNow,
+    TResult Function(Authenticate value)? authenticate,
+    TResult Function(SubmitLogin value)? loginSubmit,
+    TResult Function(RegistrationLogin value)? registrationSubmit,
+    TResult Function(SetLoadingOnAuthScreen value)? setLoadingOnAuthScreen,
+    TResult Function(SetErrorOnAuthScreen value)? setErrorOnAuthScreen,
+    TResult Function(InitLoadingArticles value)? initLoadingArticles,
+    TResult Function(ShowArticlesLoading value)? showArticlesLoading,
+    TResult Function(ShowArticlesLoaded value)? showArticlesLoaded,
+    TResult Function(ShowAllArticlesLoaded value)? showAllArticlesLoaded,
+    TResult Function(ShowErrorOnArticleLoading value)?
+        showErrorOnArticleLoading,
+    TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
+    TResult Function(RefreshArticles value)? refreshArticles,
+    required TResult orElse(),
+  }) {
+    if (changeBottomNavigationState != null) {
+      return changeBottomNavigationState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangeBottomNavigationState implements AppAction {
+  const factory ChangeBottomNavigationState(
+      {required BottomNavigationState state}) = _$ChangeBottomNavigationState;
+
+  BottomNavigationState get state => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ChangeBottomNavigationStateCopyWith<ChangeBottomNavigationState>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -762,6 +998,8 @@ class _$ShowSignIn implements ShowSignIn {
     required TResult Function() initAction,
     required TResult Function() appLoaded,
     required TResult Function() removePreviousPages,
+    required TResult Function(BottomNavigationState state)
+        changeBottomNavigationState,
     required TResult Function() showSignIn,
     required TResult Function() showSignUp,
     required TResult Function() notNow,
@@ -790,6 +1028,7 @@ class _$ShowSignIn implements ShowSignIn {
     TResult Function()? initAction,
     TResult Function()? appLoaded,
     TResult Function()? removePreviousPages,
+    TResult Function(BottomNavigationState state)? changeBottomNavigationState,
     TResult Function()? showSignIn,
     TResult Function()? showSignUp,
     TResult Function()? notNow,
@@ -822,6 +1061,8 @@ class _$ShowSignIn implements ShowSignIn {
     required TResult Function(InitAction value) initAction,
     required TResult Function(AppLoaded value) appLoaded,
     required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ChangeBottomNavigationState value)
+        changeBottomNavigationState,
     required TResult Function(ShowSignIn value) showSignIn,
     required TResult Function(ShowSignUp value) showSignUp,
     required TResult Function(NotNow value) notNow,
@@ -850,6 +1091,8 @@ class _$ShowSignIn implements ShowSignIn {
     TResult Function(InitAction value)? initAction,
     TResult Function(AppLoaded value)? appLoaded,
     TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ChangeBottomNavigationState value)?
+        changeBottomNavigationState,
     TResult Function(ShowSignIn value)? showSignIn,
     TResult Function(ShowSignUp value)? showSignUp,
     TResult Function(NotNow value)? notNow,
@@ -920,6 +1163,8 @@ class _$ShowSignUp implements ShowSignUp {
     required TResult Function() initAction,
     required TResult Function() appLoaded,
     required TResult Function() removePreviousPages,
+    required TResult Function(BottomNavigationState state)
+        changeBottomNavigationState,
     required TResult Function() showSignIn,
     required TResult Function() showSignUp,
     required TResult Function() notNow,
@@ -948,6 +1193,7 @@ class _$ShowSignUp implements ShowSignUp {
     TResult Function()? initAction,
     TResult Function()? appLoaded,
     TResult Function()? removePreviousPages,
+    TResult Function(BottomNavigationState state)? changeBottomNavigationState,
     TResult Function()? showSignIn,
     TResult Function()? showSignUp,
     TResult Function()? notNow,
@@ -980,6 +1226,8 @@ class _$ShowSignUp implements ShowSignUp {
     required TResult Function(InitAction value) initAction,
     required TResult Function(AppLoaded value) appLoaded,
     required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ChangeBottomNavigationState value)
+        changeBottomNavigationState,
     required TResult Function(ShowSignIn value) showSignIn,
     required TResult Function(ShowSignUp value) showSignUp,
     required TResult Function(NotNow value) notNow,
@@ -1008,6 +1256,8 @@ class _$ShowSignUp implements ShowSignUp {
     TResult Function(InitAction value)? initAction,
     TResult Function(AppLoaded value)? appLoaded,
     TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ChangeBottomNavigationState value)?
+        changeBottomNavigationState,
     TResult Function(ShowSignIn value)? showSignIn,
     TResult Function(ShowSignUp value)? showSignUp,
     TResult Function(NotNow value)? notNow,
@@ -1077,6 +1327,8 @@ class _$NotNow implements NotNow {
     required TResult Function() initAction,
     required TResult Function() appLoaded,
     required TResult Function() removePreviousPages,
+    required TResult Function(BottomNavigationState state)
+        changeBottomNavigationState,
     required TResult Function() showSignIn,
     required TResult Function() showSignUp,
     required TResult Function() notNow,
@@ -1105,6 +1357,7 @@ class _$NotNow implements NotNow {
     TResult Function()? initAction,
     TResult Function()? appLoaded,
     TResult Function()? removePreviousPages,
+    TResult Function(BottomNavigationState state)? changeBottomNavigationState,
     TResult Function()? showSignIn,
     TResult Function()? showSignUp,
     TResult Function()? notNow,
@@ -1137,6 +1390,8 @@ class _$NotNow implements NotNow {
     required TResult Function(InitAction value) initAction,
     required TResult Function(AppLoaded value) appLoaded,
     required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ChangeBottomNavigationState value)
+        changeBottomNavigationState,
     required TResult Function(ShowSignIn value) showSignIn,
     required TResult Function(ShowSignUp value) showSignUp,
     required TResult Function(NotNow value) notNow,
@@ -1165,6 +1420,8 @@ class _$NotNow implements NotNow {
     TResult Function(InitAction value)? initAction,
     TResult Function(AppLoaded value)? appLoaded,
     TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ChangeBottomNavigationState value)?
+        changeBottomNavigationState,
     TResult Function(ShowSignIn value)? showSignIn,
     TResult Function(ShowSignUp value)? showSignUp,
     TResult Function(NotNow value)? notNow,
@@ -1270,6 +1527,8 @@ class _$Authenticate implements Authenticate {
     required TResult Function() initAction,
     required TResult Function() appLoaded,
     required TResult Function() removePreviousPages,
+    required TResult Function(BottomNavigationState state)
+        changeBottomNavigationState,
     required TResult Function() showSignIn,
     required TResult Function() showSignUp,
     required TResult Function() notNow,
@@ -1298,6 +1557,7 @@ class _$Authenticate implements Authenticate {
     TResult Function()? initAction,
     TResult Function()? appLoaded,
     TResult Function()? removePreviousPages,
+    TResult Function(BottomNavigationState state)? changeBottomNavigationState,
     TResult Function()? showSignIn,
     TResult Function()? showSignUp,
     TResult Function()? notNow,
@@ -1330,6 +1590,8 @@ class _$Authenticate implements Authenticate {
     required TResult Function(InitAction value) initAction,
     required TResult Function(AppLoaded value) appLoaded,
     required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ChangeBottomNavigationState value)
+        changeBottomNavigationState,
     required TResult Function(ShowSignIn value) showSignIn,
     required TResult Function(ShowSignUp value) showSignUp,
     required TResult Function(NotNow value) notNow,
@@ -1358,6 +1620,8 @@ class _$Authenticate implements Authenticate {
     TResult Function(InitAction value)? initAction,
     TResult Function(AppLoaded value)? appLoaded,
     TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ChangeBottomNavigationState value)?
+        changeBottomNavigationState,
     TResult Function(ShowSignIn value)? showSignIn,
     TResult Function(ShowSignUp value)? showSignUp,
     TResult Function(NotNow value)? notNow,
@@ -1471,6 +1735,8 @@ class _$SubmitLogin implements SubmitLogin {
     required TResult Function() initAction,
     required TResult Function() appLoaded,
     required TResult Function() removePreviousPages,
+    required TResult Function(BottomNavigationState state)
+        changeBottomNavigationState,
     required TResult Function() showSignIn,
     required TResult Function() showSignUp,
     required TResult Function() notNow,
@@ -1499,6 +1765,7 @@ class _$SubmitLogin implements SubmitLogin {
     TResult Function()? initAction,
     TResult Function()? appLoaded,
     TResult Function()? removePreviousPages,
+    TResult Function(BottomNavigationState state)? changeBottomNavigationState,
     TResult Function()? showSignIn,
     TResult Function()? showSignUp,
     TResult Function()? notNow,
@@ -1531,6 +1798,8 @@ class _$SubmitLogin implements SubmitLogin {
     required TResult Function(InitAction value) initAction,
     required TResult Function(AppLoaded value) appLoaded,
     required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ChangeBottomNavigationState value)
+        changeBottomNavigationState,
     required TResult Function(ShowSignIn value) showSignIn,
     required TResult Function(ShowSignUp value) showSignUp,
     required TResult Function(NotNow value) notNow,
@@ -1559,6 +1828,8 @@ class _$SubmitLogin implements SubmitLogin {
     TResult Function(InitAction value)? initAction,
     TResult Function(AppLoaded value)? appLoaded,
     TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ChangeBottomNavigationState value)?
+        changeBottomNavigationState,
     TResult Function(ShowSignIn value)? showSignIn,
     TResult Function(ShowSignUp value)? showSignUp,
     TResult Function(NotNow value)? notNow,
@@ -1701,6 +1972,8 @@ class _$RegistrationLogin implements RegistrationLogin {
     required TResult Function() initAction,
     required TResult Function() appLoaded,
     required TResult Function() removePreviousPages,
+    required TResult Function(BottomNavigationState state)
+        changeBottomNavigationState,
     required TResult Function() showSignIn,
     required TResult Function() showSignUp,
     required TResult Function() notNow,
@@ -1729,6 +2002,7 @@ class _$RegistrationLogin implements RegistrationLogin {
     TResult Function()? initAction,
     TResult Function()? appLoaded,
     TResult Function()? removePreviousPages,
+    TResult Function(BottomNavigationState state)? changeBottomNavigationState,
     TResult Function()? showSignIn,
     TResult Function()? showSignUp,
     TResult Function()? notNow,
@@ -1761,6 +2035,8 @@ class _$RegistrationLogin implements RegistrationLogin {
     required TResult Function(InitAction value) initAction,
     required TResult Function(AppLoaded value) appLoaded,
     required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ChangeBottomNavigationState value)
+        changeBottomNavigationState,
     required TResult Function(ShowSignIn value) showSignIn,
     required TResult Function(ShowSignUp value) showSignUp,
     required TResult Function(NotNow value) notNow,
@@ -1789,6 +2065,8 @@ class _$RegistrationLogin implements RegistrationLogin {
     TResult Function(InitAction value)? initAction,
     TResult Function(AppLoaded value)? appLoaded,
     TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ChangeBottomNavigationState value)?
+        changeBottomNavigationState,
     TResult Function(ShowSignIn value)? showSignIn,
     TResult Function(ShowSignUp value)? showSignUp,
     TResult Function(NotNow value)? notNow,
@@ -1899,6 +2177,8 @@ class _$SetLoadingOnAuthScreen implements SetLoadingOnAuthScreen {
     required TResult Function() initAction,
     required TResult Function() appLoaded,
     required TResult Function() removePreviousPages,
+    required TResult Function(BottomNavigationState state)
+        changeBottomNavigationState,
     required TResult Function() showSignIn,
     required TResult Function() showSignUp,
     required TResult Function() notNow,
@@ -1927,6 +2207,7 @@ class _$SetLoadingOnAuthScreen implements SetLoadingOnAuthScreen {
     TResult Function()? initAction,
     TResult Function()? appLoaded,
     TResult Function()? removePreviousPages,
+    TResult Function(BottomNavigationState state)? changeBottomNavigationState,
     TResult Function()? showSignIn,
     TResult Function()? showSignUp,
     TResult Function()? notNow,
@@ -1959,6 +2240,8 @@ class _$SetLoadingOnAuthScreen implements SetLoadingOnAuthScreen {
     required TResult Function(InitAction value) initAction,
     required TResult Function(AppLoaded value) appLoaded,
     required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ChangeBottomNavigationState value)
+        changeBottomNavigationState,
     required TResult Function(ShowSignIn value) showSignIn,
     required TResult Function(ShowSignUp value) showSignUp,
     required TResult Function(NotNow value) notNow,
@@ -1987,6 +2270,8 @@ class _$SetLoadingOnAuthScreen implements SetLoadingOnAuthScreen {
     TResult Function(InitAction value)? initAction,
     TResult Function(AppLoaded value)? appLoaded,
     TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ChangeBottomNavigationState value)?
+        changeBottomNavigationState,
     TResult Function(ShowSignIn value)? showSignIn,
     TResult Function(ShowSignUp value)? showSignUp,
     TResult Function(NotNow value)? notNow,
@@ -2091,6 +2376,8 @@ class _$SetErrorOnAuthScreen implements SetErrorOnAuthScreen {
     required TResult Function() initAction,
     required TResult Function() appLoaded,
     required TResult Function() removePreviousPages,
+    required TResult Function(BottomNavigationState state)
+        changeBottomNavigationState,
     required TResult Function() showSignIn,
     required TResult Function() showSignUp,
     required TResult Function() notNow,
@@ -2119,6 +2406,7 @@ class _$SetErrorOnAuthScreen implements SetErrorOnAuthScreen {
     TResult Function()? initAction,
     TResult Function()? appLoaded,
     TResult Function()? removePreviousPages,
+    TResult Function(BottomNavigationState state)? changeBottomNavigationState,
     TResult Function()? showSignIn,
     TResult Function()? showSignUp,
     TResult Function()? notNow,
@@ -2151,6 +2439,8 @@ class _$SetErrorOnAuthScreen implements SetErrorOnAuthScreen {
     required TResult Function(InitAction value) initAction,
     required TResult Function(AppLoaded value) appLoaded,
     required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ChangeBottomNavigationState value)
+        changeBottomNavigationState,
     required TResult Function(ShowSignIn value) showSignIn,
     required TResult Function(ShowSignUp value) showSignUp,
     required TResult Function(NotNow value) notNow,
@@ -2179,6 +2469,8 @@ class _$SetErrorOnAuthScreen implements SetErrorOnAuthScreen {
     TResult Function(InitAction value)? initAction,
     TResult Function(AppLoaded value)? appLoaded,
     TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ChangeBottomNavigationState value)?
+        changeBottomNavigationState,
     TResult Function(ShowSignIn value)? showSignIn,
     TResult Function(ShowSignUp value)? showSignUp,
     TResult Function(NotNow value)? notNow,
@@ -2256,6 +2548,8 @@ class _$InitLoadingArticles implements InitLoadingArticles {
     required TResult Function() initAction,
     required TResult Function() appLoaded,
     required TResult Function() removePreviousPages,
+    required TResult Function(BottomNavigationState state)
+        changeBottomNavigationState,
     required TResult Function() showSignIn,
     required TResult Function() showSignUp,
     required TResult Function() notNow,
@@ -2284,6 +2578,7 @@ class _$InitLoadingArticles implements InitLoadingArticles {
     TResult Function()? initAction,
     TResult Function()? appLoaded,
     TResult Function()? removePreviousPages,
+    TResult Function(BottomNavigationState state)? changeBottomNavigationState,
     TResult Function()? showSignIn,
     TResult Function()? showSignUp,
     TResult Function()? notNow,
@@ -2316,6 +2611,8 @@ class _$InitLoadingArticles implements InitLoadingArticles {
     required TResult Function(InitAction value) initAction,
     required TResult Function(AppLoaded value) appLoaded,
     required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ChangeBottomNavigationState value)
+        changeBottomNavigationState,
     required TResult Function(ShowSignIn value) showSignIn,
     required TResult Function(ShowSignUp value) showSignUp,
     required TResult Function(NotNow value) notNow,
@@ -2344,6 +2641,8 @@ class _$InitLoadingArticles implements InitLoadingArticles {
     TResult Function(InitAction value)? initAction,
     TResult Function(AppLoaded value)? appLoaded,
     TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ChangeBottomNavigationState value)?
+        changeBottomNavigationState,
     TResult Function(ShowSignIn value)? showSignIn,
     TResult Function(ShowSignUp value)? showSignUp,
     TResult Function(NotNow value)? notNow,
@@ -2416,6 +2715,8 @@ class _$ShowArticlesLoading implements ShowArticlesLoading {
     required TResult Function() initAction,
     required TResult Function() appLoaded,
     required TResult Function() removePreviousPages,
+    required TResult Function(BottomNavigationState state)
+        changeBottomNavigationState,
     required TResult Function() showSignIn,
     required TResult Function() showSignUp,
     required TResult Function() notNow,
@@ -2444,6 +2745,7 @@ class _$ShowArticlesLoading implements ShowArticlesLoading {
     TResult Function()? initAction,
     TResult Function()? appLoaded,
     TResult Function()? removePreviousPages,
+    TResult Function(BottomNavigationState state)? changeBottomNavigationState,
     TResult Function()? showSignIn,
     TResult Function()? showSignUp,
     TResult Function()? notNow,
@@ -2476,6 +2778,8 @@ class _$ShowArticlesLoading implements ShowArticlesLoading {
     required TResult Function(InitAction value) initAction,
     required TResult Function(AppLoaded value) appLoaded,
     required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ChangeBottomNavigationState value)
+        changeBottomNavigationState,
     required TResult Function(ShowSignIn value) showSignIn,
     required TResult Function(ShowSignUp value) showSignUp,
     required TResult Function(NotNow value) notNow,
@@ -2504,6 +2808,8 @@ class _$ShowArticlesLoading implements ShowArticlesLoading {
     TResult Function(InitAction value)? initAction,
     TResult Function(AppLoaded value)? appLoaded,
     TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ChangeBottomNavigationState value)?
+        changeBottomNavigationState,
     TResult Function(ShowSignIn value)? showSignIn,
     TResult Function(ShowSignUp value)? showSignUp,
     TResult Function(NotNow value)? notNow,
@@ -2625,6 +2931,8 @@ class _$ShowArticlesLoaded implements ShowArticlesLoaded {
     required TResult Function() initAction,
     required TResult Function() appLoaded,
     required TResult Function() removePreviousPages,
+    required TResult Function(BottomNavigationState state)
+        changeBottomNavigationState,
     required TResult Function() showSignIn,
     required TResult Function() showSignUp,
     required TResult Function() notNow,
@@ -2653,6 +2961,7 @@ class _$ShowArticlesLoaded implements ShowArticlesLoaded {
     TResult Function()? initAction,
     TResult Function()? appLoaded,
     TResult Function()? removePreviousPages,
+    TResult Function(BottomNavigationState state)? changeBottomNavigationState,
     TResult Function()? showSignIn,
     TResult Function()? showSignUp,
     TResult Function()? notNow,
@@ -2685,6 +2994,8 @@ class _$ShowArticlesLoaded implements ShowArticlesLoaded {
     required TResult Function(InitAction value) initAction,
     required TResult Function(AppLoaded value) appLoaded,
     required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ChangeBottomNavigationState value)
+        changeBottomNavigationState,
     required TResult Function(ShowSignIn value) showSignIn,
     required TResult Function(ShowSignUp value) showSignUp,
     required TResult Function(NotNow value) notNow,
@@ -2713,6 +3024,8 @@ class _$ShowArticlesLoaded implements ShowArticlesLoaded {
     TResult Function(InitAction value)? initAction,
     TResult Function(AppLoaded value)? appLoaded,
     TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ChangeBottomNavigationState value)?
+        changeBottomNavigationState,
     TResult Function(ShowSignIn value)? showSignIn,
     TResult Function(ShowSignUp value)? showSignUp,
     TResult Function(NotNow value)? notNow,
@@ -2822,6 +3135,8 @@ class _$ShowAllArticlesLoaded implements ShowAllArticlesLoaded {
     required TResult Function() initAction,
     required TResult Function() appLoaded,
     required TResult Function() removePreviousPages,
+    required TResult Function(BottomNavigationState state)
+        changeBottomNavigationState,
     required TResult Function() showSignIn,
     required TResult Function() showSignUp,
     required TResult Function() notNow,
@@ -2850,6 +3165,7 @@ class _$ShowAllArticlesLoaded implements ShowAllArticlesLoaded {
     TResult Function()? initAction,
     TResult Function()? appLoaded,
     TResult Function()? removePreviousPages,
+    TResult Function(BottomNavigationState state)? changeBottomNavigationState,
     TResult Function()? showSignIn,
     TResult Function()? showSignUp,
     TResult Function()? notNow,
@@ -2882,6 +3198,8 @@ class _$ShowAllArticlesLoaded implements ShowAllArticlesLoaded {
     required TResult Function(InitAction value) initAction,
     required TResult Function(AppLoaded value) appLoaded,
     required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ChangeBottomNavigationState value)
+        changeBottomNavigationState,
     required TResult Function(ShowSignIn value) showSignIn,
     required TResult Function(ShowSignUp value) showSignUp,
     required TResult Function(NotNow value) notNow,
@@ -2910,6 +3228,8 @@ class _$ShowAllArticlesLoaded implements ShowAllArticlesLoaded {
     TResult Function(InitAction value)? initAction,
     TResult Function(AppLoaded value)? appLoaded,
     TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ChangeBottomNavigationState value)?
+        changeBottomNavigationState,
     TResult Function(ShowSignIn value)? showSignIn,
     TResult Function(ShowSignUp value)? showSignUp,
     TResult Function(NotNow value)? notNow,
@@ -3015,6 +3335,8 @@ class _$ShowErrorOnArticleLoading implements ShowErrorOnArticleLoading {
     required TResult Function() initAction,
     required TResult Function() appLoaded,
     required TResult Function() removePreviousPages,
+    required TResult Function(BottomNavigationState state)
+        changeBottomNavigationState,
     required TResult Function() showSignIn,
     required TResult Function() showSignUp,
     required TResult Function() notNow,
@@ -3043,6 +3365,7 @@ class _$ShowErrorOnArticleLoading implements ShowErrorOnArticleLoading {
     TResult Function()? initAction,
     TResult Function()? appLoaded,
     TResult Function()? removePreviousPages,
+    TResult Function(BottomNavigationState state)? changeBottomNavigationState,
     TResult Function()? showSignIn,
     TResult Function()? showSignUp,
     TResult Function()? notNow,
@@ -3075,6 +3398,8 @@ class _$ShowErrorOnArticleLoading implements ShowErrorOnArticleLoading {
     required TResult Function(InitAction value) initAction,
     required TResult Function(AppLoaded value) appLoaded,
     required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ChangeBottomNavigationState value)
+        changeBottomNavigationState,
     required TResult Function(ShowSignIn value) showSignIn,
     required TResult Function(ShowSignUp value) showSignUp,
     required TResult Function(NotNow value) notNow,
@@ -3103,6 +3428,8 @@ class _$ShowErrorOnArticleLoading implements ShowErrorOnArticleLoading {
     TResult Function(InitAction value)? initAction,
     TResult Function(AppLoaded value)? appLoaded,
     TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ChangeBottomNavigationState value)?
+        changeBottomNavigationState,
     TResult Function(ShowSignIn value)? showSignIn,
     TResult Function(ShowSignUp value)? showSignUp,
     TResult Function(NotNow value)? notNow,
@@ -3219,6 +3546,8 @@ class _$LoadNextArticlePage implements LoadNextArticlePage {
     required TResult Function() initAction,
     required TResult Function() appLoaded,
     required TResult Function() removePreviousPages,
+    required TResult Function(BottomNavigationState state)
+        changeBottomNavigationState,
     required TResult Function() showSignIn,
     required TResult Function() showSignUp,
     required TResult Function() notNow,
@@ -3247,6 +3576,7 @@ class _$LoadNextArticlePage implements LoadNextArticlePage {
     TResult Function()? initAction,
     TResult Function()? appLoaded,
     TResult Function()? removePreviousPages,
+    TResult Function(BottomNavigationState state)? changeBottomNavigationState,
     TResult Function()? showSignIn,
     TResult Function()? showSignUp,
     TResult Function()? notNow,
@@ -3279,6 +3609,8 @@ class _$LoadNextArticlePage implements LoadNextArticlePage {
     required TResult Function(InitAction value) initAction,
     required TResult Function(AppLoaded value) appLoaded,
     required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ChangeBottomNavigationState value)
+        changeBottomNavigationState,
     required TResult Function(ShowSignIn value) showSignIn,
     required TResult Function(ShowSignUp value) showSignUp,
     required TResult Function(NotNow value) notNow,
@@ -3307,6 +3639,8 @@ class _$LoadNextArticlePage implements LoadNextArticlePage {
     TResult Function(InitAction value)? initAction,
     TResult Function(AppLoaded value)? appLoaded,
     TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ChangeBottomNavigationState value)?
+        changeBottomNavigationState,
     TResult Function(ShowSignIn value)? showSignIn,
     TResult Function(ShowSignUp value)? showSignUp,
     TResult Function(NotNow value)? notNow,
@@ -3385,6 +3719,8 @@ class _$RefreshArticles implements RefreshArticles {
     required TResult Function() initAction,
     required TResult Function() appLoaded,
     required TResult Function() removePreviousPages,
+    required TResult Function(BottomNavigationState state)
+        changeBottomNavigationState,
     required TResult Function() showSignIn,
     required TResult Function() showSignUp,
     required TResult Function() notNow,
@@ -3413,6 +3749,7 @@ class _$RefreshArticles implements RefreshArticles {
     TResult Function()? initAction,
     TResult Function()? appLoaded,
     TResult Function()? removePreviousPages,
+    TResult Function(BottomNavigationState state)? changeBottomNavigationState,
     TResult Function()? showSignIn,
     TResult Function()? showSignUp,
     TResult Function()? notNow,
@@ -3445,6 +3782,8 @@ class _$RefreshArticles implements RefreshArticles {
     required TResult Function(InitAction value) initAction,
     required TResult Function(AppLoaded value) appLoaded,
     required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ChangeBottomNavigationState value)
+        changeBottomNavigationState,
     required TResult Function(ShowSignIn value) showSignIn,
     required TResult Function(ShowSignUp value) showSignUp,
     required TResult Function(NotNow value) notNow,
@@ -3473,6 +3812,8 @@ class _$RefreshArticles implements RefreshArticles {
     TResult Function(InitAction value)? initAction,
     TResult Function(AppLoaded value)? appLoaded,
     TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ChangeBottomNavigationState value)?
+        changeBottomNavigationState,
     TResult Function(ShowSignIn value)? showSignIn,
     TResult Function(ShowSignUp value)? showSignUp,
     TResult Function(NotNow value)? notNow,

@@ -6,6 +6,7 @@ import 'package:dip_frontend/redux/reducer/reducer.dart';
 import 'package:dip_frontend/redux/state/app_state.dart';
 import 'package:dip_frontend/redux/state/articles_state.dart';
 import 'package:dip_frontend/redux/state/auth_state.dart';
+import 'package:dip_frontend/redux/state/navigation/bottom_navigation.dart';
 import 'package:dip_frontend/redux/state/navigation/screen.dart';
 import 'package:dip_frontend/repository/objectdb/objectdb_repository.dart';
 import 'package:dip_frontend/repository/repository.dart';
@@ -47,6 +48,7 @@ class MyApp extends StatelessWidget {
               ],
               roles: [],
               articlesState: ArticlesState.emptyState(),
+              bottomNavigationState: BottomNavigationState.articles,
             ),
             reducers: createReducers(),
             middlewares: createMiddleware(
