@@ -13,11 +13,16 @@ dependencies:
   dio: ^4.0.0
   flutter:
     sdk: flutter
+  flutter_map:
+    git:
+      url: https://github.com/fleaflet/flutter_map.git
+      ref: issues/829-nullsafety
   freezed_annotation: ^0.14.2
   json_annotation: ^4.0.1
   objectdb: ^1.2.1
   path_provider: ^2.0.2
   provider: ^5.0.0
+  qr_code_scanner: ^0.4.0
   whelm:
     git: https://github.com/fekz115/whelm.git
 
