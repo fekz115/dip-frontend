@@ -82,13 +82,14 @@ List<Reducer<AppState, AppAction>> createReducers() => [
               ),
             ),
             showArticlesLoading: (action) => state.copyWith(
-              articlesState: const ArticlesState.loadingState(),
+              articlesState: const ArticlesState.loadingState(loading: true),
             ),
             showErrorOnArticleLoading: (action) => state.copyWith(
               articlesState: ArticlesState.errorState(
                 message: action.message,
               ),
             ),
+            refreshArticles: (action) => state.copyWith.articlesState(loading: true),
             orElse: () => state,
           ),
     ];

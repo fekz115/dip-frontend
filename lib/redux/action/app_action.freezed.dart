@@ -118,6 +118,10 @@ class _$AppActionTearOff {
       pageSize: pageSize,
     );
   }
+
+  RefreshArticles refreshArticles() {
+    return const RefreshArticles();
+  }
 }
 
 /// @nodoc
@@ -147,6 +151,7 @@ mixin _$AppAction {
     required TResult Function(List<Article> articles) showAllArticlesLoaded,
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
+    required TResult Function() refreshArticles,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -171,6 +176,7 @@ mixin _$AppAction {
     TResult Function(List<Article> articles)? showAllArticlesLoaded,
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
+    TResult Function()? refreshArticles,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -196,6 +202,7 @@ mixin _$AppAction {
     required TResult Function(ShowErrorOnArticleLoading value)
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
+    required TResult Function(RefreshArticles value) refreshArticles,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -218,6 +225,7 @@ mixin _$AppAction {
     TResult Function(ShowErrorOnArticleLoading value)?
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
+    TResult Function(RefreshArticles value)? refreshArticles,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -296,6 +304,7 @@ class _$InitAction implements InitAction {
     required TResult Function(List<Article> articles) showAllArticlesLoaded,
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
+    required TResult Function() refreshArticles,
   }) {
     return initAction();
   }
@@ -323,6 +332,7 @@ class _$InitAction implements InitAction {
     TResult Function(List<Article> articles)? showAllArticlesLoaded,
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
+    TResult Function()? refreshArticles,
     required TResult orElse(),
   }) {
     if (initAction != null) {
@@ -354,6 +364,7 @@ class _$InitAction implements InitAction {
     required TResult Function(ShowErrorOnArticleLoading value)
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
+    required TResult Function(RefreshArticles value) refreshArticles,
   }) {
     return initAction(this);
   }
@@ -379,6 +390,7 @@ class _$InitAction implements InitAction {
     TResult Function(ShowErrorOnArticleLoading value)?
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
+    TResult Function(RefreshArticles value)? refreshArticles,
     required TResult orElse(),
   }) {
     if (initAction != null) {
@@ -449,6 +461,7 @@ class _$AppLoaded implements AppLoaded {
     required TResult Function(List<Article> articles) showAllArticlesLoaded,
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
+    required TResult Function() refreshArticles,
   }) {
     return appLoaded();
   }
@@ -476,6 +489,7 @@ class _$AppLoaded implements AppLoaded {
     TResult Function(List<Article> articles)? showAllArticlesLoaded,
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
+    TResult Function()? refreshArticles,
     required TResult orElse(),
   }) {
     if (appLoaded != null) {
@@ -507,6 +521,7 @@ class _$AppLoaded implements AppLoaded {
     required TResult Function(ShowErrorOnArticleLoading value)
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
+    required TResult Function(RefreshArticles value) refreshArticles,
   }) {
     return appLoaded(this);
   }
@@ -532,6 +547,7 @@ class _$AppLoaded implements AppLoaded {
     TResult Function(ShowErrorOnArticleLoading value)?
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
+    TResult Function(RefreshArticles value)? refreshArticles,
     required TResult orElse(),
   }) {
     if (appLoaded != null) {
@@ -605,6 +621,7 @@ class _$RemovePreviousPages implements RemovePreviousPages {
     required TResult Function(List<Article> articles) showAllArticlesLoaded,
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
+    required TResult Function() refreshArticles,
   }) {
     return removePreviousPages();
   }
@@ -632,6 +649,7 @@ class _$RemovePreviousPages implements RemovePreviousPages {
     TResult Function(List<Article> articles)? showAllArticlesLoaded,
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
+    TResult Function()? refreshArticles,
     required TResult orElse(),
   }) {
     if (removePreviousPages != null) {
@@ -663,6 +681,7 @@ class _$RemovePreviousPages implements RemovePreviousPages {
     required TResult Function(ShowErrorOnArticleLoading value)
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
+    required TResult Function(RefreshArticles value) refreshArticles,
   }) {
     return removePreviousPages(this);
   }
@@ -688,6 +707,7 @@ class _$RemovePreviousPages implements RemovePreviousPages {
     TResult Function(ShowErrorOnArticleLoading value)?
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
+    TResult Function(RefreshArticles value)? refreshArticles,
     required TResult orElse(),
   }) {
     if (removePreviousPages != null) {
@@ -759,6 +779,7 @@ class _$ShowSignIn implements ShowSignIn {
     required TResult Function(List<Article> articles) showAllArticlesLoaded,
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
+    required TResult Function() refreshArticles,
   }) {
     return showSignIn();
   }
@@ -786,6 +807,7 @@ class _$ShowSignIn implements ShowSignIn {
     TResult Function(List<Article> articles)? showAllArticlesLoaded,
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
+    TResult Function()? refreshArticles,
     required TResult orElse(),
   }) {
     if (showSignIn != null) {
@@ -817,6 +839,7 @@ class _$ShowSignIn implements ShowSignIn {
     required TResult Function(ShowErrorOnArticleLoading value)
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
+    required TResult Function(RefreshArticles value) refreshArticles,
   }) {
     return showSignIn(this);
   }
@@ -842,6 +865,7 @@ class _$ShowSignIn implements ShowSignIn {
     TResult Function(ShowErrorOnArticleLoading value)?
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
+    TResult Function(RefreshArticles value)? refreshArticles,
     required TResult orElse(),
   }) {
     if (showSignIn != null) {
@@ -913,6 +937,7 @@ class _$ShowSignUp implements ShowSignUp {
     required TResult Function(List<Article> articles) showAllArticlesLoaded,
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
+    required TResult Function() refreshArticles,
   }) {
     return showSignUp();
   }
@@ -940,6 +965,7 @@ class _$ShowSignUp implements ShowSignUp {
     TResult Function(List<Article> articles)? showAllArticlesLoaded,
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
+    TResult Function()? refreshArticles,
     required TResult orElse(),
   }) {
     if (showSignUp != null) {
@@ -971,6 +997,7 @@ class _$ShowSignUp implements ShowSignUp {
     required TResult Function(ShowErrorOnArticleLoading value)
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
+    required TResult Function(RefreshArticles value) refreshArticles,
   }) {
     return showSignUp(this);
   }
@@ -996,6 +1023,7 @@ class _$ShowSignUp implements ShowSignUp {
     TResult Function(ShowErrorOnArticleLoading value)?
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
+    TResult Function(RefreshArticles value)? refreshArticles,
     required TResult orElse(),
   }) {
     if (showSignUp != null) {
@@ -1066,6 +1094,7 @@ class _$NotNow implements NotNow {
     required TResult Function(List<Article> articles) showAllArticlesLoaded,
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
+    required TResult Function() refreshArticles,
   }) {
     return notNow();
   }
@@ -1093,6 +1122,7 @@ class _$NotNow implements NotNow {
     TResult Function(List<Article> articles)? showAllArticlesLoaded,
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
+    TResult Function()? refreshArticles,
     required TResult orElse(),
   }) {
     if (notNow != null) {
@@ -1124,6 +1154,7 @@ class _$NotNow implements NotNow {
     required TResult Function(ShowErrorOnArticleLoading value)
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
+    required TResult Function(RefreshArticles value) refreshArticles,
   }) {
     return notNow(this);
   }
@@ -1149,6 +1180,7 @@ class _$NotNow implements NotNow {
     TResult Function(ShowErrorOnArticleLoading value)?
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
+    TResult Function(RefreshArticles value)? refreshArticles,
     required TResult orElse(),
   }) {
     if (notNow != null) {
@@ -1255,6 +1287,7 @@ class _$Authenticate implements Authenticate {
     required TResult Function(List<Article> articles) showAllArticlesLoaded,
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
+    required TResult Function() refreshArticles,
   }) {
     return authenticate(user);
   }
@@ -1282,6 +1315,7 @@ class _$Authenticate implements Authenticate {
     TResult Function(List<Article> articles)? showAllArticlesLoaded,
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
+    TResult Function()? refreshArticles,
     required TResult orElse(),
   }) {
     if (authenticate != null) {
@@ -1313,6 +1347,7 @@ class _$Authenticate implements Authenticate {
     required TResult Function(ShowErrorOnArticleLoading value)
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
+    required TResult Function(RefreshArticles value) refreshArticles,
   }) {
     return authenticate(this);
   }
@@ -1338,6 +1373,7 @@ class _$Authenticate implements Authenticate {
     TResult Function(ShowErrorOnArticleLoading value)?
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
+    TResult Function(RefreshArticles value)? refreshArticles,
     required TResult orElse(),
   }) {
     if (authenticate != null) {
@@ -1452,6 +1488,7 @@ class _$SubmitLogin implements SubmitLogin {
     required TResult Function(List<Article> articles) showAllArticlesLoaded,
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
+    required TResult Function() refreshArticles,
   }) {
     return loginSubmit(login, password);
   }
@@ -1479,6 +1516,7 @@ class _$SubmitLogin implements SubmitLogin {
     TResult Function(List<Article> articles)? showAllArticlesLoaded,
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
+    TResult Function()? refreshArticles,
     required TResult orElse(),
   }) {
     if (loginSubmit != null) {
@@ -1510,6 +1548,7 @@ class _$SubmitLogin implements SubmitLogin {
     required TResult Function(ShowErrorOnArticleLoading value)
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
+    required TResult Function(RefreshArticles value) refreshArticles,
   }) {
     return loginSubmit(this);
   }
@@ -1535,6 +1574,7 @@ class _$SubmitLogin implements SubmitLogin {
     TResult Function(ShowErrorOnArticleLoading value)?
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
+    TResult Function(RefreshArticles value)? refreshArticles,
     required TResult orElse(),
   }) {
     if (loginSubmit != null) {
@@ -1678,6 +1718,7 @@ class _$RegistrationLogin implements RegistrationLogin {
     required TResult Function(List<Article> articles) showAllArticlesLoaded,
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
+    required TResult Function() refreshArticles,
   }) {
     return registrationSubmit(login, email, password, repeatedPassword);
   }
@@ -1705,6 +1746,7 @@ class _$RegistrationLogin implements RegistrationLogin {
     TResult Function(List<Article> articles)? showAllArticlesLoaded,
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
+    TResult Function()? refreshArticles,
     required TResult orElse(),
   }) {
     if (registrationSubmit != null) {
@@ -1736,6 +1778,7 @@ class _$RegistrationLogin implements RegistrationLogin {
     required TResult Function(ShowErrorOnArticleLoading value)
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
+    required TResult Function(RefreshArticles value) refreshArticles,
   }) {
     return registrationSubmit(this);
   }
@@ -1761,6 +1804,7 @@ class _$RegistrationLogin implements RegistrationLogin {
     TResult Function(ShowErrorOnArticleLoading value)?
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
+    TResult Function(RefreshArticles value)? refreshArticles,
     required TResult orElse(),
   }) {
     if (registrationSubmit != null) {
@@ -1872,6 +1916,7 @@ class _$SetLoadingOnAuthScreen implements SetLoadingOnAuthScreen {
     required TResult Function(List<Article> articles) showAllArticlesLoaded,
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
+    required TResult Function() refreshArticles,
   }) {
     return setLoadingOnAuthScreen(loading);
   }
@@ -1899,6 +1944,7 @@ class _$SetLoadingOnAuthScreen implements SetLoadingOnAuthScreen {
     TResult Function(List<Article> articles)? showAllArticlesLoaded,
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
+    TResult Function()? refreshArticles,
     required TResult orElse(),
   }) {
     if (setLoadingOnAuthScreen != null) {
@@ -1930,6 +1976,7 @@ class _$SetLoadingOnAuthScreen implements SetLoadingOnAuthScreen {
     required TResult Function(ShowErrorOnArticleLoading value)
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
+    required TResult Function(RefreshArticles value) refreshArticles,
   }) {
     return setLoadingOnAuthScreen(this);
   }
@@ -1955,6 +2002,7 @@ class _$SetLoadingOnAuthScreen implements SetLoadingOnAuthScreen {
     TResult Function(ShowErrorOnArticleLoading value)?
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
+    TResult Function(RefreshArticles value)? refreshArticles,
     required TResult orElse(),
   }) {
     if (setLoadingOnAuthScreen != null) {
@@ -2060,6 +2108,7 @@ class _$SetErrorOnAuthScreen implements SetErrorOnAuthScreen {
     required TResult Function(List<Article> articles) showAllArticlesLoaded,
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
+    required TResult Function() refreshArticles,
   }) {
     return setErrorOnAuthScreen(error);
   }
@@ -2087,6 +2136,7 @@ class _$SetErrorOnAuthScreen implements SetErrorOnAuthScreen {
     TResult Function(List<Article> articles)? showAllArticlesLoaded,
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
+    TResult Function()? refreshArticles,
     required TResult orElse(),
   }) {
     if (setErrorOnAuthScreen != null) {
@@ -2118,6 +2168,7 @@ class _$SetErrorOnAuthScreen implements SetErrorOnAuthScreen {
     required TResult Function(ShowErrorOnArticleLoading value)
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
+    required TResult Function(RefreshArticles value) refreshArticles,
   }) {
     return setErrorOnAuthScreen(this);
   }
@@ -2143,6 +2194,7 @@ class _$SetErrorOnAuthScreen implements SetErrorOnAuthScreen {
     TResult Function(ShowErrorOnArticleLoading value)?
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
+    TResult Function(RefreshArticles value)? refreshArticles,
     required TResult orElse(),
   }) {
     if (setErrorOnAuthScreen != null) {
@@ -2221,6 +2273,7 @@ class _$InitLoadingArticles implements InitLoadingArticles {
     required TResult Function(List<Article> articles) showAllArticlesLoaded,
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
+    required TResult Function() refreshArticles,
   }) {
     return initLoadingArticles();
   }
@@ -2248,6 +2301,7 @@ class _$InitLoadingArticles implements InitLoadingArticles {
     TResult Function(List<Article> articles)? showAllArticlesLoaded,
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
+    TResult Function()? refreshArticles,
     required TResult orElse(),
   }) {
     if (initLoadingArticles != null) {
@@ -2279,6 +2333,7 @@ class _$InitLoadingArticles implements InitLoadingArticles {
     required TResult Function(ShowErrorOnArticleLoading value)
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
+    required TResult Function(RefreshArticles value) refreshArticles,
   }) {
     return initLoadingArticles(this);
   }
@@ -2304,6 +2359,7 @@ class _$InitLoadingArticles implements InitLoadingArticles {
     TResult Function(ShowErrorOnArticleLoading value)?
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
+    TResult Function(RefreshArticles value)? refreshArticles,
     required TResult orElse(),
   }) {
     if (initLoadingArticles != null) {
@@ -2377,6 +2433,7 @@ class _$ShowArticlesLoading implements ShowArticlesLoading {
     required TResult Function(List<Article> articles) showAllArticlesLoaded,
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
+    required TResult Function() refreshArticles,
   }) {
     return showArticlesLoading();
   }
@@ -2404,6 +2461,7 @@ class _$ShowArticlesLoading implements ShowArticlesLoading {
     TResult Function(List<Article> articles)? showAllArticlesLoaded,
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
+    TResult Function()? refreshArticles,
     required TResult orElse(),
   }) {
     if (showArticlesLoading != null) {
@@ -2435,6 +2493,7 @@ class _$ShowArticlesLoading implements ShowArticlesLoading {
     required TResult Function(ShowErrorOnArticleLoading value)
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
+    required TResult Function(RefreshArticles value) refreshArticles,
   }) {
     return showArticlesLoading(this);
   }
@@ -2460,6 +2519,7 @@ class _$ShowArticlesLoading implements ShowArticlesLoading {
     TResult Function(ShowErrorOnArticleLoading value)?
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
+    TResult Function(RefreshArticles value)? refreshArticles,
     required TResult orElse(),
   }) {
     if (showArticlesLoading != null) {
@@ -2582,6 +2642,7 @@ class _$ShowArticlesLoaded implements ShowArticlesLoaded {
     required TResult Function(List<Article> articles) showAllArticlesLoaded,
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
+    required TResult Function() refreshArticles,
   }) {
     return showArticlesLoaded(articles, page, pageSize);
   }
@@ -2609,6 +2670,7 @@ class _$ShowArticlesLoaded implements ShowArticlesLoaded {
     TResult Function(List<Article> articles)? showAllArticlesLoaded,
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
+    TResult Function()? refreshArticles,
     required TResult orElse(),
   }) {
     if (showArticlesLoaded != null) {
@@ -2640,6 +2702,7 @@ class _$ShowArticlesLoaded implements ShowArticlesLoaded {
     required TResult Function(ShowErrorOnArticleLoading value)
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
+    required TResult Function(RefreshArticles value) refreshArticles,
   }) {
     return showArticlesLoaded(this);
   }
@@ -2665,6 +2728,7 @@ class _$ShowArticlesLoaded implements ShowArticlesLoaded {
     TResult Function(ShowErrorOnArticleLoading value)?
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
+    TResult Function(RefreshArticles value)? refreshArticles,
     required TResult orElse(),
   }) {
     if (showArticlesLoaded != null) {
@@ -2775,6 +2839,7 @@ class _$ShowAllArticlesLoaded implements ShowAllArticlesLoaded {
     required TResult Function(List<Article> articles) showAllArticlesLoaded,
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
+    required TResult Function() refreshArticles,
   }) {
     return showAllArticlesLoaded(articles);
   }
@@ -2802,6 +2867,7 @@ class _$ShowAllArticlesLoaded implements ShowAllArticlesLoaded {
     TResult Function(List<Article> articles)? showAllArticlesLoaded,
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
+    TResult Function()? refreshArticles,
     required TResult orElse(),
   }) {
     if (showAllArticlesLoaded != null) {
@@ -2833,6 +2899,7 @@ class _$ShowAllArticlesLoaded implements ShowAllArticlesLoaded {
     required TResult Function(ShowErrorOnArticleLoading value)
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
+    required TResult Function(RefreshArticles value) refreshArticles,
   }) {
     return showAllArticlesLoaded(this);
   }
@@ -2858,6 +2925,7 @@ class _$ShowAllArticlesLoaded implements ShowAllArticlesLoaded {
     TResult Function(ShowErrorOnArticleLoading value)?
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
+    TResult Function(RefreshArticles value)? refreshArticles,
     required TResult orElse(),
   }) {
     if (showAllArticlesLoaded != null) {
@@ -2964,6 +3032,7 @@ class _$ShowErrorOnArticleLoading implements ShowErrorOnArticleLoading {
     required TResult Function(List<Article> articles) showAllArticlesLoaded,
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
+    required TResult Function() refreshArticles,
   }) {
     return showErrorOnArticleLoading(message);
   }
@@ -2991,6 +3060,7 @@ class _$ShowErrorOnArticleLoading implements ShowErrorOnArticleLoading {
     TResult Function(List<Article> articles)? showAllArticlesLoaded,
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
+    TResult Function()? refreshArticles,
     required TResult orElse(),
   }) {
     if (showErrorOnArticleLoading != null) {
@@ -3022,6 +3092,7 @@ class _$ShowErrorOnArticleLoading implements ShowErrorOnArticleLoading {
     required TResult Function(ShowErrorOnArticleLoading value)
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
+    required TResult Function(RefreshArticles value) refreshArticles,
   }) {
     return showErrorOnArticleLoading(this);
   }
@@ -3047,6 +3118,7 @@ class _$ShowErrorOnArticleLoading implements ShowErrorOnArticleLoading {
     TResult Function(ShowErrorOnArticleLoading value)?
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
+    TResult Function(RefreshArticles value)? refreshArticles,
     required TResult orElse(),
   }) {
     if (showErrorOnArticleLoading != null) {
@@ -3164,6 +3236,7 @@ class _$LoadNextArticlePage implements LoadNextArticlePage {
     required TResult Function(List<Article> articles) showAllArticlesLoaded,
     required TResult Function(String message) showErrorOnArticleLoading,
     required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
+    required TResult Function() refreshArticles,
   }) {
     return loadNextArticlePage(prevPage, pageSize);
   }
@@ -3191,6 +3264,7 @@ class _$LoadNextArticlePage implements LoadNextArticlePage {
     TResult Function(List<Article> articles)? showAllArticlesLoaded,
     TResult Function(String message)? showErrorOnArticleLoading,
     TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
+    TResult Function()? refreshArticles,
     required TResult orElse(),
   }) {
     if (loadNextArticlePage != null) {
@@ -3222,6 +3296,7 @@ class _$LoadNextArticlePage implements LoadNextArticlePage {
     required TResult Function(ShowErrorOnArticleLoading value)
         showErrorOnArticleLoading,
     required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
+    required TResult Function(RefreshArticles value) refreshArticles,
   }) {
     return loadNextArticlePage(this);
   }
@@ -3247,6 +3322,7 @@ class _$LoadNextArticlePage implements LoadNextArticlePage {
     TResult Function(ShowErrorOnArticleLoading value)?
         showErrorOnArticleLoading,
     TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
+    TResult Function(RefreshArticles value)? refreshArticles,
     required TResult orElse(),
   }) {
     if (loadNextArticlePage != null) {
@@ -3265,4 +3341,163 @@ abstract class LoadNextArticlePage implements AppAction {
   @JsonKey(ignore: true)
   $LoadNextArticlePageCopyWith<LoadNextArticlePage> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $RefreshArticlesCopyWith<$Res> {
+  factory $RefreshArticlesCopyWith(
+          RefreshArticles value, $Res Function(RefreshArticles) then) =
+      _$RefreshArticlesCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$RefreshArticlesCopyWithImpl<$Res> extends _$AppActionCopyWithImpl<$Res>
+    implements $RefreshArticlesCopyWith<$Res> {
+  _$RefreshArticlesCopyWithImpl(
+      RefreshArticles _value, $Res Function(RefreshArticles) _then)
+      : super(_value, (v) => _then(v as RefreshArticles));
+
+  @override
+  RefreshArticles get _value => super._value as RefreshArticles;
+}
+
+/// @nodoc
+
+class _$RefreshArticles implements RefreshArticles {
+  const _$RefreshArticles();
+
+  @override
+  String toString() {
+    return 'AppAction.refreshArticles()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is RefreshArticles);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initAction,
+    required TResult Function() appLoaded,
+    required TResult Function() removePreviousPages,
+    required TResult Function() showSignIn,
+    required TResult Function() showSignUp,
+    required TResult Function() notNow,
+    required TResult Function(User user) authenticate,
+    required TResult Function(String login, String password) loginSubmit,
+    required TResult Function(String login, String email, String password,
+            String repeatedPassword)
+        registrationSubmit,
+    required TResult Function(bool loading) setLoadingOnAuthScreen,
+    required TResult Function(String? error) setErrorOnAuthScreen,
+    required TResult Function() initLoadingArticles,
+    required TResult Function() showArticlesLoading,
+    required TResult Function(List<Article> articles, int page, int pageSize)
+        showArticlesLoaded,
+    required TResult Function(List<Article> articles) showAllArticlesLoaded,
+    required TResult Function(String message) showErrorOnArticleLoading,
+    required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
+    required TResult Function() refreshArticles,
+  }) {
+    return refreshArticles();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initAction,
+    TResult Function()? appLoaded,
+    TResult Function()? removePreviousPages,
+    TResult Function()? showSignIn,
+    TResult Function()? showSignUp,
+    TResult Function()? notNow,
+    TResult Function(User user)? authenticate,
+    TResult Function(String login, String password)? loginSubmit,
+    TResult Function(String login, String email, String password,
+            String repeatedPassword)?
+        registrationSubmit,
+    TResult Function(bool loading)? setLoadingOnAuthScreen,
+    TResult Function(String? error)? setErrorOnAuthScreen,
+    TResult Function()? initLoadingArticles,
+    TResult Function()? showArticlesLoading,
+    TResult Function(List<Article> articles, int page, int pageSize)?
+        showArticlesLoaded,
+    TResult Function(List<Article> articles)? showAllArticlesLoaded,
+    TResult Function(String message)? showErrorOnArticleLoading,
+    TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
+    TResult Function()? refreshArticles,
+    required TResult orElse(),
+  }) {
+    if (refreshArticles != null) {
+      return refreshArticles();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitAction value) initAction,
+    required TResult Function(AppLoaded value) appLoaded,
+    required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ShowSignIn value) showSignIn,
+    required TResult Function(ShowSignUp value) showSignUp,
+    required TResult Function(NotNow value) notNow,
+    required TResult Function(Authenticate value) authenticate,
+    required TResult Function(SubmitLogin value) loginSubmit,
+    required TResult Function(RegistrationLogin value) registrationSubmit,
+    required TResult Function(SetLoadingOnAuthScreen value)
+        setLoadingOnAuthScreen,
+    required TResult Function(SetErrorOnAuthScreen value) setErrorOnAuthScreen,
+    required TResult Function(InitLoadingArticles value) initLoadingArticles,
+    required TResult Function(ShowArticlesLoading value) showArticlesLoading,
+    required TResult Function(ShowArticlesLoaded value) showArticlesLoaded,
+    required TResult Function(ShowAllArticlesLoaded value)
+        showAllArticlesLoaded,
+    required TResult Function(ShowErrorOnArticleLoading value)
+        showErrorOnArticleLoading,
+    required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
+    required TResult Function(RefreshArticles value) refreshArticles,
+  }) {
+    return refreshArticles(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitAction value)? initAction,
+    TResult Function(AppLoaded value)? appLoaded,
+    TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ShowSignIn value)? showSignIn,
+    TResult Function(ShowSignUp value)? showSignUp,
+    TResult Function(NotNow value)? notNow,
+    TResult Function(Authenticate value)? authenticate,
+    TResult Function(SubmitLogin value)? loginSubmit,
+    TResult Function(RegistrationLogin value)? registrationSubmit,
+    TResult Function(SetLoadingOnAuthScreen value)? setLoadingOnAuthScreen,
+    TResult Function(SetErrorOnAuthScreen value)? setErrorOnAuthScreen,
+    TResult Function(InitLoadingArticles value)? initLoadingArticles,
+    TResult Function(ShowArticlesLoading value)? showArticlesLoading,
+    TResult Function(ShowArticlesLoaded value)? showArticlesLoaded,
+    TResult Function(ShowAllArticlesLoaded value)? showAllArticlesLoaded,
+    TResult Function(ShowErrorOnArticleLoading value)?
+        showErrorOnArticleLoading,
+    TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
+    TResult Function(RefreshArticles value)? refreshArticles,
+    required TResult orElse(),
+  }) {
+    if (refreshArticles != null) {
+      return refreshArticles(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RefreshArticles implements AppAction {
+  const factory RefreshArticles() = _$RefreshArticles;
 }

@@ -15,9 +15,18 @@ class LoadedArticleList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      physics: const AlwaysScrollableScrollPhysics(),
       children: [
         ...articles.map((e) => ArticleWidget(article: e)).toList(),
-        const CircularProgressIndicator(),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            Padding(
+              padding: EdgeInsets.all(20.0),
+              child: CircularProgressIndicator(),
+            ),
+          ],
+        ),
       ],
     );
   }

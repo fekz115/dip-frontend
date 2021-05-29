@@ -189,5 +189,48 @@ List<Middleware<AppState, AppAction, AppEvent>> createMiddleware(
                 ),
               );
             }
+          },
+          refreshArticles: (action) async {
+            state.articlesState.map(
+              emptyState: (state) => actionDispatcher(
+                const AppAction.initLoadingArticles(),
+              ),
+              loadingState: (state) => actionDispatcher(
+                const AppAction.initLoadingArticles(),
+              ),
+              errorState: (state) => actionDispatcher(
+                const AppAction.initLoadingArticles(),
+              ),
+              loadedState: (state) async {
+                final page = await apiClient.getArticles(
+                  state.pageSize * state.page,
+                  0,
+                );
+                final articles =
+                    page.getContent((json) => Article.fromJson(json));
+                actionDispatcher(
+                  AppAction.showArticlesLoaded(
+                    articles: articles,
+                    page: state.page,
+                    pageSize: state.pageSize,
+                  ),
+                );
+              },
+              loadedAllState: (state) async {
+                final page = await apiClient.getArticles(
+                  state.articles.length,
+                  0,
+                );
+                final articles =
+                    page.getContent((json) => Article.fromJson(json));
+                actionDispatcher(
+                  AppAction.showArticlesLoaded(
+                    articles: articles,
+                    page: state.articles.length,
+                    pageSize: 10,
+                  ),
+                );
+              },
+            );
           }),
     ];

@@ -50,4 +50,5 @@ class AppAction with _$AppAction {
     required int prevPage,
     required int pageSize,
   }) = LoadNextArticlePage;
+  const factory AppAction.refreshArticles() = RefreshArticles;
 }
