@@ -15,7 +15,7 @@ abstract class RecursiveResponseUpdateInterceptor extends Interceptor {
       for (final entry in data.entries) {
         _rec(entry.value);
       }
-    } else if(data is List<Map<String, dynamic>>) {
+    } else if(data is List) {
       for (final entry in data) {
         _rec(entry);
       }

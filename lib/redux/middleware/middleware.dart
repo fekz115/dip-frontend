@@ -1,5 +1,6 @@
 import 'package:dip_frontend/api/api_client.dart';
 import 'package:dip_frontend/api/api_exception.dart';
+import 'package:dip_frontend/model/article.dart';
 import 'package:dip_frontend/redux/action/app_action.dart';
 import 'package:dip_frontend/redux/state/app_state.dart';
 import 'package:dip_frontend/redux/event/app_event.dart';
@@ -107,5 +108,86 @@ List<Middleware<AppState, AppAction, AppEvent, AppAction>> createMiddleware(
             actionDispatcher(
               const AppAction.removePreviousPages(),
             );
+            actionDispatcher(
+              const AppAction.initLoadingArticles(),
+            );
+          },
+          initLoadingArticles: (action) async {
+            actionDispatcher(
+              const AppAction.showArticlesLoading(),
+            );
+            try {
+              final page = await apiClient.getArticles(10, 0);
+              final articles =
+                  page.getContent((json) => Article.fromJson(json));
+              if (!page.last) {
+                actionDispatcher(
+                  AppAction.showArticlesLoaded(
+                    articles: articles,
+                    page: 0,
+                    pageSize: 10,
+                  ),
+                );
+              } else {
+                actionDispatcher(
+                  AppAction.showAllArticlesLoaded(
+                    articles: articles,
+                  ),
+                );
+              }
+            } on ApiException catch (e) {
+              actionDispatcher(
+                AppAction.showErrorOnArticleLoading(message: e.errorType),
+              );
+            }
+          },
+          loadNextArticlePage: (action) async {
+            final nextPage = action.prevPage + 1;
+            try {
+              final page = await apiClient.getArticles(
+                action.pageSize,
+                nextPage,
+              );
+              final articles =
+                  page.getContent((json) => Article.fromJson(json));
+              if (!page.last) {
+                actionDispatcher(
+                  AppAction.showArticlesLoaded(
+                    articles: articles,
+                    page: nextPage,
+                    pageSize: action.pageSize,
+                  ),
+                );
+              } else {
+                actionDispatcher(
+                  AppAction.showAllArticlesLoaded(articles: articles),
+                );
+              }
+            } on ApiException catch (e) {
+              eventDispatcher(
+                  AppEvent.snackbarNotificationEvent(message: e.errorType));
+              state.articlesState.map(
+                emptyState: (state) => actionDispatcher(
+                  AppAction.showErrorOnArticleLoading(message: e.errorType),
+                ),
+                loadingState: (state) => actionDispatcher(
+                  AppAction.showErrorOnArticleLoading(message: e.errorType),
+                ),
+                errorState: (state) => actionDispatcher(
+                  AppAction.showErrorOnArticleLoading(message: e.errorType),
+                ),
+                loadedState: (state) {
+                  eventDispatcher(
+                    AppEvent.snackbarNotificationEvent(message: e.errorType),
+                  );
+                  actionDispatcher(
+                    AppAction.showAllArticlesLoaded(articles: state.articles),
+                  );
+                },
+                loadedAllState: (state) => eventDispatcher(
+                  AppEvent.snackbarNotificationEvent(message: e.errorType),
+                ),
+              );
+            }
           }),
     ];

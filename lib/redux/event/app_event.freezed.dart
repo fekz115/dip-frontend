@@ -16,8 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$AppEventTearOff {
   const _$AppEventTearOff();
 
-  SnackbarNoficationEvent snackbarNotificationEvent() {
-    return const SnackbarNoficationEvent();
+  SnackbarNoficationEvent snackbarNotificationEvent({required String message}) {
+    return SnackbarNoficationEvent(
+      message: message,
+    );
   }
 }
 
@@ -26,14 +28,16 @@ const $AppEvent = _$AppEventTearOff();
 
 /// @nodoc
 mixin _$AppEvent {
+  String get message => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() snackbarNotificationEvent,
+    required TResult Function(String message) snackbarNotificationEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? snackbarNotificationEvent,
+    TResult Function(String message)? snackbarNotificationEvent,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -49,12 +53,17 @@ mixin _$AppEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $AppEventCopyWith<AppEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AppEventCopyWith<$Res> {
   factory $AppEventCopyWith(AppEvent value, $Res Function(AppEvent) then) =
       _$AppEventCopyWithImpl<$Res>;
+  $Res call({String message});
 }
 
 /// @nodoc
@@ -64,13 +73,28 @@ class _$AppEventCopyWithImpl<$Res> implements $AppEventCopyWith<$Res> {
   final AppEvent _value;
   // ignore: unused_field
   final $Res Function(AppEvent) _then;
+
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(_value.copyWith(
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
-abstract class $SnackbarNoficationEventCopyWith<$Res> {
+abstract class $SnackbarNoficationEventCopyWith<$Res>
+    implements $AppEventCopyWith<$Res> {
   factory $SnackbarNoficationEventCopyWith(SnackbarNoficationEvent value,
           $Res Function(SnackbarNoficationEvent) then) =
       _$SnackbarNoficationEventCopyWithImpl<$Res>;
+  @override
+  $Res call({String message});
 }
 
 /// @nodoc
@@ -83,42 +107,67 @@ class _$SnackbarNoficationEventCopyWithImpl<$Res>
 
   @override
   SnackbarNoficationEvent get _value => super._value as SnackbarNoficationEvent;
+
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(SnackbarNoficationEvent(
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$SnackbarNoficationEvent implements SnackbarNoficationEvent {
-  const _$SnackbarNoficationEvent();
+  const _$SnackbarNoficationEvent({required this.message});
+
+  @override
+  final String message;
 
   @override
   String toString() {
-    return 'AppEvent.snackbarNotificationEvent()';
+    return 'AppEvent.snackbarNotificationEvent(message: $message)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SnackbarNoficationEvent);
+    return identical(this, other) ||
+        (other is SnackbarNoficationEvent &&
+            (identical(other.message, message) ||
+                const DeepCollectionEquality().equals(other.message, message)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(message);
+
+  @JsonKey(ignore: true)
+  @override
+  $SnackbarNoficationEventCopyWith<SnackbarNoficationEvent> get copyWith =>
+      _$SnackbarNoficationEventCopyWithImpl<SnackbarNoficationEvent>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() snackbarNotificationEvent,
+    required TResult Function(String message) snackbarNotificationEvent,
   }) {
-    return snackbarNotificationEvent();
+    return snackbarNotificationEvent(message);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? snackbarNotificationEvent,
+    TResult Function(String message)? snackbarNotificationEvent,
     required TResult orElse(),
   }) {
     if (snackbarNotificationEvent != null) {
-      return snackbarNotificationEvent();
+      return snackbarNotificationEvent(message);
     }
     return orElse();
   }
@@ -146,5 +195,13 @@ class _$SnackbarNoficationEvent implements SnackbarNoficationEvent {
 }
 
 abstract class SnackbarNoficationEvent implements AppEvent {
-  const factory SnackbarNoficationEvent() = _$SnackbarNoficationEvent;
+  const factory SnackbarNoficationEvent({required String message}) =
+      _$SnackbarNoficationEvent;
+
+  @override
+  String get message => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  $SnackbarNoficationEventCopyWith<SnackbarNoficationEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }

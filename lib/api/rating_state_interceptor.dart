@@ -6,6 +6,6 @@ class RatingStateInterceptor extends RecursiveResponseUpdateInterceptor {
     final ratingState = data['ratingState'] as String?;
     if(ratingState != null) {
       data['ratingState'] = ratingState.toLowerCase();
-    }
+    } 
   }
 }

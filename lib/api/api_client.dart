@@ -97,6 +97,6 @@ class ApiClient {
           'pageSize': pageSize,
         },
       ),
-    ).then((value) => value.data!).then((value) => Page.fromJson(value));
+    ).then((value) => value.data!).then((value) => Page.fromJson(value['page'] as Map<String, dynamic>));
   }
 }

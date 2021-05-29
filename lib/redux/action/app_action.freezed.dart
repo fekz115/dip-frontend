@@ -77,6 +77,47 @@ class _$AppActionTearOff {
       error: error,
     );
   }
+
+  InitLoadingArticles initLoadingArticles() {
+    return const InitLoadingArticles();
+  }
+
+  ShowArticlesLoading showArticlesLoading() {
+    return const ShowArticlesLoading();
+  }
+
+  ShowArticlesLoaded showArticlesLoaded(
+      {required List<Article> articles,
+      required int page,
+      required int pageSize}) {
+    return ShowArticlesLoaded(
+      articles: articles,
+      page: page,
+      pageSize: pageSize,
+    );
+  }
+
+  ShowAllArticlesLoaded showAllArticlesLoaded(
+      {required List<Article> articles}) {
+    return ShowAllArticlesLoaded(
+      articles: articles,
+    );
+  }
+
+  ShowErrorOnArticleLoading showErrorOnArticleLoading(
+      {required String message}) {
+    return ShowErrorOnArticleLoading(
+      message: message,
+    );
+  }
+
+  LoadNextArticlePage loadNextArticlePage(
+      {required int prevPage, required int pageSize}) {
+    return LoadNextArticlePage(
+      prevPage: prevPage,
+      pageSize: pageSize,
+    );
+  }
 }
 
 /// @nodoc
@@ -99,6 +140,13 @@ mixin _$AppAction {
         registrationSubmit,
     required TResult Function(bool loading) setLoadingOnAuthScreen,
     required TResult Function(String? error) setErrorOnAuthScreen,
+    required TResult Function() initLoadingArticles,
+    required TResult Function() showArticlesLoading,
+    required TResult Function(List<Article> articles, int page, int pageSize)
+        showArticlesLoaded,
+    required TResult Function(List<Article> articles) showAllArticlesLoaded,
+    required TResult Function(String message) showErrorOnArticleLoading,
+    required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -116,6 +164,13 @@ mixin _$AppAction {
         registrationSubmit,
     TResult Function(bool loading)? setLoadingOnAuthScreen,
     TResult Function(String? error)? setErrorOnAuthScreen,
+    TResult Function()? initLoadingArticles,
+    TResult Function()? showArticlesLoading,
+    TResult Function(List<Article> articles, int page, int pageSize)?
+        showArticlesLoaded,
+    TResult Function(List<Article> articles)? showAllArticlesLoaded,
+    TResult Function(String message)? showErrorOnArticleLoading,
+    TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -133,6 +188,14 @@ mixin _$AppAction {
     required TResult Function(SetLoadingOnAuthScreen value)
         setLoadingOnAuthScreen,
     required TResult Function(SetErrorOnAuthScreen value) setErrorOnAuthScreen,
+    required TResult Function(InitLoadingArticles value) initLoadingArticles,
+    required TResult Function(ShowArticlesLoading value) showArticlesLoading,
+    required TResult Function(ShowArticlesLoaded value) showArticlesLoaded,
+    required TResult Function(ShowAllArticlesLoaded value)
+        showAllArticlesLoaded,
+    required TResult Function(ShowErrorOnArticleLoading value)
+        showErrorOnArticleLoading,
+    required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -148,6 +211,13 @@ mixin _$AppAction {
     TResult Function(RegistrationLogin value)? registrationSubmit,
     TResult Function(SetLoadingOnAuthScreen value)? setLoadingOnAuthScreen,
     TResult Function(SetErrorOnAuthScreen value)? setErrorOnAuthScreen,
+    TResult Function(InitLoadingArticles value)? initLoadingArticles,
+    TResult Function(ShowArticlesLoading value)? showArticlesLoading,
+    TResult Function(ShowArticlesLoaded value)? showArticlesLoaded,
+    TResult Function(ShowAllArticlesLoaded value)? showAllArticlesLoaded,
+    TResult Function(ShowErrorOnArticleLoading value)?
+        showErrorOnArticleLoading,
+    TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -219,6 +289,13 @@ class _$InitAction implements InitAction {
         registrationSubmit,
     required TResult Function(bool loading) setLoadingOnAuthScreen,
     required TResult Function(String? error) setErrorOnAuthScreen,
+    required TResult Function() initLoadingArticles,
+    required TResult Function() showArticlesLoading,
+    required TResult Function(List<Article> articles, int page, int pageSize)
+        showArticlesLoaded,
+    required TResult Function(List<Article> articles) showAllArticlesLoaded,
+    required TResult Function(String message) showErrorOnArticleLoading,
+    required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
   }) {
     return initAction();
   }
@@ -239,6 +316,13 @@ class _$InitAction implements InitAction {
         registrationSubmit,
     TResult Function(bool loading)? setLoadingOnAuthScreen,
     TResult Function(String? error)? setErrorOnAuthScreen,
+    TResult Function()? initLoadingArticles,
+    TResult Function()? showArticlesLoading,
+    TResult Function(List<Article> articles, int page, int pageSize)?
+        showArticlesLoaded,
+    TResult Function(List<Article> articles)? showAllArticlesLoaded,
+    TResult Function(String message)? showErrorOnArticleLoading,
+    TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     required TResult orElse(),
   }) {
     if (initAction != null) {
@@ -262,6 +346,14 @@ class _$InitAction implements InitAction {
     required TResult Function(SetLoadingOnAuthScreen value)
         setLoadingOnAuthScreen,
     required TResult Function(SetErrorOnAuthScreen value) setErrorOnAuthScreen,
+    required TResult Function(InitLoadingArticles value) initLoadingArticles,
+    required TResult Function(ShowArticlesLoading value) showArticlesLoading,
+    required TResult Function(ShowArticlesLoaded value) showArticlesLoaded,
+    required TResult Function(ShowAllArticlesLoaded value)
+        showAllArticlesLoaded,
+    required TResult Function(ShowErrorOnArticleLoading value)
+        showErrorOnArticleLoading,
+    required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
   }) {
     return initAction(this);
   }
@@ -280,6 +372,13 @@ class _$InitAction implements InitAction {
     TResult Function(RegistrationLogin value)? registrationSubmit,
     TResult Function(SetLoadingOnAuthScreen value)? setLoadingOnAuthScreen,
     TResult Function(SetErrorOnAuthScreen value)? setErrorOnAuthScreen,
+    TResult Function(InitLoadingArticles value)? initLoadingArticles,
+    TResult Function(ShowArticlesLoading value)? showArticlesLoading,
+    TResult Function(ShowArticlesLoaded value)? showArticlesLoaded,
+    TResult Function(ShowAllArticlesLoaded value)? showAllArticlesLoaded,
+    TResult Function(ShowErrorOnArticleLoading value)?
+        showErrorOnArticleLoading,
+    TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     required TResult orElse(),
   }) {
     if (initAction != null) {
@@ -343,6 +442,13 @@ class _$AppLoaded implements AppLoaded {
         registrationSubmit,
     required TResult Function(bool loading) setLoadingOnAuthScreen,
     required TResult Function(String? error) setErrorOnAuthScreen,
+    required TResult Function() initLoadingArticles,
+    required TResult Function() showArticlesLoading,
+    required TResult Function(List<Article> articles, int page, int pageSize)
+        showArticlesLoaded,
+    required TResult Function(List<Article> articles) showAllArticlesLoaded,
+    required TResult Function(String message) showErrorOnArticleLoading,
+    required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
   }) {
     return appLoaded();
   }
@@ -363,6 +469,13 @@ class _$AppLoaded implements AppLoaded {
         registrationSubmit,
     TResult Function(bool loading)? setLoadingOnAuthScreen,
     TResult Function(String? error)? setErrorOnAuthScreen,
+    TResult Function()? initLoadingArticles,
+    TResult Function()? showArticlesLoading,
+    TResult Function(List<Article> articles, int page, int pageSize)?
+        showArticlesLoaded,
+    TResult Function(List<Article> articles)? showAllArticlesLoaded,
+    TResult Function(String message)? showErrorOnArticleLoading,
+    TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     required TResult orElse(),
   }) {
     if (appLoaded != null) {
@@ -386,6 +499,14 @@ class _$AppLoaded implements AppLoaded {
     required TResult Function(SetLoadingOnAuthScreen value)
         setLoadingOnAuthScreen,
     required TResult Function(SetErrorOnAuthScreen value) setErrorOnAuthScreen,
+    required TResult Function(InitLoadingArticles value) initLoadingArticles,
+    required TResult Function(ShowArticlesLoading value) showArticlesLoading,
+    required TResult Function(ShowArticlesLoaded value) showArticlesLoaded,
+    required TResult Function(ShowAllArticlesLoaded value)
+        showAllArticlesLoaded,
+    required TResult Function(ShowErrorOnArticleLoading value)
+        showErrorOnArticleLoading,
+    required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
   }) {
     return appLoaded(this);
   }
@@ -404,6 +525,13 @@ class _$AppLoaded implements AppLoaded {
     TResult Function(RegistrationLogin value)? registrationSubmit,
     TResult Function(SetLoadingOnAuthScreen value)? setLoadingOnAuthScreen,
     TResult Function(SetErrorOnAuthScreen value)? setErrorOnAuthScreen,
+    TResult Function(InitLoadingArticles value)? initLoadingArticles,
+    TResult Function(ShowArticlesLoading value)? showArticlesLoading,
+    TResult Function(ShowArticlesLoaded value)? showArticlesLoaded,
+    TResult Function(ShowAllArticlesLoaded value)? showAllArticlesLoaded,
+    TResult Function(ShowErrorOnArticleLoading value)?
+        showErrorOnArticleLoading,
+    TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     required TResult orElse(),
   }) {
     if (appLoaded != null) {
@@ -470,6 +598,13 @@ class _$RemovePreviousPages implements RemovePreviousPages {
         registrationSubmit,
     required TResult Function(bool loading) setLoadingOnAuthScreen,
     required TResult Function(String? error) setErrorOnAuthScreen,
+    required TResult Function() initLoadingArticles,
+    required TResult Function() showArticlesLoading,
+    required TResult Function(List<Article> articles, int page, int pageSize)
+        showArticlesLoaded,
+    required TResult Function(List<Article> articles) showAllArticlesLoaded,
+    required TResult Function(String message) showErrorOnArticleLoading,
+    required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
   }) {
     return removePreviousPages();
   }
@@ -490,6 +625,13 @@ class _$RemovePreviousPages implements RemovePreviousPages {
         registrationSubmit,
     TResult Function(bool loading)? setLoadingOnAuthScreen,
     TResult Function(String? error)? setErrorOnAuthScreen,
+    TResult Function()? initLoadingArticles,
+    TResult Function()? showArticlesLoading,
+    TResult Function(List<Article> articles, int page, int pageSize)?
+        showArticlesLoaded,
+    TResult Function(List<Article> articles)? showAllArticlesLoaded,
+    TResult Function(String message)? showErrorOnArticleLoading,
+    TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     required TResult orElse(),
   }) {
     if (removePreviousPages != null) {
@@ -513,6 +655,14 @@ class _$RemovePreviousPages implements RemovePreviousPages {
     required TResult Function(SetLoadingOnAuthScreen value)
         setLoadingOnAuthScreen,
     required TResult Function(SetErrorOnAuthScreen value) setErrorOnAuthScreen,
+    required TResult Function(InitLoadingArticles value) initLoadingArticles,
+    required TResult Function(ShowArticlesLoading value) showArticlesLoading,
+    required TResult Function(ShowArticlesLoaded value) showArticlesLoaded,
+    required TResult Function(ShowAllArticlesLoaded value)
+        showAllArticlesLoaded,
+    required TResult Function(ShowErrorOnArticleLoading value)
+        showErrorOnArticleLoading,
+    required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
   }) {
     return removePreviousPages(this);
   }
@@ -531,6 +681,13 @@ class _$RemovePreviousPages implements RemovePreviousPages {
     TResult Function(RegistrationLogin value)? registrationSubmit,
     TResult Function(SetLoadingOnAuthScreen value)? setLoadingOnAuthScreen,
     TResult Function(SetErrorOnAuthScreen value)? setErrorOnAuthScreen,
+    TResult Function(InitLoadingArticles value)? initLoadingArticles,
+    TResult Function(ShowArticlesLoading value)? showArticlesLoading,
+    TResult Function(ShowArticlesLoaded value)? showArticlesLoaded,
+    TResult Function(ShowAllArticlesLoaded value)? showAllArticlesLoaded,
+    TResult Function(ShowErrorOnArticleLoading value)?
+        showErrorOnArticleLoading,
+    TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     required TResult orElse(),
   }) {
     if (removePreviousPages != null) {
@@ -595,6 +752,13 @@ class _$ShowSignIn implements ShowSignIn {
         registrationSubmit,
     required TResult Function(bool loading) setLoadingOnAuthScreen,
     required TResult Function(String? error) setErrorOnAuthScreen,
+    required TResult Function() initLoadingArticles,
+    required TResult Function() showArticlesLoading,
+    required TResult Function(List<Article> articles, int page, int pageSize)
+        showArticlesLoaded,
+    required TResult Function(List<Article> articles) showAllArticlesLoaded,
+    required TResult Function(String message) showErrorOnArticleLoading,
+    required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
   }) {
     return showSignIn();
   }
@@ -615,6 +779,13 @@ class _$ShowSignIn implements ShowSignIn {
         registrationSubmit,
     TResult Function(bool loading)? setLoadingOnAuthScreen,
     TResult Function(String? error)? setErrorOnAuthScreen,
+    TResult Function()? initLoadingArticles,
+    TResult Function()? showArticlesLoading,
+    TResult Function(List<Article> articles, int page, int pageSize)?
+        showArticlesLoaded,
+    TResult Function(List<Article> articles)? showAllArticlesLoaded,
+    TResult Function(String message)? showErrorOnArticleLoading,
+    TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     required TResult orElse(),
   }) {
     if (showSignIn != null) {
@@ -638,6 +809,14 @@ class _$ShowSignIn implements ShowSignIn {
     required TResult Function(SetLoadingOnAuthScreen value)
         setLoadingOnAuthScreen,
     required TResult Function(SetErrorOnAuthScreen value) setErrorOnAuthScreen,
+    required TResult Function(InitLoadingArticles value) initLoadingArticles,
+    required TResult Function(ShowArticlesLoading value) showArticlesLoading,
+    required TResult Function(ShowArticlesLoaded value) showArticlesLoaded,
+    required TResult Function(ShowAllArticlesLoaded value)
+        showAllArticlesLoaded,
+    required TResult Function(ShowErrorOnArticleLoading value)
+        showErrorOnArticleLoading,
+    required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
   }) {
     return showSignIn(this);
   }
@@ -656,6 +835,13 @@ class _$ShowSignIn implements ShowSignIn {
     TResult Function(RegistrationLogin value)? registrationSubmit,
     TResult Function(SetLoadingOnAuthScreen value)? setLoadingOnAuthScreen,
     TResult Function(SetErrorOnAuthScreen value)? setErrorOnAuthScreen,
+    TResult Function(InitLoadingArticles value)? initLoadingArticles,
+    TResult Function(ShowArticlesLoading value)? showArticlesLoading,
+    TResult Function(ShowArticlesLoaded value)? showArticlesLoaded,
+    TResult Function(ShowAllArticlesLoaded value)? showAllArticlesLoaded,
+    TResult Function(ShowErrorOnArticleLoading value)?
+        showErrorOnArticleLoading,
+    TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     required TResult orElse(),
   }) {
     if (showSignIn != null) {
@@ -720,6 +906,13 @@ class _$ShowSignUp implements ShowSignUp {
         registrationSubmit,
     required TResult Function(bool loading) setLoadingOnAuthScreen,
     required TResult Function(String? error) setErrorOnAuthScreen,
+    required TResult Function() initLoadingArticles,
+    required TResult Function() showArticlesLoading,
+    required TResult Function(List<Article> articles, int page, int pageSize)
+        showArticlesLoaded,
+    required TResult Function(List<Article> articles) showAllArticlesLoaded,
+    required TResult Function(String message) showErrorOnArticleLoading,
+    required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
   }) {
     return showSignUp();
   }
@@ -740,6 +933,13 @@ class _$ShowSignUp implements ShowSignUp {
         registrationSubmit,
     TResult Function(bool loading)? setLoadingOnAuthScreen,
     TResult Function(String? error)? setErrorOnAuthScreen,
+    TResult Function()? initLoadingArticles,
+    TResult Function()? showArticlesLoading,
+    TResult Function(List<Article> articles, int page, int pageSize)?
+        showArticlesLoaded,
+    TResult Function(List<Article> articles)? showAllArticlesLoaded,
+    TResult Function(String message)? showErrorOnArticleLoading,
+    TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     required TResult orElse(),
   }) {
     if (showSignUp != null) {
@@ -763,6 +963,14 @@ class _$ShowSignUp implements ShowSignUp {
     required TResult Function(SetLoadingOnAuthScreen value)
         setLoadingOnAuthScreen,
     required TResult Function(SetErrorOnAuthScreen value) setErrorOnAuthScreen,
+    required TResult Function(InitLoadingArticles value) initLoadingArticles,
+    required TResult Function(ShowArticlesLoading value) showArticlesLoading,
+    required TResult Function(ShowArticlesLoaded value) showArticlesLoaded,
+    required TResult Function(ShowAllArticlesLoaded value)
+        showAllArticlesLoaded,
+    required TResult Function(ShowErrorOnArticleLoading value)
+        showErrorOnArticleLoading,
+    required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
   }) {
     return showSignUp(this);
   }
@@ -781,6 +989,13 @@ class _$ShowSignUp implements ShowSignUp {
     TResult Function(RegistrationLogin value)? registrationSubmit,
     TResult Function(SetLoadingOnAuthScreen value)? setLoadingOnAuthScreen,
     TResult Function(SetErrorOnAuthScreen value)? setErrorOnAuthScreen,
+    TResult Function(InitLoadingArticles value)? initLoadingArticles,
+    TResult Function(ShowArticlesLoading value)? showArticlesLoading,
+    TResult Function(ShowArticlesLoaded value)? showArticlesLoaded,
+    TResult Function(ShowAllArticlesLoaded value)? showAllArticlesLoaded,
+    TResult Function(ShowErrorOnArticleLoading value)?
+        showErrorOnArticleLoading,
+    TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     required TResult orElse(),
   }) {
     if (showSignUp != null) {
@@ -844,6 +1059,13 @@ class _$NotNow implements NotNow {
         registrationSubmit,
     required TResult Function(bool loading) setLoadingOnAuthScreen,
     required TResult Function(String? error) setErrorOnAuthScreen,
+    required TResult Function() initLoadingArticles,
+    required TResult Function() showArticlesLoading,
+    required TResult Function(List<Article> articles, int page, int pageSize)
+        showArticlesLoaded,
+    required TResult Function(List<Article> articles) showAllArticlesLoaded,
+    required TResult Function(String message) showErrorOnArticleLoading,
+    required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
   }) {
     return notNow();
   }
@@ -864,6 +1086,13 @@ class _$NotNow implements NotNow {
         registrationSubmit,
     TResult Function(bool loading)? setLoadingOnAuthScreen,
     TResult Function(String? error)? setErrorOnAuthScreen,
+    TResult Function()? initLoadingArticles,
+    TResult Function()? showArticlesLoading,
+    TResult Function(List<Article> articles, int page, int pageSize)?
+        showArticlesLoaded,
+    TResult Function(List<Article> articles)? showAllArticlesLoaded,
+    TResult Function(String message)? showErrorOnArticleLoading,
+    TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     required TResult orElse(),
   }) {
     if (notNow != null) {
@@ -887,6 +1116,14 @@ class _$NotNow implements NotNow {
     required TResult Function(SetLoadingOnAuthScreen value)
         setLoadingOnAuthScreen,
     required TResult Function(SetErrorOnAuthScreen value) setErrorOnAuthScreen,
+    required TResult Function(InitLoadingArticles value) initLoadingArticles,
+    required TResult Function(ShowArticlesLoading value) showArticlesLoading,
+    required TResult Function(ShowArticlesLoaded value) showArticlesLoaded,
+    required TResult Function(ShowAllArticlesLoaded value)
+        showAllArticlesLoaded,
+    required TResult Function(ShowErrorOnArticleLoading value)
+        showErrorOnArticleLoading,
+    required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
   }) {
     return notNow(this);
   }
@@ -905,6 +1142,13 @@ class _$NotNow implements NotNow {
     TResult Function(RegistrationLogin value)? registrationSubmit,
     TResult Function(SetLoadingOnAuthScreen value)? setLoadingOnAuthScreen,
     TResult Function(SetErrorOnAuthScreen value)? setErrorOnAuthScreen,
+    TResult Function(InitLoadingArticles value)? initLoadingArticles,
+    TResult Function(ShowArticlesLoading value)? showArticlesLoading,
+    TResult Function(ShowArticlesLoaded value)? showArticlesLoaded,
+    TResult Function(ShowAllArticlesLoaded value)? showAllArticlesLoaded,
+    TResult Function(ShowErrorOnArticleLoading value)?
+        showErrorOnArticleLoading,
+    TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     required TResult orElse(),
   }) {
     if (notNow != null) {
@@ -1004,6 +1248,13 @@ class _$Authenticate implements Authenticate {
         registrationSubmit,
     required TResult Function(bool loading) setLoadingOnAuthScreen,
     required TResult Function(String? error) setErrorOnAuthScreen,
+    required TResult Function() initLoadingArticles,
+    required TResult Function() showArticlesLoading,
+    required TResult Function(List<Article> articles, int page, int pageSize)
+        showArticlesLoaded,
+    required TResult Function(List<Article> articles) showAllArticlesLoaded,
+    required TResult Function(String message) showErrorOnArticleLoading,
+    required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
   }) {
     return authenticate(user);
   }
@@ -1024,6 +1275,13 @@ class _$Authenticate implements Authenticate {
         registrationSubmit,
     TResult Function(bool loading)? setLoadingOnAuthScreen,
     TResult Function(String? error)? setErrorOnAuthScreen,
+    TResult Function()? initLoadingArticles,
+    TResult Function()? showArticlesLoading,
+    TResult Function(List<Article> articles, int page, int pageSize)?
+        showArticlesLoaded,
+    TResult Function(List<Article> articles)? showAllArticlesLoaded,
+    TResult Function(String message)? showErrorOnArticleLoading,
+    TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     required TResult orElse(),
   }) {
     if (authenticate != null) {
@@ -1047,6 +1305,14 @@ class _$Authenticate implements Authenticate {
     required TResult Function(SetLoadingOnAuthScreen value)
         setLoadingOnAuthScreen,
     required TResult Function(SetErrorOnAuthScreen value) setErrorOnAuthScreen,
+    required TResult Function(InitLoadingArticles value) initLoadingArticles,
+    required TResult Function(ShowArticlesLoading value) showArticlesLoading,
+    required TResult Function(ShowArticlesLoaded value) showArticlesLoaded,
+    required TResult Function(ShowAllArticlesLoaded value)
+        showAllArticlesLoaded,
+    required TResult Function(ShowErrorOnArticleLoading value)
+        showErrorOnArticleLoading,
+    required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
   }) {
     return authenticate(this);
   }
@@ -1065,6 +1331,13 @@ class _$Authenticate implements Authenticate {
     TResult Function(RegistrationLogin value)? registrationSubmit,
     TResult Function(SetLoadingOnAuthScreen value)? setLoadingOnAuthScreen,
     TResult Function(SetErrorOnAuthScreen value)? setErrorOnAuthScreen,
+    TResult Function(InitLoadingArticles value)? initLoadingArticles,
+    TResult Function(ShowArticlesLoading value)? showArticlesLoading,
+    TResult Function(ShowArticlesLoaded value)? showArticlesLoaded,
+    TResult Function(ShowAllArticlesLoaded value)? showAllArticlesLoaded,
+    TResult Function(ShowErrorOnArticleLoading value)?
+        showErrorOnArticleLoading,
+    TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     required TResult orElse(),
   }) {
     if (authenticate != null) {
@@ -1172,6 +1445,13 @@ class _$SubmitLogin implements SubmitLogin {
         registrationSubmit,
     required TResult Function(bool loading) setLoadingOnAuthScreen,
     required TResult Function(String? error) setErrorOnAuthScreen,
+    required TResult Function() initLoadingArticles,
+    required TResult Function() showArticlesLoading,
+    required TResult Function(List<Article> articles, int page, int pageSize)
+        showArticlesLoaded,
+    required TResult Function(List<Article> articles) showAllArticlesLoaded,
+    required TResult Function(String message) showErrorOnArticleLoading,
+    required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
   }) {
     return loginSubmit(login, password);
   }
@@ -1192,6 +1472,13 @@ class _$SubmitLogin implements SubmitLogin {
         registrationSubmit,
     TResult Function(bool loading)? setLoadingOnAuthScreen,
     TResult Function(String? error)? setErrorOnAuthScreen,
+    TResult Function()? initLoadingArticles,
+    TResult Function()? showArticlesLoading,
+    TResult Function(List<Article> articles, int page, int pageSize)?
+        showArticlesLoaded,
+    TResult Function(List<Article> articles)? showAllArticlesLoaded,
+    TResult Function(String message)? showErrorOnArticleLoading,
+    TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     required TResult orElse(),
   }) {
     if (loginSubmit != null) {
@@ -1215,6 +1502,14 @@ class _$SubmitLogin implements SubmitLogin {
     required TResult Function(SetLoadingOnAuthScreen value)
         setLoadingOnAuthScreen,
     required TResult Function(SetErrorOnAuthScreen value) setErrorOnAuthScreen,
+    required TResult Function(InitLoadingArticles value) initLoadingArticles,
+    required TResult Function(ShowArticlesLoading value) showArticlesLoading,
+    required TResult Function(ShowArticlesLoaded value) showArticlesLoaded,
+    required TResult Function(ShowAllArticlesLoaded value)
+        showAllArticlesLoaded,
+    required TResult Function(ShowErrorOnArticleLoading value)
+        showErrorOnArticleLoading,
+    required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
   }) {
     return loginSubmit(this);
   }
@@ -1233,6 +1528,13 @@ class _$SubmitLogin implements SubmitLogin {
     TResult Function(RegistrationLogin value)? registrationSubmit,
     TResult Function(SetLoadingOnAuthScreen value)? setLoadingOnAuthScreen,
     TResult Function(SetErrorOnAuthScreen value)? setErrorOnAuthScreen,
+    TResult Function(InitLoadingArticles value)? initLoadingArticles,
+    TResult Function(ShowArticlesLoading value)? showArticlesLoading,
+    TResult Function(ShowArticlesLoaded value)? showArticlesLoaded,
+    TResult Function(ShowAllArticlesLoaded value)? showAllArticlesLoaded,
+    TResult Function(ShowErrorOnArticleLoading value)?
+        showErrorOnArticleLoading,
+    TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     required TResult orElse(),
   }) {
     if (loginSubmit != null) {
@@ -1369,6 +1671,13 @@ class _$RegistrationLogin implements RegistrationLogin {
         registrationSubmit,
     required TResult Function(bool loading) setLoadingOnAuthScreen,
     required TResult Function(String? error) setErrorOnAuthScreen,
+    required TResult Function() initLoadingArticles,
+    required TResult Function() showArticlesLoading,
+    required TResult Function(List<Article> articles, int page, int pageSize)
+        showArticlesLoaded,
+    required TResult Function(List<Article> articles) showAllArticlesLoaded,
+    required TResult Function(String message) showErrorOnArticleLoading,
+    required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
   }) {
     return registrationSubmit(login, email, password, repeatedPassword);
   }
@@ -1389,6 +1698,13 @@ class _$RegistrationLogin implements RegistrationLogin {
         registrationSubmit,
     TResult Function(bool loading)? setLoadingOnAuthScreen,
     TResult Function(String? error)? setErrorOnAuthScreen,
+    TResult Function()? initLoadingArticles,
+    TResult Function()? showArticlesLoading,
+    TResult Function(List<Article> articles, int page, int pageSize)?
+        showArticlesLoaded,
+    TResult Function(List<Article> articles)? showAllArticlesLoaded,
+    TResult Function(String message)? showErrorOnArticleLoading,
+    TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     required TResult orElse(),
   }) {
     if (registrationSubmit != null) {
@@ -1412,6 +1728,14 @@ class _$RegistrationLogin implements RegistrationLogin {
     required TResult Function(SetLoadingOnAuthScreen value)
         setLoadingOnAuthScreen,
     required TResult Function(SetErrorOnAuthScreen value) setErrorOnAuthScreen,
+    required TResult Function(InitLoadingArticles value) initLoadingArticles,
+    required TResult Function(ShowArticlesLoading value) showArticlesLoading,
+    required TResult Function(ShowArticlesLoaded value) showArticlesLoaded,
+    required TResult Function(ShowAllArticlesLoaded value)
+        showAllArticlesLoaded,
+    required TResult Function(ShowErrorOnArticleLoading value)
+        showErrorOnArticleLoading,
+    required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
   }) {
     return registrationSubmit(this);
   }
@@ -1430,6 +1754,13 @@ class _$RegistrationLogin implements RegistrationLogin {
     TResult Function(RegistrationLogin value)? registrationSubmit,
     TResult Function(SetLoadingOnAuthScreen value)? setLoadingOnAuthScreen,
     TResult Function(SetErrorOnAuthScreen value)? setErrorOnAuthScreen,
+    TResult Function(InitLoadingArticles value)? initLoadingArticles,
+    TResult Function(ShowArticlesLoading value)? showArticlesLoading,
+    TResult Function(ShowArticlesLoaded value)? showArticlesLoaded,
+    TResult Function(ShowAllArticlesLoaded value)? showAllArticlesLoaded,
+    TResult Function(ShowErrorOnArticleLoading value)?
+        showErrorOnArticleLoading,
+    TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     required TResult orElse(),
   }) {
     if (registrationSubmit != null) {
@@ -1534,6 +1865,13 @@ class _$SetLoadingOnAuthScreen implements SetLoadingOnAuthScreen {
         registrationSubmit,
     required TResult Function(bool loading) setLoadingOnAuthScreen,
     required TResult Function(String? error) setErrorOnAuthScreen,
+    required TResult Function() initLoadingArticles,
+    required TResult Function() showArticlesLoading,
+    required TResult Function(List<Article> articles, int page, int pageSize)
+        showArticlesLoaded,
+    required TResult Function(List<Article> articles) showAllArticlesLoaded,
+    required TResult Function(String message) showErrorOnArticleLoading,
+    required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
   }) {
     return setLoadingOnAuthScreen(loading);
   }
@@ -1554,6 +1892,13 @@ class _$SetLoadingOnAuthScreen implements SetLoadingOnAuthScreen {
         registrationSubmit,
     TResult Function(bool loading)? setLoadingOnAuthScreen,
     TResult Function(String? error)? setErrorOnAuthScreen,
+    TResult Function()? initLoadingArticles,
+    TResult Function()? showArticlesLoading,
+    TResult Function(List<Article> articles, int page, int pageSize)?
+        showArticlesLoaded,
+    TResult Function(List<Article> articles)? showAllArticlesLoaded,
+    TResult Function(String message)? showErrorOnArticleLoading,
+    TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     required TResult orElse(),
   }) {
     if (setLoadingOnAuthScreen != null) {
@@ -1577,6 +1922,14 @@ class _$SetLoadingOnAuthScreen implements SetLoadingOnAuthScreen {
     required TResult Function(SetLoadingOnAuthScreen value)
         setLoadingOnAuthScreen,
     required TResult Function(SetErrorOnAuthScreen value) setErrorOnAuthScreen,
+    required TResult Function(InitLoadingArticles value) initLoadingArticles,
+    required TResult Function(ShowArticlesLoading value) showArticlesLoading,
+    required TResult Function(ShowArticlesLoaded value) showArticlesLoaded,
+    required TResult Function(ShowAllArticlesLoaded value)
+        showAllArticlesLoaded,
+    required TResult Function(ShowErrorOnArticleLoading value)
+        showErrorOnArticleLoading,
+    required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
   }) {
     return setLoadingOnAuthScreen(this);
   }
@@ -1595,6 +1948,13 @@ class _$SetLoadingOnAuthScreen implements SetLoadingOnAuthScreen {
     TResult Function(RegistrationLogin value)? registrationSubmit,
     TResult Function(SetLoadingOnAuthScreen value)? setLoadingOnAuthScreen,
     TResult Function(SetErrorOnAuthScreen value)? setErrorOnAuthScreen,
+    TResult Function(InitLoadingArticles value)? initLoadingArticles,
+    TResult Function(ShowArticlesLoading value)? showArticlesLoading,
+    TResult Function(ShowArticlesLoaded value)? showArticlesLoaded,
+    TResult Function(ShowAllArticlesLoaded value)? showAllArticlesLoaded,
+    TResult Function(ShowErrorOnArticleLoading value)?
+        showErrorOnArticleLoading,
+    TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     required TResult orElse(),
   }) {
     if (setLoadingOnAuthScreen != null) {
@@ -1693,6 +2053,13 @@ class _$SetErrorOnAuthScreen implements SetErrorOnAuthScreen {
         registrationSubmit,
     required TResult Function(bool loading) setLoadingOnAuthScreen,
     required TResult Function(String? error) setErrorOnAuthScreen,
+    required TResult Function() initLoadingArticles,
+    required TResult Function() showArticlesLoading,
+    required TResult Function(List<Article> articles, int page, int pageSize)
+        showArticlesLoaded,
+    required TResult Function(List<Article> articles) showAllArticlesLoaded,
+    required TResult Function(String message) showErrorOnArticleLoading,
+    required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
   }) {
     return setErrorOnAuthScreen(error);
   }
@@ -1713,6 +2080,13 @@ class _$SetErrorOnAuthScreen implements SetErrorOnAuthScreen {
         registrationSubmit,
     TResult Function(bool loading)? setLoadingOnAuthScreen,
     TResult Function(String? error)? setErrorOnAuthScreen,
+    TResult Function()? initLoadingArticles,
+    TResult Function()? showArticlesLoading,
+    TResult Function(List<Article> articles, int page, int pageSize)?
+        showArticlesLoaded,
+    TResult Function(List<Article> articles)? showAllArticlesLoaded,
+    TResult Function(String message)? showErrorOnArticleLoading,
+    TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
     required TResult orElse(),
   }) {
     if (setErrorOnAuthScreen != null) {
@@ -1736,6 +2110,14 @@ class _$SetErrorOnAuthScreen implements SetErrorOnAuthScreen {
     required TResult Function(SetLoadingOnAuthScreen value)
         setLoadingOnAuthScreen,
     required TResult Function(SetErrorOnAuthScreen value) setErrorOnAuthScreen,
+    required TResult Function(InitLoadingArticles value) initLoadingArticles,
+    required TResult Function(ShowArticlesLoading value) showArticlesLoading,
+    required TResult Function(ShowArticlesLoaded value) showArticlesLoaded,
+    required TResult Function(ShowAllArticlesLoaded value)
+        showAllArticlesLoaded,
+    required TResult Function(ShowErrorOnArticleLoading value)
+        showErrorOnArticleLoading,
+    required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
   }) {
     return setErrorOnAuthScreen(this);
   }
@@ -1754,6 +2136,13 @@ class _$SetErrorOnAuthScreen implements SetErrorOnAuthScreen {
     TResult Function(RegistrationLogin value)? registrationSubmit,
     TResult Function(SetLoadingOnAuthScreen value)? setLoadingOnAuthScreen,
     TResult Function(SetErrorOnAuthScreen value)? setErrorOnAuthScreen,
+    TResult Function(InitLoadingArticles value)? initLoadingArticles,
+    TResult Function(ShowArticlesLoading value)? showArticlesLoading,
+    TResult Function(ShowArticlesLoaded value)? showArticlesLoaded,
+    TResult Function(ShowAllArticlesLoaded value)? showAllArticlesLoaded,
+    TResult Function(ShowErrorOnArticleLoading value)?
+        showErrorOnArticleLoading,
+    TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
     required TResult orElse(),
   }) {
     if (setErrorOnAuthScreen != null) {
@@ -1769,5 +2158,1111 @@ abstract class SetErrorOnAuthScreen implements AppAction {
   String? get error => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $SetErrorOnAuthScreenCopyWith<SetErrorOnAuthScreen> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $InitLoadingArticlesCopyWith<$Res> {
+  factory $InitLoadingArticlesCopyWith(
+          InitLoadingArticles value, $Res Function(InitLoadingArticles) then) =
+      _$InitLoadingArticlesCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$InitLoadingArticlesCopyWithImpl<$Res>
+    extends _$AppActionCopyWithImpl<$Res>
+    implements $InitLoadingArticlesCopyWith<$Res> {
+  _$InitLoadingArticlesCopyWithImpl(
+      InitLoadingArticles _value, $Res Function(InitLoadingArticles) _then)
+      : super(_value, (v) => _then(v as InitLoadingArticles));
+
+  @override
+  InitLoadingArticles get _value => super._value as InitLoadingArticles;
+}
+
+/// @nodoc
+
+class _$InitLoadingArticles implements InitLoadingArticles {
+  const _$InitLoadingArticles();
+
+  @override
+  String toString() {
+    return 'AppAction.initLoadingArticles()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is InitLoadingArticles);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initAction,
+    required TResult Function() appLoaded,
+    required TResult Function() removePreviousPages,
+    required TResult Function() showSignIn,
+    required TResult Function() showSignUp,
+    required TResult Function() notNow,
+    required TResult Function(User user) authenticate,
+    required TResult Function(String login, String password) loginSubmit,
+    required TResult Function(String login, String email, String password,
+            String repeatedPassword)
+        registrationSubmit,
+    required TResult Function(bool loading) setLoadingOnAuthScreen,
+    required TResult Function(String? error) setErrorOnAuthScreen,
+    required TResult Function() initLoadingArticles,
+    required TResult Function() showArticlesLoading,
+    required TResult Function(List<Article> articles, int page, int pageSize)
+        showArticlesLoaded,
+    required TResult Function(List<Article> articles) showAllArticlesLoaded,
+    required TResult Function(String message) showErrorOnArticleLoading,
+    required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
+  }) {
+    return initLoadingArticles();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initAction,
+    TResult Function()? appLoaded,
+    TResult Function()? removePreviousPages,
+    TResult Function()? showSignIn,
+    TResult Function()? showSignUp,
+    TResult Function()? notNow,
+    TResult Function(User user)? authenticate,
+    TResult Function(String login, String password)? loginSubmit,
+    TResult Function(String login, String email, String password,
+            String repeatedPassword)?
+        registrationSubmit,
+    TResult Function(bool loading)? setLoadingOnAuthScreen,
+    TResult Function(String? error)? setErrorOnAuthScreen,
+    TResult Function()? initLoadingArticles,
+    TResult Function()? showArticlesLoading,
+    TResult Function(List<Article> articles, int page, int pageSize)?
+        showArticlesLoaded,
+    TResult Function(List<Article> articles)? showAllArticlesLoaded,
+    TResult Function(String message)? showErrorOnArticleLoading,
+    TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
+    required TResult orElse(),
+  }) {
+    if (initLoadingArticles != null) {
+      return initLoadingArticles();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitAction value) initAction,
+    required TResult Function(AppLoaded value) appLoaded,
+    required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ShowSignIn value) showSignIn,
+    required TResult Function(ShowSignUp value) showSignUp,
+    required TResult Function(NotNow value) notNow,
+    required TResult Function(Authenticate value) authenticate,
+    required TResult Function(SubmitLogin value) loginSubmit,
+    required TResult Function(RegistrationLogin value) registrationSubmit,
+    required TResult Function(SetLoadingOnAuthScreen value)
+        setLoadingOnAuthScreen,
+    required TResult Function(SetErrorOnAuthScreen value) setErrorOnAuthScreen,
+    required TResult Function(InitLoadingArticles value) initLoadingArticles,
+    required TResult Function(ShowArticlesLoading value) showArticlesLoading,
+    required TResult Function(ShowArticlesLoaded value) showArticlesLoaded,
+    required TResult Function(ShowAllArticlesLoaded value)
+        showAllArticlesLoaded,
+    required TResult Function(ShowErrorOnArticleLoading value)
+        showErrorOnArticleLoading,
+    required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
+  }) {
+    return initLoadingArticles(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitAction value)? initAction,
+    TResult Function(AppLoaded value)? appLoaded,
+    TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ShowSignIn value)? showSignIn,
+    TResult Function(ShowSignUp value)? showSignUp,
+    TResult Function(NotNow value)? notNow,
+    TResult Function(Authenticate value)? authenticate,
+    TResult Function(SubmitLogin value)? loginSubmit,
+    TResult Function(RegistrationLogin value)? registrationSubmit,
+    TResult Function(SetLoadingOnAuthScreen value)? setLoadingOnAuthScreen,
+    TResult Function(SetErrorOnAuthScreen value)? setErrorOnAuthScreen,
+    TResult Function(InitLoadingArticles value)? initLoadingArticles,
+    TResult Function(ShowArticlesLoading value)? showArticlesLoading,
+    TResult Function(ShowArticlesLoaded value)? showArticlesLoaded,
+    TResult Function(ShowAllArticlesLoaded value)? showAllArticlesLoaded,
+    TResult Function(ShowErrorOnArticleLoading value)?
+        showErrorOnArticleLoading,
+    TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
+    required TResult orElse(),
+  }) {
+    if (initLoadingArticles != null) {
+      return initLoadingArticles(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InitLoadingArticles implements AppAction {
+  const factory InitLoadingArticles() = _$InitLoadingArticles;
+}
+
+/// @nodoc
+abstract class $ShowArticlesLoadingCopyWith<$Res> {
+  factory $ShowArticlesLoadingCopyWith(
+          ShowArticlesLoading value, $Res Function(ShowArticlesLoading) then) =
+      _$ShowArticlesLoadingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$ShowArticlesLoadingCopyWithImpl<$Res>
+    extends _$AppActionCopyWithImpl<$Res>
+    implements $ShowArticlesLoadingCopyWith<$Res> {
+  _$ShowArticlesLoadingCopyWithImpl(
+      ShowArticlesLoading _value, $Res Function(ShowArticlesLoading) _then)
+      : super(_value, (v) => _then(v as ShowArticlesLoading));
+
+  @override
+  ShowArticlesLoading get _value => super._value as ShowArticlesLoading;
+}
+
+/// @nodoc
+
+class _$ShowArticlesLoading implements ShowArticlesLoading {
+  const _$ShowArticlesLoading();
+
+  @override
+  String toString() {
+    return 'AppAction.showArticlesLoading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is ShowArticlesLoading);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initAction,
+    required TResult Function() appLoaded,
+    required TResult Function() removePreviousPages,
+    required TResult Function() showSignIn,
+    required TResult Function() showSignUp,
+    required TResult Function() notNow,
+    required TResult Function(User user) authenticate,
+    required TResult Function(String login, String password) loginSubmit,
+    required TResult Function(String login, String email, String password,
+            String repeatedPassword)
+        registrationSubmit,
+    required TResult Function(bool loading) setLoadingOnAuthScreen,
+    required TResult Function(String? error) setErrorOnAuthScreen,
+    required TResult Function() initLoadingArticles,
+    required TResult Function() showArticlesLoading,
+    required TResult Function(List<Article> articles, int page, int pageSize)
+        showArticlesLoaded,
+    required TResult Function(List<Article> articles) showAllArticlesLoaded,
+    required TResult Function(String message) showErrorOnArticleLoading,
+    required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
+  }) {
+    return showArticlesLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initAction,
+    TResult Function()? appLoaded,
+    TResult Function()? removePreviousPages,
+    TResult Function()? showSignIn,
+    TResult Function()? showSignUp,
+    TResult Function()? notNow,
+    TResult Function(User user)? authenticate,
+    TResult Function(String login, String password)? loginSubmit,
+    TResult Function(String login, String email, String password,
+            String repeatedPassword)?
+        registrationSubmit,
+    TResult Function(bool loading)? setLoadingOnAuthScreen,
+    TResult Function(String? error)? setErrorOnAuthScreen,
+    TResult Function()? initLoadingArticles,
+    TResult Function()? showArticlesLoading,
+    TResult Function(List<Article> articles, int page, int pageSize)?
+        showArticlesLoaded,
+    TResult Function(List<Article> articles)? showAllArticlesLoaded,
+    TResult Function(String message)? showErrorOnArticleLoading,
+    TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
+    required TResult orElse(),
+  }) {
+    if (showArticlesLoading != null) {
+      return showArticlesLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitAction value) initAction,
+    required TResult Function(AppLoaded value) appLoaded,
+    required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ShowSignIn value) showSignIn,
+    required TResult Function(ShowSignUp value) showSignUp,
+    required TResult Function(NotNow value) notNow,
+    required TResult Function(Authenticate value) authenticate,
+    required TResult Function(SubmitLogin value) loginSubmit,
+    required TResult Function(RegistrationLogin value) registrationSubmit,
+    required TResult Function(SetLoadingOnAuthScreen value)
+        setLoadingOnAuthScreen,
+    required TResult Function(SetErrorOnAuthScreen value) setErrorOnAuthScreen,
+    required TResult Function(InitLoadingArticles value) initLoadingArticles,
+    required TResult Function(ShowArticlesLoading value) showArticlesLoading,
+    required TResult Function(ShowArticlesLoaded value) showArticlesLoaded,
+    required TResult Function(ShowAllArticlesLoaded value)
+        showAllArticlesLoaded,
+    required TResult Function(ShowErrorOnArticleLoading value)
+        showErrorOnArticleLoading,
+    required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
+  }) {
+    return showArticlesLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitAction value)? initAction,
+    TResult Function(AppLoaded value)? appLoaded,
+    TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ShowSignIn value)? showSignIn,
+    TResult Function(ShowSignUp value)? showSignUp,
+    TResult Function(NotNow value)? notNow,
+    TResult Function(Authenticate value)? authenticate,
+    TResult Function(SubmitLogin value)? loginSubmit,
+    TResult Function(RegistrationLogin value)? registrationSubmit,
+    TResult Function(SetLoadingOnAuthScreen value)? setLoadingOnAuthScreen,
+    TResult Function(SetErrorOnAuthScreen value)? setErrorOnAuthScreen,
+    TResult Function(InitLoadingArticles value)? initLoadingArticles,
+    TResult Function(ShowArticlesLoading value)? showArticlesLoading,
+    TResult Function(ShowArticlesLoaded value)? showArticlesLoaded,
+    TResult Function(ShowAllArticlesLoaded value)? showAllArticlesLoaded,
+    TResult Function(ShowErrorOnArticleLoading value)?
+        showErrorOnArticleLoading,
+    TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
+    required TResult orElse(),
+  }) {
+    if (showArticlesLoading != null) {
+      return showArticlesLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ShowArticlesLoading implements AppAction {
+  const factory ShowArticlesLoading() = _$ShowArticlesLoading;
+}
+
+/// @nodoc
+abstract class $ShowArticlesLoadedCopyWith<$Res> {
+  factory $ShowArticlesLoadedCopyWith(
+          ShowArticlesLoaded value, $Res Function(ShowArticlesLoaded) then) =
+      _$ShowArticlesLoadedCopyWithImpl<$Res>;
+  $Res call({List<Article> articles, int page, int pageSize});
+}
+
+/// @nodoc
+class _$ShowArticlesLoadedCopyWithImpl<$Res>
+    extends _$AppActionCopyWithImpl<$Res>
+    implements $ShowArticlesLoadedCopyWith<$Res> {
+  _$ShowArticlesLoadedCopyWithImpl(
+      ShowArticlesLoaded _value, $Res Function(ShowArticlesLoaded) _then)
+      : super(_value, (v) => _then(v as ShowArticlesLoaded));
+
+  @override
+  ShowArticlesLoaded get _value => super._value as ShowArticlesLoaded;
+
+  @override
+  $Res call({
+    Object? articles = freezed,
+    Object? page = freezed,
+    Object? pageSize = freezed,
+  }) {
+    return _then(ShowArticlesLoaded(
+      articles: articles == freezed
+          ? _value.articles
+          : articles // ignore: cast_nullable_to_non_nullable
+              as List<Article>,
+      page: page == freezed
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
+      pageSize: pageSize == freezed
+          ? _value.pageSize
+          : pageSize // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ShowArticlesLoaded implements ShowArticlesLoaded {
+  const _$ShowArticlesLoaded(
+      {required this.articles, required this.page, required this.pageSize});
+
+  @override
+  final List<Article> articles;
+  @override
+  final int page;
+  @override
+  final int pageSize;
+
+  @override
+  String toString() {
+    return 'AppAction.showArticlesLoaded(articles: $articles, page: $page, pageSize: $pageSize)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is ShowArticlesLoaded &&
+            (identical(other.articles, articles) ||
+                const DeepCollectionEquality()
+                    .equals(other.articles, articles)) &&
+            (identical(other.page, page) ||
+                const DeepCollectionEquality().equals(other.page, page)) &&
+            (identical(other.pageSize, pageSize) ||
+                const DeepCollectionEquality()
+                    .equals(other.pageSize, pageSize)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(articles) ^
+      const DeepCollectionEquality().hash(page) ^
+      const DeepCollectionEquality().hash(pageSize);
+
+  @JsonKey(ignore: true)
+  @override
+  $ShowArticlesLoadedCopyWith<ShowArticlesLoaded> get copyWith =>
+      _$ShowArticlesLoadedCopyWithImpl<ShowArticlesLoaded>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initAction,
+    required TResult Function() appLoaded,
+    required TResult Function() removePreviousPages,
+    required TResult Function() showSignIn,
+    required TResult Function() showSignUp,
+    required TResult Function() notNow,
+    required TResult Function(User user) authenticate,
+    required TResult Function(String login, String password) loginSubmit,
+    required TResult Function(String login, String email, String password,
+            String repeatedPassword)
+        registrationSubmit,
+    required TResult Function(bool loading) setLoadingOnAuthScreen,
+    required TResult Function(String? error) setErrorOnAuthScreen,
+    required TResult Function() initLoadingArticles,
+    required TResult Function() showArticlesLoading,
+    required TResult Function(List<Article> articles, int page, int pageSize)
+        showArticlesLoaded,
+    required TResult Function(List<Article> articles) showAllArticlesLoaded,
+    required TResult Function(String message) showErrorOnArticleLoading,
+    required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
+  }) {
+    return showArticlesLoaded(articles, page, pageSize);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initAction,
+    TResult Function()? appLoaded,
+    TResult Function()? removePreviousPages,
+    TResult Function()? showSignIn,
+    TResult Function()? showSignUp,
+    TResult Function()? notNow,
+    TResult Function(User user)? authenticate,
+    TResult Function(String login, String password)? loginSubmit,
+    TResult Function(String login, String email, String password,
+            String repeatedPassword)?
+        registrationSubmit,
+    TResult Function(bool loading)? setLoadingOnAuthScreen,
+    TResult Function(String? error)? setErrorOnAuthScreen,
+    TResult Function()? initLoadingArticles,
+    TResult Function()? showArticlesLoading,
+    TResult Function(List<Article> articles, int page, int pageSize)?
+        showArticlesLoaded,
+    TResult Function(List<Article> articles)? showAllArticlesLoaded,
+    TResult Function(String message)? showErrorOnArticleLoading,
+    TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
+    required TResult orElse(),
+  }) {
+    if (showArticlesLoaded != null) {
+      return showArticlesLoaded(articles, page, pageSize);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitAction value) initAction,
+    required TResult Function(AppLoaded value) appLoaded,
+    required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ShowSignIn value) showSignIn,
+    required TResult Function(ShowSignUp value) showSignUp,
+    required TResult Function(NotNow value) notNow,
+    required TResult Function(Authenticate value) authenticate,
+    required TResult Function(SubmitLogin value) loginSubmit,
+    required TResult Function(RegistrationLogin value) registrationSubmit,
+    required TResult Function(SetLoadingOnAuthScreen value)
+        setLoadingOnAuthScreen,
+    required TResult Function(SetErrorOnAuthScreen value) setErrorOnAuthScreen,
+    required TResult Function(InitLoadingArticles value) initLoadingArticles,
+    required TResult Function(ShowArticlesLoading value) showArticlesLoading,
+    required TResult Function(ShowArticlesLoaded value) showArticlesLoaded,
+    required TResult Function(ShowAllArticlesLoaded value)
+        showAllArticlesLoaded,
+    required TResult Function(ShowErrorOnArticleLoading value)
+        showErrorOnArticleLoading,
+    required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
+  }) {
+    return showArticlesLoaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitAction value)? initAction,
+    TResult Function(AppLoaded value)? appLoaded,
+    TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ShowSignIn value)? showSignIn,
+    TResult Function(ShowSignUp value)? showSignUp,
+    TResult Function(NotNow value)? notNow,
+    TResult Function(Authenticate value)? authenticate,
+    TResult Function(SubmitLogin value)? loginSubmit,
+    TResult Function(RegistrationLogin value)? registrationSubmit,
+    TResult Function(SetLoadingOnAuthScreen value)? setLoadingOnAuthScreen,
+    TResult Function(SetErrorOnAuthScreen value)? setErrorOnAuthScreen,
+    TResult Function(InitLoadingArticles value)? initLoadingArticles,
+    TResult Function(ShowArticlesLoading value)? showArticlesLoading,
+    TResult Function(ShowArticlesLoaded value)? showArticlesLoaded,
+    TResult Function(ShowAllArticlesLoaded value)? showAllArticlesLoaded,
+    TResult Function(ShowErrorOnArticleLoading value)?
+        showErrorOnArticleLoading,
+    TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
+    required TResult orElse(),
+  }) {
+    if (showArticlesLoaded != null) {
+      return showArticlesLoaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ShowArticlesLoaded implements AppAction {
+  const factory ShowArticlesLoaded(
+      {required List<Article> articles,
+      required int page,
+      required int pageSize}) = _$ShowArticlesLoaded;
+
+  List<Article> get articles => throw _privateConstructorUsedError;
+  int get page => throw _privateConstructorUsedError;
+  int get pageSize => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ShowArticlesLoadedCopyWith<ShowArticlesLoaded> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ShowAllArticlesLoadedCopyWith<$Res> {
+  factory $ShowAllArticlesLoadedCopyWith(ShowAllArticlesLoaded value,
+          $Res Function(ShowAllArticlesLoaded) then) =
+      _$ShowAllArticlesLoadedCopyWithImpl<$Res>;
+  $Res call({List<Article> articles});
+}
+
+/// @nodoc
+class _$ShowAllArticlesLoadedCopyWithImpl<$Res>
+    extends _$AppActionCopyWithImpl<$Res>
+    implements $ShowAllArticlesLoadedCopyWith<$Res> {
+  _$ShowAllArticlesLoadedCopyWithImpl(
+      ShowAllArticlesLoaded _value, $Res Function(ShowAllArticlesLoaded) _then)
+      : super(_value, (v) => _then(v as ShowAllArticlesLoaded));
+
+  @override
+  ShowAllArticlesLoaded get _value => super._value as ShowAllArticlesLoaded;
+
+  @override
+  $Res call({
+    Object? articles = freezed,
+  }) {
+    return _then(ShowAllArticlesLoaded(
+      articles: articles == freezed
+          ? _value.articles
+          : articles // ignore: cast_nullable_to_non_nullable
+              as List<Article>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ShowAllArticlesLoaded implements ShowAllArticlesLoaded {
+  const _$ShowAllArticlesLoaded({required this.articles});
+
+  @override
+  final List<Article> articles;
+
+  @override
+  String toString() {
+    return 'AppAction.showAllArticlesLoaded(articles: $articles)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is ShowAllArticlesLoaded &&
+            (identical(other.articles, articles) ||
+                const DeepCollectionEquality()
+                    .equals(other.articles, articles)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(articles);
+
+  @JsonKey(ignore: true)
+  @override
+  $ShowAllArticlesLoadedCopyWith<ShowAllArticlesLoaded> get copyWith =>
+      _$ShowAllArticlesLoadedCopyWithImpl<ShowAllArticlesLoaded>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initAction,
+    required TResult Function() appLoaded,
+    required TResult Function() removePreviousPages,
+    required TResult Function() showSignIn,
+    required TResult Function() showSignUp,
+    required TResult Function() notNow,
+    required TResult Function(User user) authenticate,
+    required TResult Function(String login, String password) loginSubmit,
+    required TResult Function(String login, String email, String password,
+            String repeatedPassword)
+        registrationSubmit,
+    required TResult Function(bool loading) setLoadingOnAuthScreen,
+    required TResult Function(String? error) setErrorOnAuthScreen,
+    required TResult Function() initLoadingArticles,
+    required TResult Function() showArticlesLoading,
+    required TResult Function(List<Article> articles, int page, int pageSize)
+        showArticlesLoaded,
+    required TResult Function(List<Article> articles) showAllArticlesLoaded,
+    required TResult Function(String message) showErrorOnArticleLoading,
+    required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
+  }) {
+    return showAllArticlesLoaded(articles);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initAction,
+    TResult Function()? appLoaded,
+    TResult Function()? removePreviousPages,
+    TResult Function()? showSignIn,
+    TResult Function()? showSignUp,
+    TResult Function()? notNow,
+    TResult Function(User user)? authenticate,
+    TResult Function(String login, String password)? loginSubmit,
+    TResult Function(String login, String email, String password,
+            String repeatedPassword)?
+        registrationSubmit,
+    TResult Function(bool loading)? setLoadingOnAuthScreen,
+    TResult Function(String? error)? setErrorOnAuthScreen,
+    TResult Function()? initLoadingArticles,
+    TResult Function()? showArticlesLoading,
+    TResult Function(List<Article> articles, int page, int pageSize)?
+        showArticlesLoaded,
+    TResult Function(List<Article> articles)? showAllArticlesLoaded,
+    TResult Function(String message)? showErrorOnArticleLoading,
+    TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
+    required TResult orElse(),
+  }) {
+    if (showAllArticlesLoaded != null) {
+      return showAllArticlesLoaded(articles);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitAction value) initAction,
+    required TResult Function(AppLoaded value) appLoaded,
+    required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ShowSignIn value) showSignIn,
+    required TResult Function(ShowSignUp value) showSignUp,
+    required TResult Function(NotNow value) notNow,
+    required TResult Function(Authenticate value) authenticate,
+    required TResult Function(SubmitLogin value) loginSubmit,
+    required TResult Function(RegistrationLogin value) registrationSubmit,
+    required TResult Function(SetLoadingOnAuthScreen value)
+        setLoadingOnAuthScreen,
+    required TResult Function(SetErrorOnAuthScreen value) setErrorOnAuthScreen,
+    required TResult Function(InitLoadingArticles value) initLoadingArticles,
+    required TResult Function(ShowArticlesLoading value) showArticlesLoading,
+    required TResult Function(ShowArticlesLoaded value) showArticlesLoaded,
+    required TResult Function(ShowAllArticlesLoaded value)
+        showAllArticlesLoaded,
+    required TResult Function(ShowErrorOnArticleLoading value)
+        showErrorOnArticleLoading,
+    required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
+  }) {
+    return showAllArticlesLoaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitAction value)? initAction,
+    TResult Function(AppLoaded value)? appLoaded,
+    TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ShowSignIn value)? showSignIn,
+    TResult Function(ShowSignUp value)? showSignUp,
+    TResult Function(NotNow value)? notNow,
+    TResult Function(Authenticate value)? authenticate,
+    TResult Function(SubmitLogin value)? loginSubmit,
+    TResult Function(RegistrationLogin value)? registrationSubmit,
+    TResult Function(SetLoadingOnAuthScreen value)? setLoadingOnAuthScreen,
+    TResult Function(SetErrorOnAuthScreen value)? setErrorOnAuthScreen,
+    TResult Function(InitLoadingArticles value)? initLoadingArticles,
+    TResult Function(ShowArticlesLoading value)? showArticlesLoading,
+    TResult Function(ShowArticlesLoaded value)? showArticlesLoaded,
+    TResult Function(ShowAllArticlesLoaded value)? showAllArticlesLoaded,
+    TResult Function(ShowErrorOnArticleLoading value)?
+        showErrorOnArticleLoading,
+    TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
+    required TResult orElse(),
+  }) {
+    if (showAllArticlesLoaded != null) {
+      return showAllArticlesLoaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ShowAllArticlesLoaded implements AppAction {
+  const factory ShowAllArticlesLoaded({required List<Article> articles}) =
+      _$ShowAllArticlesLoaded;
+
+  List<Article> get articles => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ShowAllArticlesLoadedCopyWith<ShowAllArticlesLoaded> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ShowErrorOnArticleLoadingCopyWith<$Res> {
+  factory $ShowErrorOnArticleLoadingCopyWith(ShowErrorOnArticleLoading value,
+          $Res Function(ShowErrorOnArticleLoading) then) =
+      _$ShowErrorOnArticleLoadingCopyWithImpl<$Res>;
+  $Res call({String message});
+}
+
+/// @nodoc
+class _$ShowErrorOnArticleLoadingCopyWithImpl<$Res>
+    extends _$AppActionCopyWithImpl<$Res>
+    implements $ShowErrorOnArticleLoadingCopyWith<$Res> {
+  _$ShowErrorOnArticleLoadingCopyWithImpl(ShowErrorOnArticleLoading _value,
+      $Res Function(ShowErrorOnArticleLoading) _then)
+      : super(_value, (v) => _then(v as ShowErrorOnArticleLoading));
+
+  @override
+  ShowErrorOnArticleLoading get _value =>
+      super._value as ShowErrorOnArticleLoading;
+
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(ShowErrorOnArticleLoading(
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ShowErrorOnArticleLoading implements ShowErrorOnArticleLoading {
+  const _$ShowErrorOnArticleLoading({required this.message});
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'AppAction.showErrorOnArticleLoading(message: $message)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is ShowErrorOnArticleLoading &&
+            (identical(other.message, message) ||
+                const DeepCollectionEquality().equals(other.message, message)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(message);
+
+  @JsonKey(ignore: true)
+  @override
+  $ShowErrorOnArticleLoadingCopyWith<ShowErrorOnArticleLoading> get copyWith =>
+      _$ShowErrorOnArticleLoadingCopyWithImpl<ShowErrorOnArticleLoading>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initAction,
+    required TResult Function() appLoaded,
+    required TResult Function() removePreviousPages,
+    required TResult Function() showSignIn,
+    required TResult Function() showSignUp,
+    required TResult Function() notNow,
+    required TResult Function(User user) authenticate,
+    required TResult Function(String login, String password) loginSubmit,
+    required TResult Function(String login, String email, String password,
+            String repeatedPassword)
+        registrationSubmit,
+    required TResult Function(bool loading) setLoadingOnAuthScreen,
+    required TResult Function(String? error) setErrorOnAuthScreen,
+    required TResult Function() initLoadingArticles,
+    required TResult Function() showArticlesLoading,
+    required TResult Function(List<Article> articles, int page, int pageSize)
+        showArticlesLoaded,
+    required TResult Function(List<Article> articles) showAllArticlesLoaded,
+    required TResult Function(String message) showErrorOnArticleLoading,
+    required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
+  }) {
+    return showErrorOnArticleLoading(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initAction,
+    TResult Function()? appLoaded,
+    TResult Function()? removePreviousPages,
+    TResult Function()? showSignIn,
+    TResult Function()? showSignUp,
+    TResult Function()? notNow,
+    TResult Function(User user)? authenticate,
+    TResult Function(String login, String password)? loginSubmit,
+    TResult Function(String login, String email, String password,
+            String repeatedPassword)?
+        registrationSubmit,
+    TResult Function(bool loading)? setLoadingOnAuthScreen,
+    TResult Function(String? error)? setErrorOnAuthScreen,
+    TResult Function()? initLoadingArticles,
+    TResult Function()? showArticlesLoading,
+    TResult Function(List<Article> articles, int page, int pageSize)?
+        showArticlesLoaded,
+    TResult Function(List<Article> articles)? showAllArticlesLoaded,
+    TResult Function(String message)? showErrorOnArticleLoading,
+    TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
+    required TResult orElse(),
+  }) {
+    if (showErrorOnArticleLoading != null) {
+      return showErrorOnArticleLoading(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitAction value) initAction,
+    required TResult Function(AppLoaded value) appLoaded,
+    required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ShowSignIn value) showSignIn,
+    required TResult Function(ShowSignUp value) showSignUp,
+    required TResult Function(NotNow value) notNow,
+    required TResult Function(Authenticate value) authenticate,
+    required TResult Function(SubmitLogin value) loginSubmit,
+    required TResult Function(RegistrationLogin value) registrationSubmit,
+    required TResult Function(SetLoadingOnAuthScreen value)
+        setLoadingOnAuthScreen,
+    required TResult Function(SetErrorOnAuthScreen value) setErrorOnAuthScreen,
+    required TResult Function(InitLoadingArticles value) initLoadingArticles,
+    required TResult Function(ShowArticlesLoading value) showArticlesLoading,
+    required TResult Function(ShowArticlesLoaded value) showArticlesLoaded,
+    required TResult Function(ShowAllArticlesLoaded value)
+        showAllArticlesLoaded,
+    required TResult Function(ShowErrorOnArticleLoading value)
+        showErrorOnArticleLoading,
+    required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
+  }) {
+    return showErrorOnArticleLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitAction value)? initAction,
+    TResult Function(AppLoaded value)? appLoaded,
+    TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ShowSignIn value)? showSignIn,
+    TResult Function(ShowSignUp value)? showSignUp,
+    TResult Function(NotNow value)? notNow,
+    TResult Function(Authenticate value)? authenticate,
+    TResult Function(SubmitLogin value)? loginSubmit,
+    TResult Function(RegistrationLogin value)? registrationSubmit,
+    TResult Function(SetLoadingOnAuthScreen value)? setLoadingOnAuthScreen,
+    TResult Function(SetErrorOnAuthScreen value)? setErrorOnAuthScreen,
+    TResult Function(InitLoadingArticles value)? initLoadingArticles,
+    TResult Function(ShowArticlesLoading value)? showArticlesLoading,
+    TResult Function(ShowArticlesLoaded value)? showArticlesLoaded,
+    TResult Function(ShowAllArticlesLoaded value)? showAllArticlesLoaded,
+    TResult Function(ShowErrorOnArticleLoading value)?
+        showErrorOnArticleLoading,
+    TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
+    required TResult orElse(),
+  }) {
+    if (showErrorOnArticleLoading != null) {
+      return showErrorOnArticleLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ShowErrorOnArticleLoading implements AppAction {
+  const factory ShowErrorOnArticleLoading({required String message}) =
+      _$ShowErrorOnArticleLoading;
+
+  String get message => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ShowErrorOnArticleLoadingCopyWith<ShowErrorOnArticleLoading> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LoadNextArticlePageCopyWith<$Res> {
+  factory $LoadNextArticlePageCopyWith(
+          LoadNextArticlePage value, $Res Function(LoadNextArticlePage) then) =
+      _$LoadNextArticlePageCopyWithImpl<$Res>;
+  $Res call({int prevPage, int pageSize});
+}
+
+/// @nodoc
+class _$LoadNextArticlePageCopyWithImpl<$Res>
+    extends _$AppActionCopyWithImpl<$Res>
+    implements $LoadNextArticlePageCopyWith<$Res> {
+  _$LoadNextArticlePageCopyWithImpl(
+      LoadNextArticlePage _value, $Res Function(LoadNextArticlePage) _then)
+      : super(_value, (v) => _then(v as LoadNextArticlePage));
+
+  @override
+  LoadNextArticlePage get _value => super._value as LoadNextArticlePage;
+
+  @override
+  $Res call({
+    Object? prevPage = freezed,
+    Object? pageSize = freezed,
+  }) {
+    return _then(LoadNextArticlePage(
+      prevPage: prevPage == freezed
+          ? _value.prevPage
+          : prevPage // ignore: cast_nullable_to_non_nullable
+              as int,
+      pageSize: pageSize == freezed
+          ? _value.pageSize
+          : pageSize // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LoadNextArticlePage implements LoadNextArticlePage {
+  const _$LoadNextArticlePage({required this.prevPage, required this.pageSize});
+
+  @override
+  final int prevPage;
+  @override
+  final int pageSize;
+
+  @override
+  String toString() {
+    return 'AppAction.loadNextArticlePage(prevPage: $prevPage, pageSize: $pageSize)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is LoadNextArticlePage &&
+            (identical(other.prevPage, prevPage) ||
+                const DeepCollectionEquality()
+                    .equals(other.prevPage, prevPage)) &&
+            (identical(other.pageSize, pageSize) ||
+                const DeepCollectionEquality()
+                    .equals(other.pageSize, pageSize)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(prevPage) ^
+      const DeepCollectionEquality().hash(pageSize);
+
+  @JsonKey(ignore: true)
+  @override
+  $LoadNextArticlePageCopyWith<LoadNextArticlePage> get copyWith =>
+      _$LoadNextArticlePageCopyWithImpl<LoadNextArticlePage>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initAction,
+    required TResult Function() appLoaded,
+    required TResult Function() removePreviousPages,
+    required TResult Function() showSignIn,
+    required TResult Function() showSignUp,
+    required TResult Function() notNow,
+    required TResult Function(User user) authenticate,
+    required TResult Function(String login, String password) loginSubmit,
+    required TResult Function(String login, String email, String password,
+            String repeatedPassword)
+        registrationSubmit,
+    required TResult Function(bool loading) setLoadingOnAuthScreen,
+    required TResult Function(String? error) setErrorOnAuthScreen,
+    required TResult Function() initLoadingArticles,
+    required TResult Function() showArticlesLoading,
+    required TResult Function(List<Article> articles, int page, int pageSize)
+        showArticlesLoaded,
+    required TResult Function(List<Article> articles) showAllArticlesLoaded,
+    required TResult Function(String message) showErrorOnArticleLoading,
+    required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
+  }) {
+    return loadNextArticlePage(prevPage, pageSize);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initAction,
+    TResult Function()? appLoaded,
+    TResult Function()? removePreviousPages,
+    TResult Function()? showSignIn,
+    TResult Function()? showSignUp,
+    TResult Function()? notNow,
+    TResult Function(User user)? authenticate,
+    TResult Function(String login, String password)? loginSubmit,
+    TResult Function(String login, String email, String password,
+            String repeatedPassword)?
+        registrationSubmit,
+    TResult Function(bool loading)? setLoadingOnAuthScreen,
+    TResult Function(String? error)? setErrorOnAuthScreen,
+    TResult Function()? initLoadingArticles,
+    TResult Function()? showArticlesLoading,
+    TResult Function(List<Article> articles, int page, int pageSize)?
+        showArticlesLoaded,
+    TResult Function(List<Article> articles)? showAllArticlesLoaded,
+    TResult Function(String message)? showErrorOnArticleLoading,
+    TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
+    required TResult orElse(),
+  }) {
+    if (loadNextArticlePage != null) {
+      return loadNextArticlePage(prevPage, pageSize);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitAction value) initAction,
+    required TResult Function(AppLoaded value) appLoaded,
+    required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ShowSignIn value) showSignIn,
+    required TResult Function(ShowSignUp value) showSignUp,
+    required TResult Function(NotNow value) notNow,
+    required TResult Function(Authenticate value) authenticate,
+    required TResult Function(SubmitLogin value) loginSubmit,
+    required TResult Function(RegistrationLogin value) registrationSubmit,
+    required TResult Function(SetLoadingOnAuthScreen value)
+        setLoadingOnAuthScreen,
+    required TResult Function(SetErrorOnAuthScreen value) setErrorOnAuthScreen,
+    required TResult Function(InitLoadingArticles value) initLoadingArticles,
+    required TResult Function(ShowArticlesLoading value) showArticlesLoading,
+    required TResult Function(ShowArticlesLoaded value) showArticlesLoaded,
+    required TResult Function(ShowAllArticlesLoaded value)
+        showAllArticlesLoaded,
+    required TResult Function(ShowErrorOnArticleLoading value)
+        showErrorOnArticleLoading,
+    required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
+  }) {
+    return loadNextArticlePage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitAction value)? initAction,
+    TResult Function(AppLoaded value)? appLoaded,
+    TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ShowSignIn value)? showSignIn,
+    TResult Function(ShowSignUp value)? showSignUp,
+    TResult Function(NotNow value)? notNow,
+    TResult Function(Authenticate value)? authenticate,
+    TResult Function(SubmitLogin value)? loginSubmit,
+    TResult Function(RegistrationLogin value)? registrationSubmit,
+    TResult Function(SetLoadingOnAuthScreen value)? setLoadingOnAuthScreen,
+    TResult Function(SetErrorOnAuthScreen value)? setErrorOnAuthScreen,
+    TResult Function(InitLoadingArticles value)? initLoadingArticles,
+    TResult Function(ShowArticlesLoading value)? showArticlesLoading,
+    TResult Function(ShowArticlesLoaded value)? showArticlesLoaded,
+    TResult Function(ShowAllArticlesLoaded value)? showAllArticlesLoaded,
+    TResult Function(ShowErrorOnArticleLoading value)?
+        showErrorOnArticleLoading,
+    TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
+    required TResult orElse(),
+  }) {
+    if (loadNextArticlePage != null) {
+      return loadNextArticlePage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadNextArticlePage implements AppAction {
+  const factory LoadNextArticlePage(
+      {required int prevPage, required int pageSize}) = _$LoadNextArticlePage;
+
+  int get prevPage => throw _privateConstructorUsedError;
+  int get pageSize => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $LoadNextArticlePageCopyWith<LoadNextArticlePage> get copyWith =>
       throw _privateConstructorUsedError;
 }

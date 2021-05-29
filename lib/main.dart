@@ -4,6 +4,7 @@ import 'package:dip_frontend/navigator.dart';
 import 'package:dip_frontend/redux/middleware/middleware.dart';
 import 'package:dip_frontend/redux/reducer/reducer.dart';
 import 'package:dip_frontend/redux/state/app_state.dart';
+import 'package:dip_frontend/redux/state/articles_state.dart';
 import 'package:dip_frontend/redux/state/auth_state.dart';
 import 'package:dip_frontend/redux/state/navigation/screen.dart';
 import 'package:dip_frontend/repository/objectdb/objectdb_repository.dart';
@@ -45,6 +46,7 @@ class MyApp extends StatelessWidget {
                 Screen.splashScreen(),
               ],
               roles: [],
+              articlesState: ArticlesState.emptyState(),
             ),
             reducers: createReducers(),
             middlewares: createMiddleware(

@@ -1,5 +1,6 @@
 import 'package:dip_frontend/redux/action/app_action.dart';
 import 'package:dip_frontend/redux/state/app_state.dart';
+import 'package:dip_frontend/redux/state/articles_state.dart';
 import 'package:dip_frontend/redux/state/auth_state.dart';
 import 'package:dip_frontend/redux/state/navigation/screen.dart';
 import 'package:whelm/whelm.dart';
@@ -67,6 +68,26 @@ List<Reducer<AppState, AppAction>> createReducers() => [
               navigationState: [
                 state.navigationState.last,
               ],
+            ),
+            showAllArticlesLoaded: (action) => state.copyWith(
+              articlesState: ArticlesState.loadedAllState(
+                articles: action.articles,
+              ),
+            ),
+            showArticlesLoaded: (action) => state.copyWith(
+              articlesState: ArticlesState.loadedState(
+                articles: action.articles,
+                page: action.page,
+                pageSize: action.pageSize,
+              ),
+            ),
+            showArticlesLoading: (action) => state.copyWith(
+              articlesState: const ArticlesState.loadingState(),
+            ),
+            showErrorOnArticleLoading: (action) => state.copyWith(
+              articlesState: ArticlesState.errorState(
+                message: action.message,
+              ),
             ),
             orElse: () => state,
           ),

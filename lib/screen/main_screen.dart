@@ -1,3 +1,4 @@
+import 'package:dip_frontend/widget/article_list/article_list.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatelessWidget {
@@ -13,7 +14,7 @@ class MainScreen extends StatelessWidget {
           'Main screen',
         ),
       ),
-      body: Container(),
+      body: const ArticleList(),
     );
   }
 }
