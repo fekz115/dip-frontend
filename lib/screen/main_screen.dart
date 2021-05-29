@@ -37,6 +37,19 @@ class MainScreen extends StatelessWidget {
               return const QrWidget();
           }
         },
+        eventListener: (context, event) async {
+          event.map(
+            snackbarNotificationEvent: (event) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    event.message,
+                  ),
+                ),
+              );
+            },
+          );
+        },
       ),
       bottomNavigationBar: ProjectStoreConnection<BottomNavigationState>(
         connect: (state) => state.bottomNavigationState,
