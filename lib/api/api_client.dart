@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:dip_frontend/api/api_exception.dart';
 import 'package:dip_frontend/api/auth_interceptor.dart';
 import 'package:dip_frontend/api/exception_interceptor.dart';
+import 'package:dip_frontend/api/rating_state_interceptor.dart';
 import 'package:dip_frontend/api/role_interceptor.dart';
 import 'package:dip_frontend/model/user.dart';
 import 'package:dip_frontend/repository/repository.dart';
@@ -12,6 +13,7 @@ class ApiClient {
     dio.interceptors.add(AuthInterceptor(repository));
     dio.interceptors.add(RoleInterceptor());
     dio.interceptors.add(ExceptionInterceptor());
+    dio.interceptors.add(RatingStateInterceptor());
   }
 
   late final Dio dio;
