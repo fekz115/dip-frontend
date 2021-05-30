@@ -27,6 +27,12 @@ class _$ScreenTearOff {
   _MainScreen mainScreen() {
     return const _MainScreen();
   }
+
+  _PictureScreen pictureScreen({required Picture picture}) {
+    return _PictureScreen(
+      picture: picture,
+    );
+  }
 }
 
 /// @nodoc
@@ -39,6 +45,7 @@ mixin _$Screen {
     required TResult Function() splashScreen,
     required TResult Function() authScreen,
     required TResult Function() mainScreen,
+    required TResult Function(Picture picture) pictureScreen,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -46,6 +53,7 @@ mixin _$Screen {
     TResult Function()? splashScreen,
     TResult Function()? authScreen,
     TResult Function()? mainScreen,
+    TResult Function(Picture picture)? pictureScreen,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -54,6 +62,7 @@ mixin _$Screen {
     required TResult Function(_SplashScreen value) splashScreen,
     required TResult Function(_AuthScreen value) authScreen,
     required TResult Function(_MainScreen value) mainScreen,
+    required TResult Function(_PictureScreen value) pictureScreen,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -61,6 +70,7 @@ mixin _$Screen {
     TResult Function(_SplashScreen value)? splashScreen,
     TResult Function(_AuthScreen value)? authScreen,
     TResult Function(_MainScreen value)? mainScreen,
+    TResult Function(_PictureScreen value)? pictureScreen,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -123,6 +133,7 @@ class _$_SplashScreen implements _SplashScreen {
     required TResult Function() splashScreen,
     required TResult Function() authScreen,
     required TResult Function() mainScreen,
+    required TResult Function(Picture picture) pictureScreen,
   }) {
     return splashScreen();
   }
@@ -133,6 +144,7 @@ class _$_SplashScreen implements _SplashScreen {
     TResult Function()? splashScreen,
     TResult Function()? authScreen,
     TResult Function()? mainScreen,
+    TResult Function(Picture picture)? pictureScreen,
     required TResult orElse(),
   }) {
     if (splashScreen != null) {
@@ -147,6 +159,7 @@ class _$_SplashScreen implements _SplashScreen {
     required TResult Function(_SplashScreen value) splashScreen,
     required TResult Function(_AuthScreen value) authScreen,
     required TResult Function(_MainScreen value) mainScreen,
+    required TResult Function(_PictureScreen value) pictureScreen,
   }) {
     return splashScreen(this);
   }
@@ -157,6 +170,7 @@ class _$_SplashScreen implements _SplashScreen {
     TResult Function(_SplashScreen value)? splashScreen,
     TResult Function(_AuthScreen value)? authScreen,
     TResult Function(_MainScreen value)? mainScreen,
+    TResult Function(_PictureScreen value)? pictureScreen,
     required TResult orElse(),
   }) {
     if (splashScreen != null) {
@@ -212,6 +226,7 @@ class _$_AuthScreen implements _AuthScreen {
     required TResult Function() splashScreen,
     required TResult Function() authScreen,
     required TResult Function() mainScreen,
+    required TResult Function(Picture picture) pictureScreen,
   }) {
     return authScreen();
   }
@@ -222,6 +237,7 @@ class _$_AuthScreen implements _AuthScreen {
     TResult Function()? splashScreen,
     TResult Function()? authScreen,
     TResult Function()? mainScreen,
+    TResult Function(Picture picture)? pictureScreen,
     required TResult orElse(),
   }) {
     if (authScreen != null) {
@@ -236,6 +252,7 @@ class _$_AuthScreen implements _AuthScreen {
     required TResult Function(_SplashScreen value) splashScreen,
     required TResult Function(_AuthScreen value) authScreen,
     required TResult Function(_MainScreen value) mainScreen,
+    required TResult Function(_PictureScreen value) pictureScreen,
   }) {
     return authScreen(this);
   }
@@ -246,6 +263,7 @@ class _$_AuthScreen implements _AuthScreen {
     TResult Function(_SplashScreen value)? splashScreen,
     TResult Function(_AuthScreen value)? authScreen,
     TResult Function(_MainScreen value)? mainScreen,
+    TResult Function(_PictureScreen value)? pictureScreen,
     required TResult orElse(),
   }) {
     if (authScreen != null) {
@@ -301,6 +319,7 @@ class _$_MainScreen implements _MainScreen {
     required TResult Function() splashScreen,
     required TResult Function() authScreen,
     required TResult Function() mainScreen,
+    required TResult Function(Picture picture) pictureScreen,
   }) {
     return mainScreen();
   }
@@ -311,6 +330,7 @@ class _$_MainScreen implements _MainScreen {
     TResult Function()? splashScreen,
     TResult Function()? authScreen,
     TResult Function()? mainScreen,
+    TResult Function(Picture picture)? pictureScreen,
     required TResult orElse(),
   }) {
     if (mainScreen != null) {
@@ -325,6 +345,7 @@ class _$_MainScreen implements _MainScreen {
     required TResult Function(_SplashScreen value) splashScreen,
     required TResult Function(_AuthScreen value) authScreen,
     required TResult Function(_MainScreen value) mainScreen,
+    required TResult Function(_PictureScreen value) pictureScreen,
   }) {
     return mainScreen(this);
   }
@@ -335,6 +356,7 @@ class _$_MainScreen implements _MainScreen {
     TResult Function(_SplashScreen value)? splashScreen,
     TResult Function(_AuthScreen value)? authScreen,
     TResult Function(_MainScreen value)? mainScreen,
+    TResult Function(_PictureScreen value)? pictureScreen,
     required TResult orElse(),
   }) {
     if (mainScreen != null) {
@@ -346,4 +368,136 @@ class _$_MainScreen implements _MainScreen {
 
 abstract class _MainScreen implements Screen {
   const factory _MainScreen() = _$_MainScreen;
+}
+
+/// @nodoc
+abstract class _$PictureScreenCopyWith<$Res> {
+  factory _$PictureScreenCopyWith(
+          _PictureScreen value, $Res Function(_PictureScreen) then) =
+      __$PictureScreenCopyWithImpl<$Res>;
+  $Res call({Picture picture});
+
+  $PictureCopyWith<$Res> get picture;
+}
+
+/// @nodoc
+class __$PictureScreenCopyWithImpl<$Res> extends _$ScreenCopyWithImpl<$Res>
+    implements _$PictureScreenCopyWith<$Res> {
+  __$PictureScreenCopyWithImpl(
+      _PictureScreen _value, $Res Function(_PictureScreen) _then)
+      : super(_value, (v) => _then(v as _PictureScreen));
+
+  @override
+  _PictureScreen get _value => super._value as _PictureScreen;
+
+  @override
+  $Res call({
+    Object? picture = freezed,
+  }) {
+    return _then(_PictureScreen(
+      picture: picture == freezed
+          ? _value.picture
+          : picture // ignore: cast_nullable_to_non_nullable
+              as Picture,
+    ));
+  }
+
+  @override
+  $PictureCopyWith<$Res> get picture {
+    return $PictureCopyWith<$Res>(_value.picture, (value) {
+      return _then(_value.copyWith(picture: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_PictureScreen implements _PictureScreen {
+  const _$_PictureScreen({required this.picture});
+
+  @override
+  final Picture picture;
+
+  @override
+  String toString() {
+    return 'Screen.pictureScreen(picture: $picture)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _PictureScreen &&
+            (identical(other.picture, picture) ||
+                const DeepCollectionEquality().equals(other.picture, picture)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(picture);
+
+  @JsonKey(ignore: true)
+  @override
+  _$PictureScreenCopyWith<_PictureScreen> get copyWith =>
+      __$PictureScreenCopyWithImpl<_PictureScreen>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() splashScreen,
+    required TResult Function() authScreen,
+    required TResult Function() mainScreen,
+    required TResult Function(Picture picture) pictureScreen,
+  }) {
+    return pictureScreen(picture);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? splashScreen,
+    TResult Function()? authScreen,
+    TResult Function()? mainScreen,
+    TResult Function(Picture picture)? pictureScreen,
+    required TResult orElse(),
+  }) {
+    if (pictureScreen != null) {
+      return pictureScreen(picture);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SplashScreen value) splashScreen,
+    required TResult Function(_AuthScreen value) authScreen,
+    required TResult Function(_MainScreen value) mainScreen,
+    required TResult Function(_PictureScreen value) pictureScreen,
+  }) {
+    return pictureScreen(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SplashScreen value)? splashScreen,
+    TResult Function(_AuthScreen value)? authScreen,
+    TResult Function(_MainScreen value)? mainScreen,
+    TResult Function(_PictureScreen value)? pictureScreen,
+    required TResult orElse(),
+  }) {
+    if (pictureScreen != null) {
+      return pictureScreen(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PictureScreen implements Screen {
+  const factory _PictureScreen({required Picture picture}) = _$_PictureScreen;
+
+  Picture get picture => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$PictureScreenCopyWith<_PictureScreen> get copyWith =>
+      throw _privateConstructorUsedError;
 }

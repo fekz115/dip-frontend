@@ -107,9 +107,15 @@ class ApiClient {
   }
 
   Future<File> getPdf(int articleId,
-      [void Function(int, int)? notifier]) async {
+      [void Function(int, int)? notifier])
+      => downloadFile('/api/qr/article/$articleId', notifier);
+
+  Future<File> downloadPicture(int pictureId, [void Function(int, int)? notifier])
+      => downloadFile('/media/picture/$pictureId', notifier);
+
+  Future<File> downloadFile(String url, [void Function(int, int)? notifier]) async {
     final response = await dio.get(
-      '/api/qr/article/$articleId',
+      url,
       onReceiveProgress: notifier,
       options: Options(
         responseType: ResponseType.bytes,

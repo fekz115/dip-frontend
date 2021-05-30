@@ -112,9 +112,18 @@ List<Reducer<AppState, AppAction>> createReducers() => [
                 InnerScreen.articleScreen(article: action.article),
               ],
             ),
-            goBack: (action) => state.copyWith(
-              navigationState: (state.navigationState..removeLast()).toList(),
-            ),
+            goBack: (action) {
+              if (state.navigationState.length > 1) {
+                return state.copyWith(
+                  navigationState:
+                      (state.navigationState..removeLast()).toList(),
+                );
+              }
+              return state.copyWith(
+                innerNavigationState:
+                    (state.innerNavigationState..removeLast()).toList(),
+              );
+            },
             goBackInner: (action) => state.copyWith(
               innerNavigationState:
                   (state.innerNavigationState..removeLast()).toList(),
@@ -124,6 +133,10 @@ List<Reducer<AppState, AppAction>> createReducers() => [
                 article: action.article,
               ),
             ),
+            openPictureFullScreen: (action) => state.copyWith(navigationState: [
+              ...state.navigationState,
+              Screen.pictureScreen(picture: action.picture),
+            ]),
             orElse: () => state,
           ),
     ];

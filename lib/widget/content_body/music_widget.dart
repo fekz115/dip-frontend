@@ -12,10 +12,14 @@ class MusicWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Icon(Icons.music_note),
-        Text(
-          music.name ?? '',
+        Padding(
+          padding: const EdgeInsets.only(left: 8.0),
+          child: Text(
+            music.name ?? '',
+          ),
         ),
       ],
     );

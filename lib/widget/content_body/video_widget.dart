@@ -12,10 +12,14 @@ class VideoWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Icon(Icons.video_library),
-        Text(
-          video.name ?? '',
+        Padding(
+          padding: const EdgeInsets.only(left: 8.0),
+          child: Text(
+            video.name ?? '',
+          ),
         ),
       ],
     );

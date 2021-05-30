@@ -35,6 +35,7 @@ class MainScreen extends StatelessWidget {
                   qrScreen: (_) => const QRScreen(),
                   articleScreen: (state) => ArticleScreen(
                     article: state.article,
+                    dispatcher: dispatcher,
                   ),
                 ),
               )

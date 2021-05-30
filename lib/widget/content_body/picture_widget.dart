@@ -19,9 +19,12 @@ class PictureWidget extends StatelessWidget {
       children: [
         InkWell(
           onTap: () => onClick(picture),
-          child: Image(
-            image: NetworkImage(
-              '${EnvironmentConfig.apiUrl}media/picture/${picture.id}',
+          child: Hero(
+            tag: picture.id,
+            child: Image(
+              image: NetworkImage(
+                '${EnvironmentConfig.apiUrl}media/picture/${picture.id}',
+              ),
             ),
           ),
         ),

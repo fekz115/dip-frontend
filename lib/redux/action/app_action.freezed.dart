@@ -161,6 +161,12 @@ class _$AppActionTearOff {
       article: article,
     );
   }
+
+  OpenPictureFullScreen openPictureFullScreen({required Picture picture}) {
+    return OpenPictureFullScreen(
+      picture: picture,
+    );
+  }
 }
 
 /// @nodoc
@@ -199,6 +205,7 @@ mixin _$AppAction {
     required TResult Function(Article article) openArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
+    required TResult Function(Picture picture) openPictureFullScreen,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -231,6 +238,7 @@ mixin _$AppAction {
     TResult Function(Article article)? openArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
+    TResult Function(Picture picture)? openPictureFullScreen,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -265,6 +273,8 @@ mixin _$AppAction {
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
+    required TResult Function(OpenPictureFullScreen value)
+        openPictureFullScreen,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -296,6 +306,7 @@ mixin _$AppAction {
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
+    TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -383,6 +394,7 @@ class _$InitAction implements InitAction {
     required TResult Function(Article article) openArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
+    required TResult Function(Picture picture) openPictureFullScreen,
   }) {
     return initAction();
   }
@@ -418,6 +430,7 @@ class _$InitAction implements InitAction {
     TResult Function(Article article)? openArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
+    TResult Function(Picture picture)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (initAction != null) {
@@ -458,6 +471,8 @@ class _$InitAction implements InitAction {
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
+    required TResult Function(OpenPictureFullScreen value)
+        openPictureFullScreen,
   }) {
     return initAction(this);
   }
@@ -492,6 +507,7 @@ class _$InitAction implements InitAction {
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
+    TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (initAction != null) {
@@ -571,6 +587,7 @@ class _$AppLoaded implements AppLoaded {
     required TResult Function(Article article) openArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
+    required TResult Function(Picture picture) openPictureFullScreen,
   }) {
     return appLoaded();
   }
@@ -606,6 +623,7 @@ class _$AppLoaded implements AppLoaded {
     TResult Function(Article article)? openArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
+    TResult Function(Picture picture)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (appLoaded != null) {
@@ -646,6 +664,8 @@ class _$AppLoaded implements AppLoaded {
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
+    required TResult Function(OpenPictureFullScreen value)
+        openPictureFullScreen,
   }) {
     return appLoaded(this);
   }
@@ -680,6 +700,7 @@ class _$AppLoaded implements AppLoaded {
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
+    TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (appLoaded != null) {
@@ -762,6 +783,7 @@ class _$RemovePreviousPages implements RemovePreviousPages {
     required TResult Function(Article article) openArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
+    required TResult Function(Picture picture) openPictureFullScreen,
   }) {
     return removePreviousPages();
   }
@@ -797,6 +819,7 @@ class _$RemovePreviousPages implements RemovePreviousPages {
     TResult Function(Article article)? openArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
+    TResult Function(Picture picture)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (removePreviousPages != null) {
@@ -837,6 +860,8 @@ class _$RemovePreviousPages implements RemovePreviousPages {
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
+    required TResult Function(OpenPictureFullScreen value)
+        openPictureFullScreen,
   }) {
     return removePreviousPages(this);
   }
@@ -871,6 +896,7 @@ class _$RemovePreviousPages implements RemovePreviousPages {
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
+    TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (removePreviousPages != null) {
@@ -981,6 +1007,7 @@ class _$ChangeBottomNavigationState implements ChangeBottomNavigationState {
     required TResult Function(Article article) openArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
+    required TResult Function(Picture picture) openPictureFullScreen,
   }) {
     return changeBottomNavigationState(state);
   }
@@ -1016,6 +1043,7 @@ class _$ChangeBottomNavigationState implements ChangeBottomNavigationState {
     TResult Function(Article article)? openArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
+    TResult Function(Picture picture)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (changeBottomNavigationState != null) {
@@ -1056,6 +1084,8 @@ class _$ChangeBottomNavigationState implements ChangeBottomNavigationState {
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
+    required TResult Function(OpenPictureFullScreen value)
+        openPictureFullScreen,
   }) {
     return changeBottomNavigationState(this);
   }
@@ -1090,6 +1120,7 @@ class _$ChangeBottomNavigationState implements ChangeBottomNavigationState {
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
+    TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (changeBottomNavigationState != null) {
@@ -1175,6 +1206,7 @@ class _$GoBack implements GoBack {
     required TResult Function(Article article) openArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
+    required TResult Function(Picture picture) openPictureFullScreen,
   }) {
     return goBack();
   }
@@ -1210,6 +1242,7 @@ class _$GoBack implements GoBack {
     TResult Function(Article article)? openArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
+    TResult Function(Picture picture)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (goBack != null) {
@@ -1250,6 +1283,8 @@ class _$GoBack implements GoBack {
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
+    required TResult Function(OpenPictureFullScreen value)
+        openPictureFullScreen,
   }) {
     return goBack(this);
   }
@@ -1284,6 +1319,7 @@ class _$GoBack implements GoBack {
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
+    TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (goBack != null) {
@@ -1365,6 +1401,7 @@ class _$GoBackInner implements GoBackInner {
     required TResult Function(Article article) openArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
+    required TResult Function(Picture picture) openPictureFullScreen,
   }) {
     return goBackInner();
   }
@@ -1400,6 +1437,7 @@ class _$GoBackInner implements GoBackInner {
     TResult Function(Article article)? openArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
+    TResult Function(Picture picture)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (goBackInner != null) {
@@ -1440,6 +1478,8 @@ class _$GoBackInner implements GoBackInner {
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
+    required TResult Function(OpenPictureFullScreen value)
+        openPictureFullScreen,
   }) {
     return goBackInner(this);
   }
@@ -1474,6 +1514,7 @@ class _$GoBackInner implements GoBackInner {
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
+    TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (goBackInner != null) {
@@ -1554,6 +1595,7 @@ class _$ShowSignIn implements ShowSignIn {
     required TResult Function(Article article) openArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
+    required TResult Function(Picture picture) openPictureFullScreen,
   }) {
     return showSignIn();
   }
@@ -1589,6 +1631,7 @@ class _$ShowSignIn implements ShowSignIn {
     TResult Function(Article article)? openArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
+    TResult Function(Picture picture)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (showSignIn != null) {
@@ -1629,6 +1672,8 @@ class _$ShowSignIn implements ShowSignIn {
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
+    required TResult Function(OpenPictureFullScreen value)
+        openPictureFullScreen,
   }) {
     return showSignIn(this);
   }
@@ -1663,6 +1708,7 @@ class _$ShowSignIn implements ShowSignIn {
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
+    TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (showSignIn != null) {
@@ -1743,6 +1789,7 @@ class _$ShowSignUp implements ShowSignUp {
     required TResult Function(Article article) openArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
+    required TResult Function(Picture picture) openPictureFullScreen,
   }) {
     return showSignUp();
   }
@@ -1778,6 +1825,7 @@ class _$ShowSignUp implements ShowSignUp {
     TResult Function(Article article)? openArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
+    TResult Function(Picture picture)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (showSignUp != null) {
@@ -1818,6 +1866,8 @@ class _$ShowSignUp implements ShowSignUp {
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
+    required TResult Function(OpenPictureFullScreen value)
+        openPictureFullScreen,
   }) {
     return showSignUp(this);
   }
@@ -1852,6 +1902,7 @@ class _$ShowSignUp implements ShowSignUp {
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
+    TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (showSignUp != null) {
@@ -1931,6 +1982,7 @@ class _$NotNow implements NotNow {
     required TResult Function(Article article) openArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
+    required TResult Function(Picture picture) openPictureFullScreen,
   }) {
     return notNow();
   }
@@ -1966,6 +2018,7 @@ class _$NotNow implements NotNow {
     TResult Function(Article article)? openArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
+    TResult Function(Picture picture)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (notNow != null) {
@@ -2006,6 +2059,8 @@ class _$NotNow implements NotNow {
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
+    required TResult Function(OpenPictureFullScreen value)
+        openPictureFullScreen,
   }) {
     return notNow(this);
   }
@@ -2040,6 +2095,7 @@ class _$NotNow implements NotNow {
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
+    TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (notNow != null) {
@@ -2155,6 +2211,7 @@ class _$Authenticate implements Authenticate {
     required TResult Function(Article article) openArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
+    required TResult Function(Picture picture) openPictureFullScreen,
   }) {
     return authenticate(user);
   }
@@ -2190,6 +2247,7 @@ class _$Authenticate implements Authenticate {
     TResult Function(Article article)? openArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
+    TResult Function(Picture picture)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (authenticate != null) {
@@ -2230,6 +2288,8 @@ class _$Authenticate implements Authenticate {
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
+    required TResult Function(OpenPictureFullScreen value)
+        openPictureFullScreen,
   }) {
     return authenticate(this);
   }
@@ -2264,6 +2324,7 @@ class _$Authenticate implements Authenticate {
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
+    TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (authenticate != null) {
@@ -2387,6 +2448,7 @@ class _$SubmitLogin implements SubmitLogin {
     required TResult Function(Article article) openArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
+    required TResult Function(Picture picture) openPictureFullScreen,
   }) {
     return loginSubmit(login, password);
   }
@@ -2422,6 +2484,7 @@ class _$SubmitLogin implements SubmitLogin {
     TResult Function(Article article)? openArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
+    TResult Function(Picture picture)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (loginSubmit != null) {
@@ -2462,6 +2525,8 @@ class _$SubmitLogin implements SubmitLogin {
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
+    required TResult Function(OpenPictureFullScreen value)
+        openPictureFullScreen,
   }) {
     return loginSubmit(this);
   }
@@ -2496,6 +2561,7 @@ class _$SubmitLogin implements SubmitLogin {
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
+    TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (loginSubmit != null) {
@@ -2648,6 +2714,7 @@ class _$RegistrationLogin implements RegistrationLogin {
     required TResult Function(Article article) openArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
+    required TResult Function(Picture picture) openPictureFullScreen,
   }) {
     return registrationSubmit(login, email, password, repeatedPassword);
   }
@@ -2683,6 +2750,7 @@ class _$RegistrationLogin implements RegistrationLogin {
     TResult Function(Article article)? openArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
+    TResult Function(Picture picture)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (registrationSubmit != null) {
@@ -2723,6 +2791,8 @@ class _$RegistrationLogin implements RegistrationLogin {
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
+    required TResult Function(OpenPictureFullScreen value)
+        openPictureFullScreen,
   }) {
     return registrationSubmit(this);
   }
@@ -2757,6 +2827,7 @@ class _$RegistrationLogin implements RegistrationLogin {
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
+    TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (registrationSubmit != null) {
@@ -2877,6 +2948,7 @@ class _$SetLoadingOnAuthScreen implements SetLoadingOnAuthScreen {
     required TResult Function(Article article) openArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
+    required TResult Function(Picture picture) openPictureFullScreen,
   }) {
     return setLoadingOnAuthScreen(loading);
   }
@@ -2912,6 +2984,7 @@ class _$SetLoadingOnAuthScreen implements SetLoadingOnAuthScreen {
     TResult Function(Article article)? openArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
+    TResult Function(Picture picture)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (setLoadingOnAuthScreen != null) {
@@ -2952,6 +3025,8 @@ class _$SetLoadingOnAuthScreen implements SetLoadingOnAuthScreen {
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
+    required TResult Function(OpenPictureFullScreen value)
+        openPictureFullScreen,
   }) {
     return setLoadingOnAuthScreen(this);
   }
@@ -2986,6 +3061,7 @@ class _$SetLoadingOnAuthScreen implements SetLoadingOnAuthScreen {
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
+    TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (setLoadingOnAuthScreen != null) {
@@ -3100,6 +3176,7 @@ class _$SetErrorOnAuthScreen implements SetErrorOnAuthScreen {
     required TResult Function(Article article) openArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
+    required TResult Function(Picture picture) openPictureFullScreen,
   }) {
     return setErrorOnAuthScreen(error);
   }
@@ -3135,6 +3212,7 @@ class _$SetErrorOnAuthScreen implements SetErrorOnAuthScreen {
     TResult Function(Article article)? openArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
+    TResult Function(Picture picture)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (setErrorOnAuthScreen != null) {
@@ -3175,6 +3253,8 @@ class _$SetErrorOnAuthScreen implements SetErrorOnAuthScreen {
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
+    required TResult Function(OpenPictureFullScreen value)
+        openPictureFullScreen,
   }) {
     return setErrorOnAuthScreen(this);
   }
@@ -3209,6 +3289,7 @@ class _$SetErrorOnAuthScreen implements SetErrorOnAuthScreen {
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
+    TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (setErrorOnAuthScreen != null) {
@@ -3296,6 +3377,7 @@ class _$InitLoadingArticles implements InitLoadingArticles {
     required TResult Function(Article article) openArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
+    required TResult Function(Picture picture) openPictureFullScreen,
   }) {
     return initLoadingArticles();
   }
@@ -3331,6 +3413,7 @@ class _$InitLoadingArticles implements InitLoadingArticles {
     TResult Function(Article article)? openArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
+    TResult Function(Picture picture)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (initLoadingArticles != null) {
@@ -3371,6 +3454,8 @@ class _$InitLoadingArticles implements InitLoadingArticles {
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
+    required TResult Function(OpenPictureFullScreen value)
+        openPictureFullScreen,
   }) {
     return initLoadingArticles(this);
   }
@@ -3405,6 +3490,7 @@ class _$InitLoadingArticles implements InitLoadingArticles {
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
+    TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (initLoadingArticles != null) {
@@ -3487,6 +3573,7 @@ class _$ShowArticlesLoading implements ShowArticlesLoading {
     required TResult Function(Article article) openArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
+    required TResult Function(Picture picture) openPictureFullScreen,
   }) {
     return showArticlesLoading();
   }
@@ -3522,6 +3609,7 @@ class _$ShowArticlesLoading implements ShowArticlesLoading {
     TResult Function(Article article)? openArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
+    TResult Function(Picture picture)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (showArticlesLoading != null) {
@@ -3562,6 +3650,8 @@ class _$ShowArticlesLoading implements ShowArticlesLoading {
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
+    required TResult Function(OpenPictureFullScreen value)
+        openPictureFullScreen,
   }) {
     return showArticlesLoading(this);
   }
@@ -3596,6 +3686,7 @@ class _$ShowArticlesLoading implements ShowArticlesLoading {
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
+    TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (showArticlesLoading != null) {
@@ -3727,6 +3818,7 @@ class _$ShowArticlesLoaded implements ShowArticlesLoaded {
     required TResult Function(Article article) openArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
+    required TResult Function(Picture picture) openPictureFullScreen,
   }) {
     return showArticlesLoaded(articles, page, pageSize);
   }
@@ -3762,6 +3854,7 @@ class _$ShowArticlesLoaded implements ShowArticlesLoaded {
     TResult Function(Article article)? openArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
+    TResult Function(Picture picture)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (showArticlesLoaded != null) {
@@ -3802,6 +3895,8 @@ class _$ShowArticlesLoaded implements ShowArticlesLoaded {
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
+    required TResult Function(OpenPictureFullScreen value)
+        openPictureFullScreen,
   }) {
     return showArticlesLoaded(this);
   }
@@ -3836,6 +3931,7 @@ class _$ShowArticlesLoaded implements ShowArticlesLoaded {
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
+    TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (showArticlesLoaded != null) {
@@ -3955,6 +4051,7 @@ class _$ShowAllArticlesLoaded implements ShowAllArticlesLoaded {
     required TResult Function(Article article) openArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
+    required TResult Function(Picture picture) openPictureFullScreen,
   }) {
     return showAllArticlesLoaded(articles);
   }
@@ -3990,6 +4087,7 @@ class _$ShowAllArticlesLoaded implements ShowAllArticlesLoaded {
     TResult Function(Article article)? openArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
+    TResult Function(Picture picture)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (showAllArticlesLoaded != null) {
@@ -4030,6 +4128,8 @@ class _$ShowAllArticlesLoaded implements ShowAllArticlesLoaded {
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
+    required TResult Function(OpenPictureFullScreen value)
+        openPictureFullScreen,
   }) {
     return showAllArticlesLoaded(this);
   }
@@ -4064,6 +4164,7 @@ class _$ShowAllArticlesLoaded implements ShowAllArticlesLoaded {
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
+    TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (showAllArticlesLoaded != null) {
@@ -4179,6 +4280,7 @@ class _$ShowErrorOnArticleLoading implements ShowErrorOnArticleLoading {
     required TResult Function(Article article) openArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
+    required TResult Function(Picture picture) openPictureFullScreen,
   }) {
     return showErrorOnArticleLoading(message);
   }
@@ -4214,6 +4316,7 @@ class _$ShowErrorOnArticleLoading implements ShowErrorOnArticleLoading {
     TResult Function(Article article)? openArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
+    TResult Function(Picture picture)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (showErrorOnArticleLoading != null) {
@@ -4254,6 +4357,8 @@ class _$ShowErrorOnArticleLoading implements ShowErrorOnArticleLoading {
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
+    required TResult Function(OpenPictureFullScreen value)
+        openPictureFullScreen,
   }) {
     return showErrorOnArticleLoading(this);
   }
@@ -4288,6 +4393,7 @@ class _$ShowErrorOnArticleLoading implements ShowErrorOnArticleLoading {
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
+    TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (showErrorOnArticleLoading != null) {
@@ -4414,6 +4520,7 @@ class _$LoadNextArticlePage implements LoadNextArticlePage {
     required TResult Function(Article article) openArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
+    required TResult Function(Picture picture) openPictureFullScreen,
   }) {
     return loadNextArticlePage(prevPage, pageSize);
   }
@@ -4449,6 +4556,7 @@ class _$LoadNextArticlePage implements LoadNextArticlePage {
     TResult Function(Article article)? openArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
+    TResult Function(Picture picture)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (loadNextArticlePage != null) {
@@ -4489,6 +4597,8 @@ class _$LoadNextArticlePage implements LoadNextArticlePage {
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
+    required TResult Function(OpenPictureFullScreen value)
+        openPictureFullScreen,
   }) {
     return loadNextArticlePage(this);
   }
@@ -4523,6 +4633,7 @@ class _$LoadNextArticlePage implements LoadNextArticlePage {
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
+    TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (loadNextArticlePage != null) {
@@ -4611,6 +4722,7 @@ class _$RefreshArticles implements RefreshArticles {
     required TResult Function(Article article) openArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
+    required TResult Function(Picture picture) openPictureFullScreen,
   }) {
     return refreshArticles();
   }
@@ -4646,6 +4758,7 @@ class _$RefreshArticles implements RefreshArticles {
     TResult Function(Article article)? openArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
+    TResult Function(Picture picture)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (refreshArticles != null) {
@@ -4686,6 +4799,8 @@ class _$RefreshArticles implements RefreshArticles {
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
+    required TResult Function(OpenPictureFullScreen value)
+        openPictureFullScreen,
   }) {
     return refreshArticles(this);
   }
@@ -4720,6 +4835,7 @@ class _$RefreshArticles implements RefreshArticles {
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
+    TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (refreshArticles != null) {
@@ -4835,6 +4951,7 @@ class _$DownloadPdf implements DownloadPdf {
     required TResult Function(Article article) openArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
+    required TResult Function(Picture picture) openPictureFullScreen,
   }) {
     return downloadPdf(article);
   }
@@ -4870,6 +4987,7 @@ class _$DownloadPdf implements DownloadPdf {
     TResult Function(Article article)? openArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
+    TResult Function(Picture picture)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (downloadPdf != null) {
@@ -4910,6 +5028,8 @@ class _$DownloadPdf implements DownloadPdf {
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
+    required TResult Function(OpenPictureFullScreen value)
+        openPictureFullScreen,
   }) {
     return downloadPdf(this);
   }
@@ -4944,6 +5064,7 @@ class _$DownloadPdf implements DownloadPdf {
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
+    TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (downloadPdf != null) {
@@ -5064,6 +5185,7 @@ class _$OpenArticle implements OpenArticle {
     required TResult Function(Article article) openArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
+    required TResult Function(Picture picture) openPictureFullScreen,
   }) {
     return openArticle(article);
   }
@@ -5099,6 +5221,7 @@ class _$OpenArticle implements OpenArticle {
     TResult Function(Article article)? openArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
+    TResult Function(Picture picture)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (openArticle != null) {
@@ -5139,6 +5262,8 @@ class _$OpenArticle implements OpenArticle {
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
+    required TResult Function(OpenPictureFullScreen value)
+        openPictureFullScreen,
   }) {
     return openArticle(this);
   }
@@ -5173,6 +5298,7 @@ class _$OpenArticle implements OpenArticle {
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
+    TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (openArticle != null) {
@@ -5282,6 +5408,7 @@ class _$QRScanned implements QRScanned {
     required TResult Function(Article article) openArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
+    required TResult Function(Picture picture) openPictureFullScreen,
   }) {
     return qrScanned(code);
   }
@@ -5317,6 +5444,7 @@ class _$QRScanned implements QRScanned {
     TResult Function(Article article)? openArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
+    TResult Function(Picture picture)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (qrScanned != null) {
@@ -5357,6 +5485,8 @@ class _$QRScanned implements QRScanned {
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
+    required TResult Function(OpenPictureFullScreen value)
+        openPictureFullScreen,
   }) {
     return qrScanned(this);
   }
@@ -5391,6 +5521,7 @@ class _$QRScanned implements QRScanned {
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
+    TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (qrScanned != null) {
@@ -5512,6 +5643,7 @@ class _$ShowScannedArticle implements ShowScannedArticle {
     required TResult Function(Article article) openArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
+    required TResult Function(Picture picture) openPictureFullScreen,
   }) {
     return showScannedArticle(article);
   }
@@ -5547,6 +5679,7 @@ class _$ShowScannedArticle implements ShowScannedArticle {
     TResult Function(Article article)? openArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
+    TResult Function(Picture picture)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (showScannedArticle != null) {
@@ -5587,6 +5720,8 @@ class _$ShowScannedArticle implements ShowScannedArticle {
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
+    required TResult Function(OpenPictureFullScreen value)
+        openPictureFullScreen,
   }) {
     return showScannedArticle(this);
   }
@@ -5621,6 +5756,7 @@ class _$ShowScannedArticle implements ShowScannedArticle {
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
+    TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     required TResult orElse(),
   }) {
     if (showScannedArticle != null) {
@@ -5637,5 +5773,242 @@ abstract class ShowScannedArticle implements AppAction {
   Article get article => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ShowScannedArticleCopyWith<ShowScannedArticle> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $OpenPictureFullScreenCopyWith<$Res> {
+  factory $OpenPictureFullScreenCopyWith(OpenPictureFullScreen value,
+          $Res Function(OpenPictureFullScreen) then) =
+      _$OpenPictureFullScreenCopyWithImpl<$Res>;
+  $Res call({Picture picture});
+
+  $PictureCopyWith<$Res> get picture;
+}
+
+/// @nodoc
+class _$OpenPictureFullScreenCopyWithImpl<$Res>
+    extends _$AppActionCopyWithImpl<$Res>
+    implements $OpenPictureFullScreenCopyWith<$Res> {
+  _$OpenPictureFullScreenCopyWithImpl(
+      OpenPictureFullScreen _value, $Res Function(OpenPictureFullScreen) _then)
+      : super(_value, (v) => _then(v as OpenPictureFullScreen));
+
+  @override
+  OpenPictureFullScreen get _value => super._value as OpenPictureFullScreen;
+
+  @override
+  $Res call({
+    Object? picture = freezed,
+  }) {
+    return _then(OpenPictureFullScreen(
+      picture: picture == freezed
+          ? _value.picture
+          : picture // ignore: cast_nullable_to_non_nullable
+              as Picture,
+    ));
+  }
+
+  @override
+  $PictureCopyWith<$Res> get picture {
+    return $PictureCopyWith<$Res>(_value.picture, (value) {
+      return _then(_value.copyWith(picture: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$OpenPictureFullScreen implements OpenPictureFullScreen {
+  const _$OpenPictureFullScreen({required this.picture});
+
+  @override
+  final Picture picture;
+
+  @override
+  String toString() {
+    return 'AppAction.openPictureFullScreen(picture: $picture)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is OpenPictureFullScreen &&
+            (identical(other.picture, picture) ||
+                const DeepCollectionEquality().equals(other.picture, picture)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(picture);
+
+  @JsonKey(ignore: true)
+  @override
+  $OpenPictureFullScreenCopyWith<OpenPictureFullScreen> get copyWith =>
+      _$OpenPictureFullScreenCopyWithImpl<OpenPictureFullScreen>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initAction,
+    required TResult Function() appLoaded,
+    required TResult Function() removePreviousPages,
+    required TResult Function(BottomNavigationState state)
+        changeBottomNavigationState,
+    required TResult Function() goBack,
+    required TResult Function() goBackInner,
+    required TResult Function() showSignIn,
+    required TResult Function() showSignUp,
+    required TResult Function() notNow,
+    required TResult Function(User user) authenticate,
+    required TResult Function(String login, String password) loginSubmit,
+    required TResult Function(String login, String email, String password,
+            String repeatedPassword)
+        registrationSubmit,
+    required TResult Function(bool loading) setLoadingOnAuthScreen,
+    required TResult Function(String? error) setErrorOnAuthScreen,
+    required TResult Function() initLoadingArticles,
+    required TResult Function() showArticlesLoading,
+    required TResult Function(List<Article> articles, int page, int pageSize)
+        showArticlesLoaded,
+    required TResult Function(List<Article> articles) showAllArticlesLoaded,
+    required TResult Function(String message) showErrorOnArticleLoading,
+    required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
+    required TResult Function() refreshArticles,
+    required TResult Function(Article article) downloadPdf,
+    required TResult Function(Article article) openArticle,
+    required TResult Function(String code) qrScanned,
+    required TResult Function(Article article) showScannedArticle,
+    required TResult Function(Picture picture) openPictureFullScreen,
+  }) {
+    return openPictureFullScreen(picture);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initAction,
+    TResult Function()? appLoaded,
+    TResult Function()? removePreviousPages,
+    TResult Function(BottomNavigationState state)? changeBottomNavigationState,
+    TResult Function()? goBack,
+    TResult Function()? goBackInner,
+    TResult Function()? showSignIn,
+    TResult Function()? showSignUp,
+    TResult Function()? notNow,
+    TResult Function(User user)? authenticate,
+    TResult Function(String login, String password)? loginSubmit,
+    TResult Function(String login, String email, String password,
+            String repeatedPassword)?
+        registrationSubmit,
+    TResult Function(bool loading)? setLoadingOnAuthScreen,
+    TResult Function(String? error)? setErrorOnAuthScreen,
+    TResult Function()? initLoadingArticles,
+    TResult Function()? showArticlesLoading,
+    TResult Function(List<Article> articles, int page, int pageSize)?
+        showArticlesLoaded,
+    TResult Function(List<Article> articles)? showAllArticlesLoaded,
+    TResult Function(String message)? showErrorOnArticleLoading,
+    TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
+    TResult Function()? refreshArticles,
+    TResult Function(Article article)? downloadPdf,
+    TResult Function(Article article)? openArticle,
+    TResult Function(String code)? qrScanned,
+    TResult Function(Article article)? showScannedArticle,
+    TResult Function(Picture picture)? openPictureFullScreen,
+    required TResult orElse(),
+  }) {
+    if (openPictureFullScreen != null) {
+      return openPictureFullScreen(picture);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitAction value) initAction,
+    required TResult Function(AppLoaded value) appLoaded,
+    required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ChangeBottomNavigationState value)
+        changeBottomNavigationState,
+    required TResult Function(GoBack value) goBack,
+    required TResult Function(GoBackInner value) goBackInner,
+    required TResult Function(ShowSignIn value) showSignIn,
+    required TResult Function(ShowSignUp value) showSignUp,
+    required TResult Function(NotNow value) notNow,
+    required TResult Function(Authenticate value) authenticate,
+    required TResult Function(SubmitLogin value) loginSubmit,
+    required TResult Function(RegistrationLogin value) registrationSubmit,
+    required TResult Function(SetLoadingOnAuthScreen value)
+        setLoadingOnAuthScreen,
+    required TResult Function(SetErrorOnAuthScreen value) setErrorOnAuthScreen,
+    required TResult Function(InitLoadingArticles value) initLoadingArticles,
+    required TResult Function(ShowArticlesLoading value) showArticlesLoading,
+    required TResult Function(ShowArticlesLoaded value) showArticlesLoaded,
+    required TResult Function(ShowAllArticlesLoaded value)
+        showAllArticlesLoaded,
+    required TResult Function(ShowErrorOnArticleLoading value)
+        showErrorOnArticleLoading,
+    required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
+    required TResult Function(RefreshArticles value) refreshArticles,
+    required TResult Function(DownloadPdf value) downloadPdf,
+    required TResult Function(OpenArticle value) openArticle,
+    required TResult Function(QRScanned value) qrScanned,
+    required TResult Function(ShowScannedArticle value) showScannedArticle,
+    required TResult Function(OpenPictureFullScreen value)
+        openPictureFullScreen,
+  }) {
+    return openPictureFullScreen(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitAction value)? initAction,
+    TResult Function(AppLoaded value)? appLoaded,
+    TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ChangeBottomNavigationState value)?
+        changeBottomNavigationState,
+    TResult Function(GoBack value)? goBack,
+    TResult Function(GoBackInner value)? goBackInner,
+    TResult Function(ShowSignIn value)? showSignIn,
+    TResult Function(ShowSignUp value)? showSignUp,
+    TResult Function(NotNow value)? notNow,
+    TResult Function(Authenticate value)? authenticate,
+    TResult Function(SubmitLogin value)? loginSubmit,
+    TResult Function(RegistrationLogin value)? registrationSubmit,
+    TResult Function(SetLoadingOnAuthScreen value)? setLoadingOnAuthScreen,
+    TResult Function(SetErrorOnAuthScreen value)? setErrorOnAuthScreen,
+    TResult Function(InitLoadingArticles value)? initLoadingArticles,
+    TResult Function(ShowArticlesLoading value)? showArticlesLoading,
+    TResult Function(ShowArticlesLoaded value)? showArticlesLoaded,
+    TResult Function(ShowAllArticlesLoaded value)? showAllArticlesLoaded,
+    TResult Function(ShowErrorOnArticleLoading value)?
+        showErrorOnArticleLoading,
+    TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
+    TResult Function(RefreshArticles value)? refreshArticles,
+    TResult Function(DownloadPdf value)? downloadPdf,
+    TResult Function(OpenArticle value)? openArticle,
+    TResult Function(QRScanned value)? qrScanned,
+    TResult Function(ShowScannedArticle value)? showScannedArticle,
+    TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
+    required TResult orElse(),
+  }) {
+    if (openPictureFullScreen != null) {
+      return openPictureFullScreen(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OpenPictureFullScreen implements AppAction {
+  const factory OpenPictureFullScreen({required Picture picture}) =
+      _$OpenPictureFullScreen;
+
+  Picture get picture => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $OpenPictureFullScreenCopyWith<OpenPictureFullScreen> get copyWith =>
       throw _privateConstructorUsedError;
 }

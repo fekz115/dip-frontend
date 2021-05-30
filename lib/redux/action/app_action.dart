@@ -1,4 +1,5 @@
 import 'package:dip_frontend/model/article.dart';
+import 'package:dip_frontend/model/picture.dart';
 import 'package:dip_frontend/model/user.dart';
 import 'package:dip_frontend/redux/state/navigation/bottom_navigation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -71,4 +72,8 @@ class AppAction with _$AppAction {
   const factory AppAction.showScannedArticle({
     required Article article,
   }) = ShowScannedArticle;
+
+  const factory AppAction.openPictureFullScreen({
+    required Picture picture,
+  }) = OpenPictureFullScreen;
 }
