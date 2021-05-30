@@ -1,6 +1,7 @@
 import 'package:dip_frontend/environment_config.dart';
 import 'package:dip_frontend/model/article.dart';
 import 'package:dip_frontend/model/content_container.dart';
+import 'package:dip_frontend/widget/content_body/content_body_widget.dart';
 import 'package:flutter/material.dart';
 
 class ArticleScreen extends StatelessWidget {
@@ -19,48 +20,24 @@ class ArticleScreen extends StatelessWidget {
           'Article',
         ),
       ),
-      body: ListView(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Text(
-              article.title,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.headline5,
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: ListView(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Text(
+                article.title,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.headline5,
+              ),
             ),
-          ),
-          ...article.body.content.map((e) => _buildContent(e)),
-        ],
+            ContentBodyWidget(
+              contentBody: article.body,
+            ),
+          ],
+        ),
       ),
     );
-  }
-
-  Widget _buildContent(ContentContainer contentContainer) {
-    if (contentContainer.music != null) {
-      return ListTile(
-        leading: const Icon(Icons.music_note),
-        title: Text(
-          contentContainer.music!.name ?? '',
-        ),
-      );
-    }
-    if (contentContainer.picture != null) {
-      return Image(
-        image: NetworkImage(
-            '${EnvironmentConfig.apiUrl}/media/picture/${contentContainer.picture!.id}'),
-      );
-    }
-    if (contentContainer.video != null) {
-      return ListTile(
-        leading: const Icon(Icons.video_library),
-        title: Text(
-          contentContainer.video!.name ?? '',
-        ),
-      );
-    }
-    if (contentContainer.text != null) {
-      return Text(contentContainer.text!.data);
-    }
-    return Container();
   }
 }

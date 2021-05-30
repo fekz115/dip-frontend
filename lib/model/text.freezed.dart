@@ -23,7 +23,7 @@ class _$TextTearOff {
   _Text call(
       {required int id,
       required String data,
-      required String link,
+      String? link,
       required bool strike,
       required bool bold,
       required bool italic,
@@ -55,7 +55,7 @@ const $Text = _$TextTearOff();
 mixin _$Text {
   int get id => throw _privateConstructorUsedError;
   String get data => throw _privateConstructorUsedError;
-  String get link => throw _privateConstructorUsedError;
+  String? get link => throw _privateConstructorUsedError;
   bool get strike => throw _privateConstructorUsedError;
   bool get bold => throw _privateConstructorUsedError;
   bool get italic => throw _privateConstructorUsedError;
@@ -75,7 +75,7 @@ abstract class $TextCopyWith<$Res> {
   $Res call(
       {int id,
       String data,
-      String link,
+      String? link,
       bool strike,
       bool bold,
       bool italic,
@@ -116,7 +116,7 @@ class _$TextCopyWithImpl<$Res> implements $TextCopyWith<$Res> {
       link: link == freezed
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       strike: strike == freezed
           ? _value.strike
           : strike // ignore: cast_nullable_to_non_nullable
@@ -153,7 +153,7 @@ abstract class _$TextCopyWith<$Res> implements $TextCopyWith<$Res> {
   $Res call(
       {int id,
       String data,
-      String link,
+      String? link,
       bool strike,
       bool bold,
       bool italic,
@@ -195,7 +195,7 @@ class __$TextCopyWithImpl<$Res> extends _$TextCopyWithImpl<$Res>
       link: link == freezed
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       strike: strike == freezed
           ? _value.strike
           : strike // ignore: cast_nullable_to_non_nullable
@@ -230,7 +230,7 @@ class _$_Text implements _Text {
   const _$_Text(
       {required this.id,
       required this.data,
-      required this.link,
+      this.link,
       required this.strike,
       required this.bold,
       required this.italic,
@@ -246,7 +246,7 @@ class _$_Text implements _Text {
   @override
   final String data;
   @override
-  final String link;
+  final String? link;
   @override
   final bool strike;
   @override
@@ -318,7 +318,7 @@ abstract class _Text implements Text {
   const factory _Text(
       {required int id,
       required String data,
-      required String link,
+      String? link,
       required bool strike,
       required bool bold,
       required bool italic,
@@ -333,7 +333,7 @@ abstract class _Text implements Text {
   @override
   String get data => throw _privateConstructorUsedError;
   @override
-  String get link => throw _privateConstructorUsedError;
+  String? get link => throw _privateConstructorUsedError;
   @override
   bool get strike => throw _privateConstructorUsedError;
   @override

@@ -10,7 +10,7 @@ _$_Text _$_$_TextFromJson(Map<String, dynamic> json) {
   return _$_Text(
     id: json['id'] as int,
     data: json['data'] as String,
-    link: json['link'] as String,
+    link: json['link'] as String?,
     strike: json['strike'] as bool,
     bold: json['bold'] as bool,
     italic: json['italic'] as bool,

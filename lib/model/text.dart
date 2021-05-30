@@ -8,7 +8,7 @@ class Text with _$Text {
   const factory Text({
     required int id,
     required String data,
-    required String link,
+    String? link,
     required bool strike,
     required bool bold,
     required bool italic,
