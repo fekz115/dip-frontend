@@ -266,5 +266,10 @@ List<Middleware<AppState, AppAction, AppEvent>> createMiddleware(
                 const AppEvent.snackbarNotificationEvent(message: 'Incorrect QR-code'),
               );
             }
+          },savePicture: (action) async {
+            final file = await apiClient.downloadPicture(action.picture.id);
+            eventDispatcher(
+              AppEvent.snackbarNotificationEvent(message: 'File downloaded: ${file.path}'),
+            );
           }),
     ];

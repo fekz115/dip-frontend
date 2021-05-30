@@ -29,14 +29,17 @@ class NavigatorWidget extends StatelessWidget {
                 (screen) => screen.map(
                   splashScreen: (_) => const SplashScreen(),
                   authScreen: (_) => const AuthScreen(),
-                  mainScreen: (_) => const MainScreen(), 
-                  pictureScreen: (screen) => PictureScreen(picture: screen.picture),
+                  mainScreen: (_) => const MainScreen(),
+                  pictureScreen: (screen) => PictureScreen(
+                    picture: screen.picture,
+                    dispatcher: dispatcher,
+                  ),
                 ),
               )
               .map((screen) => MaterialPage(child: screen))
               .toList(),
           onPopPage: (route, result) {
-            if(route.didPop(result)) {
+            if (route.didPop(result)) {
               dispatcher(const AppAction.goBack());
               return true;
             } else {

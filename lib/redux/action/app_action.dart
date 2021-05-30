@@ -76,4 +76,7 @@ class AppAction with _$AppAction {
   const factory AppAction.openPictureFullScreen({
     required Picture picture,
   }) = OpenPictureFullScreen;
+  const factory AppAction.savePicture({
+    required Picture picture,
+  }) = SavePicture;
 }

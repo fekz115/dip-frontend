@@ -123,7 +123,7 @@ class ApiClient {
     );
     final t = response.headers["content-disposition"]![0];
     final file = File(
-        '${(await getDownloadsDirectory())!.path}/${t.substring(t.indexOf('"') + 1, t.lastIndexOf('"'))}');
+        '${(await getTemporaryDirectory()).path}/${t.substring(t.indexOf('"') + 1, t.lastIndexOf('"'))}');
     final raf = file.openSync(mode: FileMode.write);
     raf.writeFromSync(response.data as List<int>);
     await raf.close();
