@@ -13,6 +13,8 @@ class AppAction with _$AppAction {
   const factory AppAction.changeBottomNavigationState({
     required BottomNavigationState state,
   }) = ChangeBottomNavigationState;
+  const factory AppAction.goBack() = GoBack;
+  const factory AppAction.goBackInner() = GoBackInner;
 
   const factory AppAction.showSignIn() = ShowSignIn;
   const factory AppAction.showSignUp() = ShowSignUp;
@@ -59,4 +61,7 @@ class AppAction with _$AppAction {
   const factory AppAction.downloadPdf({
     required Article article,
   }) = DownloadPdf;
+  const factory AppAction.openArticle({
+    required Article article,
+  }) = OpenArticle;
 }

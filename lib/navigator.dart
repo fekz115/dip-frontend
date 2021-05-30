@@ -1,3 +1,4 @@
+import 'package:dip_frontend/redux/action/app_action.dart';
 import 'package:dip_frontend/redux/state/navigation/screen.dart';
 import 'package:dip_frontend/screen/auth_screen.dart';
 import 'package:dip_frontend/screen/main_screen.dart';
@@ -26,7 +27,14 @@ class NavigatorWidget extends StatelessWidget {
             )
             .map((screen) => MaterialPage(child: screen))
             .toList(),
-        onPopPage: (route, result) => true,
+        onPopPage: (route, result) {
+          if(route.didPop(result)) {
+            dispatcher(const AppAction.goBack());
+            return true;
+          } else {
+            return false;
+          }
+        },
       ),
     );
   }

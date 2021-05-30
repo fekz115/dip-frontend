@@ -1,9 +1,13 @@
+import 'dart:io';
+
 import 'package:dip_frontend/redux/action/app_action.dart';
 import 'package:dip_frontend/redux/state/navigation/bottom_navigation.dart';
-import 'package:dip_frontend/widget/article_list/article_list.dart';
+import 'package:dip_frontend/redux/state/navigation/inner_navigation/inner_screen.dart';
+import 'package:dip_frontend/screen/article_screen.dart';
+import 'package:dip_frontend/screen/articles_screen.dart';
+import 'package:dip_frontend/screen/map_screen.dart';
+import 'package:dip_frontend/screen/qr_screen.dart';
 import 'package:dip_frontend/typedefs.dart';
-import 'package:dip_frontend/widget/map/map.dart';
-import 'package:dip_frontend/widget/qr/qr.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatelessWidget {
@@ -20,23 +24,33 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Main screen',
+      body: ProjectStoreConnection<List<InnerScreen>>(
+        connect: (state) => state.innerNavigationState,
+        builder: (context, state, dispatcher) => Navigator(
+          pages: state
+              .map(
+                (e) => e.map(
+                  articlesScreen: (_) => const ArticlesScreen(),
+                  mapScreen: (_) => const MapScreen(),
+                  qrScreen: (_) => const QRScreen(),
+                  articleScreen: (state) => ArticleScreen(
+                    article: state.article,
+                  ),
+                ),
+              )
+              .map(
+                (e) => MaterialPage(child: e),
+              )
+              .toList(),
+          onPopPage: (route, result) {
+            if (route.didPop(result)) {
+              dispatcher(const AppAction.goBackInner());
+              return true;
+            } else {
+              return false;
+            }
+          },
         ),
-      ),
-      body: ProjectStoreConnection<BottomNavigationState>(
-        connect: (state) => state.bottomNavigationState,
-        builder: (context, state, dispatcher) {
-          switch(state) {
-            case BottomNavigationState.articles:
-              return const ArticleList();
-            case BottomNavigationState.map:
-              return const MapWidget();
-            case BottomNavigationState.qr:
-              return const QrWidget();
-          }
-        },
         eventListener: (context, event) async {
           event.map(
             snackbarNotificationEvent: (event) {
@@ -60,25 +74,26 @@ class MainScreen extends StatelessWidget {
               state: bottomNavigationMap[index],
             ),
           ),
-          items: const [
-            BottomNavigationBarItem(
+          items: [
+            const BottomNavigationBarItem(
               icon: Icon(
                 Icons.article,
               ),
               label: 'Articles',
             ),
-            BottomNavigationBarItem(
+            const BottomNavigationBarItem(
               icon: Icon(
                 Icons.map,
               ),
               label: 'Map',
             ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.qr_code,
+            if (Platform.isAndroid || Platform.isIOS)
+              const BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.qr_code,
+                ),
+                label: 'Scan QR',
               ),
-              label: 'Scan QR',
-            ),
           ],
         ),
       ),

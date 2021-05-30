@@ -18,6 +18,7 @@ class _$AppStateTearOff {
 
   _AppState call(
       {required List<Screen> navigationState,
+      required List<InnerScreen> innerNavigationState,
       required AuthState authState,
       required List<Role> roles,
       required ArticlesState articlesState,
@@ -25,6 +26,7 @@ class _$AppStateTearOff {
       User? user}) {
     return _AppState(
       navigationState: navigationState,
+      innerNavigationState: innerNavigationState,
       authState: authState,
       roles: roles,
       articlesState: articlesState,
@@ -40,6 +42,8 @@ const $AppState = _$AppStateTearOff();
 /// @nodoc
 mixin _$AppState {
   List<Screen> get navigationState => throw _privateConstructorUsedError;
+  List<InnerScreen> get innerNavigationState =>
+      throw _privateConstructorUsedError;
   AuthState get authState => throw _privateConstructorUsedError;
   List<Role> get roles => throw _privateConstructorUsedError;
   ArticlesState get articlesState => throw _privateConstructorUsedError;
@@ -58,6 +62,7 @@ abstract class $AppStateCopyWith<$Res> {
       _$AppStateCopyWithImpl<$Res>;
   $Res call(
       {List<Screen> navigationState,
+      List<InnerScreen> innerNavigationState,
       AuthState authState,
       List<Role> roles,
       ArticlesState articlesState,
@@ -80,6 +85,7 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
   @override
   $Res call({
     Object? navigationState = freezed,
+    Object? innerNavigationState = freezed,
     Object? authState = freezed,
     Object? roles = freezed,
     Object? articlesState = freezed,
@@ -91,6 +97,10 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
           ? _value.navigationState
           : navigationState // ignore: cast_nullable_to_non_nullable
               as List<Screen>,
+      innerNavigationState: innerNavigationState == freezed
+          ? _value.innerNavigationState
+          : innerNavigationState // ignore: cast_nullable_to_non_nullable
+              as List<InnerScreen>,
       authState: authState == freezed
           ? _value.authState
           : authState // ignore: cast_nullable_to_non_nullable
@@ -147,6 +157,7 @@ abstract class _$AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
   @override
   $Res call(
       {List<Screen> navigationState,
+      List<InnerScreen> innerNavigationState,
       AuthState authState,
       List<Role> roles,
       ArticlesState articlesState,
@@ -173,6 +184,7 @@ class __$AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? navigationState = freezed,
+    Object? innerNavigationState = freezed,
     Object? authState = freezed,
     Object? roles = freezed,
     Object? articlesState = freezed,
@@ -184,6 +196,10 @@ class __$AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
           ? _value.navigationState
           : navigationState // ignore: cast_nullable_to_non_nullable
               as List<Screen>,
+      innerNavigationState: innerNavigationState == freezed
+          ? _value.innerNavigationState
+          : innerNavigationState // ignore: cast_nullable_to_non_nullable
+              as List<InnerScreen>,
       authState: authState == freezed
           ? _value.authState
           : authState // ignore: cast_nullable_to_non_nullable
@@ -213,6 +229,7 @@ class __$AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
 class _$_AppState implements _AppState {
   const _$_AppState(
       {required this.navigationState,
+      required this.innerNavigationState,
       required this.authState,
       required this.roles,
       required this.articlesState,
@@ -221,6 +238,8 @@ class _$_AppState implements _AppState {
 
   @override
   final List<Screen> navigationState;
+  @override
+  final List<InnerScreen> innerNavigationState;
   @override
   final AuthState authState;
   @override
@@ -234,7 +253,7 @@ class _$_AppState implements _AppState {
 
   @override
   String toString() {
-    return 'AppState(navigationState: $navigationState, authState: $authState, roles: $roles, articlesState: $articlesState, bottomNavigationState: $bottomNavigationState, user: $user)';
+    return 'AppState(navigationState: $navigationState, innerNavigationState: $innerNavigationState, authState: $authState, roles: $roles, articlesState: $articlesState, bottomNavigationState: $bottomNavigationState, user: $user)';
   }
 
   @override
@@ -244,6 +263,9 @@ class _$_AppState implements _AppState {
             (identical(other.navigationState, navigationState) ||
                 const DeepCollectionEquality()
                     .equals(other.navigationState, navigationState)) &&
+            (identical(other.innerNavigationState, innerNavigationState) ||
+                const DeepCollectionEquality().equals(
+                    other.innerNavigationState, innerNavigationState)) &&
             (identical(other.authState, authState) ||
                 const DeepCollectionEquality()
                     .equals(other.authState, authState)) &&
@@ -263,6 +285,7 @@ class _$_AppState implements _AppState {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(navigationState) ^
+      const DeepCollectionEquality().hash(innerNavigationState) ^
       const DeepCollectionEquality().hash(authState) ^
       const DeepCollectionEquality().hash(roles) ^
       const DeepCollectionEquality().hash(articlesState) ^
@@ -278,6 +301,7 @@ class _$_AppState implements _AppState {
 abstract class _AppState implements AppState {
   const factory _AppState(
       {required List<Screen> navigationState,
+      required List<InnerScreen> innerNavigationState,
       required AuthState authState,
       required List<Role> roles,
       required ArticlesState articlesState,
@@ -286,6 +310,9 @@ abstract class _AppState implements AppState {
 
   @override
   List<Screen> get navigationState => throw _privateConstructorUsedError;
+  @override
+  List<InnerScreen> get innerNavigationState =>
+      throw _privateConstructorUsedError;
   @override
   AuthState get authState => throw _privateConstructorUsedError;
   @override

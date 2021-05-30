@@ -6,15 +6,19 @@ class LoadedAllArticleList extends StatelessWidget {
   const LoadedAllArticleList({
     Key? key,
     required this.articles,
+    required this.articleWidgetBuilder,
   }) : super(key: key);
 
   final List<Article> articles;
+  final Widget Function(Article) articleWidgetBuilder;
 
   @override
   Widget build(BuildContext context) {
     return ListView(
       physics: const AlwaysScrollableScrollPhysics(),
-      children: articles.map((e) => ArticleWidget(article: e)).toList(),
+      children: articles
+          .map(articleWidgetBuilder)
+          .toList(),
     );
   }
 }

@@ -1,5 +1,4 @@
 import 'package:dip_frontend/model/article.dart';
-import 'package:dip_frontend/widget/article_list/article_widget.dart';
 import 'package:flutter/material.dart';
 
 class LoadedArticleList extends StatefulWidget {
@@ -7,17 +6,18 @@ class LoadedArticleList extends StatefulWidget {
     Key? key,
     required this.articles,
     required this.onListEnd,
+    required this.articleWidgetBuilder,
   }) : super(key: key);
 
   final List<Article> articles;
   final void Function() onListEnd;
+  final Widget Function(Article) articleWidgetBuilder;
 
   @override
   _LoadedArticleListState createState() => _LoadedArticleListState();
 }
 
 class _LoadedArticleListState extends State<LoadedArticleList> {
-
   final ScrollController _scrollController = ScrollController();
 
   _LoadedArticleListState() {
@@ -36,7 +36,9 @@ class _LoadedArticleListState extends State<LoadedArticleList> {
       controller: _scrollController,
       shrinkWrap: true,
       children: [
-        ...widget.articles.map((e) => ArticleWidget(article: e)).toList(),
+        ...widget.articles
+            .map(widget.articleWidgetBuilder)
+            .toList(),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [

@@ -17,6 +17,7 @@ dependencies:
     git:
       url: https://github.com/fleaflet/flutter_map.git
       ref: issues/829-nullsafety
+  flutter_slidable: ^0.6.0
   freezed_annotation: ^0.14.2
   json_annotation: ^4.0.1
   objectdb: ^1.2.1

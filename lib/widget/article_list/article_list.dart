@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:dip_frontend/redux/action/app_action.dart';
 import 'package:dip_frontend/redux/state/articles_state.dart';
+import 'package:dip_frontend/widget/article_list/article_widget.dart';
 import 'package:dip_frontend/widget/article_list/loaded_all_list.dart';
 import 'package:dip_frontend/widget/article_list/loaded_list.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,8 @@ class ArticleList extends StatefulWidget {
 }
 
 class _ArticleListState extends State<ArticleList> {
-  final StreamController<bool> _refreshingController = StreamController.broadcast();
+  final StreamController<bool> _refreshingController =
+      StreamController.broadcast();
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +28,10 @@ class _ArticleListState extends State<ArticleList> {
       builder: (context, state, dispatcher) {
         _refreshingController.add(state.loading);
         return RefreshIndicator(
-          onRefresh: () { 
+          onRefresh: () {
             dispatcher(const AppAction.refreshArticles());
-            return _refreshingController.stream.firstWhere((element) => !element);
+            return _refreshingController.stream
+                .firstWhere((element) => !element);
           },
           child: state.map(
             emptyState: (state) => Container(),
@@ -48,8 +51,20 @@ class _ArticleListState extends State<ArticleList> {
                   pageSize: state.pageSize,
                 ),
               ),
+              articleWidgetBuilder: (article) => ArticleWidget(
+                article: article,
+                onClick: (article) => dispatcher(
+                  AppAction.openArticle(article: article),
+                ),
+              ),
             ),
             loadedAllState: (state) => LoadedAllArticleList(
+              articleWidgetBuilder: (article) => ArticleWidget(
+                article: article,
+                onClick: (article) => dispatcher(
+                  AppAction.openArticle(article: article),
+                ),
+              ),
               articles: state.articles,
             ),
             loadingState: (state) => const Center(
