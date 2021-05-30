@@ -5,6 +5,7 @@ import 'package:dip_frontend/redux/state/auth_state.dart';
 import 'package:dip_frontend/redux/state/navigation/bottom_navigation.dart';
 import 'package:dip_frontend/redux/state/navigation/inner_navigation/inner_screen.dart';
 import 'package:dip_frontend/redux/state/navigation/screen.dart';
+import 'package:dip_frontend/redux/state/opened_article_state.dart';
 import 'package:dip_frontend/redux/state/scanned_article_state.dart';
 import 'package:whelm/whelm.dart';
 
@@ -109,8 +110,10 @@ List<Reducer<AppState, AppAction>> createReducers() => [
             openArticle: (action) => state.copyWith(
               innerNavigationState: [
                 ...state.innerNavigationState,
-                InnerScreen.articleScreen(article: action.article),
+                const InnerScreen.articleScreen(),
               ],
+              openedArticleState:
+                  OpenedArticleState.loaded(article: action.article),
             ),
             goBack: (action) {
               if (state.navigationState.length > 1) {
@@ -137,6 +140,11 @@ List<Reducer<AppState, AppAction>> createReducers() => [
               ...state.navigationState,
               Screen.pictureScreen(picture: action.picture),
             ]),
+            updateOpenedArticle: (action) => state.copyWith(
+              openedArticleState: OpenedArticleState.loaded(
+                article: action.article,
+              ),
+            ),
             orElse: () => state,
           ),
     ];

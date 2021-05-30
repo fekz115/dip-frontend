@@ -24,6 +24,7 @@ class _$AppStateTearOff {
       required ArticlesState articlesState,
       required BottomNavigationState bottomNavigationState,
       required ScannedArticleState scannedArticle,
+      required OpenedArticleState openedArticleState,
       User? user}) {
     return _AppState(
       navigationState: navigationState,
@@ -33,6 +34,7 @@ class _$AppStateTearOff {
       articlesState: articlesState,
       bottomNavigationState: bottomNavigationState,
       scannedArticle: scannedArticle,
+      openedArticleState: openedArticleState,
       user: user,
     );
   }
@@ -52,6 +54,8 @@ mixin _$AppState {
   BottomNavigationState get bottomNavigationState =>
       throw _privateConstructorUsedError;
   ScannedArticleState get scannedArticle => throw _privateConstructorUsedError;
+  OpenedArticleState get openedArticleState =>
+      throw _privateConstructorUsedError;
   User? get user => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -71,11 +75,13 @@ abstract class $AppStateCopyWith<$Res> {
       ArticlesState articlesState,
       BottomNavigationState bottomNavigationState,
       ScannedArticleState scannedArticle,
+      OpenedArticleState openedArticleState,
       User? user});
 
   $AuthStateCopyWith<$Res> get authState;
   $ArticlesStateCopyWith<$Res> get articlesState;
   $ScannedArticleStateCopyWith<$Res> get scannedArticle;
+  $OpenedArticleStateCopyWith<$Res> get openedArticleState;
   $UserCopyWith<$Res>? get user;
 }
 
@@ -96,6 +102,7 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
     Object? articlesState = freezed,
     Object? bottomNavigationState = freezed,
     Object? scannedArticle = freezed,
+    Object? openedArticleState = freezed,
     Object? user = freezed,
   }) {
     return _then(_value.copyWith(
@@ -127,6 +134,10 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
           ? _value.scannedArticle
           : scannedArticle // ignore: cast_nullable_to_non_nullable
               as ScannedArticleState,
+      openedArticleState: openedArticleState == freezed
+          ? _value.openedArticleState
+          : openedArticleState // ignore: cast_nullable_to_non_nullable
+              as OpenedArticleState,
       user: user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -156,6 +167,14 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
   }
 
   @override
+  $OpenedArticleStateCopyWith<$Res> get openedArticleState {
+    return $OpenedArticleStateCopyWith<$Res>(_value.openedArticleState,
+        (value) {
+      return _then(_value.copyWith(openedArticleState: value));
+    });
+  }
+
+  @override
   $UserCopyWith<$Res>? get user {
     if (_value.user == null) {
       return null;
@@ -180,6 +199,7 @@ abstract class _$AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
       ArticlesState articlesState,
       BottomNavigationState bottomNavigationState,
       ScannedArticleState scannedArticle,
+      OpenedArticleState openedArticleState,
       User? user});
 
   @override
@@ -188,6 +208,8 @@ abstract class _$AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
   $ArticlesStateCopyWith<$Res> get articlesState;
   @override
   $ScannedArticleStateCopyWith<$Res> get scannedArticle;
+  @override
+  $OpenedArticleStateCopyWith<$Res> get openedArticleState;
   @override
   $UserCopyWith<$Res>? get user;
 }
@@ -210,6 +232,7 @@ class __$AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
     Object? articlesState = freezed,
     Object? bottomNavigationState = freezed,
     Object? scannedArticle = freezed,
+    Object? openedArticleState = freezed,
     Object? user = freezed,
   }) {
     return _then(_AppState(
@@ -241,6 +264,10 @@ class __$AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
           ? _value.scannedArticle
           : scannedArticle // ignore: cast_nullable_to_non_nullable
               as ScannedArticleState,
+      openedArticleState: openedArticleState == freezed
+          ? _value.openedArticleState
+          : openedArticleState // ignore: cast_nullable_to_non_nullable
+              as OpenedArticleState,
       user: user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -260,6 +287,7 @@ class _$_AppState implements _AppState {
       required this.articlesState,
       required this.bottomNavigationState,
       required this.scannedArticle,
+      required this.openedArticleState,
       this.user});
 
   @override
@@ -277,11 +305,13 @@ class _$_AppState implements _AppState {
   @override
   final ScannedArticleState scannedArticle;
   @override
+  final OpenedArticleState openedArticleState;
+  @override
   final User? user;
 
   @override
   String toString() {
-    return 'AppState(navigationState: $navigationState, innerNavigationState: $innerNavigationState, authState: $authState, roles: $roles, articlesState: $articlesState, bottomNavigationState: $bottomNavigationState, scannedArticle: $scannedArticle, user: $user)';
+    return 'AppState(navigationState: $navigationState, innerNavigationState: $innerNavigationState, authState: $authState, roles: $roles, articlesState: $articlesState, bottomNavigationState: $bottomNavigationState, scannedArticle: $scannedArticle, openedArticleState: $openedArticleState, user: $user)';
   }
 
   @override
@@ -308,6 +338,9 @@ class _$_AppState implements _AppState {
             (identical(other.scannedArticle, scannedArticle) ||
                 const DeepCollectionEquality()
                     .equals(other.scannedArticle, scannedArticle)) &&
+            (identical(other.openedArticleState, openedArticleState) ||
+                const DeepCollectionEquality()
+                    .equals(other.openedArticleState, openedArticleState)) &&
             (identical(other.user, user) ||
                 const DeepCollectionEquality().equals(other.user, user)));
   }
@@ -322,6 +355,7 @@ class _$_AppState implements _AppState {
       const DeepCollectionEquality().hash(articlesState) ^
       const DeepCollectionEquality().hash(bottomNavigationState) ^
       const DeepCollectionEquality().hash(scannedArticle) ^
+      const DeepCollectionEquality().hash(openedArticleState) ^
       const DeepCollectionEquality().hash(user);
 
   @JsonKey(ignore: true)
@@ -339,6 +373,7 @@ abstract class _AppState implements AppState {
       required ArticlesState articlesState,
       required BottomNavigationState bottomNavigationState,
       required ScannedArticleState scannedArticle,
+      required OpenedArticleState openedArticleState,
       User? user}) = _$_AppState;
 
   @override
@@ -357,6 +392,9 @@ abstract class _AppState implements AppState {
       throw _privateConstructorUsedError;
   @override
   ScannedArticleState get scannedArticle => throw _privateConstructorUsedError;
+  @override
+  OpenedArticleState get openedArticleState =>
+      throw _privateConstructorUsedError;
   @override
   User? get user => throw _privateConstructorUsedError;
   @override

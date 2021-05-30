@@ -68,6 +68,9 @@ class AppAction with _$AppAction {
   const factory AppAction.removeArticle({
     required Article article,
   }) = RemoveArticle;
+  const factory AppAction.updateOpenedArticle({
+    required Article article,
+  }) = UpdateOpenedArticle;
 
   const factory AppAction.qrScanned({
     required String code,
@@ -82,4 +85,8 @@ class AppAction with _$AppAction {
   const factory AppAction.savePicture({
     required Picture picture,
   }) = SavePicture;
+
+  const factory AppAction.like({
+    required bool button
+  }) = Like;
 }

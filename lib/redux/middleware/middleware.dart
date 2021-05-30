@@ -1,6 +1,7 @@
 import 'package:dip_frontend/api/api_client.dart';
 import 'package:dip_frontend/api/api_exception.dart';
 import 'package:dip_frontend/model/article.dart';
+import 'package:dip_frontend/model/rating_state.dart';
 import 'package:dip_frontend/redux/action/app_action.dart';
 import 'package:dip_frontend/redux/state/app_state.dart';
 import 'package:dip_frontend/redux/event/app_event.dart';
@@ -248,42 +249,88 @@ List<Middleware<AppState, AppAction, AppEvent>> createMiddleware(
           downloadPdf: (action) async {
             final file = await apiClient.getPdf(action.article.id);
             eventDispatcher(
-              AppEvent.snackbarNotificationEvent(message: 'File downloaded: ${file.path}'),
+              AppEvent.snackbarNotificationEvent(
+                  message: 'File downloaded: ${file.path}'),
             );
-          }, qrScanned: (action) async {
-            if(RegExp(r'\/article\/\d+').hasMatch(action.code)) {
+          },
+          qrScanned: (action) async {
+            if (RegExp(r'\/article\/\d+').hasMatch(action.code)) {
               final id = int.parse(action.code.substring(9));
               try {
                 final Article article = await apiClient.getArticle(id);
-                actionDispatcher(AppAction.showScannedArticle(article: article));
+                actionDispatcher(
+                    AppAction.showScannedArticle(article: article));
               } catch (_) {
                 eventDispatcher(
-                  const AppEvent.snackbarNotificationEvent(message: 'Incorrect QR-code'),
+                  const AppEvent.snackbarNotificationEvent(
+                      message: 'Incorrect QR-code'),
                 );
               }
             } else {
               eventDispatcher(
-                const AppEvent.snackbarNotificationEvent(message: 'Incorrect QR-code'),
+                const AppEvent.snackbarNotificationEvent(
+                    message: 'Incorrect QR-code'),
               );
             }
           },
           savePicture: (action) async {
             final file = await apiClient.downloadPicture(action.picture.id);
             eventDispatcher(
-              AppEvent.snackbarNotificationEvent(message: 'File downloaded: ${file.path}'),
+              AppEvent.snackbarNotificationEvent(
+                  message: 'File downloaded: ${file.path}'),
             );
           },
           removeArticle: (action) async {
             try {
               await apiClient.removeArticle(action.article.id);
               eventDispatcher(
-                const AppEvent.snackbarNotificationEvent(message: 'Removed succesfully'),
+                const AppEvent.snackbarNotificationEvent(
+                    message: 'Removed succesfully'),
               );
               eventDispatcher(const AppEvent.refreshArticles());
             } catch (_) {
               eventDispatcher(
-                const AppEvent.snackbarNotificationEvent(message: 'Unable to remove'),
+                const AppEvent.snackbarNotificationEvent(
+                    message: 'Unable to remove'),
               );
             }
+          },
+          like: (action) {
+            state.openedArticleState.maybeMap(
+              loaded: (screen) async {
+                final article = screen.article;
+                final prevRatingState = article.ratingState;
+                final RatingState newRatingState;
+                switch(prevRatingState) {
+                  case RatingState.liked:
+                    if(action.button) {
+                      newRatingState = RatingState.unrated;
+                    } else {
+                      newRatingState = RatingState.disliked;
+                    }
+                    break;
+                  case RatingState.disliked:
+                    if(action.button) {
+                      newRatingState = RatingState.liked;
+                    } else {
+                      newRatingState = RatingState.unrated;
+                    }
+                    break;
+                  case RatingState.unrated:
+                    if(action.button) {
+                      newRatingState = RatingState.liked;
+                    } else {
+                      newRatingState = RatingState.disliked;
+                    }
+                    break;
+                }
+                final newArticle = await apiClient.updateArticleRating(
+                    article.id, newRatingState);
+                actionDispatcher(
+                  AppAction.updateOpenedArticle(article: newArticle),
+                );
+              },
+              orElse: () {},
+            );
           }),
     ];

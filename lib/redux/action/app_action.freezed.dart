@@ -156,6 +156,12 @@ class _$AppActionTearOff {
     );
   }
 
+  UpdateOpenedArticle updateOpenedArticle({required Article article}) {
+    return UpdateOpenedArticle(
+      article: article,
+    );
+  }
+
   QRScanned qrScanned({required String code}) {
     return QRScanned(
       code: code,
@@ -177,6 +183,12 @@ class _$AppActionTearOff {
   SavePicture savePicture({required Picture picture}) {
     return SavePicture(
       picture: picture,
+    );
+  }
+
+  Like like({required bool button}) {
+    return Like(
+      button: button,
     );
   }
 }
@@ -216,10 +228,12 @@ mixin _$AppAction {
     required TResult Function(Article article) downloadPdf,
     required TResult Function(Article article) openArticle,
     required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
     required TResult Function(Picture picture) openPictureFullScreen,
     required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -251,10 +265,12 @@ mixin _$AppAction {
     TResult Function(Article article)? downloadPdf,
     TResult Function(Article article)? openArticle,
     TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
     TResult Function(Picture picture)? openPictureFullScreen,
     TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -288,11 +304,13 @@ mixin _$AppAction {
     required TResult Function(DownloadPdf value) downloadPdf,
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
     required TResult Function(OpenPictureFullScreen value)
         openPictureFullScreen,
     required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -323,10 +341,12 @@ mixin _$AppAction {
     TResult Function(DownloadPdf value)? downloadPdf,
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
     TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -413,10 +433,12 @@ class _$InitAction implements InitAction {
     required TResult Function(Article article) downloadPdf,
     required TResult Function(Article article) openArticle,
     required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
     required TResult Function(Picture picture) openPictureFullScreen,
     required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
   }) {
     return initAction();
   }
@@ -451,10 +473,12 @@ class _$InitAction implements InitAction {
     TResult Function(Article article)? downloadPdf,
     TResult Function(Article article)? openArticle,
     TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
     TResult Function(Picture picture)? openPictureFullScreen,
     TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
     required TResult orElse(),
   }) {
     if (initAction != null) {
@@ -494,11 +518,13 @@ class _$InitAction implements InitAction {
     required TResult Function(DownloadPdf value) downloadPdf,
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
     required TResult Function(OpenPictureFullScreen value)
         openPictureFullScreen,
     required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
   }) {
     return initAction(this);
   }
@@ -532,10 +558,12 @@ class _$InitAction implements InitAction {
     TResult Function(DownloadPdf value)? downloadPdf,
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
     TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
     required TResult orElse(),
   }) {
     if (initAction != null) {
@@ -614,10 +642,12 @@ class _$AppLoaded implements AppLoaded {
     required TResult Function(Article article) downloadPdf,
     required TResult Function(Article article) openArticle,
     required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
     required TResult Function(Picture picture) openPictureFullScreen,
     required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
   }) {
     return appLoaded();
   }
@@ -652,10 +682,12 @@ class _$AppLoaded implements AppLoaded {
     TResult Function(Article article)? downloadPdf,
     TResult Function(Article article)? openArticle,
     TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
     TResult Function(Picture picture)? openPictureFullScreen,
     TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
     required TResult orElse(),
   }) {
     if (appLoaded != null) {
@@ -695,11 +727,13 @@ class _$AppLoaded implements AppLoaded {
     required TResult Function(DownloadPdf value) downloadPdf,
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
     required TResult Function(OpenPictureFullScreen value)
         openPictureFullScreen,
     required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
   }) {
     return appLoaded(this);
   }
@@ -733,10 +767,12 @@ class _$AppLoaded implements AppLoaded {
     TResult Function(DownloadPdf value)? downloadPdf,
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
     TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
     required TResult orElse(),
   }) {
     if (appLoaded != null) {
@@ -818,10 +854,12 @@ class _$RemovePreviousPages implements RemovePreviousPages {
     required TResult Function(Article article) downloadPdf,
     required TResult Function(Article article) openArticle,
     required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
     required TResult Function(Picture picture) openPictureFullScreen,
     required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
   }) {
     return removePreviousPages();
   }
@@ -856,10 +894,12 @@ class _$RemovePreviousPages implements RemovePreviousPages {
     TResult Function(Article article)? downloadPdf,
     TResult Function(Article article)? openArticle,
     TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
     TResult Function(Picture picture)? openPictureFullScreen,
     TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
     required TResult orElse(),
   }) {
     if (removePreviousPages != null) {
@@ -899,11 +939,13 @@ class _$RemovePreviousPages implements RemovePreviousPages {
     required TResult Function(DownloadPdf value) downloadPdf,
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
     required TResult Function(OpenPictureFullScreen value)
         openPictureFullScreen,
     required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
   }) {
     return removePreviousPages(this);
   }
@@ -937,10 +979,12 @@ class _$RemovePreviousPages implements RemovePreviousPages {
     TResult Function(DownloadPdf value)? downloadPdf,
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
     TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
     required TResult orElse(),
   }) {
     if (removePreviousPages != null) {
@@ -1050,10 +1094,12 @@ class _$ChangeBottomNavigationState implements ChangeBottomNavigationState {
     required TResult Function(Article article) downloadPdf,
     required TResult Function(Article article) openArticle,
     required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
     required TResult Function(Picture picture) openPictureFullScreen,
     required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
   }) {
     return changeBottomNavigationState(state);
   }
@@ -1088,10 +1134,12 @@ class _$ChangeBottomNavigationState implements ChangeBottomNavigationState {
     TResult Function(Article article)? downloadPdf,
     TResult Function(Article article)? openArticle,
     TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
     TResult Function(Picture picture)? openPictureFullScreen,
     TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
     required TResult orElse(),
   }) {
     if (changeBottomNavigationState != null) {
@@ -1131,11 +1179,13 @@ class _$ChangeBottomNavigationState implements ChangeBottomNavigationState {
     required TResult Function(DownloadPdf value) downloadPdf,
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
     required TResult Function(OpenPictureFullScreen value)
         openPictureFullScreen,
     required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
   }) {
     return changeBottomNavigationState(this);
   }
@@ -1169,10 +1219,12 @@ class _$ChangeBottomNavigationState implements ChangeBottomNavigationState {
     TResult Function(DownloadPdf value)? downloadPdf,
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
     TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
     required TResult orElse(),
   }) {
     if (changeBottomNavigationState != null) {
@@ -1257,10 +1309,12 @@ class _$GoBack implements GoBack {
     required TResult Function(Article article) downloadPdf,
     required TResult Function(Article article) openArticle,
     required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
     required TResult Function(Picture picture) openPictureFullScreen,
     required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
   }) {
     return goBack();
   }
@@ -1295,10 +1349,12 @@ class _$GoBack implements GoBack {
     TResult Function(Article article)? downloadPdf,
     TResult Function(Article article)? openArticle,
     TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
     TResult Function(Picture picture)? openPictureFullScreen,
     TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
     required TResult orElse(),
   }) {
     if (goBack != null) {
@@ -1338,11 +1394,13 @@ class _$GoBack implements GoBack {
     required TResult Function(DownloadPdf value) downloadPdf,
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
     required TResult Function(OpenPictureFullScreen value)
         openPictureFullScreen,
     required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
   }) {
     return goBack(this);
   }
@@ -1376,10 +1434,12 @@ class _$GoBack implements GoBack {
     TResult Function(DownloadPdf value)? downloadPdf,
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
     TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
     required TResult orElse(),
   }) {
     if (goBack != null) {
@@ -1460,10 +1520,12 @@ class _$GoBackInner implements GoBackInner {
     required TResult Function(Article article) downloadPdf,
     required TResult Function(Article article) openArticle,
     required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
     required TResult Function(Picture picture) openPictureFullScreen,
     required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
   }) {
     return goBackInner();
   }
@@ -1498,10 +1560,12 @@ class _$GoBackInner implements GoBackInner {
     TResult Function(Article article)? downloadPdf,
     TResult Function(Article article)? openArticle,
     TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
     TResult Function(Picture picture)? openPictureFullScreen,
     TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
     required TResult orElse(),
   }) {
     if (goBackInner != null) {
@@ -1541,11 +1605,13 @@ class _$GoBackInner implements GoBackInner {
     required TResult Function(DownloadPdf value) downloadPdf,
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
     required TResult Function(OpenPictureFullScreen value)
         openPictureFullScreen,
     required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
   }) {
     return goBackInner(this);
   }
@@ -1579,10 +1645,12 @@ class _$GoBackInner implements GoBackInner {
     TResult Function(DownloadPdf value)? downloadPdf,
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
     TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
     required TResult orElse(),
   }) {
     if (goBackInner != null) {
@@ -1662,10 +1730,12 @@ class _$ShowSignIn implements ShowSignIn {
     required TResult Function(Article article) downloadPdf,
     required TResult Function(Article article) openArticle,
     required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
     required TResult Function(Picture picture) openPictureFullScreen,
     required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
   }) {
     return showSignIn();
   }
@@ -1700,10 +1770,12 @@ class _$ShowSignIn implements ShowSignIn {
     TResult Function(Article article)? downloadPdf,
     TResult Function(Article article)? openArticle,
     TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
     TResult Function(Picture picture)? openPictureFullScreen,
     TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
     required TResult orElse(),
   }) {
     if (showSignIn != null) {
@@ -1743,11 +1815,13 @@ class _$ShowSignIn implements ShowSignIn {
     required TResult Function(DownloadPdf value) downloadPdf,
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
     required TResult Function(OpenPictureFullScreen value)
         openPictureFullScreen,
     required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
   }) {
     return showSignIn(this);
   }
@@ -1781,10 +1855,12 @@ class _$ShowSignIn implements ShowSignIn {
     TResult Function(DownloadPdf value)? downloadPdf,
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
     TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
     required TResult orElse(),
   }) {
     if (showSignIn != null) {
@@ -1864,10 +1940,12 @@ class _$ShowSignUp implements ShowSignUp {
     required TResult Function(Article article) downloadPdf,
     required TResult Function(Article article) openArticle,
     required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
     required TResult Function(Picture picture) openPictureFullScreen,
     required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
   }) {
     return showSignUp();
   }
@@ -1902,10 +1980,12 @@ class _$ShowSignUp implements ShowSignUp {
     TResult Function(Article article)? downloadPdf,
     TResult Function(Article article)? openArticle,
     TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
     TResult Function(Picture picture)? openPictureFullScreen,
     TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
     required TResult orElse(),
   }) {
     if (showSignUp != null) {
@@ -1945,11 +2025,13 @@ class _$ShowSignUp implements ShowSignUp {
     required TResult Function(DownloadPdf value) downloadPdf,
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
     required TResult Function(OpenPictureFullScreen value)
         openPictureFullScreen,
     required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
   }) {
     return showSignUp(this);
   }
@@ -1983,10 +2065,12 @@ class _$ShowSignUp implements ShowSignUp {
     TResult Function(DownloadPdf value)? downloadPdf,
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
     TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
     required TResult orElse(),
   }) {
     if (showSignUp != null) {
@@ -2065,10 +2149,12 @@ class _$NotNow implements NotNow {
     required TResult Function(Article article) downloadPdf,
     required TResult Function(Article article) openArticle,
     required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
     required TResult Function(Picture picture) openPictureFullScreen,
     required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
   }) {
     return notNow();
   }
@@ -2103,10 +2189,12 @@ class _$NotNow implements NotNow {
     TResult Function(Article article)? downloadPdf,
     TResult Function(Article article)? openArticle,
     TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
     TResult Function(Picture picture)? openPictureFullScreen,
     TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
     required TResult orElse(),
   }) {
     if (notNow != null) {
@@ -2146,11 +2234,13 @@ class _$NotNow implements NotNow {
     required TResult Function(DownloadPdf value) downloadPdf,
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
     required TResult Function(OpenPictureFullScreen value)
         openPictureFullScreen,
     required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
   }) {
     return notNow(this);
   }
@@ -2184,10 +2274,12 @@ class _$NotNow implements NotNow {
     TResult Function(DownloadPdf value)? downloadPdf,
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
     TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
     required TResult orElse(),
   }) {
     if (notNow != null) {
@@ -2302,10 +2394,12 @@ class _$Authenticate implements Authenticate {
     required TResult Function(Article article) downloadPdf,
     required TResult Function(Article article) openArticle,
     required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
     required TResult Function(Picture picture) openPictureFullScreen,
     required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
   }) {
     return authenticate(user);
   }
@@ -2340,10 +2434,12 @@ class _$Authenticate implements Authenticate {
     TResult Function(Article article)? downloadPdf,
     TResult Function(Article article)? openArticle,
     TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
     TResult Function(Picture picture)? openPictureFullScreen,
     TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
     required TResult orElse(),
   }) {
     if (authenticate != null) {
@@ -2383,11 +2479,13 @@ class _$Authenticate implements Authenticate {
     required TResult Function(DownloadPdf value) downloadPdf,
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
     required TResult Function(OpenPictureFullScreen value)
         openPictureFullScreen,
     required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
   }) {
     return authenticate(this);
   }
@@ -2421,10 +2519,12 @@ class _$Authenticate implements Authenticate {
     TResult Function(DownloadPdf value)? downloadPdf,
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
     TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
     required TResult orElse(),
   }) {
     if (authenticate != null) {
@@ -2547,10 +2647,12 @@ class _$SubmitLogin implements SubmitLogin {
     required TResult Function(Article article) downloadPdf,
     required TResult Function(Article article) openArticle,
     required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
     required TResult Function(Picture picture) openPictureFullScreen,
     required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
   }) {
     return loginSubmit(login, password);
   }
@@ -2585,10 +2687,12 @@ class _$SubmitLogin implements SubmitLogin {
     TResult Function(Article article)? downloadPdf,
     TResult Function(Article article)? openArticle,
     TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
     TResult Function(Picture picture)? openPictureFullScreen,
     TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
     required TResult orElse(),
   }) {
     if (loginSubmit != null) {
@@ -2628,11 +2732,13 @@ class _$SubmitLogin implements SubmitLogin {
     required TResult Function(DownloadPdf value) downloadPdf,
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
     required TResult Function(OpenPictureFullScreen value)
         openPictureFullScreen,
     required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
   }) {
     return loginSubmit(this);
   }
@@ -2666,10 +2772,12 @@ class _$SubmitLogin implements SubmitLogin {
     TResult Function(DownloadPdf value)? downloadPdf,
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
     TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
     required TResult orElse(),
   }) {
     if (loginSubmit != null) {
@@ -2821,10 +2929,12 @@ class _$RegistrationLogin implements RegistrationLogin {
     required TResult Function(Article article) downloadPdf,
     required TResult Function(Article article) openArticle,
     required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
     required TResult Function(Picture picture) openPictureFullScreen,
     required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
   }) {
     return registrationSubmit(login, email, password, repeatedPassword);
   }
@@ -2859,10 +2969,12 @@ class _$RegistrationLogin implements RegistrationLogin {
     TResult Function(Article article)? downloadPdf,
     TResult Function(Article article)? openArticle,
     TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
     TResult Function(Picture picture)? openPictureFullScreen,
     TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
     required TResult orElse(),
   }) {
     if (registrationSubmit != null) {
@@ -2902,11 +3014,13 @@ class _$RegistrationLogin implements RegistrationLogin {
     required TResult Function(DownloadPdf value) downloadPdf,
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
     required TResult Function(OpenPictureFullScreen value)
         openPictureFullScreen,
     required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
   }) {
     return registrationSubmit(this);
   }
@@ -2940,10 +3054,12 @@ class _$RegistrationLogin implements RegistrationLogin {
     TResult Function(DownloadPdf value)? downloadPdf,
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
     TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
     required TResult orElse(),
   }) {
     if (registrationSubmit != null) {
@@ -3063,10 +3179,12 @@ class _$SetLoadingOnAuthScreen implements SetLoadingOnAuthScreen {
     required TResult Function(Article article) downloadPdf,
     required TResult Function(Article article) openArticle,
     required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
     required TResult Function(Picture picture) openPictureFullScreen,
     required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
   }) {
     return setLoadingOnAuthScreen(loading);
   }
@@ -3101,10 +3219,12 @@ class _$SetLoadingOnAuthScreen implements SetLoadingOnAuthScreen {
     TResult Function(Article article)? downloadPdf,
     TResult Function(Article article)? openArticle,
     TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
     TResult Function(Picture picture)? openPictureFullScreen,
     TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
     required TResult orElse(),
   }) {
     if (setLoadingOnAuthScreen != null) {
@@ -3144,11 +3264,13 @@ class _$SetLoadingOnAuthScreen implements SetLoadingOnAuthScreen {
     required TResult Function(DownloadPdf value) downloadPdf,
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
     required TResult Function(OpenPictureFullScreen value)
         openPictureFullScreen,
     required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
   }) {
     return setLoadingOnAuthScreen(this);
   }
@@ -3182,10 +3304,12 @@ class _$SetLoadingOnAuthScreen implements SetLoadingOnAuthScreen {
     TResult Function(DownloadPdf value)? downloadPdf,
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
     TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
     required TResult orElse(),
   }) {
     if (setLoadingOnAuthScreen != null) {
@@ -3299,10 +3423,12 @@ class _$SetErrorOnAuthScreen implements SetErrorOnAuthScreen {
     required TResult Function(Article article) downloadPdf,
     required TResult Function(Article article) openArticle,
     required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
     required TResult Function(Picture picture) openPictureFullScreen,
     required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
   }) {
     return setErrorOnAuthScreen(error);
   }
@@ -3337,10 +3463,12 @@ class _$SetErrorOnAuthScreen implements SetErrorOnAuthScreen {
     TResult Function(Article article)? downloadPdf,
     TResult Function(Article article)? openArticle,
     TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
     TResult Function(Picture picture)? openPictureFullScreen,
     TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
     required TResult orElse(),
   }) {
     if (setErrorOnAuthScreen != null) {
@@ -3380,11 +3508,13 @@ class _$SetErrorOnAuthScreen implements SetErrorOnAuthScreen {
     required TResult Function(DownloadPdf value) downloadPdf,
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
     required TResult Function(OpenPictureFullScreen value)
         openPictureFullScreen,
     required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
   }) {
     return setErrorOnAuthScreen(this);
   }
@@ -3418,10 +3548,12 @@ class _$SetErrorOnAuthScreen implements SetErrorOnAuthScreen {
     TResult Function(DownloadPdf value)? downloadPdf,
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
     TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
     required TResult orElse(),
   }) {
     if (setErrorOnAuthScreen != null) {
@@ -3508,10 +3640,12 @@ class _$InitLoadingArticles implements InitLoadingArticles {
     required TResult Function(Article article) downloadPdf,
     required TResult Function(Article article) openArticle,
     required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
     required TResult Function(Picture picture) openPictureFullScreen,
     required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
   }) {
     return initLoadingArticles();
   }
@@ -3546,10 +3680,12 @@ class _$InitLoadingArticles implements InitLoadingArticles {
     TResult Function(Article article)? downloadPdf,
     TResult Function(Article article)? openArticle,
     TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
     TResult Function(Picture picture)? openPictureFullScreen,
     TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
     required TResult orElse(),
   }) {
     if (initLoadingArticles != null) {
@@ -3589,11 +3725,13 @@ class _$InitLoadingArticles implements InitLoadingArticles {
     required TResult Function(DownloadPdf value) downloadPdf,
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
     required TResult Function(OpenPictureFullScreen value)
         openPictureFullScreen,
     required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
   }) {
     return initLoadingArticles(this);
   }
@@ -3627,10 +3765,12 @@ class _$InitLoadingArticles implements InitLoadingArticles {
     TResult Function(DownloadPdf value)? downloadPdf,
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
     TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
     required TResult orElse(),
   }) {
     if (initLoadingArticles != null) {
@@ -3712,10 +3852,12 @@ class _$ShowArticlesLoading implements ShowArticlesLoading {
     required TResult Function(Article article) downloadPdf,
     required TResult Function(Article article) openArticle,
     required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
     required TResult Function(Picture picture) openPictureFullScreen,
     required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
   }) {
     return showArticlesLoading();
   }
@@ -3750,10 +3892,12 @@ class _$ShowArticlesLoading implements ShowArticlesLoading {
     TResult Function(Article article)? downloadPdf,
     TResult Function(Article article)? openArticle,
     TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
     TResult Function(Picture picture)? openPictureFullScreen,
     TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
     required TResult orElse(),
   }) {
     if (showArticlesLoading != null) {
@@ -3793,11 +3937,13 @@ class _$ShowArticlesLoading implements ShowArticlesLoading {
     required TResult Function(DownloadPdf value) downloadPdf,
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
     required TResult Function(OpenPictureFullScreen value)
         openPictureFullScreen,
     required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
   }) {
     return showArticlesLoading(this);
   }
@@ -3831,10 +3977,12 @@ class _$ShowArticlesLoading implements ShowArticlesLoading {
     TResult Function(DownloadPdf value)? downloadPdf,
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
     TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
     required TResult orElse(),
   }) {
     if (showArticlesLoading != null) {
@@ -3965,10 +4113,12 @@ class _$ShowArticlesLoaded implements ShowArticlesLoaded {
     required TResult Function(Article article) downloadPdf,
     required TResult Function(Article article) openArticle,
     required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
     required TResult Function(Picture picture) openPictureFullScreen,
     required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
   }) {
     return showArticlesLoaded(articles, page, pageSize);
   }
@@ -4003,10 +4153,12 @@ class _$ShowArticlesLoaded implements ShowArticlesLoaded {
     TResult Function(Article article)? downloadPdf,
     TResult Function(Article article)? openArticle,
     TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
     TResult Function(Picture picture)? openPictureFullScreen,
     TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
     required TResult orElse(),
   }) {
     if (showArticlesLoaded != null) {
@@ -4046,11 +4198,13 @@ class _$ShowArticlesLoaded implements ShowArticlesLoaded {
     required TResult Function(DownloadPdf value) downloadPdf,
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
     required TResult Function(OpenPictureFullScreen value)
         openPictureFullScreen,
     required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
   }) {
     return showArticlesLoaded(this);
   }
@@ -4084,10 +4238,12 @@ class _$ShowArticlesLoaded implements ShowArticlesLoaded {
     TResult Function(DownloadPdf value)? downloadPdf,
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
     TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
     required TResult orElse(),
   }) {
     if (showArticlesLoaded != null) {
@@ -4206,10 +4362,12 @@ class _$ShowAllArticlesLoaded implements ShowAllArticlesLoaded {
     required TResult Function(Article article) downloadPdf,
     required TResult Function(Article article) openArticle,
     required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
     required TResult Function(Picture picture) openPictureFullScreen,
     required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
   }) {
     return showAllArticlesLoaded(articles);
   }
@@ -4244,10 +4402,12 @@ class _$ShowAllArticlesLoaded implements ShowAllArticlesLoaded {
     TResult Function(Article article)? downloadPdf,
     TResult Function(Article article)? openArticle,
     TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
     TResult Function(Picture picture)? openPictureFullScreen,
     TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
     required TResult orElse(),
   }) {
     if (showAllArticlesLoaded != null) {
@@ -4287,11 +4447,13 @@ class _$ShowAllArticlesLoaded implements ShowAllArticlesLoaded {
     required TResult Function(DownloadPdf value) downloadPdf,
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
     required TResult Function(OpenPictureFullScreen value)
         openPictureFullScreen,
     required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
   }) {
     return showAllArticlesLoaded(this);
   }
@@ -4325,10 +4487,12 @@ class _$ShowAllArticlesLoaded implements ShowAllArticlesLoaded {
     TResult Function(DownloadPdf value)? downloadPdf,
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
     TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
     required TResult orElse(),
   }) {
     if (showAllArticlesLoaded != null) {
@@ -4443,10 +4607,12 @@ class _$ShowErrorOnArticleLoading implements ShowErrorOnArticleLoading {
     required TResult Function(Article article) downloadPdf,
     required TResult Function(Article article) openArticle,
     required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
     required TResult Function(Picture picture) openPictureFullScreen,
     required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
   }) {
     return showErrorOnArticleLoading(message);
   }
@@ -4481,10 +4647,12 @@ class _$ShowErrorOnArticleLoading implements ShowErrorOnArticleLoading {
     TResult Function(Article article)? downloadPdf,
     TResult Function(Article article)? openArticle,
     TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
     TResult Function(Picture picture)? openPictureFullScreen,
     TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
     required TResult orElse(),
   }) {
     if (showErrorOnArticleLoading != null) {
@@ -4524,11 +4692,13 @@ class _$ShowErrorOnArticleLoading implements ShowErrorOnArticleLoading {
     required TResult Function(DownloadPdf value) downloadPdf,
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
     required TResult Function(OpenPictureFullScreen value)
         openPictureFullScreen,
     required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
   }) {
     return showErrorOnArticleLoading(this);
   }
@@ -4562,10 +4732,12 @@ class _$ShowErrorOnArticleLoading implements ShowErrorOnArticleLoading {
     TResult Function(DownloadPdf value)? downloadPdf,
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
     TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
     required TResult orElse(),
   }) {
     if (showErrorOnArticleLoading != null) {
@@ -4691,10 +4863,12 @@ class _$LoadNextArticlePage implements LoadNextArticlePage {
     required TResult Function(Article article) downloadPdf,
     required TResult Function(Article article) openArticle,
     required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
     required TResult Function(Picture picture) openPictureFullScreen,
     required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
   }) {
     return loadNextArticlePage(prevPage, pageSize);
   }
@@ -4729,10 +4903,12 @@ class _$LoadNextArticlePage implements LoadNextArticlePage {
     TResult Function(Article article)? downloadPdf,
     TResult Function(Article article)? openArticle,
     TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
     TResult Function(Picture picture)? openPictureFullScreen,
     TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
     required TResult orElse(),
   }) {
     if (loadNextArticlePage != null) {
@@ -4772,11 +4948,13 @@ class _$LoadNextArticlePage implements LoadNextArticlePage {
     required TResult Function(DownloadPdf value) downloadPdf,
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
     required TResult Function(OpenPictureFullScreen value)
         openPictureFullScreen,
     required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
   }) {
     return loadNextArticlePage(this);
   }
@@ -4810,10 +4988,12 @@ class _$LoadNextArticlePage implements LoadNextArticlePage {
     TResult Function(DownloadPdf value)? downloadPdf,
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
     TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
     required TResult orElse(),
   }) {
     if (loadNextArticlePage != null) {
@@ -4901,10 +5081,12 @@ class _$RefreshArticles implements RefreshArticles {
     required TResult Function(Article article) downloadPdf,
     required TResult Function(Article article) openArticle,
     required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
     required TResult Function(Picture picture) openPictureFullScreen,
     required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
   }) {
     return refreshArticles();
   }
@@ -4939,10 +5121,12 @@ class _$RefreshArticles implements RefreshArticles {
     TResult Function(Article article)? downloadPdf,
     TResult Function(Article article)? openArticle,
     TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
     TResult Function(Picture picture)? openPictureFullScreen,
     TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
     required TResult orElse(),
   }) {
     if (refreshArticles != null) {
@@ -4982,11 +5166,13 @@ class _$RefreshArticles implements RefreshArticles {
     required TResult Function(DownloadPdf value) downloadPdf,
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
     required TResult Function(OpenPictureFullScreen value)
         openPictureFullScreen,
     required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
   }) {
     return refreshArticles(this);
   }
@@ -5020,10 +5206,12 @@ class _$RefreshArticles implements RefreshArticles {
     TResult Function(DownloadPdf value)? downloadPdf,
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
     TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
     required TResult orElse(),
   }) {
     if (refreshArticles != null) {
@@ -5138,10 +5326,12 @@ class _$DownloadPdf implements DownloadPdf {
     required TResult Function(Article article) downloadPdf,
     required TResult Function(Article article) openArticle,
     required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
     required TResult Function(Picture picture) openPictureFullScreen,
     required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
   }) {
     return downloadPdf(article);
   }
@@ -5176,10 +5366,12 @@ class _$DownloadPdf implements DownloadPdf {
     TResult Function(Article article)? downloadPdf,
     TResult Function(Article article)? openArticle,
     TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
     TResult Function(Picture picture)? openPictureFullScreen,
     TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
     required TResult orElse(),
   }) {
     if (downloadPdf != null) {
@@ -5219,11 +5411,13 @@ class _$DownloadPdf implements DownloadPdf {
     required TResult Function(DownloadPdf value) downloadPdf,
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
     required TResult Function(OpenPictureFullScreen value)
         openPictureFullScreen,
     required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
   }) {
     return downloadPdf(this);
   }
@@ -5257,10 +5451,12 @@ class _$DownloadPdf implements DownloadPdf {
     TResult Function(DownloadPdf value)? downloadPdf,
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
     TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
     required TResult orElse(),
   }) {
     if (downloadPdf != null) {
@@ -5380,10 +5576,12 @@ class _$OpenArticle implements OpenArticle {
     required TResult Function(Article article) downloadPdf,
     required TResult Function(Article article) openArticle,
     required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
     required TResult Function(Picture picture) openPictureFullScreen,
     required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
   }) {
     return openArticle(article);
   }
@@ -5418,10 +5616,12 @@ class _$OpenArticle implements OpenArticle {
     TResult Function(Article article)? downloadPdf,
     TResult Function(Article article)? openArticle,
     TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
     TResult Function(Picture picture)? openPictureFullScreen,
     TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
     required TResult orElse(),
   }) {
     if (openArticle != null) {
@@ -5461,11 +5661,13 @@ class _$OpenArticle implements OpenArticle {
     required TResult Function(DownloadPdf value) downloadPdf,
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
     required TResult Function(OpenPictureFullScreen value)
         openPictureFullScreen,
     required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
   }) {
     return openArticle(this);
   }
@@ -5499,10 +5701,12 @@ class _$OpenArticle implements OpenArticle {
     TResult Function(DownloadPdf value)? downloadPdf,
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
     TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
     required TResult orElse(),
   }) {
     if (openArticle != null) {
@@ -5622,10 +5826,12 @@ class _$RemoveArticle implements RemoveArticle {
     required TResult Function(Article article) downloadPdf,
     required TResult Function(Article article) openArticle,
     required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
     required TResult Function(Picture picture) openPictureFullScreen,
     required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
   }) {
     return removeArticle(article);
   }
@@ -5660,10 +5866,12 @@ class _$RemoveArticle implements RemoveArticle {
     TResult Function(Article article)? downloadPdf,
     TResult Function(Article article)? openArticle,
     TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
     TResult Function(Picture picture)? openPictureFullScreen,
     TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
     required TResult orElse(),
   }) {
     if (removeArticle != null) {
@@ -5703,11 +5911,13 @@ class _$RemoveArticle implements RemoveArticle {
     required TResult Function(DownloadPdf value) downloadPdf,
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
     required TResult Function(OpenPictureFullScreen value)
         openPictureFullScreen,
     required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
   }) {
     return removeArticle(this);
   }
@@ -5741,10 +5951,12 @@ class _$RemoveArticle implements RemoveArticle {
     TResult Function(DownloadPdf value)? downloadPdf,
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
     TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
     required TResult orElse(),
   }) {
     if (removeArticle != null) {
@@ -5760,6 +5972,258 @@ abstract class RemoveArticle implements AppAction {
   Article get article => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $RemoveArticleCopyWith<RemoveArticle> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UpdateOpenedArticleCopyWith<$Res> {
+  factory $UpdateOpenedArticleCopyWith(
+          UpdateOpenedArticle value, $Res Function(UpdateOpenedArticle) then) =
+      _$UpdateOpenedArticleCopyWithImpl<$Res>;
+  $Res call({Article article});
+
+  $ArticleCopyWith<$Res> get article;
+}
+
+/// @nodoc
+class _$UpdateOpenedArticleCopyWithImpl<$Res>
+    extends _$AppActionCopyWithImpl<$Res>
+    implements $UpdateOpenedArticleCopyWith<$Res> {
+  _$UpdateOpenedArticleCopyWithImpl(
+      UpdateOpenedArticle _value, $Res Function(UpdateOpenedArticle) _then)
+      : super(_value, (v) => _then(v as UpdateOpenedArticle));
+
+  @override
+  UpdateOpenedArticle get _value => super._value as UpdateOpenedArticle;
+
+  @override
+  $Res call({
+    Object? article = freezed,
+  }) {
+    return _then(UpdateOpenedArticle(
+      article: article == freezed
+          ? _value.article
+          : article // ignore: cast_nullable_to_non_nullable
+              as Article,
+    ));
+  }
+
+  @override
+  $ArticleCopyWith<$Res> get article {
+    return $ArticleCopyWith<$Res>(_value.article, (value) {
+      return _then(_value.copyWith(article: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UpdateOpenedArticle implements UpdateOpenedArticle {
+  const _$UpdateOpenedArticle({required this.article});
+
+  @override
+  final Article article;
+
+  @override
+  String toString() {
+    return 'AppAction.updateOpenedArticle(article: $article)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is UpdateOpenedArticle &&
+            (identical(other.article, article) ||
+                const DeepCollectionEquality().equals(other.article, article)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(article);
+
+  @JsonKey(ignore: true)
+  @override
+  $UpdateOpenedArticleCopyWith<UpdateOpenedArticle> get copyWith =>
+      _$UpdateOpenedArticleCopyWithImpl<UpdateOpenedArticle>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initAction,
+    required TResult Function() appLoaded,
+    required TResult Function() removePreviousPages,
+    required TResult Function(BottomNavigationState state)
+        changeBottomNavigationState,
+    required TResult Function() goBack,
+    required TResult Function() goBackInner,
+    required TResult Function() showSignIn,
+    required TResult Function() showSignUp,
+    required TResult Function() notNow,
+    required TResult Function(User user) authenticate,
+    required TResult Function(String login, String password) loginSubmit,
+    required TResult Function(String login, String email, String password,
+            String repeatedPassword)
+        registrationSubmit,
+    required TResult Function(bool loading) setLoadingOnAuthScreen,
+    required TResult Function(String? error) setErrorOnAuthScreen,
+    required TResult Function() initLoadingArticles,
+    required TResult Function() showArticlesLoading,
+    required TResult Function(List<Article> articles, int page, int pageSize)
+        showArticlesLoaded,
+    required TResult Function(List<Article> articles) showAllArticlesLoaded,
+    required TResult Function(String message) showErrorOnArticleLoading,
+    required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
+    required TResult Function() refreshArticles,
+    required TResult Function(Article article) downloadPdf,
+    required TResult Function(Article article) openArticle,
+    required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
+    required TResult Function(String code) qrScanned,
+    required TResult Function(Article article) showScannedArticle,
+    required TResult Function(Picture picture) openPictureFullScreen,
+    required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
+  }) {
+    return updateOpenedArticle(article);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initAction,
+    TResult Function()? appLoaded,
+    TResult Function()? removePreviousPages,
+    TResult Function(BottomNavigationState state)? changeBottomNavigationState,
+    TResult Function()? goBack,
+    TResult Function()? goBackInner,
+    TResult Function()? showSignIn,
+    TResult Function()? showSignUp,
+    TResult Function()? notNow,
+    TResult Function(User user)? authenticate,
+    TResult Function(String login, String password)? loginSubmit,
+    TResult Function(String login, String email, String password,
+            String repeatedPassword)?
+        registrationSubmit,
+    TResult Function(bool loading)? setLoadingOnAuthScreen,
+    TResult Function(String? error)? setErrorOnAuthScreen,
+    TResult Function()? initLoadingArticles,
+    TResult Function()? showArticlesLoading,
+    TResult Function(List<Article> articles, int page, int pageSize)?
+        showArticlesLoaded,
+    TResult Function(List<Article> articles)? showAllArticlesLoaded,
+    TResult Function(String message)? showErrorOnArticleLoading,
+    TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
+    TResult Function()? refreshArticles,
+    TResult Function(Article article)? downloadPdf,
+    TResult Function(Article article)? openArticle,
+    TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
+    TResult Function(String code)? qrScanned,
+    TResult Function(Article article)? showScannedArticle,
+    TResult Function(Picture picture)? openPictureFullScreen,
+    TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
+    required TResult orElse(),
+  }) {
+    if (updateOpenedArticle != null) {
+      return updateOpenedArticle(article);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitAction value) initAction,
+    required TResult Function(AppLoaded value) appLoaded,
+    required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ChangeBottomNavigationState value)
+        changeBottomNavigationState,
+    required TResult Function(GoBack value) goBack,
+    required TResult Function(GoBackInner value) goBackInner,
+    required TResult Function(ShowSignIn value) showSignIn,
+    required TResult Function(ShowSignUp value) showSignUp,
+    required TResult Function(NotNow value) notNow,
+    required TResult Function(Authenticate value) authenticate,
+    required TResult Function(SubmitLogin value) loginSubmit,
+    required TResult Function(RegistrationLogin value) registrationSubmit,
+    required TResult Function(SetLoadingOnAuthScreen value)
+        setLoadingOnAuthScreen,
+    required TResult Function(SetErrorOnAuthScreen value) setErrorOnAuthScreen,
+    required TResult Function(InitLoadingArticles value) initLoadingArticles,
+    required TResult Function(ShowArticlesLoading value) showArticlesLoading,
+    required TResult Function(ShowArticlesLoaded value) showArticlesLoaded,
+    required TResult Function(ShowAllArticlesLoaded value)
+        showAllArticlesLoaded,
+    required TResult Function(ShowErrorOnArticleLoading value)
+        showErrorOnArticleLoading,
+    required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
+    required TResult Function(RefreshArticles value) refreshArticles,
+    required TResult Function(DownloadPdf value) downloadPdf,
+    required TResult Function(OpenArticle value) openArticle,
+    required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
+    required TResult Function(QRScanned value) qrScanned,
+    required TResult Function(ShowScannedArticle value) showScannedArticle,
+    required TResult Function(OpenPictureFullScreen value)
+        openPictureFullScreen,
+    required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
+  }) {
+    return updateOpenedArticle(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitAction value)? initAction,
+    TResult Function(AppLoaded value)? appLoaded,
+    TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ChangeBottomNavigationState value)?
+        changeBottomNavigationState,
+    TResult Function(GoBack value)? goBack,
+    TResult Function(GoBackInner value)? goBackInner,
+    TResult Function(ShowSignIn value)? showSignIn,
+    TResult Function(ShowSignUp value)? showSignUp,
+    TResult Function(NotNow value)? notNow,
+    TResult Function(Authenticate value)? authenticate,
+    TResult Function(SubmitLogin value)? loginSubmit,
+    TResult Function(RegistrationLogin value)? registrationSubmit,
+    TResult Function(SetLoadingOnAuthScreen value)? setLoadingOnAuthScreen,
+    TResult Function(SetErrorOnAuthScreen value)? setErrorOnAuthScreen,
+    TResult Function(InitLoadingArticles value)? initLoadingArticles,
+    TResult Function(ShowArticlesLoading value)? showArticlesLoading,
+    TResult Function(ShowArticlesLoaded value)? showArticlesLoaded,
+    TResult Function(ShowAllArticlesLoaded value)? showAllArticlesLoaded,
+    TResult Function(ShowErrorOnArticleLoading value)?
+        showErrorOnArticleLoading,
+    TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
+    TResult Function(RefreshArticles value)? refreshArticles,
+    TResult Function(DownloadPdf value)? downloadPdf,
+    TResult Function(OpenArticle value)? openArticle,
+    TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
+    TResult Function(QRScanned value)? qrScanned,
+    TResult Function(ShowScannedArticle value)? showScannedArticle,
+    TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
+    TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
+    required TResult orElse(),
+  }) {
+    if (updateOpenedArticle != null) {
+      return updateOpenedArticle(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateOpenedArticle implements AppAction {
+  const factory UpdateOpenedArticle({required Article article}) =
+      _$UpdateOpenedArticle;
+
+  Article get article => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UpdateOpenedArticleCopyWith<UpdateOpenedArticle> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -5853,10 +6317,12 @@ class _$QRScanned implements QRScanned {
     required TResult Function(Article article) downloadPdf,
     required TResult Function(Article article) openArticle,
     required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
     required TResult Function(Picture picture) openPictureFullScreen,
     required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
   }) {
     return qrScanned(code);
   }
@@ -5891,10 +6357,12 @@ class _$QRScanned implements QRScanned {
     TResult Function(Article article)? downloadPdf,
     TResult Function(Article article)? openArticle,
     TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
     TResult Function(Picture picture)? openPictureFullScreen,
     TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
     required TResult orElse(),
   }) {
     if (qrScanned != null) {
@@ -5934,11 +6402,13 @@ class _$QRScanned implements QRScanned {
     required TResult Function(DownloadPdf value) downloadPdf,
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
     required TResult Function(OpenPictureFullScreen value)
         openPictureFullScreen,
     required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
   }) {
     return qrScanned(this);
   }
@@ -5972,10 +6442,12 @@ class _$QRScanned implements QRScanned {
     TResult Function(DownloadPdf value)? downloadPdf,
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
     TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
     required TResult orElse(),
   }) {
     if (qrScanned != null) {
@@ -6096,10 +6568,12 @@ class _$ShowScannedArticle implements ShowScannedArticle {
     required TResult Function(Article article) downloadPdf,
     required TResult Function(Article article) openArticle,
     required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
     required TResult Function(Picture picture) openPictureFullScreen,
     required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
   }) {
     return showScannedArticle(article);
   }
@@ -6134,10 +6608,12 @@ class _$ShowScannedArticle implements ShowScannedArticle {
     TResult Function(Article article)? downloadPdf,
     TResult Function(Article article)? openArticle,
     TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
     TResult Function(Picture picture)? openPictureFullScreen,
     TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
     required TResult orElse(),
   }) {
     if (showScannedArticle != null) {
@@ -6177,11 +6653,13 @@ class _$ShowScannedArticle implements ShowScannedArticle {
     required TResult Function(DownloadPdf value) downloadPdf,
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
     required TResult Function(OpenPictureFullScreen value)
         openPictureFullScreen,
     required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
   }) {
     return showScannedArticle(this);
   }
@@ -6215,10 +6693,12 @@ class _$ShowScannedArticle implements ShowScannedArticle {
     TResult Function(DownloadPdf value)? downloadPdf,
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
     TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
     required TResult orElse(),
   }) {
     if (showScannedArticle != null) {
@@ -6341,10 +6821,12 @@ class _$OpenPictureFullScreen implements OpenPictureFullScreen {
     required TResult Function(Article article) downloadPdf,
     required TResult Function(Article article) openArticle,
     required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
     required TResult Function(Picture picture) openPictureFullScreen,
     required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
   }) {
     return openPictureFullScreen(picture);
   }
@@ -6379,10 +6861,12 @@ class _$OpenPictureFullScreen implements OpenPictureFullScreen {
     TResult Function(Article article)? downloadPdf,
     TResult Function(Article article)? openArticle,
     TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
     TResult Function(Picture picture)? openPictureFullScreen,
     TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
     required TResult orElse(),
   }) {
     if (openPictureFullScreen != null) {
@@ -6422,11 +6906,13 @@ class _$OpenPictureFullScreen implements OpenPictureFullScreen {
     required TResult Function(DownloadPdf value) downloadPdf,
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
     required TResult Function(OpenPictureFullScreen value)
         openPictureFullScreen,
     required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
   }) {
     return openPictureFullScreen(this);
   }
@@ -6460,10 +6946,12 @@ class _$OpenPictureFullScreen implements OpenPictureFullScreen {
     TResult Function(DownloadPdf value)? downloadPdf,
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
     TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
     required TResult orElse(),
   }) {
     if (openPictureFullScreen != null) {
@@ -6584,10 +7072,12 @@ class _$SavePicture implements SavePicture {
     required TResult Function(Article article) downloadPdf,
     required TResult Function(Article article) openArticle,
     required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
     required TResult Function(String code) qrScanned,
     required TResult Function(Article article) showScannedArticle,
     required TResult Function(Picture picture) openPictureFullScreen,
     required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
   }) {
     return savePicture(picture);
   }
@@ -6622,10 +7112,12 @@ class _$SavePicture implements SavePicture {
     TResult Function(Article article)? downloadPdf,
     TResult Function(Article article)? openArticle,
     TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
     TResult Function(String code)? qrScanned,
     TResult Function(Article article)? showScannedArticle,
     TResult Function(Picture picture)? openPictureFullScreen,
     TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
     required TResult orElse(),
   }) {
     if (savePicture != null) {
@@ -6665,11 +7157,13 @@ class _$SavePicture implements SavePicture {
     required TResult Function(DownloadPdf value) downloadPdf,
     required TResult Function(OpenArticle value) openArticle,
     required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
     required TResult Function(QRScanned value) qrScanned,
     required TResult Function(ShowScannedArticle value) showScannedArticle,
     required TResult Function(OpenPictureFullScreen value)
         openPictureFullScreen,
     required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
   }) {
     return savePicture(this);
   }
@@ -6703,10 +7197,12 @@ class _$SavePicture implements SavePicture {
     TResult Function(DownloadPdf value)? downloadPdf,
     TResult Function(OpenArticle value)? openArticle,
     TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
     TResult Function(QRScanned value)? qrScanned,
     TResult Function(ShowScannedArticle value)? showScannedArticle,
     TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
     TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
     required TResult orElse(),
   }) {
     if (savePicture != null) {
@@ -6723,4 +7219,242 @@ abstract class SavePicture implements AppAction {
   @JsonKey(ignore: true)
   $SavePictureCopyWith<SavePicture> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LikeCopyWith<$Res> {
+  factory $LikeCopyWith(Like value, $Res Function(Like) then) =
+      _$LikeCopyWithImpl<$Res>;
+  $Res call({bool button});
+}
+
+/// @nodoc
+class _$LikeCopyWithImpl<$Res> extends _$AppActionCopyWithImpl<$Res>
+    implements $LikeCopyWith<$Res> {
+  _$LikeCopyWithImpl(Like _value, $Res Function(Like) _then)
+      : super(_value, (v) => _then(v as Like));
+
+  @override
+  Like get _value => super._value as Like;
+
+  @override
+  $Res call({
+    Object? button = freezed,
+  }) {
+    return _then(Like(
+      button: button == freezed
+          ? _value.button
+          : button // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$Like implements Like {
+  const _$Like({required this.button});
+
+  @override
+  final bool button;
+
+  @override
+  String toString() {
+    return 'AppAction.like(button: $button)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is Like &&
+            (identical(other.button, button) ||
+                const DeepCollectionEquality().equals(other.button, button)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(button);
+
+  @JsonKey(ignore: true)
+  @override
+  $LikeCopyWith<Like> get copyWith =>
+      _$LikeCopyWithImpl<Like>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initAction,
+    required TResult Function() appLoaded,
+    required TResult Function() removePreviousPages,
+    required TResult Function(BottomNavigationState state)
+        changeBottomNavigationState,
+    required TResult Function() goBack,
+    required TResult Function() goBackInner,
+    required TResult Function() showSignIn,
+    required TResult Function() showSignUp,
+    required TResult Function() notNow,
+    required TResult Function(User user) authenticate,
+    required TResult Function(String login, String password) loginSubmit,
+    required TResult Function(String login, String email, String password,
+            String repeatedPassword)
+        registrationSubmit,
+    required TResult Function(bool loading) setLoadingOnAuthScreen,
+    required TResult Function(String? error) setErrorOnAuthScreen,
+    required TResult Function() initLoadingArticles,
+    required TResult Function() showArticlesLoading,
+    required TResult Function(List<Article> articles, int page, int pageSize)
+        showArticlesLoaded,
+    required TResult Function(List<Article> articles) showAllArticlesLoaded,
+    required TResult Function(String message) showErrorOnArticleLoading,
+    required TResult Function(int prevPage, int pageSize) loadNextArticlePage,
+    required TResult Function() refreshArticles,
+    required TResult Function(Article article) downloadPdf,
+    required TResult Function(Article article) openArticle,
+    required TResult Function(Article article) removeArticle,
+    required TResult Function(Article article) updateOpenedArticle,
+    required TResult Function(String code) qrScanned,
+    required TResult Function(Article article) showScannedArticle,
+    required TResult Function(Picture picture) openPictureFullScreen,
+    required TResult Function(Picture picture) savePicture,
+    required TResult Function(bool button) like,
+  }) {
+    return like(button);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initAction,
+    TResult Function()? appLoaded,
+    TResult Function()? removePreviousPages,
+    TResult Function(BottomNavigationState state)? changeBottomNavigationState,
+    TResult Function()? goBack,
+    TResult Function()? goBackInner,
+    TResult Function()? showSignIn,
+    TResult Function()? showSignUp,
+    TResult Function()? notNow,
+    TResult Function(User user)? authenticate,
+    TResult Function(String login, String password)? loginSubmit,
+    TResult Function(String login, String email, String password,
+            String repeatedPassword)?
+        registrationSubmit,
+    TResult Function(bool loading)? setLoadingOnAuthScreen,
+    TResult Function(String? error)? setErrorOnAuthScreen,
+    TResult Function()? initLoadingArticles,
+    TResult Function()? showArticlesLoading,
+    TResult Function(List<Article> articles, int page, int pageSize)?
+        showArticlesLoaded,
+    TResult Function(List<Article> articles)? showAllArticlesLoaded,
+    TResult Function(String message)? showErrorOnArticleLoading,
+    TResult Function(int prevPage, int pageSize)? loadNextArticlePage,
+    TResult Function()? refreshArticles,
+    TResult Function(Article article)? downloadPdf,
+    TResult Function(Article article)? openArticle,
+    TResult Function(Article article)? removeArticle,
+    TResult Function(Article article)? updateOpenedArticle,
+    TResult Function(String code)? qrScanned,
+    TResult Function(Article article)? showScannedArticle,
+    TResult Function(Picture picture)? openPictureFullScreen,
+    TResult Function(Picture picture)? savePicture,
+    TResult Function(bool button)? like,
+    required TResult orElse(),
+  }) {
+    if (like != null) {
+      return like(button);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitAction value) initAction,
+    required TResult Function(AppLoaded value) appLoaded,
+    required TResult Function(RemovePreviousPages value) removePreviousPages,
+    required TResult Function(ChangeBottomNavigationState value)
+        changeBottomNavigationState,
+    required TResult Function(GoBack value) goBack,
+    required TResult Function(GoBackInner value) goBackInner,
+    required TResult Function(ShowSignIn value) showSignIn,
+    required TResult Function(ShowSignUp value) showSignUp,
+    required TResult Function(NotNow value) notNow,
+    required TResult Function(Authenticate value) authenticate,
+    required TResult Function(SubmitLogin value) loginSubmit,
+    required TResult Function(RegistrationLogin value) registrationSubmit,
+    required TResult Function(SetLoadingOnAuthScreen value)
+        setLoadingOnAuthScreen,
+    required TResult Function(SetErrorOnAuthScreen value) setErrorOnAuthScreen,
+    required TResult Function(InitLoadingArticles value) initLoadingArticles,
+    required TResult Function(ShowArticlesLoading value) showArticlesLoading,
+    required TResult Function(ShowArticlesLoaded value) showArticlesLoaded,
+    required TResult Function(ShowAllArticlesLoaded value)
+        showAllArticlesLoaded,
+    required TResult Function(ShowErrorOnArticleLoading value)
+        showErrorOnArticleLoading,
+    required TResult Function(LoadNextArticlePage value) loadNextArticlePage,
+    required TResult Function(RefreshArticles value) refreshArticles,
+    required TResult Function(DownloadPdf value) downloadPdf,
+    required TResult Function(OpenArticle value) openArticle,
+    required TResult Function(RemoveArticle value) removeArticle,
+    required TResult Function(UpdateOpenedArticle value) updateOpenedArticle,
+    required TResult Function(QRScanned value) qrScanned,
+    required TResult Function(ShowScannedArticle value) showScannedArticle,
+    required TResult Function(OpenPictureFullScreen value)
+        openPictureFullScreen,
+    required TResult Function(SavePicture value) savePicture,
+    required TResult Function(Like value) like,
+  }) {
+    return like(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitAction value)? initAction,
+    TResult Function(AppLoaded value)? appLoaded,
+    TResult Function(RemovePreviousPages value)? removePreviousPages,
+    TResult Function(ChangeBottomNavigationState value)?
+        changeBottomNavigationState,
+    TResult Function(GoBack value)? goBack,
+    TResult Function(GoBackInner value)? goBackInner,
+    TResult Function(ShowSignIn value)? showSignIn,
+    TResult Function(ShowSignUp value)? showSignUp,
+    TResult Function(NotNow value)? notNow,
+    TResult Function(Authenticate value)? authenticate,
+    TResult Function(SubmitLogin value)? loginSubmit,
+    TResult Function(RegistrationLogin value)? registrationSubmit,
+    TResult Function(SetLoadingOnAuthScreen value)? setLoadingOnAuthScreen,
+    TResult Function(SetErrorOnAuthScreen value)? setErrorOnAuthScreen,
+    TResult Function(InitLoadingArticles value)? initLoadingArticles,
+    TResult Function(ShowArticlesLoading value)? showArticlesLoading,
+    TResult Function(ShowArticlesLoaded value)? showArticlesLoaded,
+    TResult Function(ShowAllArticlesLoaded value)? showAllArticlesLoaded,
+    TResult Function(ShowErrorOnArticleLoading value)?
+        showErrorOnArticleLoading,
+    TResult Function(LoadNextArticlePage value)? loadNextArticlePage,
+    TResult Function(RefreshArticles value)? refreshArticles,
+    TResult Function(DownloadPdf value)? downloadPdf,
+    TResult Function(OpenArticle value)? openArticle,
+    TResult Function(RemoveArticle value)? removeArticle,
+    TResult Function(UpdateOpenedArticle value)? updateOpenedArticle,
+    TResult Function(QRScanned value)? qrScanned,
+    TResult Function(ShowScannedArticle value)? showScannedArticle,
+    TResult Function(OpenPictureFullScreen value)? openPictureFullScreen,
+    TResult Function(SavePicture value)? savePicture,
+    TResult Function(Like value)? like,
+    required TResult orElse(),
+  }) {
+    if (like != null) {
+      return like(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Like implements AppAction {
+  const factory Like({required bool button}) = _$Like;
+
+  bool get button => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $LikeCopyWith<Like> get copyWith => throw _privateConstructorUsedError;
 }

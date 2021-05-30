@@ -33,10 +33,7 @@ class MainScreen extends StatelessWidget {
                   articlesScreen: (_) => const ArticlesScreen(),
                   mapScreen: (_) => const MapScreen(),
                   qrScreen: (_) => const QRScreen(),
-                  articleScreen: (state) => ArticleScreen(
-                    article: state.article,
-                    dispatcher: dispatcher,
-                  ),
+                  articleScreen: (state) => const ArticleScreen(),
                 ),
               )
               .map(

@@ -6,6 +6,7 @@ import 'package:dip_frontend/redux/state/navigation/inner_navigation/inner_scree
 import 'package:dip_frontend/redux/state/auth_state.dart';
 import 'package:dip_frontend/redux/state/navigation/bottom_navigation.dart';
 import 'package:dip_frontend/redux/state/navigation/screen.dart';
+import 'package:dip_frontend/redux/state/opened_article_state.dart';
 import 'package:dip_frontend/redux/state/scanned_article_state.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -22,6 +23,7 @@ class AppState with _$AppState {
     required ArticlesState articlesState,
     required BottomNavigationState bottomNavigationState,
     required ScannedArticleState scannedArticle,
+    required OpenedArticleState openedArticleState,
     User? user,
   }) = _AppState;
 

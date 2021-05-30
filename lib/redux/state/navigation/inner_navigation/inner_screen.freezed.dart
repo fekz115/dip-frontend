@@ -28,10 +28,8 @@ class _$InnerScreenTearOff {
     return const _QRScreen();
   }
 
-  _ArticleScreen articleScreen({required Article article}) {
-    return _ArticleScreen(
-      article: article,
-    );
+  _ArticleScreen articleScreen() {
+    return const _ArticleScreen();
   }
 }
 
@@ -45,7 +43,7 @@ mixin _$InnerScreen {
     required TResult Function() articlesScreen,
     required TResult Function() mapScreen,
     required TResult Function() qrScreen,
-    required TResult Function(Article article) articleScreen,
+    required TResult Function() articleScreen,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -53,7 +51,7 @@ mixin _$InnerScreen {
     TResult Function()? articlesScreen,
     TResult Function()? mapScreen,
     TResult Function()? qrScreen,
-    TResult Function(Article article)? articleScreen,
+    TResult Function()? articleScreen,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -135,7 +133,7 @@ class _$_ArticlesScreen implements _ArticlesScreen {
     required TResult Function() articlesScreen,
     required TResult Function() mapScreen,
     required TResult Function() qrScreen,
-    required TResult Function(Article article) articleScreen,
+    required TResult Function() articleScreen,
   }) {
     return articlesScreen();
   }
@@ -146,7 +144,7 @@ class _$_ArticlesScreen implements _ArticlesScreen {
     TResult Function()? articlesScreen,
     TResult Function()? mapScreen,
     TResult Function()? qrScreen,
-    TResult Function(Article article)? articleScreen,
+    TResult Function()? articleScreen,
     required TResult orElse(),
   }) {
     if (articlesScreen != null) {
@@ -227,7 +225,7 @@ class _$_MapScreen implements _MapScreen {
     required TResult Function() articlesScreen,
     required TResult Function() mapScreen,
     required TResult Function() qrScreen,
-    required TResult Function(Article article) articleScreen,
+    required TResult Function() articleScreen,
   }) {
     return mapScreen();
   }
@@ -238,7 +236,7 @@ class _$_MapScreen implements _MapScreen {
     TResult Function()? articlesScreen,
     TResult Function()? mapScreen,
     TResult Function()? qrScreen,
-    TResult Function(Article article)? articleScreen,
+    TResult Function()? articleScreen,
     required TResult orElse(),
   }) {
     if (mapScreen != null) {
@@ -318,7 +316,7 @@ class _$_QRScreen implements _QRScreen {
     required TResult Function() articlesScreen,
     required TResult Function() mapScreen,
     required TResult Function() qrScreen,
-    required TResult Function(Article article) articleScreen,
+    required TResult Function() articleScreen,
   }) {
     return qrScreen();
   }
@@ -329,7 +327,7 @@ class _$_QRScreen implements _QRScreen {
     TResult Function()? articlesScreen,
     TResult Function()? mapScreen,
     TResult Function()? qrScreen,
-    TResult Function(Article article)? articleScreen,
+    TResult Function()? articleScreen,
     required TResult orElse(),
   }) {
     if (qrScreen != null) {
@@ -374,9 +372,6 @@ abstract class _$ArticleScreenCopyWith<$Res> {
   factory _$ArticleScreenCopyWith(
           _ArticleScreen value, $Res Function(_ArticleScreen) then) =
       __$ArticleScreenCopyWithImpl<$Res>;
-  $Res call({Article article});
-
-  $ArticleCopyWith<$Res> get article;
 }
 
 /// @nodoc
@@ -388,56 +383,25 @@ class __$ArticleScreenCopyWithImpl<$Res> extends _$InnerScreenCopyWithImpl<$Res>
 
   @override
   _ArticleScreen get _value => super._value as _ArticleScreen;
-
-  @override
-  $Res call({
-    Object? article = freezed,
-  }) {
-    return _then(_ArticleScreen(
-      article: article == freezed
-          ? _value.article
-          : article // ignore: cast_nullable_to_non_nullable
-              as Article,
-    ));
-  }
-
-  @override
-  $ArticleCopyWith<$Res> get article {
-    return $ArticleCopyWith<$Res>(_value.article, (value) {
-      return _then(_value.copyWith(article: value));
-    });
-  }
 }
 
 /// @nodoc
 
 class _$_ArticleScreen implements _ArticleScreen {
-  const _$_ArticleScreen({required this.article});
-
-  @override
-  final Article article;
+  const _$_ArticleScreen();
 
   @override
   String toString() {
-    return 'InnerScreen.articleScreen(article: $article)';
+    return 'InnerScreen.articleScreen()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _ArticleScreen &&
-            (identical(other.article, article) ||
-                const DeepCollectionEquality().equals(other.article, article)));
+    return identical(this, other) || (other is _ArticleScreen);
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(article);
-
-  @JsonKey(ignore: true)
-  @override
-  _$ArticleScreenCopyWith<_ArticleScreen> get copyWith =>
-      __$ArticleScreenCopyWithImpl<_ArticleScreen>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -445,9 +409,9 @@ class _$_ArticleScreen implements _ArticleScreen {
     required TResult Function() articlesScreen,
     required TResult Function() mapScreen,
     required TResult Function() qrScreen,
-    required TResult Function(Article article) articleScreen,
+    required TResult Function() articleScreen,
   }) {
-    return articleScreen(article);
+    return articleScreen();
   }
 
   @override
@@ -456,11 +420,11 @@ class _$_ArticleScreen implements _ArticleScreen {
     TResult Function()? articlesScreen,
     TResult Function()? mapScreen,
     TResult Function()? qrScreen,
-    TResult Function(Article article)? articleScreen,
+    TResult Function()? articleScreen,
     required TResult orElse(),
   }) {
     if (articleScreen != null) {
-      return articleScreen(article);
+      return articleScreen();
     }
     return orElse();
   }
@@ -493,10 +457,5 @@ class _$_ArticleScreen implements _ArticleScreen {
 }
 
 abstract class _ArticleScreen implements InnerScreen {
-  const factory _ArticleScreen({required Article article}) = _$_ArticleScreen;
-
-  Article get article => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$ArticleScreenCopyWith<_ArticleScreen> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory _ArticleScreen() = _$_ArticleScreen;
 }

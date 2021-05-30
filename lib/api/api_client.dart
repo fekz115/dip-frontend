@@ -8,6 +8,7 @@ import 'package:dip_frontend/api/rating_state_interceptor.dart';
 import 'package:dip_frontend/api/role_interceptor.dart';
 import 'package:dip_frontend/model/article.dart';
 import 'package:dip_frontend/model/page.dart';
+import 'package:dip_frontend/model/rating_state.dart';
 import 'package:dip_frontend/model/user.dart';
 import 'package:dip_frontend/repository/repository.dart';
 import 'package:path_provider/path_provider.dart';
@@ -137,5 +138,15 @@ class ApiClient {
 
   Future<void> removeArticle(int id) {
     return _request(() => dio.delete('$articleControllerUrl/$id'));
+  }
+
+  Future<Article> updateArticleRating(int articleId, RatingState newRatingState) {
+    return _request(() => dio.post<Map<String, dynamic>>(
+        '$articleControllerUrl/$articleId/rating', 
+        data: {
+          'newRatingState': newRatingState.toString().toUpperCase().toString().split('.')[1].toUpperCase(),
+        },
+      ).then((value) => Article.fromJson(value.data!['article'] as Map<String, dynamic>))
+    );
   }
 }
