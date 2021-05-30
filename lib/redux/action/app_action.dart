@@ -65,6 +65,9 @@ class AppAction with _$AppAction {
   const factory AppAction.openArticle({
     required Article article,
   }) = OpenArticle;
+  const factory AppAction.removeArticle({
+    required Article article,
+  }) = RemoveArticle;
 
   const factory AppAction.qrScanned({
     required String code,

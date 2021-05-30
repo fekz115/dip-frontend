@@ -123,7 +123,7 @@ class ApiClient {
     );
     final t = response.headers["content-disposition"]![0];
     final file = File(
-        '${(await getTemporaryDirectory()).path}/${t.substring(t.indexOf('"') + 1, t.lastIndexOf('"'))}');
+        '${(await getExternalStorageDirectory())!.path}/${t.substring(t.indexOf('"') + 1, t.lastIndexOf('"'))}');
     final raf = file.openSync(mode: FileMode.write);
     raf.writeFromSync(response.data as List<int>);
     await raf.close();
@@ -133,5 +133,9 @@ class ApiClient {
   Future<Article> getArticle(int id) {
     return _request(() => dio.get<Map<String, dynamic>>('$articleControllerUrl/$id'))
         .then((value) => Article.fromJson(value.data!['article'] as Map<String, dynamic>));
+  }
+
+  Future<void> removeArticle(int id) {
+    return _request(() => dio.delete('$articleControllerUrl/$id'));
   }
 }

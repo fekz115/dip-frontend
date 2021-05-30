@@ -10,4 +10,6 @@ class AppEvent with _$AppEvent {
     required String message,
   }) = SnackbarNoficationEvent;
 
+  const factory AppEvent.refreshArticles() = RefreshArticlesEvent;
+
 }

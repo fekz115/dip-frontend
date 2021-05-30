@@ -23,6 +23,8 @@ class _ArticleListState extends State<ArticleList> {
   final StreamController<bool> _refreshingController =
       StreamController.broadcast();
 
+  GlobalKey<RefreshIndicatorState> key = GlobalKey();
+
   @override
   Widget build(BuildContext context) {
     return ProjectStoreConnection<ArticlesState>(
@@ -30,6 +32,7 @@ class _ArticleListState extends State<ArticleList> {
       builder: (context, state, dispatcher) {
         _refreshingController.add(state.loading);
         return RefreshIndicator(
+          key: key,
           onRefresh: () {
             dispatcher(const AppAction.refreshArticles());
             return _refreshingController.stream
@@ -67,6 +70,12 @@ class _ArticleListState extends State<ArticleList> {
           ),
         );
       },
+      eventListener: (context, event) => event.maybeMap(
+        refreshArticles: (vent) async {
+          key.currentState?.show();
+        },
+        orElse: () async {},
+      ),
     );
   }
 
@@ -93,7 +102,7 @@ class _ArticleListState extends State<ArticleList> {
           caption: 'Remove',
           icon: Icons.remove_circle,
           color: Colors.redAccent,
-          onTap: () {},
+          onTap: () => dispatcher(AppAction.removeArticle(article: article)),
         ),
       ],
       child: ArticleWidget(

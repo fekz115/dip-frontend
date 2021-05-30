@@ -53,7 +53,7 @@ class MainScreen extends StatelessWidget {
           },
         ),
         eventListener: (context, event) async {
-          event.map(
+          event.maybeMap(
             snackbarNotificationEvent: (event) {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
@@ -63,6 +63,7 @@ class MainScreen extends StatelessWidget {
                 ),
               );
             },
+            orElse: () {},
           );
         },
       ),

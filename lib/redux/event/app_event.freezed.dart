@@ -21,6 +21,10 @@ class _$AppEventTearOff {
       message: message,
     );
   }
+
+  RefreshArticlesEvent refreshArticles() {
+    return const RefreshArticlesEvent();
+  }
 }
 
 /// @nodoc
@@ -28,16 +32,16 @@ const $AppEvent = _$AppEventTearOff();
 
 /// @nodoc
 mixin _$AppEvent {
-  String get message => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String message) snackbarNotificationEvent,
+    required TResult Function() refreshArticles,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String message)? snackbarNotificationEvent,
+    TResult Function()? refreshArticles,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -45,17 +49,15 @@ mixin _$AppEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(SnackbarNoficationEvent value)
         snackbarNotificationEvent,
+    required TResult Function(RefreshArticlesEvent value) refreshArticles,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SnackbarNoficationEvent value)? snackbarNotificationEvent,
+    TResult Function(RefreshArticlesEvent value)? refreshArticles,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $AppEventCopyWith<AppEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -63,7 +65,6 @@ mixin _$AppEvent {
 abstract class $AppEventCopyWith<$Res> {
   factory $AppEventCopyWith(AppEvent value, $Res Function(AppEvent) then) =
       _$AppEventCopyWithImpl<$Res>;
-  $Res call({String message});
 }
 
 /// @nodoc
@@ -73,27 +74,13 @@ class _$AppEventCopyWithImpl<$Res> implements $AppEventCopyWith<$Res> {
   final AppEvent _value;
   // ignore: unused_field
   final $Res Function(AppEvent) _then;
-
-  @override
-  $Res call({
-    Object? message = freezed,
-  }) {
-    return _then(_value.copyWith(
-      message: message == freezed
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
-abstract class $SnackbarNoficationEventCopyWith<$Res>
-    implements $AppEventCopyWith<$Res> {
+abstract class $SnackbarNoficationEventCopyWith<$Res> {
   factory $SnackbarNoficationEventCopyWith(SnackbarNoficationEvent value,
           $Res Function(SnackbarNoficationEvent) then) =
       _$SnackbarNoficationEventCopyWithImpl<$Res>;
-  @override
   $Res call({String message});
 }
 
@@ -156,6 +143,7 @@ class _$SnackbarNoficationEvent implements SnackbarNoficationEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String message) snackbarNotificationEvent,
+    required TResult Function() refreshArticles,
   }) {
     return snackbarNotificationEvent(message);
   }
@@ -164,6 +152,7 @@ class _$SnackbarNoficationEvent implements SnackbarNoficationEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String message)? snackbarNotificationEvent,
+    TResult Function()? refreshArticles,
     required TResult orElse(),
   }) {
     if (snackbarNotificationEvent != null) {
@@ -177,6 +166,7 @@ class _$SnackbarNoficationEvent implements SnackbarNoficationEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(SnackbarNoficationEvent value)
         snackbarNotificationEvent,
+    required TResult Function(RefreshArticlesEvent value) refreshArticles,
   }) {
     return snackbarNotificationEvent(this);
   }
@@ -185,6 +175,7 @@ class _$SnackbarNoficationEvent implements SnackbarNoficationEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SnackbarNoficationEvent value)? snackbarNotificationEvent,
+    TResult Function(RefreshArticlesEvent value)? refreshArticles,
     required TResult orElse(),
   }) {
     if (snackbarNotificationEvent != null) {
@@ -198,10 +189,95 @@ abstract class SnackbarNoficationEvent implements AppEvent {
   const factory SnackbarNoficationEvent({required String message}) =
       _$SnackbarNoficationEvent;
 
-  @override
   String get message => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   $SnackbarNoficationEventCopyWith<SnackbarNoficationEvent> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $RefreshArticlesEventCopyWith<$Res> {
+  factory $RefreshArticlesEventCopyWith(RefreshArticlesEvent value,
+          $Res Function(RefreshArticlesEvent) then) =
+      _$RefreshArticlesEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$RefreshArticlesEventCopyWithImpl<$Res>
+    extends _$AppEventCopyWithImpl<$Res>
+    implements $RefreshArticlesEventCopyWith<$Res> {
+  _$RefreshArticlesEventCopyWithImpl(
+      RefreshArticlesEvent _value, $Res Function(RefreshArticlesEvent) _then)
+      : super(_value, (v) => _then(v as RefreshArticlesEvent));
+
+  @override
+  RefreshArticlesEvent get _value => super._value as RefreshArticlesEvent;
+}
+
+/// @nodoc
+
+class _$RefreshArticlesEvent implements RefreshArticlesEvent {
+  const _$RefreshArticlesEvent();
+
+  @override
+  String toString() {
+    return 'AppEvent.refreshArticles()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is RefreshArticlesEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String message) snackbarNotificationEvent,
+    required TResult Function() refreshArticles,
+  }) {
+    return refreshArticles();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message)? snackbarNotificationEvent,
+    TResult Function()? refreshArticles,
+    required TResult orElse(),
+  }) {
+    if (refreshArticles != null) {
+      return refreshArticles();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SnackbarNoficationEvent value)
+        snackbarNotificationEvent,
+    required TResult Function(RefreshArticlesEvent value) refreshArticles,
+  }) {
+    return refreshArticles(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SnackbarNoficationEvent value)? snackbarNotificationEvent,
+    TResult Function(RefreshArticlesEvent value)? refreshArticles,
+    required TResult orElse(),
+  }) {
+    if (refreshArticles != null) {
+      return refreshArticles(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RefreshArticlesEvent implements AppEvent {
+  const factory RefreshArticlesEvent() = _$RefreshArticlesEvent;
 }

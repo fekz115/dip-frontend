@@ -266,10 +266,24 @@ List<Middleware<AppState, AppAction, AppEvent>> createMiddleware(
                 const AppEvent.snackbarNotificationEvent(message: 'Incorrect QR-code'),
               );
             }
-          },savePicture: (action) async {
+          },
+          savePicture: (action) async {
             final file = await apiClient.downloadPicture(action.picture.id);
             eventDispatcher(
               AppEvent.snackbarNotificationEvent(message: 'File downloaded: ${file.path}'),
             );
+          },
+          removeArticle: (action) async {
+            try {
+              await apiClient.removeArticle(action.article.id);
+              eventDispatcher(
+                const AppEvent.snackbarNotificationEvent(message: 'Removed succesfully'),
+              );
+              eventDispatcher(const AppEvent.refreshArticles());
+            } catch (_) {
+              eventDispatcher(
+                const AppEvent.snackbarNotificationEvent(message: 'Unable to remove'),
+              );
+            }
           }),
     ];
