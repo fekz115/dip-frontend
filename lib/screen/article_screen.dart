@@ -35,6 +35,32 @@ class ArticleScreen extends StatelessWidget {
                 style: Theme.of(context).textTheme.headline5,
               ),
             ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: article.tags
+                    .map((tag) => Padding(
+                          padding: const EdgeInsets.all(3.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              border: Border.all(),
+                              borderRadius: BorderRadius.circular(30),
+                              color: Colors.grey[200],
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Text(
+                                tag.name ?? '',
+                                style: const TextStyle(
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ))
+                    .toList(),
+              ),
+            ),
             ContentBodyWidget(
               contentBody: article.body,
               onPictureClick: (picture) => dispatcher(
