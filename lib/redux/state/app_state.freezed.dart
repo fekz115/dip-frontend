@@ -23,6 +23,7 @@ class _$AppStateTearOff {
       required List<Role> roles,
       required ArticlesState articlesState,
       required BottomNavigationState bottomNavigationState,
+      required ScannedArticleState scannedArticle,
       User? user}) {
     return _AppState(
       navigationState: navigationState,
@@ -31,6 +32,7 @@ class _$AppStateTearOff {
       roles: roles,
       articlesState: articlesState,
       bottomNavigationState: bottomNavigationState,
+      scannedArticle: scannedArticle,
       user: user,
     );
   }
@@ -49,6 +51,7 @@ mixin _$AppState {
   ArticlesState get articlesState => throw _privateConstructorUsedError;
   BottomNavigationState get bottomNavigationState =>
       throw _privateConstructorUsedError;
+  ScannedArticleState get scannedArticle => throw _privateConstructorUsedError;
   User? get user => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -67,10 +70,12 @@ abstract class $AppStateCopyWith<$Res> {
       List<Role> roles,
       ArticlesState articlesState,
       BottomNavigationState bottomNavigationState,
+      ScannedArticleState scannedArticle,
       User? user});
 
   $AuthStateCopyWith<$Res> get authState;
   $ArticlesStateCopyWith<$Res> get articlesState;
+  $ScannedArticleStateCopyWith<$Res> get scannedArticle;
   $UserCopyWith<$Res>? get user;
 }
 
@@ -90,6 +95,7 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
     Object? roles = freezed,
     Object? articlesState = freezed,
     Object? bottomNavigationState = freezed,
+    Object? scannedArticle = freezed,
     Object? user = freezed,
   }) {
     return _then(_value.copyWith(
@@ -117,6 +123,10 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
           ? _value.bottomNavigationState
           : bottomNavigationState // ignore: cast_nullable_to_non_nullable
               as BottomNavigationState,
+      scannedArticle: scannedArticle == freezed
+          ? _value.scannedArticle
+          : scannedArticle // ignore: cast_nullable_to_non_nullable
+              as ScannedArticleState,
       user: user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -135,6 +145,13 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
   $ArticlesStateCopyWith<$Res> get articlesState {
     return $ArticlesStateCopyWith<$Res>(_value.articlesState, (value) {
       return _then(_value.copyWith(articlesState: value));
+    });
+  }
+
+  @override
+  $ScannedArticleStateCopyWith<$Res> get scannedArticle {
+    return $ScannedArticleStateCopyWith<$Res>(_value.scannedArticle, (value) {
+      return _then(_value.copyWith(scannedArticle: value));
     });
   }
 
@@ -162,12 +179,15 @@ abstract class _$AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
       List<Role> roles,
       ArticlesState articlesState,
       BottomNavigationState bottomNavigationState,
+      ScannedArticleState scannedArticle,
       User? user});
 
   @override
   $AuthStateCopyWith<$Res> get authState;
   @override
   $ArticlesStateCopyWith<$Res> get articlesState;
+  @override
+  $ScannedArticleStateCopyWith<$Res> get scannedArticle;
   @override
   $UserCopyWith<$Res>? get user;
 }
@@ -189,6 +209,7 @@ class __$AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
     Object? roles = freezed,
     Object? articlesState = freezed,
     Object? bottomNavigationState = freezed,
+    Object? scannedArticle = freezed,
     Object? user = freezed,
   }) {
     return _then(_AppState(
@@ -216,6 +237,10 @@ class __$AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
           ? _value.bottomNavigationState
           : bottomNavigationState // ignore: cast_nullable_to_non_nullable
               as BottomNavigationState,
+      scannedArticle: scannedArticle == freezed
+          ? _value.scannedArticle
+          : scannedArticle // ignore: cast_nullable_to_non_nullable
+              as ScannedArticleState,
       user: user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -234,6 +259,7 @@ class _$_AppState implements _AppState {
       required this.roles,
       required this.articlesState,
       required this.bottomNavigationState,
+      required this.scannedArticle,
       this.user});
 
   @override
@@ -249,11 +275,13 @@ class _$_AppState implements _AppState {
   @override
   final BottomNavigationState bottomNavigationState;
   @override
+  final ScannedArticleState scannedArticle;
+  @override
   final User? user;
 
   @override
   String toString() {
-    return 'AppState(navigationState: $navigationState, innerNavigationState: $innerNavigationState, authState: $authState, roles: $roles, articlesState: $articlesState, bottomNavigationState: $bottomNavigationState, user: $user)';
+    return 'AppState(navigationState: $navigationState, innerNavigationState: $innerNavigationState, authState: $authState, roles: $roles, articlesState: $articlesState, bottomNavigationState: $bottomNavigationState, scannedArticle: $scannedArticle, user: $user)';
   }
 
   @override
@@ -277,6 +305,9 @@ class _$_AppState implements _AppState {
             (identical(other.bottomNavigationState, bottomNavigationState) ||
                 const DeepCollectionEquality().equals(
                     other.bottomNavigationState, bottomNavigationState)) &&
+            (identical(other.scannedArticle, scannedArticle) ||
+                const DeepCollectionEquality()
+                    .equals(other.scannedArticle, scannedArticle)) &&
             (identical(other.user, user) ||
                 const DeepCollectionEquality().equals(other.user, user)));
   }
@@ -290,6 +321,7 @@ class _$_AppState implements _AppState {
       const DeepCollectionEquality().hash(roles) ^
       const DeepCollectionEquality().hash(articlesState) ^
       const DeepCollectionEquality().hash(bottomNavigationState) ^
+      const DeepCollectionEquality().hash(scannedArticle) ^
       const DeepCollectionEquality().hash(user);
 
   @JsonKey(ignore: true)
@@ -306,6 +338,7 @@ abstract class _AppState implements AppState {
       required List<Role> roles,
       required ArticlesState articlesState,
       required BottomNavigationState bottomNavigationState,
+      required ScannedArticleState scannedArticle,
       User? user}) = _$_AppState;
 
   @override
@@ -322,6 +355,8 @@ abstract class _AppState implements AppState {
   @override
   BottomNavigationState get bottomNavigationState =>
       throw _privateConstructorUsedError;
+  @override
+  ScannedArticleState get scannedArticle => throw _privateConstructorUsedError;
   @override
   User? get user => throw _privateConstructorUsedError;
   @override

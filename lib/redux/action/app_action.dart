@@ -64,4 +64,11 @@ class AppAction with _$AppAction {
   const factory AppAction.openArticle({
     required Article article,
   }) = OpenArticle;
+
+  const factory AppAction.qrScanned({
+    required String code,
+  }) = QRScanned;
+  const factory AppAction.showScannedArticle({
+    required Article article,
+  }) = ShowScannedArticle;
 }

@@ -9,6 +9,7 @@ import 'package:dip_frontend/redux/state/auth_state.dart';
 import 'package:dip_frontend/redux/state/navigation/bottom_navigation.dart';
 import 'package:dip_frontend/redux/state/navigation/inner_navigation/inner_screen.dart';
 import 'package:dip_frontend/redux/state/navigation/screen.dart';
+import 'package:dip_frontend/redux/state/scanned_article_state.dart';
 import 'package:dip_frontend/repository/objectdb/objectdb_repository.dart';
 import 'package:dip_frontend/repository/repository.dart';
 import 'package:flutter/material.dart';
@@ -52,7 +53,8 @@ class MyApp extends StatelessWidget {
               ],
               roles: [],
               articlesState: ArticlesState.emptyState(),
-              bottomNavigationState: BottomNavigationState.articles,
+              bottomNavigationState: BottomNavigationState.articles, 
+              scannedArticle: ScannedArticleState.emptyState(),
             ),
             reducers: createReducers(),
             middlewares: createMiddleware(

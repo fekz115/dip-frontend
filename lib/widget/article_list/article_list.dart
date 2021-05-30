@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:dip_frontend/model/article.dart';
 import 'package:dip_frontend/redux/action/app_action.dart';
 import 'package:dip_frontend/redux/state/articles_state.dart';
 import 'package:dip_frontend/widget/article_list/article_widget.dart';
@@ -7,6 +8,7 @@ import 'package:dip_frontend/widget/article_list/loaded_all_list.dart';
 import 'package:dip_frontend/widget/article_list/loaded_list.dart';
 import 'package:flutter/material.dart';
 import 'package:dip_frontend/typedefs.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 class ArticleList extends StatefulWidget {
   const ArticleList({
@@ -51,20 +53,12 @@ class _ArticleListState extends State<ArticleList> {
                   pageSize: state.pageSize,
                 ),
               ),
-              articleWidgetBuilder: (article) => ArticleWidget(
-                article: article,
-                onClick: (article) => dispatcher(
-                  AppAction.openArticle(article: article),
-                ),
-              ),
+              articleWidgetBuilder: (article) =>
+                  _buildArticleWidget(article, dispatcher),
             ),
             loadedAllState: (state) => LoadedAllArticleList(
-              articleWidgetBuilder: (article) => ArticleWidget(
-                article: article,
-                onClick: (article) => dispatcher(
-                  AppAction.openArticle(article: article),
-                ),
-              ),
+              articleWidgetBuilder: (article) =>
+                  _buildArticleWidget(article, dispatcher),
               articles: state.articles,
             ),
             loadingState: (state) => const Center(
@@ -73,6 +67,41 @@ class _ArticleListState extends State<ArticleList> {
           ),
         );
       },
+    );
+  }
+
+  Widget _buildArticleWidget(
+    Article article,
+    void Function(AppAction) dispatcher,
+  ) {
+    return Slidable(
+      actionExtentRatio: 0.15,
+      actionPane: const SlidableDrawerActionPane(),
+      secondaryActions: [
+        IconSlideAction(
+          caption: 'Generate PDF',
+          icon: Icons.picture_as_pdf,
+          onTap: () => dispatcher(AppAction.downloadPdf(article: article)),
+        ),
+        IconSlideAction(
+          caption: 'Edit',
+          icon: Icons.edit,
+          color: Colors.blueAccent,
+          onTap: () {},
+        ),
+        IconSlideAction(
+          caption: 'Remove',
+          icon: Icons.remove_circle,
+          color: Colors.redAccent,
+          onTap: () {},
+        ),
+      ],
+      child: ArticleWidget(
+        article: article,
+        onClick: (article) => dispatcher(
+          AppAction.openArticle(article: article),
+        ),
+      ),
     );
   }
 }

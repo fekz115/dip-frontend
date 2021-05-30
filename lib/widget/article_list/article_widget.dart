@@ -22,41 +22,45 @@ class ArticleWidget extends StatelessWidget {
         child: Card(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: Row(
               children: [
-                Text('Author: ${article.author.login}'),
-                Text(
-                  article.title,
-                  style: Theme.of(context).textTheme.headline5,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 8.0),
-                  child: RichText(
-                    text: TextSpan(
-                      text: article.publicationDate.toString(),
-                      style: const TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w300,
-                      ),
-                      children: [
-                        TextSpan(
-                          text: '  +${article.likes}  ',
-                          style: const TextStyle(
-                            color: Colors.green,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        TextSpan(
-                          text: '-${article.dislikes}',
-                          style: const TextStyle(
-                            color: Colors.red,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        )
-                      ],
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Author: ${article.author.login}'),
+                    Text(
+                      article.title,
+                      style: Theme.of(context).textTheme.headline5,
                     ),
-                  ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: RichText(
+                        text: TextSpan(
+                          text: article.publicationDate.toString(),
+                          style: const TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w300,
+                          ),
+                          children: [
+                            TextSpan(
+                              text: '  +${article.likes}  ',
+                              style: const TextStyle(
+                                color: Colors.green,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            TextSpan(
+                              text: '-${article.dislikes}',
+                              style: const TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),

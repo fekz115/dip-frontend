@@ -6,6 +6,7 @@ import 'package:dip_frontend/api/auth_interceptor.dart';
 import 'package:dip_frontend/api/exception_interceptor.dart';
 import 'package:dip_frontend/api/rating_state_interceptor.dart';
 import 'package:dip_frontend/api/role_interceptor.dart';
+import 'package:dip_frontend/model/article.dart';
 import 'package:dip_frontend/model/page.dart';
 import 'package:dip_frontend/model/user.dart';
 import 'package:dip_frontend/repository/repository.dart';
@@ -105,7 +106,8 @@ class ApiClient {
         .then((value) => Page.fromJson(value['page'] as Map<String, dynamic>));
   }
 
-  Future<File> getPdf(int articleId, [void Function(int, int)? notifier]) async {
+  Future<File> getPdf(int articleId,
+      [void Function(int, int)? notifier]) async {
     final response = await dio.get(
       '/api/qr/article/$articleId',
       onReceiveProgress: notifier,
@@ -114,10 +116,16 @@ class ApiClient {
       ),
     );
     final t = response.headers["content-disposition"]![0];
-    final file = File('${(await getDownloadsDirectory())!.path}/${t.substring(t.indexOf('"') + 1, t.lastIndexOf('"'))}');
+    final file = File(
+        '${(await getDownloadsDirectory())!.path}/${t.substring(t.indexOf('"') + 1, t.lastIndexOf('"'))}');
     final raf = file.openSync(mode: FileMode.write);
     raf.writeFromSync(response.data as List<int>);
     await raf.close();
     return file;
+  }
+
+  Future<Article> getArticle(int id) {
+    return _request(() => dio.get<Map<String, dynamic>>('$articleControllerUrl/$id'))
+        .then((value) => Article.fromJson(value.data!['article'] as Map<String, dynamic>));
   }
 }

@@ -250,5 +250,21 @@ List<Middleware<AppState, AppAction, AppEvent>> createMiddleware(
             eventDispatcher(
               AppEvent.snackbarNotificationEvent(message: 'File downloaded: ${file.path}'),
             );
+          }, qrScanned: (action) async {
+            if(RegExp(r'\/article\/\d+').hasMatch(action.code)) {
+              final id = int.parse(action.code.substring(9));
+              try {
+                final Article article = await apiClient.getArticle(id);
+                actionDispatcher(AppAction.showScannedArticle(article: article));
+              } catch (_) {
+                eventDispatcher(
+                  const AppEvent.snackbarNotificationEvent(message: 'Incorrect QR-code'),
+                );
+              }
+            } else {
+              eventDispatcher(
+                const AppEvent.snackbarNotificationEvent(message: 'Incorrect QR-code'),
+              );
+            }
           }),
     ];

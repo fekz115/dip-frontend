@@ -5,6 +5,7 @@ import 'package:dip_frontend/redux/state/auth_state.dart';
 import 'package:dip_frontend/redux/state/navigation/bottom_navigation.dart';
 import 'package:dip_frontend/redux/state/navigation/inner_navigation/inner_screen.dart';
 import 'package:dip_frontend/redux/state/navigation/screen.dart';
+import 'package:dip_frontend/redux/state/scanned_article_state.dart';
 import 'package:whelm/whelm.dart';
 
 List<Reducer<AppState, AppAction>> createReducers() => [
@@ -115,7 +116,13 @@ List<Reducer<AppState, AppAction>> createReducers() => [
               navigationState: (state.navigationState..removeLast()).toList(),
             ),
             goBackInner: (action) => state.copyWith(
-              innerNavigationState: (state.innerNavigationState..removeLast()).toList(),
+              innerNavigationState:
+                  (state.innerNavigationState..removeLast()).toList(),
+            ),
+            showScannedArticle: (action) => state.copyWith(
+              scannedArticle: ScannedArticleState.hasArticle(
+                article: action.article,
+              ),
             ),
             orElse: () => state,
           ),
